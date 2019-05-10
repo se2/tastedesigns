@@ -20,3 +20,4 @@ require get_template_directory() . '/lib/enqueue-styles-scripts.php';
 require get_template_directory() . '/lib/template-tags.php';
 require get_template_directory() . '/lib/template-functions.php';
 
+require get_template_directory() . '/lib/acf-options-page.php';
