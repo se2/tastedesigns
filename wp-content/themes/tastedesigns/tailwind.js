@@ -43,15 +43,15 @@ View the full documentation at https://tailwindcss.com.
 */
 
 let colors = {
-  'taste-color-1': '#4f4137',
-  'taste-color-2': '#736357',
-  'taste-color-3': '#a6988d',
-  'taste-color-4': '#cebbad',
-  'taste-color-5': '#e8e0da',
-  'taste-color-6': '#9b9b9b',
-  'taste-color-7': '#000000',
+  'taste-1': '#4f4137',
+  'taste-2': '#736357',
+  'taste-3': '#a6988d',
+  'taste-4': '#cebbad',
+  'taste-5': '#e8e0da',
+  'taste-6': '#9b9b9b',
+  'taste-7': '#000000',
   light: '#ffffff',
-  primary: this['taste-color-1'],
+  primary: this['taste-1'],
 }
 
 module.exports = {
@@ -116,9 +116,21 @@ module.exports = {
   */
 
   fonts: {
-    sans: [
-      'Arial',
-      'Helvetica',
+    title: [
+      'Abril Fatface',
+      'Roboto Slab',
+      'Constantia',
+      'Lucida Bright',
+      'Lucidabright',
+      'Lucida Serif',
+      'Lucida',
+      'DejaVu Serif',
+      'Bitstream Vera Serif',
+      'Liberation Serif',
+      'Georgia',
+      'serif',
+    ],
+    subtitle: [
       'Heebo',
       'Montserrat',
       'system-ui',
@@ -134,21 +146,25 @@ module.exports = {
       'Helvetica Neue',
       'sans-serif',
     ],
-    serif: [
-      'Abril Fatface',
-      'Roboto Slab',
-      'Constantia',
-      'Lucida Bright',
-      'Lucidabright',
-      'Lucida Serif',
-      'Lucida',
-      'DejaVu Serif',
-      'Bitstream Vera Serif',
-      'Liberation Serif',
-      'Georgia',
-      'serif',
+    body: [
+      'Optima',
+      'Arial',
+      'Helvetica',
+      'Montserrat',
+      'system-ui',
+      'BlinkMacSystemFont',
+      '-apple-system',
+      'Segoe UI',
+      'Roboto',
+      'Oxygen',
+      'Ubuntu',
+      'Cantarell',
+      'Fira Sans',
+      'Droid Sans',
+      'Helvetica Neue',
+      'sans-serif',
     ],
-    mono: ['Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace'],
+    // mono: ['Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace'],
   },
 
   /*
@@ -182,6 +198,8 @@ module.exports = {
     '5xl': '2.25rem', // 36px
     '6xl': '3rem', // 48px
     '7xl': '3.875rem', // 62px
+    'title-size': '4.6875rem', // 75px
+    'subtitle-size': '1.0625rem', // 17px
   },
 
   /*
@@ -223,6 +241,8 @@ module.exports = {
     tight: 1.4,
     normal: 1.5,
     loose: 2,
+    title: 0.95,
+    subtitle: 1.15,
   },
 
   /*
@@ -242,6 +262,7 @@ module.exports = {
     normal: '0',
     wide: '0.05em',
     'x-wide': '0.1em',
+    'subtitle': '0.258em',
   },
 
   /*
@@ -406,6 +427,8 @@ module.exports = {
     '5/6': '83.33333%',
     full: '100%',
     screen: '100vw',
+    '576': '36rem',
+    '40': '2.5rem',
   },
 
   /*
@@ -442,6 +465,7 @@ module.exports = {
     '64': '16rem',
     full: '100%',
     screen: '100vh',
+    '40': '2.5rem',
   },
 
   /*
@@ -561,6 +585,10 @@ module.exports = {
     '20': '5rem',
     '24': '6rem',
     '32': '8rem',
+
+    '34': '2.125rem',
+    '27': '1.6875rem',
+    '55': '3.49rem',
   },
 
   /*

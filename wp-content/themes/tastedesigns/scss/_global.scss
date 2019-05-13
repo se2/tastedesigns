@@ -2,7 +2,9 @@ $maxWidth: 1400px;
 $maxPhoneWidth: 500px;
 
 * {
-  @apply font-sans;
+  @apply font-body;
+
+  font-weight: normal;
 }
 
 html {
@@ -12,7 +14,7 @@ html {
 // Themes
 body.theme {
   &--color-1 {
-    @apply bg-taste-color-1;
+    @apply bg-taste-1;
   }
 
   // &--color-2 {
