@@ -9,5 +9,7 @@ function ttg_wp_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	wp_enqueue_style('fonts', 'https://fonts.googleapis.com/css?family=Abril+Fatface|Heebo:300', NULL, NULL);
 }
 add_action( 'wp_enqueue_scripts', 'ttg_wp_scripts' );

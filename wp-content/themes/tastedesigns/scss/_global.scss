@@ -1,0 +1,41 @@
+$maxWidth: 1400px;
+$maxPhoneWidth: 500px;
+
+* {
+  @apply font-sans;
+}
+
+html {
+  @apply bg-light;
+}
+
+// Themes
+body.theme {
+  &--color-1 {
+    @apply bg-taste-color-1;
+  }
+
+  // &--color-2 {
+  //   @apply bg-taste-color-2;
+  // }
+
+  // &--color-3 {
+  //   @apply bg-taste-color-3;
+  // }
+
+  // &--color-4 {
+  //   @apply bg-taste-color-4;
+  // }
+
+  // &--color-5 {
+  //   @apply bg-taste-color-5;
+  // }
+
+  // &--color-6 {
+  //   @apply bg-taste-color-6;
+  // }
+
+  // &--color-7 {
+  //   @apply bg-taste-color-7;
+  // }
+}

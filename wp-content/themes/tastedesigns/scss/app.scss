@@ -10,6 +10,15 @@
   margin-top: 0; // single-direction margins only. @see: https://bit.ly/2LGJ2mr
 }
 
+// Slick Carousel
+$slick-font-path: "/node_modules/slick-carousel/slick/fonts/" !default;
+$slick-font-family: "slick" !default;
+$slick-loader-path: "/node_modules/slick-carousel/slick-carousel/slick/" !default;
+$slick-arrow-color: black !default;
+@import "~slick-carousel/slick/slick.scss";
+@import "~slick-carousel/slick/slick-theme.scss";
+
 // Include our includes!
+@import 'global';
 @import 'wp';
-@import 'buttons'
+@import 'buttons';

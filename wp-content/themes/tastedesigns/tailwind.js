@@ -43,14 +43,15 @@ View the full documentation at https://tailwindcss.com.
 */
 
 let colors = {
-  primary: '#3f4f60',
-  secondary: '#5c6d7d',
-  tertiary: '#449da1',
-  quaternary: '#abd037',
+  'taste-color-1': '#4f4137',
+  'taste-color-2': '#736357',
+  'taste-color-3': '#a6988d',
+  'taste-color-4': '#cebbad',
+  'taste-color-5': '#e8e0da',
+  'taste-color-6': '#9b9b9b',
+  'taste-color-7': '#000000',
   light: '#ffffff',
-  grey: '#dee2e5',
-  'grey-light': '#f3f3f3',
-  'grey-dark': '#b2b9bf',
+  primary: this['taste-color-1'],
 }
 
 module.exports = {
@@ -116,6 +117,9 @@ module.exports = {
 
   fonts: {
     sans: [
+      'Arial',
+      'Helvetica',
+      'Heebo',
       'Montserrat',
       'system-ui',
       'BlinkMacSystemFont',
@@ -131,6 +135,7 @@ module.exports = {
       'sans-serif',
     ],
     serif: [
+      'Abril Fatface',
       'Roboto Slab',
       'Constantia',
       'Lucida Bright',
