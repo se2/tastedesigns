@@ -19,7 +19,7 @@ $subtitle = get_sub_field('subtitle');
       <h1 class="c-section__title text-title-size font-title leading-title text-light relative">
         <?php echo $title; ?>
       </h1>
-      <a href="<?php echo $subtitle['url'] ?>" class="c-section__subtitle text-subtitle-size font-subtitle leading-subtitle tracking-subtitle text-taste-4 uppercase relative inline-block mt-8 pb-2 no-underline border-b-4">
+      <a href="<?php echo $subtitle['url'] ?>" class="c-section__subtitle text-subtitle-size font-subtitle leading-subtitle tracking-subtitle text-light uppercase relative inline-block mt-8 pb-2 no-underline border-b-4 border-taste-4">
         <?php echo $subtitle['title']; ?>
       </a>
     </div>

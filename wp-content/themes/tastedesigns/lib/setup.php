@@ -79,6 +79,21 @@ if ( ! function_exists( 'ttg_wp_setup' ) ) :
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
+
+		/**
+		 * Add image sizes
+		 */
+		update_option( 'large_size_w', 1024 );
+		update_option( 'large_size_h', 0 );
+		update_option( 'large_crop', 0 );
+
+		update_option( 'medium_size_w', 1366 );
+		update_option( 'medium_size_h', 0 );
+		update_option( 'medium_crop', 0 );
+
+		add_image_size( 'massive', 1920 );
+		add_image_size( 'small', 768 );
+		add_image_size( 'tiny', 300 );
 	}
 endif;
 add_action( 'after_setup_theme', 'ttg_wp_setup' );

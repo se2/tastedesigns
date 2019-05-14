@@ -106,3 +106,10 @@ if ( ! function_exists( 'ttg_pagination' ) ) :
 		}
 	}
 endif;
+
+/**
+ * Generate image
+ */
+function generate_image($id, $class = 'c-image', $size = 'tiny') {
+  return wp_get_attachment_image($id, $size, '', array('class'=>$class));
+}
