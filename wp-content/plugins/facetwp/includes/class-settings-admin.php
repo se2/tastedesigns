@@ -9,72 +9,72 @@ class FacetWP_Settings_Admin
      */
     function get_settings() {
 
-        $defaults = array(
-            'general' => array(
+        $defaults = [
+            'general' => [
                 'label' => __( 'General', 'fwp' ),
-                'fields' => array(
-                    'license_key' => array(
+                'fields' => [
+                    'license_key' => [
                         'label' => __( 'License Key', 'fwp' ),
                         'html' => $this->get_field_html( 'license_key' )
-                    ),
-                    'gmaps_api_key' => array(
+                    ],
+                    'gmaps_api_key' => [
                         'label' => __( 'Google Maps API Key', 'fwp' ),
                         'html' => $this->get_field_html( 'gmaps_api_key' )
-                    ),
-                    'separators' => array(
+                    ],
+                    'separators' => [
                         'label' => __( 'Separators', 'fwp' ),
                         'html' => $this->get_field_html( 'separators' )
-                    ),
-                    'loading_animation' => array(
+                    ],
+                    'loading_animation' => [
                         'label' => __( 'Loading Animation', 'fwp' ),
-                        'html' => $this->get_field_html( 'loading_animation', 'dropdown', array(
-                            'choices' => array( 'fade' => __( 'Fade', 'fwp' ), '' => __( 'Spin', 'fwp' ), 'none' => __( 'None', 'fwp' ) )
-                        ) )
-                    ),
-                    'prefix' => array(
+                        'html' => $this->get_field_html( 'loading_animation', 'dropdown', [
+                            'choices' => [ 'fade' => __( 'Fade', 'fwp' ), '' => __( 'Spin', 'fwp' ), 'none' => __( 'None', 'fwp' ) ]
+                        ] )
+                    ],
+                    'prefix' => [
                         'label' => __( 'URL Prefix', 'fwp' ),
-                        'html' => $this->get_field_html( 'prefix', 'dropdown', array(
-                            'choices' => array( 'fwp_' => 'fwp_', '_' => '_' )
-                        ) )
-                    ),
-                    'debug_mode' => array(
+                        'html' => $this->get_field_html( 'prefix', 'dropdown', [
+                            'choices' => [ 'fwp_' => 'fwp_', '_' => '_' ]
+                        ] )
+                    ],
+                    'debug_mode' => [
                         'label' => __( 'Debug Mode', 'fwp' ),
-                        'html' => $this->get_field_html( 'debug_mode', 'toggle', array(
+                        'html' => $this->get_field_html( 'debug_mode', 'toggle', [
                             'true_value' => 'on',
                             'false_value' => 'off'
-                        ) )
-                    )
-                )
-            ),
-            'woocommerce' => array(
+                        ] )
+                    ]
+                ]
+            ],
+            'woocommerce' => [
                 'label' => __( 'WooCommerce', 'fwp' ),
-                'fields' => array(
-                    'wc_enable_variations' => array(
+                'fields' => [
+                    'wc_enable_variations' => [
                         'label' => __( 'Support product variations?', 'fwp' ),
                         'notes' => __( 'Enable if your store uses variable products.', 'fwp' ),
                         'html' => $this->get_field_html( 'wc_enable_variations', 'toggle' )
-                    ),
-                    'wc_index_all' => array(
+                    ],
+                    'wc_index_all' => [
                         'label' => __( 'Include all products?', 'fwp' ),
                         'notes' => __( 'Show facet choices for out-of-stock products?', 'fwp' ),
                         'html' => $this->get_field_html( 'wc_index_all', 'toggle' )
-                    )
-                )
-            ),
-            'backup' => array(
+                    ]
+                ]
+            ],
+            'backup' => [
                 'label' => __( 'Backup', 'fwp' ),
-                'fields' => array(
-                    'export' => array(
+                'fields' => [
+                    'export' => [
                         'label' => __( 'Export', 'fwp' ),
                         'html' => $this->get_field_html( 'export' )
-                    ),
-                    'import' => array(
+                    ],
+                    'import' => [
                         'label' => __( 'Import', 'fwp' ),
                         'html' => $this->get_field_html( 'import' )
-                    )
-                )
-            )
-        );
+                    ]
+                ]
+            ]
+        ];
 
         if ( ! is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
             unset( $defaults['woocommerce'] );
@@ -88,7 +88,7 @@ class FacetWP_Settings_Admin
      * Return HTML for a setting field
      * @since 3.0.0
      */
-    function get_field_html( $setting_name, $field_type = 'text', $atts = array() ) {
+    function get_field_html( $setting_name, $field_type = 'text', $atts = [] ) {
         ob_start();
 
         if ( 'license_key' == $setting_name ) : ?>
@@ -165,7 +165,7 @@ $false_value = isset( $atts['false_value'] ) ? $atts['false_value'] : 'no';
      * @since 3.0.0
      */
     function get_export_choices() {
-        $export = array();
+        $export = [];
 
         $settings = FWP()->helper->settings;
 
@@ -209,7 +209,7 @@ $false_value = isset( $atts['false_value'] ) ? $atts['false_value'] : 'no';
      * @since 3.2.0
      */
     function get_i18n_strings() {
-        return array(
+        return [
             'Results per row' => __( 'Results per row', 'fwp' ),
             'Grid gap' => __( 'Grid gap', 'fwp' ),
             'Text style' => __( 'Text style', 'fwp' ),
@@ -253,7 +253,6 @@ $false_value = isset( $atts['false_value'] ) ? $atts['false_value'] : 'no';
             'Suffix' => __( 'Suffix', 'fwp' ),
             'Hide item?' => __( 'Hide item?', 'fwp' ),
             'Padding' => __( 'Padding', 'fwp' ),
-            'Unique name' => __( 'Unique name', 'fwp' ),
             'CSS class' => __( 'CSS class', 'fwp' ),
             'Button Border' => __( 'Button border', 'fwp' ),
             'Term URL' => __( 'Term URL', 'fwp' ),
@@ -274,12 +273,12 @@ $false_value = isset( $atts['false_value'] ) ? $atts['false_value'] : 'no';
             'Hit Enter' => __( 'Hit Enter', 'fwp' ),
             'Add sort' => __( 'Add sort', 'fwp' ),
             'Add filter' => __( 'Add filter', 'fwp' ),
+            'Clear' => __( 'Clear', 'fwp' ),
             'Enter term slugs' => __( 'Enter term slugs', 'fwp' ),
             'Enter values' => __( 'Enter values', 'fwp' ),
             'Layout' => __( 'Layout', 'fwp' ),
             'Content' => __( 'Content', 'fwp' ),
             'Style' => __( 'Style', 'fwp' ),
-            'Advanced' => __( 'Advanced', 'fwp' ),
             'Row' => __( 'Row', 'fwp' ),
             'Column' => __( 'Column', 'fwp' ),
             'Start typing' => __( 'Start typing', 'fwp' ),
@@ -307,6 +306,54 @@ $false_value = isset( $atts['false_value'] ) ? $atts['false_value'] : 'no';
             'Stop indexer' => __( 'Stop indexer', 'fwp' ),
             'Loading' => __( 'Loading', 'fwp' ),
             'Importing' => __( 'Importing', 'fwp' ),
-        );
+            'Convert to query args' => __( 'Convert to query args', 'fwp' ),
+            'Delete item?' => __( 'Delete item?', 'fwp' )
+        ];
+    }
+
+
+    /**
+     * Get available image sizes
+     * @since 3.2.7
+     */
+    function get_image_sizes() {
+        global $_wp_additional_image_sizes;
+
+        $sizes = [];
+
+        $default_sizes = [ 'thumbnail', 'medium', 'medium_large', 'large', 'full' ];
+
+        foreach ( get_intermediate_image_sizes() as $size ) {
+            if ( in_array( $size, $default_sizes ) ) {
+                $sizes[ $size ]['width'] = (int) get_option( "{$size}_size_w" );
+                $sizes[ $size ]['height'] = (int) get_option( "{$size}_size_h" );
+                $sizes[ $size ]['crop'] = (bool) get_option( "{$size}_size_crop" );
+            }
+            elseif ( isset( $_wp_additional_image_sizes[ $size ] ) ) {
+                $sizes[ $size ] = $_wp_additional_image_sizes[ $size ];
+            }
+        }
+
+        return $sizes;
+    }
+
+
+    /**
+     * Return an array of formatted image sizes
+     * @since 3.2.7
+     */
+    function get_image_size_labels() {
+        $labels = [];
+        $sizes = $this->get_image_sizes();
+
+        foreach ( $sizes as $size => $data ) {
+            $height = ( 0 === $data['height'] ) ? 'w' : 'x' . $data['height'];
+            $label = $size . ' (' . $data['width'] . $height . ')';
+            $labels[ $size ] = $label;
+        }
+
+        $labels['full'] = __( 'full', 'fwp' );
+
+        return $labels;
     }
 }

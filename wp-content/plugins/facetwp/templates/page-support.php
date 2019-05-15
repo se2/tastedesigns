@@ -7,13 +7,10 @@ class FacetWP_Support
 
 
     function __construct() {
-        $activation = get_option( 'facetwp_activation' );
-
-        if ( ! empty( $activation ) ) {
-            $activation = json_decode( $activation, true );
-            if ( 'success' == $activation['status'] ) {
-                $this->payment_id = $activation['payment_id'];
-            }
+        if ( FWP()->helper->is_license_active() ) {
+            $activation = get_option( 'facetwp_activation' );
+            $activation = json_decode( $activation );
+            $this->payment_id = $activation->payment_id;
         }
     }
 
@@ -35,7 +32,7 @@ class FacetWP_Support
 
     function get_sysinfo() {
         $plugins = get_plugins();
-        $active_plugins = get_option( 'active_plugins', array() );
+        $active_plugins = get_option( 'active_plugins', [] );
         $theme = wp_get_theme();
         $parent = $theme->parent();
 

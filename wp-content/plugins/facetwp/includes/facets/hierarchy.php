@@ -20,7 +20,7 @@ class FacetWP_Facet_Hierarchy extends FacetWP_Facet
 
         $selected_values = (array) $params['selected_values'];
         $facet_parent_id = 0;
-        $output = array();
+        $output = [];
 
         // Orderby
         $orderby = $this->get_orderby( $facet );
@@ -42,7 +42,7 @@ class FacetWP_Facet_Hierarchy extends FacetWP_Facet
 
             // Invalid term
             if ( $facet_parent_id < 1 ) {
-                return array();
+                return [];
             }
 
             // Create term lookup array
@@ -52,22 +52,22 @@ class FacetWP_Facet_Hierarchy extends FacetWP_Facet
 
             // Loop backwards
             for ( $i = 0; $i <= $max_depth; $i++ ) {
-                $output[] = array(
+                $output[] = [
                     'facet_value'           => $depths[ $last_parent_id ]['slug'],
                     'facet_display_value'   => $depths[ $last_parent_id ]['name'],
                     'depth'                 => $depths[ $last_parent_id ]['depth'] + 1,
                     'counter'               => 1, // FWP.settings.num_choices
-                );
+                ];
 
                 $last_parent_id = (int) $depths[ $last_parent_id ]['parent_id'];
             }
 
-            $output[] = array(
+            $output[] = [
                 'facet_value'           => '',
-                'facet_display_value'   => __( 'Any', 'fwp' ),
+                'facet_display_value'   => __( 'Any', 'fwp-front' ),
                 'depth'                 => 0,
                 'counter'               => 1,
-            );
+            ];
 
             // Reverse it
             $output = array_reverse( $output );
@@ -148,8 +148,8 @@ class FacetWP_Facet_Hierarchy extends FacetWP_Facet
 
             if ( $num_visible < $num ) {
                 $output .= '</div>';
-                $output .= '<a class="facetwp-toggle">' . __( 'See more', 'fwp' ) . '</a>';
-                $output .= '<a class="facetwp-toggle facetwp-hidden">' . __( 'See less', 'fwp' ) . '</a>';
+                $output .= '<a class="facetwp-toggle">' . __( 'See more', 'fwp-front' ) . '</a>';
+                $output .= '<a class="facetwp-toggle facetwp-hidden">' . __( 'See less', 'fwp-front' ) . '</a>';
             }
 
             for ( $i = 0; $i <= $last_depth; $i++ ) {
