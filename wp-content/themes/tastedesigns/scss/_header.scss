@@ -34,3 +34,76 @@
     }
   }
 }
+
+.c-phone-numbers {
+  .c-menu__separator:last-child {
+    display: none;
+  }
+}
+
+.menu-main-menu-container {
+  .menu {
+    @apply p-0;
+    @apply pt-16;
+
+    list-style-type: none;
+  }
+
+  .menu-item {
+    @apply pt-16;
+    @apply pb-16;
+  }
+
+  .menu-item a {
+    @apply font-subtitle;
+    @apply text-taste-3;
+    @apply text-26;
+    @apply leading-38;
+    @apply no-underline;
+  }
+
+  .menu-item-has-children {
+    @apply border-t-2;
+    @apply w-265;
+    @apply border-taste-2;
+    @apply overflow-hidden;
+
+    box-sizing: content-box;
+    transition: height 0.3s ease;
+
+    > a {
+      @apply text-taste-1;
+
+      &::after {
+        content: ' +';
+      }
+
+      &.is-active::after {
+        content: ' -';
+      }
+    }
+
+    .sub-menu {
+      @apply p-0;
+      @apply pt-8;
+
+      list-style-type: none;
+    }
+
+    .menu-item {
+      @apply pt-8;
+      @apply pb-8;
+    }
+
+    .menu-item a {
+      @apply text-taste-3;
+      @apply text-14;
+      @apply tracking-3.71;
+      @apply uppercase;
+
+      &::before {
+        content: '- ';
+      }
+    }
+  }
+}
