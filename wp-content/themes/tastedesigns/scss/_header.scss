@@ -67,16 +67,24 @@
   }
 
   .menu-item {
-    @apply pt-16;
-    @apply pb-16;
+    @apply py-10;
+
+    @screen lg {
+      @apply py-16;
+    }
   }
 
   .menu-item a {
     @apply font-subtitle;
     @apply text-taste-3;
-    @apply text-26;
-    @apply leading-38;
     @apply no-underline;
+    @apply text-22;
+    @apply leading-32;
+
+    @screen lg {
+      @apply text-26;
+      @apply leading-38;
+    }
   }
 
   .menu-item-has-children {
