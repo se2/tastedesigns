@@ -12,7 +12,7 @@ $title = get_sub_field('title');
 $subtitle = get_sub_field('subtitle');
 ?>
 
-<section class="c-section__hero w-full h-full bg-cover bg-bottom relative" style="<?php echo $bg; ?>">
+<section class="c-section__hero w-full h-screen bg-cover bg-bottom relative" style="<?php echo $bg; ?>">
   <div class="c-section__inner absolute w-full pt-34 pb-55 pl-27 pr-27">
     <div class="c-section__underlay absolute w-full h-full opacity-50 bg-taste-1"></div>
     <div class="c-section__text-content w-576 float-right">

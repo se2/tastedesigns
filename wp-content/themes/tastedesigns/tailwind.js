@@ -52,6 +52,7 @@ let colors = {
   'taste-7': '#000000',
   light: '#ffffff',
   primary: this['taste-1'],
+  'transparent': 'transparent',
 }
 
 module.exports = {
@@ -204,6 +205,7 @@ module.exports = {
     '14': '0.875rem', // 14px
     '16': '1rem', // 16px
     '26': '1.625rem', // 26px
+    '0': '0rem', // 26px
   },
 
   /*
@@ -346,6 +348,7 @@ module.exports = {
     '2': '2px',
     '4': '4px',
     '8': '8px',
+    '20': '20px',
   },
 
   /*
@@ -365,7 +368,11 @@ module.exports = {
   |
   */
 
-  borderColors: global.Object.assign({ default: colors['grey-secondary'], trans: 'rgba(255, 255, 255, 0.4)' }, colors),
+  borderColors: global.Object.assign({
+    default: colors['grey-secondary'],
+    trans: 'rgba(255, 255, 255, 0.4)',
+    'blur-taste-6': 'rgba(155, 155, 155, 0.5)',
+  }, colors),
 
   /*
   |-----------------------------------------------------------------------------
@@ -450,6 +457,11 @@ module.exports = {
     '46': '2.875rem',
     '33': '2.0625rem',
     '265': '16.5625rem',
+    '34': '2.125rem',
+    '47': '2.9375rem',
+    '20': '1.25rem',
+    '30': '1.875rem',
+    '151': '9.4375rem',
   },
 
   /*
@@ -492,6 +504,10 @@ module.exports = {
     '3.78': '0.23625rem',
     '17': '1.0625rem',
     '33': '2.0625rem',
+    '34': '2.125rem',
+    '20': '1.25rem',
+    '4.44': '0.2775rem',
+    '4': '0.25rem',
   },
 
   /*
@@ -605,10 +621,10 @@ module.exports = {
     // '5': '1.25rem',
     '6': '1.5rem',
     // '8': '2rem',
-    '10': '2.5rem',
+    // '10': '2.5rem',
     '12': '3rem',
     '16': '4rem',
-    '20': '5rem',
+    // '20': '5rem',
     // '24': '6rem',
     '32': '8rem',
 
@@ -621,6 +637,8 @@ module.exports = {
     '30': '1.875rem',
     '16': '1rem',
     '8': '0.5rem',
+    '10': '0.625rem',
+    '20': '1.25rem',
   },
 
   /*

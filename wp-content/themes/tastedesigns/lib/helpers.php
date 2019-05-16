@@ -110,6 +110,22 @@ endif;
 /**
  * Generate image
  */
-function generate_image($id, $class = 'c-image', $size = 'tiny') {
-  return wp_get_attachment_image($id, $size, '', array('class'=>$class));
+function generate_image($id, $class = 'c-image', $size = 'tiny', $echo = true) {
+	if ($echo) {
+		echo wp_get_attachment_image($id, $size, '', array('class'=>$class));
+	} else {
+		return wp_get_attachment_image($id, $size, '', array('class'=>$class));
+	}
+}
+
+
+/**
+ * Get image URL
+ */
+function get_image_url($name, $echo = true) {
+	if ($echo) {
+		echo get_stylesheet_directory_uri() . '/img/' . $name;
+	} else {
+		return get_stylesheet_directory_uri() . '/img/' . $name;
+	}
 }
