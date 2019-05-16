@@ -94,9 +94,10 @@
                         "id": ""
                     },
                     "choices": {
-                        "facebook": "Facebook",
-                        "instagram": "Instagram",
-                        "pinterest": "Pinterest"
+                        "fa-facebook-f": "Facebook",
+                        "fa-instagram": "Instagram",
+                        "fa-pinterest-p": "Pinterest",
+                        "fa-twitter": "Twitter"
                     },
                     "default_value": [
                         "facebook"
@@ -144,5 +145,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1557984980
+    "modified": 1558005839
 }

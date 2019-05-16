@@ -149,3 +149,15 @@
     }
   }
 }
+
+.c-social-medias {
+  &__item {
+    transition-property: background-color;
+    transition-duration: 0.3s;
+
+    i {
+      transition-property: color;
+      transition-duration: 0.3s;
+    }
+  }
+}

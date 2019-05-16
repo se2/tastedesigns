@@ -141,8 +141,8 @@
 
 				<div class="c-social-medias pt-30 pb-30 border-b-2 border-t-2 border-taste-5 mt-30 flex items-center">
 					<?php while (have_rows('social_medias', 'option')) : the_row(); ?>
-						<a href="<?php echo get_sub_field('link'); ?>" target="_blank" class="c-social-medias__item inline-block mr-22 text-0">
-							<img src="<?php get_image_url(get_sub_field('type').'.png'); ?>" alt="<?php echo get_sub_field('type'); ?>" class="c-social-medias__icon w-auto h-34">
+						<a href="<?php echo get_sub_field('link'); ?>" target="_blank" class="c-social-medias__item inline-block mr-22 text-0 rounded-full border-2 border-taste-3 w-34 h-34 flex justify-center items-center no-underline hover:bg-taste-3 text-taste-3 hover:text-light text-17">
+							<i class="fab <?php echo get_sub_field('type'); ?>"></i>
 						</a>
 					<?php endwhile; ?>
 					<a href="#" class="font-body text-14 leading-17 tracking-3.71 text-taste-1 uppercase no-underline align-middle ml-auto">

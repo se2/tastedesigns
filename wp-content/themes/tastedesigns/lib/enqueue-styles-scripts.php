@@ -10,6 +10,10 @@ function ttg_wp_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
+	// Custom fonts
 	wp_enqueue_style('fonts', 'https://fonts.googleapis.com/css?family=Abril+Fatface|Heebo:300', NULL, NULL);
+
+	// Font Awesome
+	wp_enqueue_style( 'font-awesome-free', 'https://use.fontawesome.com/releases/v5.8.2/css/all.css' );
 }
 add_action( 'wp_enqueue_scripts', 'ttg_wp_scripts' );
