@@ -25,3 +25,9 @@
     cursor: pointer;
   }
 }
+
+.c-featured-project {
+  &__body p {
+    margin: 30px 0;
+  }
+}
