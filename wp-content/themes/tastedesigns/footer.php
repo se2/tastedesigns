@@ -13,6 +13,20 @@
 
 	</div><!-- #content -->
 
+
+<?php
+
+
+// sitewide CTA
+// TODO: tu - please move this action to wherever you need it!
+do_action('ttg_sitewideCta');
+
+
+?>
+
+
+
+
 	<footer id="colophon" class="site-footer hidden">
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'ttg-wp' ) ); ?>">
