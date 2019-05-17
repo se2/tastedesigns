@@ -41,7 +41,7 @@
 	<div class="entry-content">
 		<?php
 
-		the_content( 
+		the_content(
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
@@ -53,7 +53,7 @@
 					)
 				),
 				get_the_title()
-			) 
+			)
 		);
 
 		// custom field - expert gallery
@@ -84,7 +84,7 @@
 			<?php
 		}
 
-		wp_link_pages( 
+		wp_link_pages(
 			array(
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ttg-wp' ),
 				'after'  => '</div>',
@@ -95,8 +95,8 @@
 	</div>
 
 	<footer class="entry-footer">
-		<?php 
-		ttg_wp_entry_footer(); 
+		<?php
+		ttg_wp_entry_footer();
 		?>
 	</footer>
 </article>
