@@ -144,7 +144,7 @@
                 "layout_5cd9a8841fbfe": {
                     "key": "layout_5cd9a8841fbfe",
                     "name": "hero-editor",
-                    "label": "Hero Editor",
+                    "label": "Cover",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -199,7 +199,7 @@
                                 "id": ""
                             },
                             "return_format": "url",
-                            "preview_size": "medium",
+                            "preview_size": "small",
                             "library": "all",
                             "min_width": "",
                             "min_height": "",
@@ -246,6 +246,33 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_5cde8e02f68c9": {
+                    "key": "layout_5cde8e02f68c9",
+                    "name": "featured-project-editor",
+                    "label": "Featured Project",
+                    "display": "block",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5cde8e46f68d0": {
+                    "key": "layout_5cde8e46f68d0",
+                    "name": "stay-connected-editor",
+                    "label": "Stay Connected",
+                    "display": "block",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5cde8f1af68d9": {
+                    "key": "layout_5cde8f1af68d9",
+                    "name": "appreciation-editor",
+                    "label": "Appreciation",
+                    "display": "block",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Add Block",
@@ -259,6 +286,20 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "page"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "project"
             }
         ]
     ],
@@ -278,5 +319,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1557817274
+    "modified": 1558089613
 }
