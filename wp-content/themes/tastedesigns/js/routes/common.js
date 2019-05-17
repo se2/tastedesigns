@@ -16,6 +16,9 @@ export default {
     e.$menuTrigger = $('.js-menu-trigger');
     e.$submenu = $('.menu-item-has-children');
     e.$submenuLink = $('.menu-item-has-children > a');
+    e.$searchTrigger = $('.js-search-trigger');
+    e.$searchClose = $('.js-search-close');
+    e.$searchForm = $('.js-search-form');
   },
   initMenu() {
     let s = this;
@@ -61,6 +64,15 @@ export default {
           $menu.css('height', maxHeight);
         }
       });
+    });
+
+    e.$searchTrigger.click(function(event) {
+      event.preventDefault();
+      e.$searchForm.addClass('is-active');
+    });
+
+    e.$searchClose.click(function() {
+      e.$searchForm.removeClass('is-active');
     });
   },
   finalize() {

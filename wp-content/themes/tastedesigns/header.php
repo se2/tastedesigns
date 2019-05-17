@@ -37,7 +37,7 @@
 						<img src="<?php get_image_url('email.png'); ?>" alt="Email" class="c-menu__mail-icon w-31 h-auto align-middle ml-22">
 					</a>
 					<div class="c-menu__separator w-2 h-36 bg-light align-middle ml-28 mr-28 hidden lg:inline-block"></div>
-					<a href="#" class="c-menu__item font-body text-0 lg:text-14 leading-17 tracking-5.73 text-light uppercase no-underline flex-1 lg:flex-initial">
+					<a href="#" class="c-menu__item font-body text-0 lg:text-14 leading-17 tracking-5.73 text-light uppercase no-underline flex-1 lg:flex-initial js-search-trigger">
 						Search
 						<img src="<?php get_image_url('search.png'); ?>" alt="Search" class="c-menu__mail-icon w-37 h-auto align-middle ml-22 hidden lg:inline">
 						<img src="<?php get_image_url('mobile-search.png'); ?>" alt="Search" class="c-menu__mail-icon w-30 h-auto align-middle lg:hidden">
@@ -66,7 +66,7 @@
 						<img src="<?php get_image_url('alternative-email.png'); ?>" alt="Email" class="c-menu__mail-icon w-31 h-auto align-middle ml-22">
 					</a>
 					<div class="c-menu__separator w-2 h-36 bg-taste-3 align-middle ml-28 mr-28 hidden lg:inline-block"></div>
-					<a href="#" class="c-menu__item font-body text-0 lg:text-14 leading-17 tracking-5.73 text-taste-2 uppercase no-underline flex-1 lg:flex-initial">
+					<a href="#" class="c-menu__item font-body text-0 lg:text-14 leading-17 tracking-5.73 text-taste-2 uppercase no-underline flex-1 lg:flex-initial js-search-trigger">
 						Search
 						<img src="<?php get_image_url('alternative-search.png'); ?>" alt="Search" class="c-menu__mail-icon w-37 h-auto align-middle ml-22 hidden lg:inline">
 						<img src="<?php get_image_url('mobile-search.png'); ?>" alt="Search" class="c-menu__mail-icon w-30 h-auto align-middle lg:hidden">
@@ -102,7 +102,7 @@
 				<div class="c-menu flex items-center">
 					<a href="#" class="c-menu__item font-body text-11 leading-13 tracking-2.54 lg:text-14 lg:leading-17 lg:tracking-3.71 text-taste-1 uppercase no-underline">Work With Taste</a>
 					<div class="c-menu__separator w-2 h-36 bg-taste-5 opacity-80 inline-block align-middle mx-28 hidden lg:inline"></div>
-					<a href="#" class="c-menu__item font-body text-16 leading-19 tracking-5.73 text-taste-3 uppercase no-underline hidden lg:inline-flex items-center">
+					<a href="#" class="c-menu__item font-body text-16 leading-19 tracking-5.73 text-taste-3 uppercase no-underline hidden lg:inline-flex items-center js-search-trigger">
 						Search
 						<img src="<?php get_image_url('alternative-search-2.png'); ?>" alt="Search" class="c-menu__mail-icon w-37 h-auto align-middle ml-22">
 					</a>
@@ -162,6 +162,17 @@
 				</a>
 			</div>
 		</nav><!-- #site-navigation -->
+
+		<div class="c-menu-search fixed w-full h-full z-50 js-search-form">
+			<div class="c-menu-search__background absolute bg-light w-full h-full"></div>
+			<div class="c-menu-search__inner relative w-full h-full">
+				<div class="c-menu__hamburger w-28 h-28 right-0 lg:w-33 lg:h-33 absolute is-active js-search-close">
+					<div class="c-menu__stick w-full h-3 lg:h-3.78 absolute bg-taste-2 rounded"></div>
+					<div class="c-menu__stick w-full h-3 lg:h-3.78 absolute bg-taste-2 rounded"></div>
+				</div>
+				<?php get_search_form(); ?>
+			</div>
+		</div>
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content w-full h-full">
