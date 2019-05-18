@@ -484,6 +484,9 @@ module.exports = {
     '25': '1.5625rem',
     '28': '1.75rem',
     '50': '3.125rem',
+    '30%': '30%',
+    '34%': '34%',
+    '66%': '66%',
   },
 
   /*
@@ -535,6 +538,7 @@ module.exports = {
     '3': '0.1875rem',
     '25': '1.5625rem',
     '28': '1.75rem',
+    'featured': 'calc(628 / 1440 * 100vw)',
   },
 
   /*
@@ -928,6 +932,7 @@ module.exports = {
     whitespace: ['responsive'],
     width: ['responsive'],
     zIndex: [],
+    objectFit: true,
   },
 
   /*

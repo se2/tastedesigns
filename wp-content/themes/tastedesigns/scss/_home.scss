@@ -30,4 +30,16 @@
   &__body p {
     margin: 30px 0;
   }
+
+  &__image-wrapper {
+    outline: 0;
+
+    &:not(.slick-current) {
+      cursor: pointer;
+    }
+  }
+
+  &__image {
+    object-fit: cover;
+  }
 }
