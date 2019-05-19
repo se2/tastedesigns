@@ -210,6 +210,30 @@
                             "mime_types": ""
                         },
                         {
+                            "key": "field_5ce10560320e0",
+                            "label": "Background Image Mobile",
+                            "name": "background_image_mobile",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "url",
+                            "preview_size": "small",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
                             "key": "field_5cd9a8841fc02",
                             "label": "Title",
                             "name": "title",
@@ -649,5 +673,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1558156466
+    "modified": 1558250864
 }

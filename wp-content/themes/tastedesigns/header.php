@@ -54,7 +54,7 @@
 					</a>
 				</div>
 
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php generate_image(get_field('logo', 'option'), 'c-logo w-151 pt-40 pl-20 lg:p-0 lg:w-132 h-auto'); ?></a>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php generate_image(get_field('logo', 'option'), 'c-logo w-151 pt-25 xs:pt-40 pl-20 lg:p-0 lg:w-132 h-auto'); ?></a>
 
 				<?php
 			else :

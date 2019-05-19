@@ -6,13 +6,29 @@ export default {
     let s = this;
 
     s.initHome();
+    s.initCover();
     s.initFeaturedProject();
   },
   initHome() {
     let e = this.elements;
 
+    e.$window = $(window);
+    e.$root = $('html, body');
+    e.$scroll = $('.js-scroll');
     e.$gallery = $('.js-project-gallery');
     e.$galleryItem = $('.js-project-gallery-item');
+  },
+  initCover() {
+    let s = this;
+    let e = s.elements;
+
+    e.$scroll.click(function() {
+      let height = e.$window.height();
+
+      e.$root.animate({
+        scrollTop: height
+      }, 1000);
+    });
   },
   initFeaturedProject() {
     let s = this;
@@ -27,8 +43,18 @@ export default {
       rows: 0,
       arrows: false,
       speed: 1000,
-      // cssEase: 'cubic-bezier(0.86, 0, 0.07, 1)',
       cssEase: 'cubic-bezier(0.645, 0.045, 0.355, 1)',
+      pauseOnFocus: false,
+      pauseOnHover: false,
+      pauseOnDotsHover: false,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            centerPadding: '10px',
+          }
+        },
+      ],
     });
 
     e.$galleryItem.click(function() {
