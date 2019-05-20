@@ -53,6 +53,10 @@
   &__gallery {
     @screen lg {
       order: 2;
+
+      .slick-list {
+        padding:0 30px 0 0;
+      }
     }
   }
 

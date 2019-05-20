@@ -38,7 +38,6 @@ export default {
       infinite: false,
       autoplay: true,
       autoplaySpeed: 5000,
-      slidesToShow: 1.035,
       rows: 0,
       arrows: false,
       speed: 1000,
