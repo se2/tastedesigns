@@ -17,7 +17,7 @@ if ($visible && $project) :
 
   <section class="c-featured-project w-full relative pt-30 pb-80 lg:py-80">
     <div class="c-featured-project__inner flex flex-col lg:flex-row">
-      <div class="c-featured-project__gallery w-full lg:w-66% order">
+      <div class="c-featured-project__gallery w-full lg:w-66% order lg:pl-40">
         <h2 class="font-title text-30 leading-40 text-taste-4 text-center mb-22 lg:hidden">
           Featured Project
         </h2>
@@ -25,7 +25,7 @@ if ($visible && $project) :
           <?php $gallery = get_field('gallery'); ?>
           <?php $count = 0; ?>
           <?php foreach ($gallery as $image) : $count++; ?>
-            <div class="c-featured-project__image-wrapper p-10 js-project-gallery-item">
+            <div class="c-featured-project__image-wrapper py-10 px-10 lg:pl-0 lg:pr-20 js-project-gallery-item">
               <?php generate_image($image['ID'], 'c-featured-project__image w-full h-featured-mobile lg:h-featured', 'large'); ?>
             </div>
             <?php if ($count == 4) : break; endif; ?>

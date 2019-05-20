@@ -38,8 +38,7 @@ export default {
       infinite: false,
       autoplay: true,
       autoplaySpeed: 5000,
-      centerMode: true,
-      centerPadding: '40px',
+      slidesToShow: 1.035,
       rows: 0,
       arrows: false,
       speed: 1000,
@@ -51,6 +50,8 @@ export default {
         {
           breakpoint: 1024,
           settings: {
+            slidesToShow: 1,
+            centerMode: true,
             centerPadding: '10px',
           }
         },
