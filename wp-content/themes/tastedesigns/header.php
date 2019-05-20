@@ -24,6 +24,8 @@
 <div id="page" class="site w-full h-full">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'ttg-wp' ); ?></a>
 
+	<?php $career = get_field('career', 'option'); ?>
+
 	<header id="masthead" class="site-header">
 		<div class="site-branding absolute w-full z-50 lg:py-40 lg:px-50">
 			<?php
@@ -32,10 +34,12 @@
 				?>
 
 				<div class="c-menu w-full lg:w-auto float-none lg:float-right flex items-center bg-light lg:bg-transparent py-10 px-20 lg:p-0">
-					<a href="#" class="c-menu__item font-body text-14 leading-17 tracking-5.73 text-light uppercase no-underline hidden lg:inline">
-						Work With Us
-						<img src="<?php get_image_url('email.png'); ?>" alt="Email" class="c-menu__mail-icon w-31 h-auto align-middle ml-22">
-					</a>
+					<?php if ($career) : ?>
+						<a href="<?php echo $career['url'] ?>" target="<?php echo $career['target']; ?>" class="c-menu__item font-body text-14 leading-17 tracking-5.73 text-light uppercase no-underline hidden lg:inline">
+							<?php echo $career['title']; ?>
+							<img src="<?php get_image_url('email.png'); ?>" alt="Email" class="c-menu__mail-icon w-31 h-auto align-middle ml-22">
+						</a>
+					<?php endif; ?>
 					<div class="c-menu__separator w-2 h-36 bg-light align-middle ml-28 mr-28 hidden lg:inline-block"></div>
 					<a href="#" class="c-menu__item font-body text-0 lg:text-14 leading-17 tracking-5.73 text-light uppercase no-underline flex-1 lg:flex-initial js-search-trigger">
 						Search
@@ -61,10 +65,12 @@
 				?>
 
 				<div class="c-menu w-full lg:w-auto float-none lg:float-right flex items-center bg-light lg:bg-transparent py-10 px-20 lg:p-0">
-					<a href="#" class="c-menu__item font-body text-14 leading-17 tracking-5.73 text-taste-2 uppercase no-underline hidden lg:inline">
-						Work With Us
-						<img src="<?php get_image_url('alternative-email.png'); ?>" alt="Email" class="c-menu__mail-icon w-31 h-auto align-middle ml-22">
-					</a>
+					<?php if ($career) : ?>
+						<a href="<?php echo $career['url']; ?>" target="<?php echo $career['target']; ?>" class="c-menu__item font-body text-14 leading-17 tracking-5.73 text-taste-2 uppercase no-underline hidden lg:inline">
+							<?php echo $career['title']; ?>
+							<img src="<?php get_image_url('alternative-email.png'); ?>" alt="Email" class="c-menu__mail-icon w-31 h-auto align-middle ml-22">
+						</a>
+					<?php endif; ?>
 					<div class="c-menu__separator w-2 h-36 bg-taste-3 align-middle ml-28 mr-28 hidden lg:inline-block"></div>
 					<a href="#" class="c-menu__item font-body text-0 lg:text-14 leading-17 tracking-5.73 text-taste-2 uppercase no-underline flex-1 lg:flex-initial js-search-trigger">
 						Search
@@ -95,12 +101,18 @@
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="c-main-menu__wrapper js-menu main-navigation absolute z-50 border-l-20 border-transparent min-h-screen">
+		<div class="c-main-menu__decoy absolute w-full h-full z-50 hidden js-menu-decoy"></div>
+
+		<nav id="site-navigation" class="c-main-menu__wrapper main-navigation absolute z-50 border-l-20 border-transparent min-h-screen js-menu">
 			<div class="c-main-menu__inner bg-light py-10 px-20 lg:py-40 lg:px-50 min-h-screen">
 				<!-- <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php // esc_html_e( 'Primary Menu', 'ttg-wp' ); ?></button> -->
 
 				<div class="c-menu flex items-center">
-					<a href="#" class="c-menu__item font-body text-11 leading-13 tracking-2.54 lg:text-14 lg:leading-17 lg:tracking-3.71 text-taste-1 uppercase no-underline">Work With Taste</a>
+					<?php if ($career) : ?>
+						<a href="<?php echo $career['url']; ?>" target="<?php echo $career['target']; ?>" class="c-menu__item font-body text-11 leading-13 tracking-2.54 lg:text-16 lg:leading-19 lg:tracking-5.73 text-taste-3 uppercase no-underline">
+							<?php echo $career['title']; ?>
+						</a>
+					<?php endif; ?>
 					<div class="c-menu__separator w-2 h-36 bg-taste-5 opacity-80 inline-block align-middle mx-28 hidden lg:inline"></div>
 					<a href="#" class="c-menu__item font-body text-16 leading-19 tracking-5.73 text-taste-3 uppercase no-underline hidden lg:inline-flex items-center js-search-trigger">
 						Search

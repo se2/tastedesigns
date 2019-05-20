@@ -50,6 +50,12 @@
       transition-timing-function: $default;
     }
   }
+
+  &__decoy {
+    &.is-active {
+      display: block;
+    }
+  }
 }
 
 .c-phone-numbers {
