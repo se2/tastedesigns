@@ -118,7 +118,6 @@ function generate_image($id, $class = 'c-image', $size = 'tiny', $echo = true) {
 	}
 }
 
-
 /**
  * Get image URL
  */

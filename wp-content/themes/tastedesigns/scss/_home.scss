@@ -94,3 +94,13 @@
     }
   }
 }
+
+.c-stay-connected {
+  &__body p {
+    margin: 10px 0;
+  }
+
+  &__image-wrapper img {
+    object-fit: cover;
+  }
+}

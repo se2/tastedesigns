@@ -7,9 +7,8 @@
  * @link       https://technologytherapy.com/
  */
 
-$visible = get_sub_field('visible');
 $project = get_sub_field('project');
-if ($visible && $project) :
+if ($project) :
   global $post;
   $post = $project;
   setup_postdata($post);
@@ -67,7 +66,6 @@ if ($visible && $project) :
       </a>
       <a href="<?php echo get_post_type_archive_link('project'); ?>" class="c-featured-project__link border-b-4 no-underline mt-50 lg:mt-0 mx-auto lg:mr-0 lg:ml-auto pb-5 lg:pb-0">
         <span class="text-14 leading-17 tracking-3.71 lg:text-18 lg:leading-21 lg:tracking-3 text-taste-2 uppercase">View All Projects</span>
-        </div>
       </a>
     </div>
   </section>
