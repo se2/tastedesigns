@@ -17,7 +17,7 @@
             },
             "collapsed": "",
             "min": 0,
-            "max": 0,
+            "max": 2,
             "layout": "table",
             "button_label": "Add Phone Number",
             "sub_fields": [
@@ -94,9 +94,10 @@
                         "id": ""
                     },
                     "choices": {
-                        "facebook": "Facebook",
-                        "instagram": "Instagram",
-                        "pinterest": "Pinterest"
+                        "fa-facebook-f": "Facebook",
+                        "fa-instagram": "Instagram",
+                        "fa-pinterest-p": "Pinterest",
+                        "fa-twitter": "Twitter"
                     },
                     "default_value": [
                         "facebook"
@@ -144,5 +145,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1557827539
+    "modified": 1558005839
 }

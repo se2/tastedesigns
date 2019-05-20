@@ -23,6 +23,10 @@ require get_template_directory() . '/lib/template-functions.php';
 require get_template_directory() . '/lib/helpers.php';
 require get_template_directory() . '/lib/acf-options-page.php';
 
+// global CTA logic
+require_once get_template_directory() . '/lib/sitewide_cta.php';
+
 // Custom Post Types
 require get_template_directory() . '/lib/project-cpt.php';
 require get_template_directory() . '/lib/testimonial-cpt.php';
+require get_template_directory() . '/lib/tasteExpert-cpt.php';

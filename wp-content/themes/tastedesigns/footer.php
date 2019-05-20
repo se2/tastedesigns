@@ -13,6 +13,16 @@
 
 	</div><!-- #content -->
 
+
+<?php
+
+
+// sitewide CTA
+// TODO: tu - please move this action to wherever you need it!
+do_action('ttg_sitewideCta');
+
+?>
+
 	<footer id="colophon" class="site-footer hidden">
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'ttg-wp' ) ); ?>">
@@ -24,7 +34,7 @@
 			<span class="sep"> | </span>
 				<?php
 				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'ttg-wp' ), 'ttg-wp', '<a href="http://technologytherapy">ttg</a>' );
+				printf( esc_html__( 'Theme: %1$s by %2$s.', 'ttg-wp' ), 'ttg-wp', '<a href="https://technologytherapy.com">ttg</a>' );
 				?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
