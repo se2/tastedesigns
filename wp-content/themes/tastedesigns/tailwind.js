@@ -308,6 +308,7 @@ module.exports = {
     '3': '0.1875rem',
     '4.5': '0.28125rem',
     '3.63': '0.226rem',
+    '4': '0.25rem',
   },
 
   /*
@@ -500,6 +501,8 @@ module.exports = {
     '66%': '66%',
     'half': '50%',
     'featured-instagram': 'calc(470 / 1440 * 100vw)',
+    '70': '4.375rem',
+    'appreciation': 'calc(561 / 1440 * 100vw)',
   },
 
   /*
@@ -558,6 +561,7 @@ module.exports = {
     'featured-blog': 'calc(230 / 1440 * 100vw)',
     'featured-blog-mobile': 'calc(148 / 414 * 100vw)',
     'featured-instagram': 'calc(470 / 1440 * 100vw)',
+    'featured-instagram-mobile': 'calc(335 / 414 * 100vw)',
   },
 
   /*
@@ -698,6 +702,7 @@ module.exports = {
     '70': '4.375rem',
     '60': '3.75rem',
     '65': '4.0625rem',
+    '75': '4.6875rem',
   },
 
   /*
@@ -728,7 +733,7 @@ module.exports = {
     '8': '2rem',
     // '10': '2.5rem',
     '12': '3rem',
-    '16': '4rem',
+    // '16': '4rem',
     // '20': '5rem',
     '24': '6rem',
     '32': '8rem',
@@ -748,6 +753,8 @@ module.exports = {
     '32': '2rem',
     '60': '3.75rem',
     '25': '1.5625rem',
+    '16': '1rem',
+    '75': '4.6875rem',
   },
 
   /*

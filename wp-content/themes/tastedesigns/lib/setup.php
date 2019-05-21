@@ -99,6 +99,17 @@ if ( ! function_exists( 'ttg_wp_setup' ) ) :
 		 * Disable Wordpress's Image Compression
 		 */
 		add_filter('jpeg_quality', function($arg){return 100;});
+
+		/**
+		 * Remove testimonial's first open quote
+		 */
+		add_filter('the_content', function($content) {
+			global $post;
+			if ($post->post_type == 'testimonial') {
+				$content = preg_replace('/^<p>“/', '<p>', $content);ltrim($content, '“');
+			}
+			return $content;
+		});
 	}
 endif;
 add_action( 'after_setup_theme', 'ttg_wp_setup' );

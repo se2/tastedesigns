@@ -15,17 +15,18 @@
   </h2>
   <div class="c-stay-connected__inner flex flex-col lg:flex-row">
     <?php
-      global $post;
-      $post_type = get_sub_field('blog_post_type');
-      if ($post_type == 'latest') :
-        $posts = wp_get_recent_posts(array('numberposts' => '1'));
-        if (count($posts)) :
-          $post = $posts[0];
+      $blog_type = get_sub_field('blog_post_type');
+      if ($blog_type == 'latest') :
+        $blogs = wp_get_recent_posts(array('numberposts' => '1'));
+        if (count($blogs)) :
+          $blog = $blogs[0];
         endif;
       else :
-        $post = get_sub_field('blog_post');
+        $blog = get_sub_field('blog_post');
       endif;
-      if ($post) :
+      if ($blog) :
+        global $post;
+        $post = $blog;
         setup_postdata($post);
     ?>
       <div class="c-stay-connected__blog px-20 py-40 lg:px-65 lg:py-60 bg-light lg:w-half clearfix mx-20 mt-60 flex flex-col">
@@ -65,7 +66,7 @@
       <h1 class="font-title text-42 leading-57 lg:text-58 lg:leading-78 text-taste-1">
         Instagram
       </h1>
-      <div class="c-stay-connected__image-wrapper mt-20 mb-30 lg:my-30 lg:w-featured-instagram h-featured-instagram-mobile lg:h-featured-instagram mb-auto">
+      <div class="c-stay-connected__image-wrapper mt-30 lg:w-featured-instagram h-featured-instagram-mobile lg:h-featured-instagram mb-auto">
         <?php generate_image(get_sub_field('instagram_cover'), 'c-stay-connected__instagram-cover w-full h-full', 'medium'); ?>
       </div>
       <a href="<?php echo get_sub_field('instagram_account'); ?>" class="c-stay-connected__link border-b-4 border-taste-3 no-underline mx-auto lg:mr-0 lg:ml-auto pb-5 float-right mt-30 lg:mt-40">
