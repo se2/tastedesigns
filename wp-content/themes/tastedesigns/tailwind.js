@@ -149,7 +149,7 @@ module.exports = {
       'sans-serif',
     ],
     body: [
-      'Optima',
+      'Optima Roman',
       'Arial',
       'Helvetica',
       'Montserrat',
