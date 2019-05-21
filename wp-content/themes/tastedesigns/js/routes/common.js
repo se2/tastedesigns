@@ -13,9 +13,14 @@ export default {
 
     e.$window = $(window);
     e.$menu = $('.js-menu');
+    e.$menuDecoy = $('.js-menu-decoy');
     e.$menuTrigger = $('.js-menu-trigger');
     e.$submenu = $('.menu-item-has-children');
     e.$submenuLink = $('.menu-item-has-children > a');
+    e.$searchTrigger = $('.js-search-trigger');
+    e.$searchClose = $('.js-search-close');
+    e.$searchForm = $('.js-search-form');
+    e.$searchInput = $('.js-search-input');
   },
   initMenu() {
     let s = this;
@@ -25,6 +30,12 @@ export default {
       event.preventDefault();
 
       e.$menu.toggleClass('is-active');
+      e.$menuDecoy.toggleClass('is-active');
+    });
+
+    e.$menuDecoy.click(function() {
+      e.$menu.toggleClass('is-active');
+      e.$menuDecoy.toggleClass('is-active');
     });
 
     e.$submenuLink.click(function(event) {
@@ -61,6 +72,16 @@ export default {
           $menu.css('height', maxHeight);
         }
       });
+    });
+
+    e.$searchTrigger.click(function(event) {
+      event.preventDefault();
+      e.$searchForm.addClass('is-active');
+      e.$searchInput.focus();
+    });
+
+    e.$searchClose.click(function() {
+      e.$searchForm.removeClass('is-active');
     });
   },
   finalize() {
