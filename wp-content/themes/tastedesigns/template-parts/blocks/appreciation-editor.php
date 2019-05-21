@@ -59,7 +59,7 @@ if ($testimonial) :
         $post = $testimonial;
         setup_postdata($post);
     ?>
-      <div class="c-appreciation__image-container ml-50 w-appreciation">
+      <div class="c-appreciation__image-container ml-50 w-appreciation overflow-hidden">
         <?php generate_image(get_post_thumbnail_id(get_the_ID()), 'c-appreciation__image h-full w-full', 'medium'); ?>
       </div>
     <?php

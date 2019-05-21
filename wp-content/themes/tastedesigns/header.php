@@ -11,7 +11,7 @@
 
 ?>
 <!doctype html>
-<html <?php language_attributes(); ?> class="w-full h-full overflow-x-hidden">
+<html <?php language_attributes(); ?> class="w-full overflow-x-hidden">
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,8 +20,8 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class('w-full h-full overflow-x-hidden relative'); ?>>
-<div id="page" class="site w-full h-full">
+<body <?php body_class('w-full min-h-screen overflow-x-hidden relative'); ?>>
+<div id="page" class="site w-full">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'ttg-wp' ); ?></a>
 
 	<?php $career = get_field('career', 'option'); ?>
@@ -103,8 +103,8 @@
 
 		<div class="c-main-menu__decoy absolute w-full h-full z-50 hidden js-menu-decoy"></div>
 
-		<nav id="site-navigation" class="c-main-menu__wrapper main-navigation absolute z-50 border-l-20 border-transparent min-h-screen js-menu">
-			<div class="c-main-menu__inner bg-light py-10 px-20 lg:py-40 lg:px-50 min-h-screen">
+		<nav id="site-navigation" class="c-main-menu__wrapper main-navigation absolute z-50 border-l-20 border-transparent min-h-full js-menu">
+			<div class="c-main-menu__inner py-10 px-20 lg:py-40 lg:px-50 relative">
 				<!-- <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php // esc_html_e( 'Primary Menu', 'ttg-wp' ); ?></button> -->
 
 				<div class="c-menu flex items-center">
@@ -187,4 +187,4 @@
 		</div>
 	</header><!-- #masthead -->
 
-	<div id="content" class="site-content w-full h-full">
+	<div id="content" class="site-content w-full">
