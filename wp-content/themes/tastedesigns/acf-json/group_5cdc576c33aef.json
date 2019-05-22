@@ -46,6 +46,25 @@
                     "mime_types": ""
                 }
             ]
+        },
+        {
+            "key": "field_5ce59dc29c167",
+            "label": "Expert Job Title",
+            "name": "expert_jobTitle",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -65,5 +84,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1557945183
+    "modified": 1558552016
 }
