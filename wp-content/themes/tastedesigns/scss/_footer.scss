@@ -1,4 +1,4 @@
-.menu-footer-menu-container {
+.c-footer {
   .menu {
     @apply px-0;
 
@@ -41,7 +41,7 @@
   }
 }
 
-.c-footer{
+.c-footer {
   &__button {
     @screen lg {
       border-color: config('colors.taste-3');
