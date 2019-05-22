@@ -218,6 +218,7 @@ module.exports = {
     '58': '3.625rem', // 58px
     '12': '0.75rem', // 12px
     '24': '1.5rem', // 24px
+    '20': '1.25rem', // 20px
   },
 
   /*
@@ -278,6 +279,7 @@ module.exports = {
     '36': 1.2, // 36px / 30px
     '18': 1.5, // 18px / 12px
     '28': 1.16, // 28px / 24px
+    '12': 1.09, // 12px / 11px
   },
 
   /*
@@ -309,6 +311,7 @@ module.exports = {
     '4.5': '0.28125rem',
     '3.63': '0.226rem',
     '4': '0.25rem',
+    '2.92': '0.1825rem',
   },
 
   /*
@@ -500,8 +503,9 @@ module.exports = {
     '34%': '34%',
     '66%': '66%',
     'half': '50%',
-    'featured-instagram': 'calc(470 / 1440 * 100vw)',
     '70': '4.375rem',
+    '38': '2.375rem',
+    'featured-instagram': 'calc(470 / 1440 * 100vw)',
     'appreciation': 'calc(561 / 1440 * 100vw)',
   },
 
@@ -554,14 +558,16 @@ module.exports = {
     '3': '0.1875rem',
     '25': '1.5625rem',
     '28': '1.75rem',
-    'featured': 'calc(628 / 1440 * 100vw)',
-    'featured-mobile': 'calc(240 / 414 * 100vw)',
     '16': '1rem',
     '44': '2.75rem',
+    '47': '2.9375rem',
+    'featured': 'calc(628 / 1440 * 100vw)',
+    'featured-mobile': 'calc(240 / 414 * 100vw)',
     'featured-blog': 'calc(230 / 1440 * 100vw)',
     'featured-blog-mobile': 'calc(148 / 414 * 100vw)',
     'featured-instagram': 'calc(470 / 1440 * 100vw)',
     'featured-instagram-mobile': 'calc(335 / 414 * 100vw)',
+    'appreciation-mobile': 'calc(329 / 414 * 100vw)',
   },
 
   /*
@@ -703,6 +709,7 @@ module.exports = {
     '60': '3.75rem',
     '65': '4.0625rem',
     '75': '4.6875rem',
+    '36': '2.25rem',
   },
 
   /*
@@ -735,7 +742,7 @@ module.exports = {
     '12': '3rem',
     // '16': '4rem',
     // '20': '5rem',
-    '24': '6rem',
+    // '24': '6rem',
     '32': '8rem',
 
     '30': '1.875rem',
@@ -755,6 +762,8 @@ module.exports = {
     '25': '1.5625rem',
     '16': '1rem',
     '75': '4.6875rem',
+    '24': '1.5rem',
+    '12': '0.75rem',
   },
 
   /*
