@@ -158,7 +158,7 @@
 
 				<div class="c-social-medias py-19 lg:py-30 border-b-2 border-t-2 border-taste-5 mt-30 flex items-center justify-center">
 					<?php while (have_rows('social_medias', 'option')) : the_row(); ?>
-						<a href="<?php echo get_sub_field('link'); ?>" target="_blank" class="c-social-medias__item inline-block mx-11 lg:ml-0 lg:mr-22 text-0 rounded-full border-2 border-taste-3 w-34 h-34 flex justify-center items-center no-underline hover:bg-taste-3 text-taste-3 hover:text-light text-17">
+						<a href="<?php echo get_sub_field('link'); ?>" target="_blank" class="c-social-medias__item inline-block mx-11 lg:ml-0 lg:mr-22 text-0 rounded-full border-2 border-taste-3 w-34 h-34 flex justify-center items-center no-underline lg:hover:bg-taste-3 text-taste-3 lg:hover:text-light text-17">
 							<i class="fab <?php echo get_sub_field('type'); ?>"></i>
 						</a>
 					<?php endwhile; ?>
