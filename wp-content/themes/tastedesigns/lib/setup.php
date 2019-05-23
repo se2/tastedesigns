@@ -111,6 +111,21 @@ if ( ! function_exists( 'ttg_wp_setup' ) ) :
 			}
 			return $content;
 		});
+
+		/**
+		 * Modify Archive Title
+		 */
+		add_filter('get_the_archive_title', function($title) {
+			if (is_post_type_archive()) {
+        $title = post_type_archive_title('', false);
+			}
+			return $title;
+		}, 10, 1);
+
+		/**
+		 * Hi counts from all dropdowns
+		 */
+		add_filter('facetwp_facet_dropdown_show_counts', '__return_false');
 	}
 endif;
 add_action( 'after_setup_theme', 'ttg_wp_setup' );

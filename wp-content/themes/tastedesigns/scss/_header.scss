@@ -64,6 +64,9 @@
   }
 
   &__decoy {
+    top: 0;
+    left: 0;
+
     &.is-active {
       display: block;
     }

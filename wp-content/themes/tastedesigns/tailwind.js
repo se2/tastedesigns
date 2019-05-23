@@ -51,8 +51,9 @@ let colors = {
   'taste-6': '#9b9b9b',
   'taste-7': '#000000',
   light: '#ffffff',
-  primary: this['taste-1'],
   'transparent': 'transparent',
+  primary: 'var(--color-primary)',
+  secondary: 'var(--color-secondary)',
 }
 
 module.exports = {

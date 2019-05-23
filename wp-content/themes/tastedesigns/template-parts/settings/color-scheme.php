@@ -1,6 +1,6 @@
 <?php
 /**
- * Theme Colors implementation
+ * Color Scheme implementation
  *
  * @author     Technology Therapy Group
  * @link       https://technologytherapy.com/

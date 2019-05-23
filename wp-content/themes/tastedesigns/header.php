@@ -27,7 +27,8 @@
 	<?php $career = get_field('career', 'option'); ?>
 
 	<header id="masthead" class="site-header">
-		<div class="site-branding absolute w-full z-50 lg:py-40 lg:px-50">
+		<?php $position = is_front_page() ? 'absolute' : 'relative'; ?>
+		<div class="site-branding w-full z-50 lg:py-40 lg:px-50 <?php echo $position; ?>">
 			<?php
 			// the_custom_logo();
 			if ( is_front_page() ) :
