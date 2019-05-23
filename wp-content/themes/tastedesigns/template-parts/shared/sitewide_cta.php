@@ -6,24 +6,34 @@ SITEWIDE CTA
 logic found in /lib/sitewide_cta.php
 
 */
+$tile = get_query_var('title');
+$subtitle = get_query_var('subtitle');
+$button_text = get_query_var('buttonText');
+$button_url = get_query_var('buttonUrl');
 
 if (
-	!empty( $GLOBALS['callToAction'] ) &&
-	!empty( $GLOBALS['callToAction']['title'] ) &&
-	!empty( $GLOBALS['callToAction']['subtitle'] ) &&
-	!empty( $GLOBALS['callToAction']['buttonText'] ) &&
-	!empty( $GLOBALS['callToAction']['buttonUrl'] )
+	!empty( $title ) &&
+	!empty( $subtitle ) &&
+	!empty( $button_text ) &&
+	!empty( $button_url )
 )
 {
 	?>
-	<div>
-		<h2>
-			<?php echo $GLOBALS['callToAction']['subtitle']; ?>
+	<div class="c-global-cta">
+		<h2 class="c-global-cta__subtitle">
+			<?php echo $subtitle; ?>
 		</h2>
-		<h3>
-			<?php echo $GLOBALS['callToAction']['title']; ?>
-		</h3>
-		<a href="<?php echo $GLOBALS['callToAction']['buttonUrl']; ?>" ><?php echo $GLOBALS['callToAction']['buttonText']; ?></a>
+		<div class="c-global-cta__inner">
+			<h1 class="c-global-cta__title">
+				<?php echo $title; ?>
+			</h1>
+			<a href="<?php echo $button_url; ?>" class="c-button__link">
+				<div class="c-button">
+					<span class="c-button__text"><?php echo $button_text; ?></span>
+					<img src="<?php get_image_url('alternative-path.png'); ?>" alt="Enter" class="c-button__icon">
+				</div>
+			</a>
+		</div>
 	</div>
 	<?php
 }

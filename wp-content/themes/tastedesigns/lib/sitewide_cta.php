@@ -12,7 +12,7 @@ function ttg_doSitewideCta()
 		$globalCta_buttonText = get_field('globalCta_buttonText', 'options');
 		$globalCta_buttonUrl = get_field('globalCta_url', 'options');
 
-		if ( 
+		if (
 			$globalCta_status === 'enabled' &&
 			(
 				!empty( $globalCta_title ) &&
@@ -22,16 +22,12 @@ function ttg_doSitewideCta()
 			)
 		)
 		{
-			$GLOBALS['callToAction'] = [];
-			$GLOBALS['callToAction']['title'] = $globalCta_title;
-			$GLOBALS['callToAction']['subtitle'] = $globalCta_subtitle;
-			$GLOBALS['callToAction']['buttonText'] = $globalCta_buttonText;
-			$GLOBALS['callToAction']['buttonUrl'] = $globalCta_buttonUrl;
+			set_query_var('title', $globalCta_title);
+			set_query_var('subtitle', $globalCta_subtitle);
+			set_query_var('buttonText', $globalCta_buttonText);
+			set_query_var('buttonUrl', $globalCta_buttonUrl);
 
 			get_template_part('template-parts/shared/sitewide_cta');
-
-			unset( $GLOBALS['callToAction'] );
-
 		}
 	}
 }

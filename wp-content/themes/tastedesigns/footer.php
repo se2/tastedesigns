@@ -45,7 +45,7 @@ do_action('ttg_sitewideCta');
 			<?php endif; ?>
 			<div class="c-footer__copyright site-info font-body text-14 leading-17 text-taste-3 lg:text-taste-4 flex-1 pt-60 lg:pt-0 text-center lg:text-left">
 				<p>
-					©2019 Taste, Artful Interiors & Design. All rights reserved.
+					©<?php echo date("Y"); ?> Taste, Artful Interiors & Design. All rights reserved.
 				</p>
 				<?php
 					/* translators: 1: Theme name, 2: Theme author. */
