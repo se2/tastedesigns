@@ -83,8 +83,8 @@
 					<a href="#" class="c-menu__item font-body text-11 leading-13 tracking-2.54 lg:text-14 lg:leading-17 lg:tracking-5.73 text-taste-6 lg:text-taste-2 uppercase no-underline lg:ml-85 js-menu-trigger flex-1 lg:flex-intial text-right">
 						Menu
 						<div class="c-menu__hamburger w-40 lg:w-46 h-20 lg:h-17 relative inline-block align-middle ml-10 lg:ml-22">
-							<div class="c-menu__stick w-full h-4 lg:h-3.78 absolute bg-taste-6 lg:bg-taste-1 rounded"></div>
-							<div class="c-menu__stick w-full h-4 lg:h-3.78 absolute bg-taste-6 lg:bg-taste-1 rounded"></div>
+							<div class="c-menu__stick w-full h-4 lg:h-3.78 absolute bg-taste-6 bgc-large-primary rounded"></div>
+							<div class="c-menu__stick w-full h-4 lg:h-3.78 absolute bg-taste-6 bgc-large-primary rounded"></div>
 						</div>
 					</a>
 				</div>
@@ -133,7 +133,7 @@
 				<?php if ($total && $total == 1) : ?>
 					<div class="c-phone-numbers py-19 lg:py-30 border-b-2 border-t-2 border-taste-5 mt-10 lg:mt-40">
 						<?php while (have_rows('phone_numbers', 'option')) : the_row(); ?>
-							<a href="<?php echo 'tel:'.get_sub_field('number'); ?>" class="c-phone-numbers__item block no-underline font-subtitle text-taste-1 text-13 leading-15 tracking-4.65 lg:text-16 lg:leading-24 lg:tracking-5.73 uppercase text-center">
+							<a href="<?php echo 'tel:'.get_sub_field('number'); ?>" class="c-phone-numbers__item block no-underline font-subtitle tc-primary text-13 leading-15 tracking-4.65 lg:text-16 lg:leading-24 lg:tracking-5.73 uppercase text-center">
 								<span class="text-taste-3"><?php echo get_sub_field('name').': '; ?></span><?php echo get_sub_field('number'); ?>
 							</a>
 						<?php endwhile; ?>
@@ -141,7 +141,7 @@
 				<?php elseif ($total) : ?>
 					<div class="c-phone-numbers py-15 lg:py-30 border-b-2 border-t-2 border-taste-5 mt-10 lg:mt-40 flex items-center">
 						<?php while (have_rows('phone_numbers', 'option')) : the_row(); ?>
-							<a href="<?php echo 'tel:'.get_sub_field('number'); ?>" class="c-phone-numbers__item no-underline font-subtitle text-taste-1 text-13 leading-15 tracking-4.65 lg:text-16 lg:leading-24 lg:tracking-5.73 uppercase text-center flex-1">
+							<a href="<?php echo 'tel:'.get_sub_field('number'); ?>" class="c-phone-numbers__item no-underline font-subtitle tc-primary text-13 leading-15 tracking-4.65 lg:text-16 lg:leading-24 lg:tracking-5.73 uppercase text-center flex-1">
 								<span class="text-taste-3"><?php echo get_sub_field('name').': '; ?></span><?php echo get_sub_field('number'); ?>
 							</a>
 							<div class="c-menu__separator w-2 h-41 lg:h-36 bg-taste-5 opacity-80 inline-block align-middle"></div>
@@ -162,13 +162,13 @@
 							<i class="fab <?php echo get_sub_field('type'); ?>"></i>
 						</a>
 					<?php endwhile; ?>
-					<a href="#" class="font-body text-14 leading-17 tracking-3.71 text-taste-1 uppercase no-underline align-middle ml-auto hidden lg:inline">
+					<a href="#" class="font-body text-14 leading-17 tracking-3.71 tc-primary uppercase no-underline align-middle ml-auto hidden lg:inline">
 						Gallery At Taste
 						<img src="<?php get_image_url('path.png'); ?>" alt="Enter" class="w-47 h-auto ml-22 align-middle">
 					</a>
 				</div>
 
-				<a href="#" class="font-body text-11 leading-13 tracking-2.54 lg:text-14 lg:leading-17 lg:tracking-3.71 text-taste-1 uppercase no-underline align-middle mt-22 lg:hidden block text-center">
+				<a href="#" class="font-body text-11 leading-13 tracking-2.54 lg:text-14 lg:leading-17 lg:tracking-3.71 tc-primary uppercase no-underline align-middle mt-22 lg:hidden block text-center">
 					Gallery At Taste
 					<img src="<?php get_image_url('path.png'); ?>" alt="Enter" class="w-31 h-auto ml-20 align-middle">
 				</a>
