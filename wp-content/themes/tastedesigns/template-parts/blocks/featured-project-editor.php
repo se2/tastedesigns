@@ -40,7 +40,7 @@ if ($project) :
             <?php the_field('location'); ?>
           </h3>
         <?php endif; ?>
-        <h1 class="font-title text-58 leading-78 lg:text-66 lg:leading-89 text-taste-1 break-words">
+        <h1 class="font-title text-58 leading-78 lg:text-66 lg:leading-89 tc-primary break-words">
           <?php the_title(); ?>
         </h1>
         <div class="c-featured-project__body font-body text-14 leading-17 lg:text-16 lg:leading-19 text-taste-6">

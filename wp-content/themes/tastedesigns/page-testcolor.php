@@ -10,10 +10,10 @@ $primaryColorField = get_field('theme_primaryColor', 'options');
 $secondaryColorField = get_field('theme_secondaryColor', 'options');
 
 var_dump(
-	$primaryColorField 
+	$primaryColorField
 );
 var_dump(
-	$secondaryColorField 
+	$secondaryColorField
 );
 */
 ?>
