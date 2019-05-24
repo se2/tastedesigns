@@ -19,7 +19,9 @@
 
 // sitewide CTA
 // TODO: tu - please move this action to wherever you need it!
-do_action('ttg_sitewideCta');
+if ( !is_front_page() ) {
+	do_action('ttg_sitewideCta');
+}
 
 ?>
 
