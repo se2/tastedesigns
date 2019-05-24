@@ -6,12 +6,23 @@
     font-size: 60px;
     line-height: 1.35;
     padding-bottom: 21px;
+    padding-top: 10px;
   }
   &__filters {
     padding-top: 34px;
     padding-bottom: 49px;
+    .facetwp-facet {
+      margin-bottom: 25px;
+      &::after {
+        @apply .font-subtitle .text-16 .text-taste-2 .leading-24 .absolute;
+        content: '+';
+      }
+    }
     .facetwp-type-dropdown {
       @apply .w-full;
+    }
+    .facetwp-dropdown {
+      -webkit-appearance: none;
     }
     .facetwp-dropdown,
     button {
@@ -25,12 +36,18 @@
     padding-left: 30px;
     padding-right: 30px;
     padding-bottom: 73px;
+    &__title {
+      @apply .pt-0;
+    }
     &__filters {
       padding-top: 31px;
       padding-bottom: 84px;
       .facetwp-facet {
         margin-bottom: 0;
         margin-right: 50px;
+        &::after {
+          @apply .text-18;
+        }
       }
       .facetwp-type-dropdown {
         @apply .w-auto;

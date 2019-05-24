@@ -23,7 +23,7 @@ get_header();
 				echo do_shortcode('[facetwp facet="project_type" pager="true"]');
 				echo do_shortcode('[facetwp facet="room_type" pager="true"]');
 				?>
-				<button onclick="FWP.reset()">VIEW ALL</button>
+				<button class="uppercase" onclick="FWP.reset()">View All</button>
 			</div>
 		<?php endif; ?>
 

@@ -249,10 +249,3 @@
     }
   }
 }
-
-.is-none-mobile {
-  @apply .hidden;
-  @screen lg {
-    @apply .inline-block;
-  }
-}

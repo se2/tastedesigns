@@ -90,7 +90,7 @@
 					</a>
 				</div>
 
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php generate_image(get_field('alternative_logo', 'option'), 'c-logo w-132 h-auto is-none-mobile'); ?></a>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php generate_image(get_field('alternative_logo', 'option'), 'c-logo w-132 h-auto hidden lg:inline-block'); ?></a>
 
 				<?php
 			endif;

@@ -1,5 +1,4 @@
 .c-button {
-  display: block;
   padding-top: 25px;
   padding-bottom: 25px;
   &__text {
@@ -7,9 +6,6 @@
   }
   &__icon {
     width: 47px;
-  }
-  @screen md {
-    display: inline-block;
   }
   @screen lg {
     padding-top: 27px;
