@@ -14,16 +14,16 @@ get_header();
 	<?php if ( have_posts() ) : ?>
 
 		<div class="c-archive__header">
-			<?php the_archive_title('<h1 class="c-archive__title font-title text-center lowercase">', '</h1>'); ?>
+			<?php the_archive_title('<h1 class="c-archive__title font-title text-center lowercase text-taste-1">', '</h1>'); ?>
 		</div>
 
 		<?php if (is_post_type_archive('project')) : ?>
-			<div class="c-archive__filters flex justify-center">
+			<div class="c-archive__filters flex flex-wrap justify-center text-center">
 				<?php
 				echo do_shortcode('[facetwp facet="project_type" pager="true"]');
 				echo do_shortcode('[facetwp facet="room_type" pager="true"]');
 				?>
-				<button onclick="FWP.reset()">Reset</button>
+				<button class="uppercase" onclick="FWP.reset()">View All</button>
 			</div>
 		<?php endif; ?>
 

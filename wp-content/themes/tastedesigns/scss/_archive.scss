@@ -1,0 +1,104 @@
+.c-archive {
+  padding-left: 21px;
+  padding-right: 21px;
+  padding-bottom: 34px;
+  &__title {
+    font-size: 60px;
+    line-height: 1.35;
+    padding-bottom: 21px;
+    padding-top: 10px;
+  }
+  &__filters {
+    padding-top: 34px;
+    padding-bottom: 49px;
+    .facetwp-facet {
+      margin-bottom: 25px;
+      &::after {
+        @apply .font-subtitle .text-16 .text-taste-2 .leading-24 .absolute;
+        content: '+';
+      }
+    }
+    .facetwp-type-dropdown {
+      @apply .w-full;
+    }
+    .facetwp-dropdown {
+      -webkit-appearance: none;
+    }
+    .facetwp-dropdown,
+    button {
+      @apply .font-subtitle .text-16 .text-taste-2 .leading-24 .uppercase .outline-none;
+      -webkit-appearance: none;
+      letter-spacing: 4.24px;
+      background-color: transparent;
+    }
+  }
+  @screen lg {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 73px;
+    &__title {
+      @apply .pt-0;
+    }
+    &__filters {
+      padding-top: 31px;
+      padding-bottom: 84px;
+      .facetwp-facet {
+        margin-bottom: 0;
+        margin-right: 50px;
+        &::after {
+          @apply .text-18;
+        }
+      }
+      .facetwp-type-dropdown {
+        @apply .w-auto;
+      }
+      .facetwp-dropdown,
+      button {
+        @apply .text-18;
+        letter-spacing: 4.77px;
+        line-height: calc(26 / 18);
+      }
+    }
+  }
+}
+
+.c-project {
+  padding-bottom: 15px;
+  &__title {
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 35px;
+  }
+  &__image {
+    height: 72.4637681159vw;
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+    object-fit: cover;
+  }
+  @screen md {
+    padding-left: 15px;
+    padding-right: 15px;
+    &__image {
+      max-height: 300px;
+    }
+  }
+  @screen lg {
+    padding-left: 21px;
+    padding-right: 21px;
+    padding-bottom: 32px;
+    &__title {
+      padding-bottom: 20px;
+    }
+    &__image {
+      max-width: 100%;
+      height: calc((360 / 432 * (100vw - 144px)) / 3);
+    }
+    &:nth-child(3n + 1) {
+      padding-left: 0;
+    }
+    &:nth-child(3n + 3) {
+      padding-right: 0;
+    }
+  }
+}

@@ -1,5 +1,52 @@
 .c-button {
-  &__link {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  &__text {
+    letter-spacing: 4.24px;
+  }
+  &__icon {
+    width: 47px;
+  }
+  @screen lg {
+    padding-top: 27px;
+    padding-bottom: 23px;
+    &__text {
+      letter-spacing: 4.77px;
+    }
+  }
+}
 
+.c-global-cta {
+  padding-bottom: 74px;
+  &__subtitle {
+    padding-bottom: 53px;
+  }
+  &__inner {
+    max-width: 1152px;
+    margin: 0 20px;
+    text-align: center;
+    padding-left: 37px;
+    padding-right: 37px;
+    padding-bottom: 76px;
+    padding-top: 66px;
+  }
+  &__title {
+    padding-bottom: 61px;
+  }
+  @screen lg {
+    padding-bottom: 94px;
+    &__inner {
+      padding-left: 115px;
+      padding-right: 115px;
+      padding-bottom: 67px;
+    }
+    &__title {
+      padding-bottom: 53px;
+    }
+  }
+  @screen xl {
+    &__inner {
+      margin: 0 auto;
+    }
   }
 }
