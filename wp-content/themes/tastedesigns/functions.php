@@ -25,6 +25,7 @@ require get_template_directory() . '/lib/acf-options-page.php';
 
 // global CTA logic
 require_once get_template_directory() . '/lib/sitewide_cta.php';
+require_once get_template_directory() . '/lib/blogs_cta.php';
 
 // Custom Post Types
 require get_template_directory() . '/lib/project-cpt.php';
