@@ -1,0 +1,106 @@
+.blog {
+  .site-content {
+    @apply .flex .flex-wrap;
+    .c-header {
+      @apply .w-full;
+      &__title {
+        font-size: 60px;
+        line-height: 1.15;
+        padding-bottom: 46px;
+      }
+    }
+    .c-archive {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    article {
+      @apply .relative;
+      margin-bottom: 38px;
+      &::after {
+        @apply .absolute;
+        content: '';
+        height: 2px;
+        width: 158px;
+        background-color: #E8E0DA;
+      }
+      .wp-post-image {
+        @apply .w-full;
+        object-fit: cover;
+        max-height: 207px;
+        height: calc( 207 / 373 * 100vw );
+      }
+    }
+    .entry-header {
+      padding-top: 11px;
+      padding-bottom: 31px;
+      &__author {
+        line-height: 2.5;
+        letter-spacing: 3.18px;
+      }
+      .entry-title {
+        &__title {
+          font-size: 40px;
+          line-height: 1.05;
+        }
+      }
+    }
+    .entry-content {
+      @apply .font-body .text-14 .text-taste-6;
+      line-height: 1.5;
+      padding-bottom: 33px;
+    }
+    .entry-footer {
+      @apply .uppercase;
+      padding-bottom: 3px;
+      letter-spacing: 3.18px;
+      line-height: 2.5;
+    }
+  }
+  @screen lg {
+    .site-content {
+      .c-header {
+        &__title {
+          padding-bottom: 65px;
+        }
+      }
+      .c-archive {
+        padding-left: 50px;
+        padding-right: 50px;
+        max-width: 1100px;
+      }
+      article {
+        margin-bottom: 73px;
+        &::after {
+          width: 250px;
+        }
+        .wp-post-image {
+        max-height: 500px;
+        height: calc( 500 / 1000 * 100vw );
+        }
+      }
+      .entry-header {
+        padding-top: 23px;
+        padding-bottom: 32px;
+        &__author {
+          line-height: 1.875;
+          letter-spacing: 4.24px;
+        }
+        .entry-title {
+          &__title {
+            font-size: 66px;
+            line-height: 1.3484848485;
+          }
+        }
+      }
+      .entry-content {
+        @apply .text-16;
+        padding-bottom: 27px;
+      }
+      .entry-footer {
+        padding-bottom: 59px;
+        letter-spacing: 4.24px;
+        line-height: 1.875;
+      }
+    }
+  }
+}
