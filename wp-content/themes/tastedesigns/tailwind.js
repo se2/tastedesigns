@@ -50,6 +50,7 @@ let colors = {
   'taste-5': '#e8e0da',
   'taste-6': '#9b9b9b',
   'taste-7': '#000000',
+  'taste-8': '#f4f4f4',
   light: '#ffffff',
   'transparent': 'transparent',
   primary: 'var(--color-primary)',
@@ -220,6 +221,7 @@ module.exports = {
     '12': '0.75rem', // 12px
     '24': '1.5rem', // 24px
     '20': '1.25rem', // 20px
+    '60': '3.75rem', // 60px
   },
 
   /*
@@ -281,6 +283,8 @@ module.exports = {
     '18': 1.5, // 18px / 12px
     '28': 1.16, // 28px / 24px
     '12': 1.09, // 12px / 11px
+    '69': 1.15, // 69px / 60px
+    '30': 1.875, // 30px / 16px
   },
 
   /*
@@ -569,6 +573,8 @@ module.exports = {
     'featured-instagram': 'calc(470 / 1440 * 100vw)',
     'featured-instagram-mobile': 'calc(335 / 414 * 100vw)',
     'appreciation-mobile': 'calc(329 / 414 * 100vw)',
+    'blog-image': 'calc(720 / 1440 * 100vw)',
+    'related-image': 'calc(190 / 1440 * 100vw)',
   },
 
   /*
@@ -588,6 +594,7 @@ module.exports = {
   minWidth: {
     '0': '0',
     full: '100%',
+    '316': '19.75rem',
   },
 
   /*
@@ -636,6 +643,7 @@ module.exports = {
     '4xl': '90rem',
     '5xl': '100rem',
     full: '100%',
+    '1000': '62.5rem',
   },
 
   /*
@@ -702,7 +710,7 @@ module.exports = {
     '20': '1.25rem',
     '15': '0.9375rem',
     '19': '1.1875rem',
-    '80': '5.33rem',
+    '85': '5.33rem',
     '25': '1.5625rem',
     '21': '1.3125rem',
     '5': '0.3125rem',
@@ -711,6 +719,9 @@ module.exports = {
     '65': '4.0625rem',
     '75': '4.6875rem',
     '36': '2.25rem',
+    '80': '5rem',
+    '100': '6.25rem',
+    '3': '0.1875rem',
   },
 
   /*

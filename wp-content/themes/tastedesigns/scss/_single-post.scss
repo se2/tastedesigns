@@ -1,0 +1,81 @@
+.c-blog {
+  &__image {
+    object-fit: cover;
+  }
+
+  &__body {
+    h1 {
+      @apply font-title;
+      @apply text-58;
+      @apply leading-78;
+      @apply text-taste-1;
+
+      @screen lg {
+        @apply text-42;
+        @apply leading-57;
+      }
+    }
+
+    h2 {
+      @apply font-title;
+      @apply text-30;
+      @apply leading-40;
+      @apply text-taste-3;
+
+      @screen lg {
+        @apply text-42;
+        @apply leading-57;
+      }
+    }
+
+    h3 {
+      @apply font-body;
+      @apply text-24;
+      @apply leading-28;
+      @apply text-taste-2;
+
+      @screen lg {
+        @apply text-30;
+        @apply leading-36;
+      }
+    }
+
+    h4,
+    h5 {
+      @apply font-subtitle;
+      @apply text-16;
+      @apply leading-30;
+      @apply tracking-4.24;
+      @apply text-taste-2;
+      @apply uppercase;
+    }
+
+    p,
+    li,
+    blockquote {
+      @apply font-body;
+      @apply text-taste-6;
+      @apply text-16;
+      @apply leading-24;
+    }
+
+    a {
+      @apply no-underline;
+      @apply text-taste-1;
+    }
+
+    blockquote {
+      font-style: italic;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    p,
+    blockquote {
+      @apply my-20;
+    }
+  }
+}
