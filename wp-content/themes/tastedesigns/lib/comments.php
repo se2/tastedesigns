@@ -52,10 +52,10 @@ class Comment_Walker extends Walker_Comment {
           <div class="comment-body min-h-87 pt-10">
             <div class="comment-meta post-meta" role="complementary">
               <h2 class="comment-author font-body text-16 leading-24 text-taste-1 font-bold">
-                <?php comment_author(); ?>
+                <?php comment_author(); ?> <?php echo get_comment_meta(get_comment_ID(), 'last_name', true); ?>
                 <span class="comment-author-reply font-normal">Says:</span>
               </h2>
-              <?php edit_comment_link('<p class="comment-meta-item">Edit this comment</p>','',''); ?>
+              <?php // edit_comment_link('<p class="comment-meta-item">Edit this comment</p>','',''); ?>
               <?php if ($comment->comment_approved == '0') : ?>
               <p class="comment-meta-item font-body text-16 leading-24 text-taste-3 italic">Your comment is awaiting moderation.</p>
               <?php endif; ?>
@@ -133,9 +133,10 @@ add_action('after_setup_theme', function() {
   /**
    * Save new custom field data
    */
-  add_action( 'comment_post', function( $comment_id ) {
-    if ( ( isset( $_POST['last_name'] ) ) && ( $_POST['last_name'] != ’) )
-    $last_name = wp_filter_nohtml_kses($_POST['last_name']);
-    add_comment_meta( $comment_id, 'last_name', $last_name );
+  add_action('comment_post', function($comment_id) {
+    if ((isset($_POST['last-name'])) && ($_POST['last-name'] != '')) {
+      $last_name = wp_filter_nohtml_kses($_POST['last-name']);
+      add_comment_meta($comment_id, 'last_name', $last_name);
+    }
   });
 });
