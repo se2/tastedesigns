@@ -12,7 +12,7 @@ template partial for single post type
     <h1 class="c-blog__title font-title text-center text-taste-1 text-60 leading-69">
       Blog Title
     </h1>
-    <a href="<?php echo get_permalink(get_option('page_for_posts')); ?>" class="flex items-center uppercase no-underline text-taste-2 font-subtitle text-14 leading-17 tracking-3 my-40">
+    <a href="<?php echo get_permalink(get_option('page_for_posts')); ?>" class="flex items-center uppercase no-underline text-taste-2 font-subtitle text-14 leading-17 tracking-3 mt-40 mb-30">
       <img src="<?php get_image_url('reverse-path.png'); ?>" alt="Return" class="w-40 h-auto mr-20">
       return to all blog posts
     </a>
@@ -26,23 +26,18 @@ template partial for single post type
         ]);
       ?>
     </div>
-    <div class="c-blog__content py-60 max-w-1000 mx-auto">
+    <div class="c-blog__content pt-60 pb-140 max-w-1000 mx-auto">
       <h2 class="font-subtitle text-16 leading-30 tracking-4.24 text-taste-2 uppercase text-center">
         <?php echo $author; ?>&nbsp;&nbsp;|&nbsp;&nbsp;<?php echo $primaryCat; ?>
       </h2>
       <h1 class="c-blog__title font-title text-center text-taste-1 text-60 leading-69">
         <?php the_title(); ?>
       </h1>
-      <div class="c-blog__body entry-content mt-70 mx-50">
+      <div class="c-blog__body entry-content mt-70 mb-50 clearfix">
         <?php the_content(); ?>
       </div>
       <div class="c-blog__comment">
-        <?php
-          // wp_link_pages( array(
-          //   'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ttg-wp' ),
-          //   'after'  => '</div>',
-          // ) );
-        ?>
+        <?php comments_template(); ?>
       </div>
     </div>
   </article>

@@ -26,36 +26,18 @@ if ( post_password_required() ) {
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) :
 		?>
-		<h2 class="comments-title">
-			<?php
-			$ttg_wp_comment_count = get_comments_number();
-			if ( '1' === $ttg_wp_comment_count ) {
-				printf(
-					/* translators: 1: title. */
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'ttg-wp' ),
-					'<span>' . get_the_title() . '</span>'
-				);
-			} else {
-				printf( // WPCS: XSS OK.
-					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $ttg_wp_comment_count, 'comments title', 'ttg-wp' ) ),
-					number_format_i18n( $ttg_wp_comment_count ),
-					'<span>' . get_the_title() . '</span>'
-				);
-			}
-			?>
+		<div class="comments-separator bg-taste-5 h-2 w-265 mx-auto"></div>
+		<h2 class="comments-title font-title text-42 leading-57 text-taste-1 text-center mt-90 mb-80">
+			Comments
 		</h2><!-- .comments-title -->
 
 		<?php the_comments_navigation(); ?>
 
-		<ol class="comment-list">
-			<?php
-			wp_list_comments( array(
-				'style'      => 'ol',
-				'short_ping' => true,
-			) );
-			?>
-		</ol><!-- .comment-list -->
+		<?php
+		wp_list_comments( array(
+			'walker' => new Comment_Walker(),
+		) );
+		?> <!-- .comment-list -->
 
 		<?php
 		the_comments_navigation();
@@ -69,7 +51,20 @@ if ( post_password_required() ) {
 
 	endif; // Check for have_comments().
 
-	comment_form();
+	$args = array(
+		'id_form'           		=> 'commentform',
+		'class_form'      			=> 'c-blog__form text-0 clearfix',
+		'class_submit'      		=> 'c-blog__submit font-body text-18 leading-30.18 tracking-4.77 text-taste-2 uppercase px-30 py-25 bg-transparent',
+		'name_submit'       		=> 'submit',
+		'title_reply'       		=> __( 'Leave a Comment' ),
+		'title_reply_before'		=> '<h2 id="reply-title" class="comment-reply-title font-title text-42 leading-57 text-taste-1 text-center mb-40 mt-80">',
+		'title_reply_after'			=> '</h2>',
+		'label_submit'      		=> __( 'Submit' ),
+		'format'            		=> 'xhtml',
+		'comment_notes_before'	=> '',
+	);
+
+	comment_form($args);
 	?>
 
 </div><!-- #comments -->

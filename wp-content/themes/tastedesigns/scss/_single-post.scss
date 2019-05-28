@@ -77,5 +77,116 @@
     blockquote {
       @apply my-20;
     }
+
+    figure.wp-caption {
+      border: 0;
+      margin-top: 0;
+      padding: 0;
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+    }
+
+    figcaption {
+      @apply font-body;
+      @apply text-16;
+      @apply leading-19;
+      @apply text-taste-6;
+      @apply italic;
+      @apply text-left;
+
+      margin-top: 20px;
+    }
+  }
+
+  &__form {
+    input,
+    textarea {
+      &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        opacity: 0.6;
+      }
+      &::-moz-placeholder { /* Firefox 19+ */
+        opacity: 0.6;
+      }
+      &:-ms-input-placeholder { /* IE 10+ */
+        opacity: 0.6;
+      }
+      &:-moz-placeholder { /* Firefox 18- */
+        opacity: 0.6;
+      }
+    }
+  }
+
+  &__submit {
+    @apply text-left;
+    @apply relative;
+
+    min-width: 256px;
+    cursor: pointer;
+  }
+
+  .form-submit {
+    @apply mt-30;
+    @apply inline-flex;
+    @apply items-center;
+    @apply border-2;
+    @apply border-taste-4;
+    @apply text-right;
+    @apply relative;
+    @apply float-right;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 25px;
+      transform: translateY(-50%);
+      width: 47px;
+      height: 18px;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url('../img/alternative-path.png');
+    }
+  }
+
+  .comment-content-reply a {
+    @apply no-underline;
+    @apply text-taste-3;
+  }
+
+  .comment-reply-title small a {
+    @apply font-title;
+    @apply capitalize;
+    @apply text-taste-1;
+
+    &::before {
+      content: '|';
+      @apply text-42;
+      @apply leading-57;
+      @apply text-taste-1;
+      @apply no-underline;
+      @apply inline-block;
+      @apply mr-10;
+    }
+  }
+
+  .child-comments {
+    @apply pl-50;
+
+    .comment-content-inner {
+      @apply bg-taste-5;
+    }
+
+    .comment-author-reply {
+      font-size: 0;
+    }
+
+    .comment-author-reply::after {
+      content: 'Replied:';
+      @apply text-16;
+    }
   }
 }
