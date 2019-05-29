@@ -38,7 +38,6 @@ get_header();
 
 			<?php
 
-
 		else :
 
 			get_template_part( 'template-parts/content', 'none' );
