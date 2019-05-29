@@ -12,7 +12,7 @@ $backgroundImage = wp_get_attachment_image_src($background, 'small');
 ?>
 
 <a href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>" class="c-blogs-cta__link no-underline">
-  <div class="c-blogs-cta bg-taste-5">
+  <div class="c-blogs-cta">
     <div class="c-blogs-cta__background bg-cover bg-center bg-no-repeat" style="background-image:url(<?php echo $backgroundImage[0]; ?>);">
       <h1 class="c-blogs-cta__title">
         <?php echo $link['title']; ?>

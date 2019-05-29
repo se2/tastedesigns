@@ -8,10 +8,10 @@ template partial for archive post type
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('min-h-full'); ?>>
 
-  <a href="<?php echo get_permalink(); ?>" ><?php ttg_wp_post_thumbnail(); ?></a>
+  <?php ttg_wp_post_thumbnail(); ?>
   <header class="entry-header">
-    <div class="font-subtitle text-12 lg:text-16 text-taste-2 entry-header__author">
-      <?php echo $author; ?> | <?php echo $primaryCat; ?>
+    <div class="font-subtitle text-12 lg:text-16 text-taste-2 uppercase entry-header__author">
+      <?php echo $author; ?>&nbsp;&nbsp;|&nbsp;&nbsp;<?php echo $primaryCat; ?>
     </div>
     <h1 class="entry-title">
       <a href="<?php echo get_permalink(); ?>" class="font-title text-taste-1 no-underline entry-title__title"><?php the_title(); ?></a>
