@@ -16,7 +16,7 @@ get_header();
 
 <div class="blog-content flex flex-wrap relative w-full js-content-blog">
 
-	<div class="c-archive" style="order: 1;">
+	<div class="c-archive lg:min-h-screen" style="order: 1;">
 		<?php if ( have_posts() ) : ?>
 
 			<div class="c-archive__content flex flex-wrap">
@@ -31,8 +31,8 @@ get_header();
 				?>
 			</div>
 
-			<div class="c-button border-2 border-taste-4 px-21 inline-flex items-center fwp-load-more cursor-pointer">
-				<span class="c-button__text uppercase text-14 text-taste-2 font-subtitle">View more Posts</span>
+			<div class="c-button border-2 border-taste-4 px-21 inline-flex items-center fwp-load-more cursor-pointer uppercase text-14 tracking-3 text-taste-2 font-subtitle">
+				<span class="c-button__text uppercase text-14 text-taste-2 font-subtitle tracking-3">View more Posts</span>
 				<img src="<?php get_image_url('alternative-path.png'); ?>" alt="Arrow" class="c-button__icon h-auto ml-auto lg:ml-30">
 			</div>
 

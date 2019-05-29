@@ -10,8 +10,8 @@
 ?>
 
 <section class="no-results not-found">
-	<header class="page-header">
-		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'ttg-wp' ); ?></h1>
+	<header class="page-header mb-20">
+		<h1 class="page-title font-title text-taste-1 text-48 leading-52.48 lg:text-60 lg:leading-69"><?php esc_html_e( 'Nothing Found', 'ttg-wp' ); ?></h1>
 	</header><!-- .page-header -->
 
 	<div class="page-content">
@@ -34,16 +34,16 @@
 		elseif ( is_search() ) :
 			?>
 
-			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'ttg-wp' ); ?></p>
+			<h2 class="font-subtitle text-12 leading-30.12 tracking-3.18 lg:text-16 lg:leading-30 lg:tracking-4.24 text-taste-2 uppercase"><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'ttg-wp' ); ?></h2>
 			<?php
 			get_search_form();
 
 		else :
 			?>
 
-			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'ttg-wp' ); ?></p>
+			<h2 class="font-subtitle text-12 leading-30.12 tracking-3.18 lg:text-16 lg:leading-30 lg:tracking-4.24 text-taste-2 uppercase"><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'ttg-wp' ); ?></h2>
 			<?php
-			get_search_form();
+			// get_search_form();
 
 		endif;
 		?>

@@ -123,7 +123,7 @@ if ( ! function_exists( 'ttg_wp_setup' ) ) :
 		}, 10, 1);
 
 		/**
-		 * Hi counts from all dropdowns
+		 * Hide counts from all dropdowns
 		 */
 		add_filter('facetwp_facet_dropdown_show_counts', '__return_false');
 	}

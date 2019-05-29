@@ -247,9 +247,9 @@
 .c-blogs-cta {
   &__background {
     @apply .flex .flex-wrap .items-center .justify-center .relative;
-    min-height: 250px;
-    padding-left: 75px;
-    padding-right: 75px;
+    min-height: calc(250 / 414 * 100vw);
+    padding-left: 40px;
+    padding-right: 40px;
     &::before {
       @apply .absolute .w-full .h-full;
       content: "";
@@ -266,7 +266,7 @@
   }
   @screen lg {
     &__background {
-      min-height: 195px;
+      min-height: calc(195 / 1440 * 100vw);
       padding-left: 37px;
       padding-right: 37px;
     }

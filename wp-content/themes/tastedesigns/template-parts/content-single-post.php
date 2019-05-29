@@ -8,33 +8,35 @@ template partial for single post type
 
 <section class="c-blog">
 
-  <div class="c-blog__header px-50">
-    <h1 class="c-blog__title font-title text-center text-taste-1 text-60 leading-69">
+  <div class="c-blog__header lg:px-50">
+    <h1 class="c-blog__title font-title text-center text-taste-1 text-60 leading-69 mt-20 lg:mt-0">
       Blog Title
     </h1>
-    <a href="<?php echo get_permalink(get_option('page_for_posts')); ?>" class="flex items-center uppercase no-underline text-taste-2 font-subtitle text-14 leading-17 tracking-3 mt-40 mb-30">
+    <a href="<?php echo get_permalink(get_option('page_for_posts')); ?>" class="flex items-center uppercase no-underline text-taste-2 font-subtitle text-12 leading-17.12 tracking-2.57 lg:text-14 lg:leading-17 lg:tracking-3 py-25 px-50 lg:px-0 lg:pt-40 lg:pb-30 border-2 border-taste-5 lg:border-0 flex items-center mt-40 lg:mt-0">
       <img src="<?php get_image_url('reverse-path.png'); ?>" alt="Return" class="w-40 h-auto mr-20">
-      return to all blog posts
+      <span class="ml-auto lg:ml-0">Return to all blog posts</span>
     </a>
   </div>
 
   <article id="post-<?php the_ID(); ?>" <?php post_class('min-h-full w-full'); ?> >
-    <div class="c-blog__image-wrapper w-full h-blog-image">
-      <?php
-        the_post_thumbnail('massive', [
+    <?php if (has_post_thumbnail()) : ?>
+      <div class="c-blog__image-wrapper w-full h-blog-image">
+        <?php the_post_thumbnail('massive', [
           'class' => 'c-blog__image w-full h-full'
-        ]);
-      ?>
-    </div>
-    <div class="c-blog__content pt-60 pb-140 max-w-1000 mx-auto">
-      <h2 class="font-subtitle text-16 leading-30 tracking-4.24 text-taste-2 uppercase text-center">
-        <?php echo $author; ?>&nbsp;&nbsp;|&nbsp;&nbsp;<?php echo $primaryCat; ?>
-      </h2>
-      <h1 class="c-blog__title font-title text-center text-taste-1 text-60 leading-69">
-        <?php the_title(); ?>
-      </h1>
-      <div class="c-blog__body entry-content mt-70 mb-50 clearfix">
-        <?php the_content(); ?>
+        ]); ?>
+      </div>
+    <?php endif; ?>
+    <div class="c-blog__content pt-50 lg:pt-60 pb-70 lg:pb-140 max-w-1000 mx-auto border-b-2 border-taste-5 lg:border-b-0">
+      <div class="c-blog__inner mx-20 lg:mx-0">
+        <h2 class="font-subtitle text-12 leading-30.12 tracking-3.18 lg:text-16 lg:leading-30 lg:tracking-4.24 text-taste-2 uppercase text-center">
+          <?php echo $author; ?>&nbsp;&nbsp;|&nbsp;&nbsp;<?php echo $primaryCat; ?>
+        </h2>
+        <h1 class="c-blog__title font-title text-center text-taste-1 text-48 leading-52.48 lg:text-60 lg:leading-69">
+          <?php the_title(); ?>
+        </h1>
+        <div class="c-blog__body entry-content mt-50 lg:mt-70 mb-50 clearfix">
+          <?php the_content(); ?>
+        </div>
       </div>
       <div class="c-blog__comment">
         <?php comments_template(); ?>
@@ -65,7 +67,7 @@ template partial for single post type
   $query = new WP_Query($args);
 
   if ($query->have_posts()) : ?>
-    <div class="c-blog__related pt-80 pb-100 px-30 bg-taste-8 border-t-2 border-b-2 border-taste-4">
+    <div class="c-blog__related pt-80 pb-100 px-30 bg-taste-8 border-t-2 border-b-2 border-taste-4 hidden lg:block">
       <h2 class="font-title text-42 leading-57 text-taste-4 capitalize text-center px-20">
         You might also like:
       </h2>
@@ -107,34 +109,44 @@ template partial for single post type
   $prevPost = get_previous_post();
   ?>
 
-  <div class="c-blog__navigation px-50 py-55 bg-light flex items-center">
-    <?php if (!empty($prevPost)) : ?>
-      <a class="no-underline block" href="<?php echo get_permalink($prevPost); ?>">
-        <div class="border-2 border-taste-4 py-50 px-21 items-center inline-flex min-w-316">
-          <img src="<?php get_image_url('reverse-path.png'); ?>" alt="Prev" class="w-40 h-auto mr-30 align-middle">
-          <span class="text-14 leading-17 tracking-3 text-taste-2 uppercase ml-auto">
-            Previous post
-          </span>
-        </div>
+  <div class="c-blog__navigation px-20 lg:px-50 py-55 bg-light flex items-center flex-wrap">
+    <div class="mx-auto md:hidden pb-50">
+      <a class="border-b-4 border-taste-3 no-underline inline-block" href="<?php echo get_permalink(get_option('page_for_posts')); ?>">
+        <span class="text-16 leading-30 tracking-3.56 lg:tracking-4.24 text-taste-1 uppercase">View all blog posts</span>
       </a>
-    <?php endif; ?>
+    </div>
 
-    <div class="mx-auto">
+    <div class="min-w-full xs:min-w-158 lg:min-w-316 mr-auto">
+      <?php if (!empty($prevPost)) : ?>
+        <a class="no-underline block mr-auto w-full xs:w-auto" href="<?php echo get_permalink($prevPost); ?>">
+          <div class="border-2 border-taste-4 py-30 px-15 lg:py-50 lg:px-21 items-center inline-flex flex-col lg:flex-row w-full">
+            <img src="<?php get_image_url('reverse-path.png'); ?>" alt="Prev" class="w-40 h-auto lg:mr-30 align-middle">
+            <span class="text-12 leading-17.12 tracking-2.57 lg:text-14 lg:leading-17 lg:tracking-3 text-taste-2 uppercase mt-15 lg:mt-0 lg:ml-auto">
+              Previous post
+            </span>
+          </div>
+        </a>
+      <?php endif; ?>
+    </div>
+
+    <div class="mx-auto hidden md:block">
       <a class="border-b-4 border-taste-3 no-underline inline-block" href="<?php echo get_permalink(get_option('page_for_posts')); ?>">
         <span class="text-16 leading-30 tracking-4.24 text-taste-1 uppercase">View all blog posts</span>
       </a>
     </div>
 
-    <?php if (!empty($nextPost)) : ?>
-      <a class="no-underline block" href="<?php echo get_permalink($nextPost); ?>">
-        <div class="border-2 border-taste-4 py-50 px-21 items-center inline-flex min-w-316">
-          <span class="text-14 leading-17 tracking-3 text-taste-2 uppercase mr-auto">
-            Next post
-          </span>
-          <img src="<?php get_image_url('alternative-path.png'); ?>" alt="Next" class="w-40 h-auto ml-30 align-middle">
-        </div>
-      </a>
-    <?php endif; ?>
+    <div class="min-w-full xs:min-w-158 lg:min-w-316 ml-auto">
+      <?php if (!empty($nextPost)) : ?>
+        <a class="no-underline block w-full xs:w-auto mt-50 xs:mt-0" href="<?php echo get_permalink($nextPost); ?>">
+          <div class="border-2 border-taste-4 py-30 px-15 lg:py-50 lg:px-21 items-center inline-flex flex-col lg:flex-row w-full">
+            <span class="text-12 leading-17.12 tracking-2.57 lg:text-14 lg:leading-17 lg:tracking-3 text-taste-2 uppercase mt-15 lg:mt-0 lg:mr-auto order-2 lg-order-1">
+              Next post
+            </span>
+            <img src="<?php get_image_url('alternative-path.png'); ?>" alt="Next" class="w-40 h-auto lg:ml-30 align-middle order-1 lg-order-2">
+          </div>
+        </a>
+      <?php endif; ?>
+    </div>
   </div>
 
 </section>

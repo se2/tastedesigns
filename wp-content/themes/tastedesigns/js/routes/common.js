@@ -1,4 +1,4 @@
-import $ from 'jquery';
+let $ = jQuery;
 
 export default {
   elements: {},
@@ -90,6 +90,7 @@ export default {
 
     setTimeout(function() {
       e.$window.resize();
+      e.$window.scroll();
     }, 300);
   },
 };

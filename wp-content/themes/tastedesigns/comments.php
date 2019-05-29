@@ -27,7 +27,7 @@ if ( post_password_required() ) {
 	if ( have_comments() ) :
 		?>
 		<div class="comments-separator bg-taste-5 h-2 w-265 mx-auto"></div>
-		<h2 class="comments-title font-title text-42 leading-57 text-taste-1 text-center mt-90 mb-80">
+		<h2 class="comments-title font-title text-36 leading-49.36 lg:text-42 lg:leading-57 text-taste-1 text-center mt-60 mb-60 lg:mt-90 lg:mb-80">
 			Comments
 		</h2><!-- .comments-title -->
 
@@ -53,11 +53,11 @@ if ( post_password_required() ) {
 
 	$args = array(
 		'id_form'           		=> 'commentform',
-		'class_form'      			=> 'c-blog__form text-0 clearfix',
-		'class_submit'      		=> 'c-blog__submit font-body text-18 leading-30.18 tracking-4.77 text-taste-2 uppercase px-30 py-25 bg-transparent',
+		'class_form'      			=> 'c-blog__form text-0 clearfix px-20 lg:px-0',
+		'class_submit'      		=> 'c-blog__submit font-body text-16 leading-30.16 tracking-4.24 lg:text-18 lg:leading-30.18 lg:tracking-4.77 text-taste-2 uppercase px-20 lg:px-30 py-25 bg-transparent',
 		'name_submit'       		=> 'submit',
 		'title_reply'       		=> __( 'Leave a Comment' ),
-		'title_reply_before'		=> '<h2 id="reply-title" class="comment-reply-title font-title text-42 leading-57 text-taste-1 text-center mb-40 mt-80">',
+		'title_reply_before'		=> '<h2 id="reply-title" class="comment-reply-title font-title text-36 leading-49.36 lg:text-42 lg:leading-57 text-taste-1 text-center mb-40 mt-80 px-20 lg:px-0">',
 		'title_reply_after'			=> '</h2>',
 		'label_submit'      		=> __( 'Submit' ),
 		'format'            		=> 'xhtml',

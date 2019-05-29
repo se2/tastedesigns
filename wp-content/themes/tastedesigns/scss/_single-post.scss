@@ -41,13 +41,20 @@
     }
 
     h4,
-    h5 {
+    h5,
+    h6 {
       @apply font-subtitle;
-      @apply text-16;
-      @apply leading-30;
-      @apply tracking-4.24;
       @apply text-taste-2;
       @apply uppercase;
+      @apply text-12;
+      @apply leading-17.12;
+      @apply tracking-2.57;
+
+      @screen lg {
+        @apply text-16;
+        @apply leading-30;
+        @apply tracking-4.24;
+      }
     }
 
     p,
@@ -55,8 +62,13 @@
     blockquote {
       @apply font-body;
       @apply text-taste-6;
-      @apply text-16;
-      @apply leading-24;
+      @apply text-14;
+      @apply leading-21;
+
+      @screen lg {
+        @apply text-16;
+        @apply leading-24;
+      }
     }
 
     a {
@@ -79,9 +91,13 @@
     }
 
     figure.wp-caption {
+      @apply my-40;
       border: 0;
-      margin-top: 0;
       padding: 0;
+
+      @screen lg {
+        @apply my-0;
+      }
 
       img {
         display: block;
@@ -91,13 +107,17 @@
 
     figcaption {
       @apply font-body;
-      @apply text-16;
-      @apply leading-19;
       @apply text-taste-6;
       @apply italic;
       @apply text-left;
+      @apply mt-20;
+      @apply text-12;
+      @apply leading-14.12;
 
-      margin-top: 20px;
+      @screen lg {
+        @apply text-16;
+        @apply leading-19;
+      }
     }
   }
 
@@ -123,8 +143,12 @@
     @apply text-left;
     @apply relative;
 
-    min-width: 256px;
-    cursor: pointer;
+    min-width: 186px;
+
+    @screen lg {
+      min-width: 256px;
+      cursor: pointer;
+    }
   }
 
   .form-submit {
@@ -143,12 +167,16 @@
       top: 50%;
       right: 25px;
       transform: translateY(-50%);
-      width: 47px;
+      width: 40px;
       height: 18px;
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
       background-image: url('../img/alternative-path.png');
+
+      @screen lg {
+        width: 47px;
+      }
     }
   }
 
@@ -163,18 +191,25 @@
     @apply text-taste-1;
 
     &::before {
-      content: '|';
       @apply text-42;
       @apply leading-57;
       @apply text-taste-1;
       @apply no-underline;
       @apply inline-block;
       @apply mr-10;
+
+      @screen lg {
+        content: '|';
+      }
     }
   }
 
   .child-comments {
-    @apply pl-50;
+    @apply pl-20;
+
+    @screen lg {
+      @apply pl-50;
+    }
 
     .comment-content-inner {
       @apply bg-taste-5;

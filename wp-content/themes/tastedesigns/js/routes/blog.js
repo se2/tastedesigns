@@ -1,4 +1,4 @@
-import $ from 'jquery';
+let $ = jQuery;
 
 export default {
   elements: {},
@@ -12,6 +12,7 @@ export default {
     let e = this.elements;
 
     e.$window = $(window);
+    e.$document = $(document);
     e.$header = $('.js-header-blog');
     e.$content = $('.js-content-blog');
     e.$sidebar = $('.js-sidebar-blog');
@@ -41,6 +42,10 @@ export default {
         e.$sidebar.css('bottom', 'auto');
         e.$sidebar.removeClass('is-active');
       }
+    });
+
+    e.$document.on('facetwp-loaded', function() {
+      e.$window.trigger('scroll');
     });
   },
 };

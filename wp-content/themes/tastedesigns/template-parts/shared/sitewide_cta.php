@@ -21,7 +21,7 @@ $button_url = get_query_var('buttonUrl');
 			<?php echo $title; ?>
 		</h1>
 		<a href="<?php echo $button_url; ?>" class="c-button__link no-underline">
-			<div class="c-button border-2 border-taste-4 px-21 inline-flex items-center">
+			<div class="c-button border-2 border-taste-4 px-21 inline-flex items-center w-full lg:w-auto">
 				<span class="c-button__text uppercase text-16 leading-19 lg:leading-21 lg:text-18 text-taste-3"><?php echo $button_text; ?></span>
 				<img src="<?php get_image_url('alternative-path.png'); ?>" alt="Enter" class="c-button__icon h-auto ml-auto lg:ml-30">
 			</div>
