@@ -31,10 +31,10 @@ get_header();
 				?>
 			</div>
 
-			<a href="//localhost:3000" class="c-button__link no-underline">
+			<a href="/" class="c-button__link no-underline">
 				<div class="c-button border-2 border-taste-4 px-21 inline-flex items-center">
 					<span class="c-button__text uppercase text-14 text-taste-2 font-subtitle">View more Posts</span>
-					<img src="//localhost:3000/wp-content/themes/tastedesigns/img/alternative-path.png" alt="Enter" class="c-button__icon h-auto ml-auto lg:ml-30">
+					<img src="<?php get_image_url( 'alternative-path.png' ); ?>" alt="Enter" class="c-button__icon h-auto ml-auto lg:ml-30">
 				</div>
 			</a>
 
