@@ -161,7 +161,7 @@
     background-color: #ffffff;
     border-radius: initial;
     height: 66px;
-    border: 2px solid #cebbad;
+    border: 2px solid config('colors.taste-5');
     padding: 0 20px;
     line-height: 1.2142857143;
     background-image: url(/wp-content/themes/tastedesigns/img/icon-down.png);
@@ -194,7 +194,7 @@
       line-height: 1.2142857143;
       height: 66px;
       padding-left: 30px;
-      border: 2px solid #cebbad;
+      border: 2px solid config('colors.taste-5');
       &::-webkit-input-placeholder {
         /* Chrome/Opera/Safari */
         color: #736357;
