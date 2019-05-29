@@ -176,7 +176,7 @@
 			</div>
 		</nav><!-- #site-navigation -->
 
-		<div class="c-menu-search fixed w-full h-full z-50 js-search-form">
+		<div class="c-menu-search fixed w-full h-full z-50 js-search-form top-0 left-0">
 			<div class="c-menu-search__background absolute bg-light w-full h-full"></div>
 			<div class="c-menu-search__inner relative w-full h-full">
 				<div class="c-menu__hamburger w-28 h-28 right-0 lg:w-33 lg:h-33 absolute is-active js-search-close">

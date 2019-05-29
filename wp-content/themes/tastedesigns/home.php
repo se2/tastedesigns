@@ -10,11 +10,11 @@
 get_header();
 ?>
 
-<div class="c-header">
+<div class="c-header js-header-blog">
 	<h1 class="c-header__title font-title text-center text-taste-1"><?php echo get_the_title(get_option('page_for_posts', true)); ?></h1>
 </div>
 
-<div class="blog-content flex flex-wrap relative">
+<div class="blog-content flex flex-wrap relative w-full js-content-blog">
 
 	<div class="c-archive" style="order: 1;">
 		<?php if ( have_posts() ) : ?>
@@ -31,12 +31,10 @@ get_header();
 				?>
 			</div>
 
-			<a href="//localhost:3000" class="c-button__link no-underline">
-				<div class="c-button border-2 border-taste-4 px-21 inline-flex items-center">
-					<span class="c-button__text uppercase text-14 text-taste-2 font-subtitle">View more Posts</span>
-					<img src="//localhost:3000/wp-content/themes/tastedesigns/img/alternative-path.png" alt="Enter" class="c-button__icon h-auto ml-auto lg:ml-30">
-				</div>
-			</a>
+			<div class="c-button border-2 border-taste-4 px-21 inline-flex items-center fwp-load-more cursor-pointer">
+				<span class="c-button__text uppercase text-14 text-taste-2 font-subtitle">View more Posts</span>
+				<img src="<?php get_image_url('alternative-path.png'); ?>" alt="Arrow" class="c-button__icon h-auto ml-auto lg:ml-30">
+			</div>
 
 			<?php
 

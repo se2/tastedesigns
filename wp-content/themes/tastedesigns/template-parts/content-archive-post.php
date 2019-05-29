@@ -6,7 +6,7 @@ template partial for archive post type
 */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('min-h-full'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('min-h-full w-full'); ?>>
 
   <?php ttg_wp_post_thumbnail(); ?>
   <header class="entry-header">

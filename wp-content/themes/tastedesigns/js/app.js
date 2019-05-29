@@ -6,6 +6,7 @@ import 'slick-carousel';
 import Router from './util/Router';
 import common from './routes/common';
 import home from './routes/home';
+import blog from './routes/blog';
 
 /** Populate Router instance with DOM routes */
 const routes = new Router({
@@ -13,6 +14,8 @@ const routes = new Router({
   common,
   // Home page
   home,
+  // Blogs page
+  blog,
 });
 
 // Load Events

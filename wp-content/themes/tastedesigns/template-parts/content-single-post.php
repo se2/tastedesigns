@@ -18,7 +18,7 @@ template partial for single post type
     </a>
   </div>
 
-  <article id="post-<?php the_ID(); ?>" <?php post_class('min-h-full'); ?> >
+  <article id="post-<?php the_ID(); ?>" <?php post_class('min-h-full w-full'); ?> >
     <div class="c-blog__image-wrapper w-full h-blog-image">
       <?php
         the_post_thumbnail('massive', [
