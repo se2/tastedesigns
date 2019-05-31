@@ -106,7 +106,7 @@ if ( ! function_exists( 'ttg_wp_setup' ) ) :
 		 */
 		add_filter('the_content', function($content) {
 			global $post;
-			if ($post->post_type == 'testimonial') {
+			if ( ( is_object( $post ) && $post->post_type == 'testimonial' ) || ( is_array( $post ) && $post['post_type'] == 'testimonial' ) ) {
 				$content = preg_replace('/^<p>“/', '<p>', $content);ltrim($content, '“');
 			}
 			return $content;
@@ -122,11 +122,11 @@ if ( ! function_exists( 'ttg_wp_setup' ) ) :
         $title = post_type_archive_title('', false);
 			} else if (is_tag()) {
         $title = single_tag_title('', false);
-    	} else if (is_tax()) {
+				} else if (is_tax()) {
         $title = single_term_title('', false);
-    	} else if (is_author()) {
+			} else if (is_author()) {
         $title = get_the_author();
-    	}
+			}
 			return $title;
 		}, 10, 1);
 
