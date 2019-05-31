@@ -40,7 +40,11 @@
       @apply .w-full;
       @apply .block;
       object-fit: cover;
-      height: calc(207 / 414 * 100vw);
+			height: calc(207 / 414 * 100vw);
+			&:active,
+			&:focus {
+				@apply outline-none;
+			}
     }
   }
   .entry-header {

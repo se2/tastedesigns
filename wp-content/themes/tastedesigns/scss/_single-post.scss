@@ -1,6 +1,10 @@
 .c-blog {
   &__image {
-    object-fit: cover;
+		object-fit: cover;
+		&:active,
+		&:focus {
+			@apply outline-none;
+		}
   }
 
   &__body {
