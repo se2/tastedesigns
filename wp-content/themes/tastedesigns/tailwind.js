@@ -526,6 +526,7 @@ module.exports = {
     '38': '2.375rem',
     'featured-instagram': 'calc(470 / 1440 * 100vw)',
     'appreciation': 'calc(561 / 1440 * 100vw)',
+    '9/12': 'calc(9 / 12 * 100%)',
   },
 
   /*
@@ -589,6 +590,7 @@ module.exports = {
     'appreciation-mobile': 'calc(329 / 414 * 100vw)',
     'blog-image': 'calc(720 / 1440 * 100vw)',
     'related-image': 'calc(190 / 1440 * 100vw)',
+    'alt-blog-image': 'calc(500 / 1440 * 100vw)',
   },
 
   /*
@@ -740,6 +742,7 @@ module.exports = {
     '100': '6.25rem',
     '3': '0.1875rem',
     '140': '8.75rem',
+    '46': '2.875rem',
   },
 
   /*

@@ -1,127 +1,131 @@
-.blog {
-  .site-content {
-    @apply .flex .flex-wrap;
-    .c-header {
+.blog,
+.blog-content {
+  @apply .flex .flex-wrap;
+  .c-header {
+    @apply .w-full;
+    &__title {
+      font-size: 60px;
+      line-height: 1.15;
+      padding-bottom: 46px;
+      margin-top: 10px;
+    }
+  }
+  .c-archive {
+    @apply .w-full px-20;
+    padding-bottom: 54px;
+    .c-button {
       @apply .w-full;
+      padding: 43px 47px 40px 47px;
+      margin-top: 42px;
+      &__text {
+        letter-spacing: 3px;
+        line-height: 1.2142857143;
+      }
+      &__icon {
+        width: 40px;
+      }
+    }
+  }
+  article:not(.comment):not(.c-single-post) {
+    @apply .relative;
+    margin-bottom: 38px;
+    &::after {
+      @apply .absolute;
+      content: "";
+      height: 2px;
+      width: 158px;
+      background-color: #e8e0da;
+    }
+    .wp-post-image {
+      @apply .w-full;
+      @apply .block;
+      object-fit: cover;
+      height: calc(207 / 414 * 100vw);
+    }
+  }
+  .entry-header {
+    padding-top: 11px;
+    padding-bottom: 31px;
+    &.is-top {
+      padding-top: 0;
+      margin-top: -8px;
+    }
+    &__author {
+      line-height: 2.5;
+      letter-spacing: 3.18px;
+    }
+    .entry-title {
       &__title {
-        font-size: 60px;
-        line-height: 1.15;
-        padding-bottom: 46px;
-        margin-top: 10px;
+        font-size: 40px;
+        line-height: 1.05;
+      }
+    }
+  }
+  .entry-content {
+    @apply .font-body .text-14 .text-taste-6;
+    line-height: 1.5;
+    padding-bottom: 33px;
+  }
+  .entry-footer {
+    @apply .uppercase;
+    padding-bottom: 3px;
+    letter-spacing: 3.18px;
+    line-height: 2.5;
+  }
+}
+@screen lg {
+  .blog,
+  .blog-content {
+    .c-header {
+      &__title {
+        @apply .mt-0;
+        padding-bottom: 65px;
       }
     }
     .c-archive {
-      @apply .w-full px-20;
-      padding-bottom: 54px;
+      @apply px-50;
+      width: calc(100% * 9 / 12);
+      padding-bottom: 88px;
       .c-button {
-        @apply .w-full;
-        padding: 43px 47px 40px 47px;
-        margin-top: 42px;
-        &__text {
-          letter-spacing: 3px;
-          line-height: 1.2142857143;
-        }
+        @apply .w-auto px-20 pb-50;
+        margin-top: 5px;
+        padding-top: 53px;
         &__icon {
-          width: 40px;
+          width: 47px;
         }
       }
     }
-    article {
-      @apply .relative;
-      margin-bottom: 38px;
+    article:not(.comment):not(.c-single-post) {
+      margin-bottom: 75px;
       &::after {
-        @apply .absolute;
-        content: "";
-        height: 2px;
-        width: 158px;
-        background-color: #e8e0da;
+        width: 250px;
       }
       .wp-post-image {
-        @apply .w-full;
-        @apply .block;
-        object-fit: cover;
-        height: calc(207 / 414 * 100vw);
+        height: calc(500 / 1440 * 100vw);
       }
     }
     .entry-header {
-      padding-top: 11px;
-      padding-bottom: 31px;
+      padding-top: 23px;
+      padding-bottom: 32px;
       &__author {
-        line-height: 2.5;
-        letter-spacing: 3.18px;
+        line-height: 1.875;
+        letter-spacing: 4.24px;
       }
       .entry-title {
         &__title {
-          font-size: 40px;
-          line-height: 1.05;
+          font-size: 66px;
+          line-height: 1.3484848485;
         }
       }
     }
     .entry-content {
-      @apply .font-body .text-14 .text-taste-6;
-      line-height: 1.5;
-      padding-bottom: 33px;
+      @apply .text-16;
+      padding-bottom: 27px;
     }
     .entry-footer {
-      @apply .uppercase;
-      padding-bottom: 3px;
-      letter-spacing: 3.18px;
-      line-height: 2.5;
-    }
-  }
-  @screen lg {
-    .site-content {
-      .c-header {
-        &__title {
-          @apply .mt-0;
-          padding-bottom: 65px;
-        }
-      }
-      .c-archive {
-        @apply px-50;
-        width: calc(100% * 9 / 12);
-        padding-bottom: 88px;
-        .c-button {
-          @apply .w-auto px-20 pb-50;
-          margin-top: 5px;
-          padding-top: 53px;
-          &__icon {
-            width: 47px;
-          }
-        }
-      }
-      article {
-        margin-bottom: 75px;
-        &::after {
-          width: 250px;
-        }
-        .wp-post-image {
-          height: calc(500 / 1440 * 100vw);
-        }
-      }
-      .entry-header {
-        padding-top: 23px;
-        padding-bottom: 32px;
-        &__author {
-          line-height: 1.875;
-          letter-spacing: 4.24px;
-        }
-        .entry-title {
-          &__title {
-            font-size: 66px;
-            line-height: 1.3484848485;
-          }
-        }
-      }
-      .entry-content {
-        @apply .text-16;
-        padding-bottom: 27px;
-      }
-      .entry-footer {
-        padding-bottom: 59px;
-        letter-spacing: 4.24px;
-        line-height: 1.875;
-      }
+      padding-bottom: 59px;
+      letter-spacing: 4.24px;
+      line-height: 1.875;
     }
   }
 }

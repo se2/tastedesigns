@@ -116,9 +116,17 @@ if ( ! function_exists( 'ttg_wp_setup' ) ) :
 		 * Modify Archive Title
 		 */
 		add_filter('get_the_archive_title', function($title) {
-			if (is_post_type_archive()) {
+			if (is_category()) {
+				$title = single_cat_title('', false);
+			} else if (is_post_type_archive()) {
         $title = post_type_archive_title('', false);
-			}
+			} else if (is_tag()) {
+        $title = single_tag_title('', false);
+    	} else if (is_tax()) {
+        $title = single_term_title('', false);
+    	} else if (is_author()) {
+        $title = get_the_author();
+    	}
 			return $title;
 		}, 10, 1);
 

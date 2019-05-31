@@ -16,6 +16,7 @@ export default {
     e.$header = $('.js-header-blog');
     e.$content = $('.js-content-blog');
     e.$sidebar = $('.js-sidebar-blog');
+    console.log('yo');
   },
   initSidebar() {
     let s = this;

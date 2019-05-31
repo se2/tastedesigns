@@ -10,12 +10,16 @@
 get_header();
 ?>
 
-<div class="c-archive">
-	<?php if ( have_posts() ) : ?>
+<div class="c-header js-header-blog">
+	<?php the_archive_title('<h1 class="c-header__title font-title text-center text-taste-1 text-60 leading-15 pb-46 lg:pb-65 mt-10 lg:mt-0 break-words mx-20 lg:mx-0">', '</h1>'); ?>
+</div>
 
-		<div class="c-archive__header">
-			<?php the_archive_title('<h1 class="c-archive__title font-title text-center lowercase text-taste-1">', '</h1>'); ?>
-		</div>
+<?php if (get_post_type() == 'post') : ?>
+	<div class="blog-content flex flex-wrap relative w-full js-content-blog">
+<?php endif; ?>
+
+<div class="c-archive lg:min-h-screen order-1">
+	<?php if (have_posts()) : ?>
 
 		<?php if (is_post_type_archive('project')) : ?>
 			<div class="c-archive__filters flex flex-wrap justify-center text-center">
@@ -44,8 +48,15 @@ get_header();
 			?>
 		</div>
 
+		<?php if (get_post_type() == 'post') : ?>
+			<div class="c-button border-2 border-taste-4 px-21 inline-flex items-center fwp-load-more cursor-pointer uppercase text-14 tracking-3 text-taste-2 font-subtitle">
+				<span class="c-button__text uppercase text-14 text-taste-2 font-subtitle tracking-3">View more Posts</span>
+				<img src="<?php get_image_url('alternative-path.png'); ?>" alt="Arrow" class="c-button__icon h-auto ml-auto lg:ml-30">
+			</div>
+		<?php endif; ?>
+
 		<?php
-		the_posts_navigation();
+		// the_posts_navigation();
 
 	else :
 
@@ -54,6 +65,11 @@ get_header();
 	endif;
 	?>
 </div>
+
+<?php if (get_post_type() == 'post') : ?>
+		<?php get_sidebar('blogs'); ?>
+	</div>
+<?php endif; ?>
 
 <?php
 // get_sidebar();

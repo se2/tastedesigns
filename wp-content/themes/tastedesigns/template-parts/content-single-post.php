@@ -6,32 +6,41 @@ template partial for single post type
 */
 ?>
 
+<?php $alter = isset($_GET['a']) ? $_GET['a'] : ''; ?>
+
 <section class="c-blog">
 
-  <div class="c-blog__header lg:px-50">
-    <h1 class="c-blog__title font-title text-center text-taste-1 text-60 leading-69 mt-20 lg:mt-0">
+  <div class="c-blog__header lg:px-50 js-header-blog">
+    <h1 class="c-blog__title font-title text-center text-taste-1 text-60 leading-69 mt-20 lg:mt-0 <?php echo $alter ? 'pb-40 lg:pb-60' : ''; ?>">
       Blog Title
     </h1>
-    <a href="<?php echo get_permalink(get_option('page_for_posts')); ?>" class="flex items-center uppercase no-underline text-taste-2 font-subtitle text-12 leading-17.12 tracking-2.57 lg:text-14 lg:leading-17 lg:tracking-3 py-25 px-50 lg:px-0 lg:pt-40 lg:pb-30 border-2 border-taste-5 lg:border-0 flex items-center mt-40 lg:mt-0">
-      <img src="<?php get_image_url('reverse-path.png'); ?>" alt="Return" class="w-40 h-auto mr-20">
-      <span class="ml-auto lg:ml-0">Return to all blog posts</span>
-    </a>
+    <?php if (!$alter) : ?>
+      <a href="<?php echo get_permalink(get_option('page_for_posts')); ?>" class="flex items-center uppercase no-underline text-taste-2 font-subtitle text-12 leading-17.12 tracking-2.57 lg:text-14 lg:leading-17 lg:tracking-3 py-25 px-50 lg:px-0 lg:pt-40 lg:pb-30 border-2 border-taste-5 lg:border-0 flex items-center mt-40 lg:mt-0">
+        <img src="<?php get_image_url('reverse-path.png'); ?>" alt="Return" class="w-40 h-auto mr-20">
+        <span class="ml-auto lg:ml-0">Return to all blog posts</span>
+      </a>
+    <?php endif; ?>
   </div>
 
-  <article id="post-<?php the_ID(); ?>" <?php post_class('min-h-full w-full'); ?> >
+  <?php if (get_post_type() == 'post') : ?>
+    <div class="blog-content flex flex-wrap relative w-full js-content-blog">
+  <?php endif; ?>
+
+  <?php $post_class = ($alter ? ' lg:w-9/12 lg:px-50' : ''); ?>
+  <article id="post-<?php the_ID(); ?>" <?php post_class('c-single-post min-h-full w-full' . $post_class); ?> >
     <?php if (has_post_thumbnail()) : ?>
-      <div class="c-blog__image-wrapper w-full h-blog-image">
+      <div class="c-blog__image-wrapper w-full h-blog-image <?php echo ($alter) ? 'lg:h-alt-blog-image' : ''; ?>">
         <?php the_post_thumbnail('massive', [
           'class' => 'c-blog__image w-full h-full'
         ]); ?>
       </div>
     <?php endif; ?>
-    <div class="c-blog__content pt-50 lg:pt-60 pb-70 lg:pb-140 max-w-1000 mx-auto border-b-2 border-taste-5 lg:border-b-0">
+    <div class="c-blog__content pt-50 lg:pt-60 pb-70 lg:pb-140 <?php if (!$alter) : echo 'max-w-1000'; endif; ?> mx-auto border-b-2 border-taste-5 lg:border-b-0">
       <div class="c-blog__inner mx-20 lg:mx-0">
-        <h2 class="font-subtitle text-12 leading-30.12 tracking-3.18 lg:text-16 lg:leading-30 lg:tracking-4.24 text-taste-2 uppercase text-center">
+        <h2 class="font-subtitle text-12 leading-30.12 tracking-3.18 lg:text-16 lg:leading-30 lg:tracking-4.24 text-taste-2 uppercase text-center <?php if ($alter) : ?>lg:text-left<?php endif; ?>">
           <?php echo $author; ?>&nbsp;&nbsp;|&nbsp;&nbsp;<?php echo $primaryCat; ?>
         </h2>
-        <h1 class="c-blog__title font-title text-center text-taste-1 text-48 leading-52.48 lg:text-60 lg:leading-69">
+        <h1 class="c-blog__title font-title text-taste-1 text-48 leading-52.48 lg:text-60 lg:leading-69 text-center <?php if ($alter) : ?>lg:text-left<?php endif; ?>">
           <?php the_title(); ?>
         </h1>
         <div class="c-blog__body entry-content mt-50 lg:mt-70 mb-50 clearfix">
@@ -43,6 +52,13 @@ template partial for single post type
       </div>
     </div>
   </article>
+
+  <?php if (get_post_type() == 'post') : ?>
+      <?php if ($alter) : ?>
+        <?php get_sidebar('blogs'); ?>
+      <?php endif; ?>
+    </div>
+  <?php endif; ?>
 
   <?php
   /**

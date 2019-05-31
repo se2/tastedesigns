@@ -70,8 +70,8 @@
     padding-bottom: 35px;
   }
   &__image {
-    height: 72.4637681159vw;
-    max-width: 100%;
+    height: calc(300 / 414 * 100vw);
+    width: 100%;
     margin: 0 auto;
     display: block;
     object-fit: cover;
@@ -79,9 +79,6 @@
   @screen md {
     padding-left: 15px;
     padding-right: 15px;
-    &__image {
-      max-height: 300px;
-    }
   }
   @screen lg {
     padding-left: 21px;
@@ -91,8 +88,7 @@
       padding-bottom: 20px;
     }
     &__image {
-      max-width: 100%;
-      height: calc((360 / 432 * (100vw - 144px)) / 3);
+      height: calc(360 / 1440 * 100vw);
     }
     &:nth-child(3n + 1) {
       padding-left: 0;
