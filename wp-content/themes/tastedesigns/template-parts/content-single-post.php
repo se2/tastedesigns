@@ -6,7 +6,7 @@ template partial for single post type
 */
 ?>
 
-<?php $alter = isset($_GET['a']) ? $_GET['a'] : ''; ?>
+<?php $alter = is_page_template( 'templates/single-sidebar.php' ); ?>
 
 <section class="c-blog">
 
