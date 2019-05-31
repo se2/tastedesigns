@@ -26,8 +26,8 @@
 
             // ignore the current facet's selections
             var post_data = FWP.build_post_data();
-            var facet_values = FWP.facets;
-            facet_values[facet_name] = '';
+            var facet_values = JSON.parse(JSON.stringify(FWP.facets)); // clone
+            facet_values[facet_name] = ''; // clear value
             post_data.facets = JSON.stringify(facet_values);
 
             // initialize

@@ -102,13 +102,14 @@ class FacetWP_Integration_WooCommerce
 
         // Saving a single product
         if ( ! empty( $args['p'] ) ) {
-            if ( 'product' == get_post_type( $args['p'] ) ) {
-                $product = wc_get_product( $args['p'] );
-                if ( 'variable' == $product->get_type() ) {
+            $post_id = (int) $args['p'];
+            if ( 'product' == get_post_type( $post_id ) ) {
+                if ( 'variable' == $this->get_product_type( $post_id ) ) {
+                    $product = wc_get_product( $post_id );
                     $children = $product->get_children();
                     $args['post_type'] = [ 'product', 'product_variation' ];
                     $args['post__in'] = $children;
-                    $args['post__in'][] = $args['p'];
+                    $args['post__in'][] = $post_id;
                     $args['posts_per_page'] = -1;
                     unset( $args['p'] );
                 }
@@ -230,6 +231,27 @@ class FacetWP_Integration_WooCommerce
         }
 
         return $output;
+    }
+
+
+    /**
+     * Efficiently grab the product type without wc_get_product()
+     * @since 3.3.8
+     */
+    function get_product_type( $post_id ) {
+        global $wpdb;
+
+        $sql = "
+        SELECT t.name
+        FROM wp_terms t
+        INNER JOIN wp_term_taxonomy tt ON tt.term_id = t.term_id AND tt.taxonomy = 'product_type'
+        INNER JOIN wp_term_relationships tr ON tr.term_taxonomy_id = tt.term_taxonomy_id AND tr.object_id = %d";
+
+        $type = $wpdb->get_var(
+            $wpdb->prepare( $sql, $post_id )
+        );
+
+        return ( null !== $type ) ? $type : 'simple';
     }
 
 
@@ -368,9 +390,8 @@ class FacetWP_Integration_WooCommerce
 
         // Ignore product attributes with "Used for variations" ticked
         if ( 0 === strpos( $facet['source'], 'tax/pa_' ) ) {
-            $product = wc_get_product( $post_id );
-
-            if ( $product->is_type( 'variable' ) ) {
+            if ( 'variable' == $this->get_product_type( $post_id ) ) {
+                $product = wc_get_product( $post_id );
                 $attrs = $product->get_attributes();
                 $attr_name = str_replace( 'tax/', '', $facet['source'] );
                 if ( isset( $attrs[ $attr_name ] ) && 1 === $attrs[ $attr_name ]['is_variation'] ) {

@@ -1271,7 +1271,7 @@
                     @click="$root.editItem('facet', facet)"
                 >
                     <div class="card-drag">&#9776;</div>
-                    <div class="card-label">{{ facet.label }}</div>
+                    <div class="card-label" :title="facet.name">{{ facet.label }}</div>
                     <div class="card-delete" @click.stop="$root.deleteItem('facet', index)"></div>
                     <div class="card-type">{{ facet.type }}</div>
                     <div class="card-source" v-html="getSource(facet.source)"></div>
@@ -1302,7 +1302,7 @@
                     @click="$root.editItem('template', template)"
                 >
                     <div class="card-drag">&#9776;</div>
-                    <div class="card-label">{{ template.label }}</div>
+                    <div class="card-label" :title="template.name">{{ template.label }}</div>
                     <div class="card-delete" @click.stop="$root.deleteItem('template', index)"></div>
                     <div class="card-display-mode">{{ getDisplayMode(index) }}</div>
                     <div class="card-post-types">{{ getPostTypes(index) }}</div>
