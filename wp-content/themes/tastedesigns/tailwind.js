@@ -663,6 +663,7 @@ module.exports = {
     full: '100%',
     '1000': '62.5rem',
     'initial': 'initial',
+    '498': '31.125rem',
   },
 
   /*

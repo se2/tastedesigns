@@ -122,7 +122,7 @@ if ( ! function_exists( 'ttg_wp_setup' ) ) :
         $title = post_type_archive_title('', false);
 			} else if (is_tag()) {
         $title = single_tag_title('', false);
-				} else if (is_tax()) {
+			} else if (is_tax()) {
         $title = single_term_title('', false);
 			} else if (is_author()) {
         $title = get_the_author();
