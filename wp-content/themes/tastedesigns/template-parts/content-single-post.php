@@ -93,7 +93,7 @@ template partial for single post type
             <a href="<?php the_permalink(); ?>">
               <div class="c-blog__related-thumbnail w-full h-related-image bg-taste-8">
                 <?php the_post_thumbnail('small', [
-                  'class' => 'c-blog__related-image w-full h-full o-center'
+                  'class' => 'c-blog__related-image w-full h-full o-cover'
                 ]); ?>
               </div>
             </a>
