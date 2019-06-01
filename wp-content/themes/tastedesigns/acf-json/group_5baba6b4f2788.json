@@ -148,25 +148,6 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5cd9a8841fbff",
-                            "label": "Visible?",
-                            "name": "visible",
-                            "type": "true_false",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "25",
-                                "class": "",
-                                "id": ""
-                            },
-                            "message": "",
-                            "default_value": 1,
-                            "ui": 0,
-                            "ui_on_text": "",
-                            "ui_off_text": ""
-                        },
-                        {
                             "key": "field_5cd9a8841fc00",
                             "label": "Admin Title",
                             "name": "layout_title",
@@ -266,19 +247,9 @@
                                 "id": ""
                             },
                             "return_format": "array"
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
-                "layout_5cde8e02f68c9": {
-                    "key": "layout_5cde8e02f68c9",
-                    "name": "featured-project-editor",
-                    "label": "Featured Project",
-                    "display": "block",
-                    "sub_fields": [
+                        },
                         {
-                            "key": "field_5cde8e02f68ca",
+                            "key": "field_5cd9a8841fbff",
                             "label": "Visible?",
                             "name": "visible",
                             "type": "true_false",
@@ -295,7 +266,17 @@
                             "ui": 0,
                             "ui_on_text": "",
                             "ui_off_text": ""
-                        },
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5cde8e02f68c9": {
+                    "key": "layout_5cde8e02f68c9",
+                    "name": "featured-project-editor",
+                    "label": "Featured Project",
+                    "display": "block",
+                    "sub_fields": [
                         {
                             "key": "field_5cde8e02f68cb",
                             "label": "Admin Title",
@@ -336,19 +317,9 @@
                             "multiple": 0,
                             "return_format": "object",
                             "ui": 1
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
-                "layout_5cde8e46f68d0": {
-                    "key": "layout_5cde8e46f68d0",
-                    "name": "stay-connected-editor",
-                    "label": "Stay Connected",
-                    "display": "block",
-                    "sub_fields": [
+                        },
                         {
-                            "key": "field_5cde8e46f68d1",
+                            "key": "field_5cde8e02f68ca",
                             "label": "Visible?",
                             "name": "visible",
                             "type": "true_false",
@@ -365,7 +336,17 @@
                             "ui": 0,
                             "ui_on_text": "",
                             "ui_off_text": ""
-                        },
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5cde8e46f68d0": {
+                    "key": "layout_5cde8e46f68d0",
+                    "name": "stay-connected-editor",
+                    "label": "Stay Connected",
+                    "display": "block",
+                    "sub_fields": [
                         {
                             "key": "field_5cde8e46f68d2",
                             "label": "Admin Title",
@@ -500,19 +481,9 @@
                             },
                             "default_value": "",
                             "placeholder": ""
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
-                "layout_5cde8f1af68d9": {
-                    "key": "layout_5cde8f1af68d9",
-                    "name": "appreciation-editor",
-                    "label": "Appreciation",
-                    "display": "block",
-                    "sub_fields": [
+                        },
                         {
-                            "key": "field_5cde8f1af68da",
+                            "key": "field_5cde8e46f68d1",
                             "label": "Visible?",
                             "name": "visible",
                             "type": "true_false",
@@ -529,7 +500,17 @@
                             "ui": 0,
                             "ui_on_text": "",
                             "ui_off_text": ""
-                        },
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5cde8f1af68d9": {
+                    "key": "layout_5cde8f1af68d9",
+                    "name": "appreciation-editor",
+                    "label": "Appreciation",
+                    "display": "block",
+                    "sub_fields": [
                         {
                             "key": "field_5cde8f1af68db",
                             "label": "Admin Title",
@@ -623,6 +604,25 @@
                                 "id": ""
                             },
                             "return_format": "array"
+                        },
+                        {
+                            "key": "field_5cde8f1af68da",
+                            "label": "Visible?",
+                            "name": "visible",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "25",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 1,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
                         }
                     ],
                     "min": "",
@@ -725,8 +725,8 @@
                                         "id": ""
                                     },
                                     "choices": {
-                                        "is-default": "Image Right | Content Left",
-                                        "is-alternative": "Image Left | Content Right",
+                                        "is-default": "Image Left | Content Right",
+                                        "is-alternative": "Image Right | Content Left",
                                         "is-background-full": "Content floats above Image"
                                     },
                                     "default_value": [
@@ -847,5 +847,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1559327671
+    "modified": 1559370109
 }
