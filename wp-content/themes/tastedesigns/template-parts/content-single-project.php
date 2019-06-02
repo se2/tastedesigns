@@ -95,32 +95,36 @@ template partial for single post type
     <div class="c-single-project__gallery-wrapper pt-40">
       <div class="c-single-project__gallery-inner mx-n5 flex flex-wrap">
         <?php $gallery = get_field('gallery'); ?>
+        <?php $count = 0; ?>
         <?php foreach ($gallery as $image) : ?>
-          <div class="c-single-project__gallery-image-warpper p-5 h-gallery-image
+          <div class="c-single-project__gallery-image-wrapper p-5 h-gallery-image
           <?php if ($image['width'] > $image['height']) : ?>w-1/2<?php else : ?>w-1/4<?php endif; ?>
           ">
-            <div class="c-single-project__gallery-image-inner w-full h-full">
+            <div class="c-single-project__gallery-image-inner w-full h-full js-gallery-image cursor-pointer" data-index="<?php echo $count; ?>">
               <?php generate_image($image['ID'], 'c-single-project__gallery-image w-full h-full o-cover', 'medium'); ?>
             </div>
           </div>
+          <?php $count++; ?>
         <?php endforeach; ?>
       </div>
     </div>
-    <div class="c-single-project__gallery-popup fixed w-full h-full top-0 left-0 px-70 pt-30 pb-20">
-      <div class="c-single-project__gallery-popup-underlay absolute w-full h-full top-0 left-0 bg-taste-7 opacity-60"></div>
+    <div class="c-single-project__gallery-popup js-gallery-popup fixed w-full h-full top-0 left-0 px-70 pt-30 pb-20">
+      <div class="c-single-project__gallery-popup-underlay absolute w-full h-full top-0 left-0 bg-taste-7 opacity-60 js-gallery-overlay cursor-pointer"></div>
       <div class="c-single-project__gallery-popup-slider js-gallery-slider w-full h-m90 relative">
         <?php foreach ($gallery as $image) : ?>
           <?php generate_image($image['ID'], 'c-single-project__gallery-popup-image w-full h-full o-contain', 'massive'); ?>
         <?php endforeach; ?>
       </div>
-      <div class="c-single-project__gallery-popup-thumbnails js-gallery-thumbnails w-full h-90 relative mt-15">
-        <?php foreach ($gallery as $image) : ?>
-          <?php generate_image($image['ID'], 'c-single-project__gallery-popup-image w-auto h-full mx-5', 'tiny'); ?>
-        <?php endforeach; ?>
+      <div class="c-single-project__gallery-popup-thumbnails-container px-50 mt-15">
+        <div class="c-single-project__gallery-popup-thumbnails js-gallery-thumbnails w-full h-90 relative">
+          <?php foreach ($gallery as $image) : ?>
+            <?php generate_image($image['ID'], 'c-single-project__gallery-popup-image js-gallery-item w-auto h-full mx-5', 'tiny'); ?>
+          <?php endforeach; ?>
+        </div>
       </div>
-      <img src="<?php get_image_url('arrow-left.png'); ?>" alt="Prev" class="w-auto h-40 mr-30 js-gallery-left relative">
-      <img src="<?php get_image_url('arrow-right.png'); ?>" alt="Next" class="w-auto h-40 ml-30 js-gallery-right relative">
-      <h3 class="font-body text-14 leading-21 tracking-3.5 text-light js-gallery-index text-center uppercase mt-15 relative">Image 02/50</h3>
+      <h3 class="font-body text-14 leading-21 tracking-3.5 text-light js-gallery-index text-center uppercase mt-15 relative">
+        Image 01/<?php echo count($gallery); ?>
+      </h3>
     </div>
   </div>
 
