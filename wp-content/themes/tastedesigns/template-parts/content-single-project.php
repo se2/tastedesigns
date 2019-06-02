@@ -79,6 +79,53 @@ template partial for single post type
 
   <?php
   /**
+   * Gallery
+   */
+  ?>
+  <div class="c-single-project__gallery pt-60">
+    <h1 class="font-title text-30 leading-40 text-taste-3 text-center">
+      Full Project Gallery
+    </h1>
+    <h4 class="entry-content text-center font-body text-16 leading-24 text-taste-1 mt-30">
+      Photographer:
+    </h4>
+    <h4 class="entry-content text-center font-body text-16 leading-24 text-taste-6">
+      <?php the_field('photographer'); ?>
+    </h4>
+    <div class="c-single-project__gallery-wrapper pt-40">
+      <div class="c-single-project__gallery-inner mx-n5 flex flex-wrap">
+        <?php $gallery = get_field('gallery'); ?>
+        <?php foreach ($gallery as $image) : ?>
+          <div class="c-single-project__gallery-image-warpper p-5 h-gallery-image
+          <?php if ($image['width'] > $image['height']) : ?>w-1/2<?php else : ?>w-1/4<?php endif; ?>
+          ">
+            <div class="c-single-project__gallery-image-inner w-full h-full">
+              <?php generate_image($image['ID'], 'c-single-project__gallery-image w-full h-full o-cover', 'medium'); ?>
+            </div>
+          </div>
+        <?php endforeach; ?>
+      </div>
+    </div>
+    <div class="c-single-project__gallery-popup fixed w-full h-full top-0 left-0 px-70 pt-30 pb-20">
+      <div class="c-single-project__gallery-popup-underlay absolute w-full h-full top-0 left-0 bg-taste-7 opacity-60"></div>
+      <div class="c-single-project__gallery-popup-slider js-gallery-slider w-full h-m90 relative">
+        <?php foreach ($gallery as $image) : ?>
+          <?php generate_image($image['ID'], 'c-single-project__gallery-popup-image w-full h-full o-contain', 'massive'); ?>
+        <?php endforeach; ?>
+      </div>
+      <div class="c-single-project__gallery-popup-thumbnails js-gallery-thumbnails w-full h-90 relative mt-15">
+        <?php foreach ($gallery as $image) : ?>
+          <?php generate_image($image['ID'], 'c-single-project__gallery-popup-image w-auto h-full mx-5', 'tiny'); ?>
+        <?php endforeach; ?>
+      </div>
+      <img src="<?php get_image_url('arrow-left.png'); ?>" alt="Prev" class="w-auto h-40 mr-30 js-gallery-left relative">
+      <img src="<?php get_image_url('arrow-right.png'); ?>" alt="Next" class="w-auto h-40 ml-30 js-gallery-right relative">
+      <h3 class="font-body text-14 leading-21 tracking-3.5 text-light js-gallery-index text-center uppercase mt-15 relative">Image 02/50</h3>
+    </div>
+  </div>
+
+  <?php
+  /**
    * blog navigation - previous post || next post || view all
    */
   $nextPost = get_next_post();

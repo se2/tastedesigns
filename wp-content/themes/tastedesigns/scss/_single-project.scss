@@ -20,3 +20,12 @@
     }
   }
 }
+
+.c-single-project {
+  &__gallery-popup {
+    .slick-list,
+    .slick-track {
+      height: 100%;
+    }
+  }
+}

@@ -11,6 +11,7 @@ import category from './routes/blog';
 import tag from './routes/blog';
 import author from './routes/blog';
 import singlePost from './routes/blog';
+import singleProject from './routes/single-project';
 
 /** Populate Router instance with DOM routes */
 const routes = new Router({
@@ -28,6 +29,8 @@ const routes = new Router({
   author,
   // Single Post
   singlePost,
+  // Single Project
+  singleProject,
 });
 
 // Load Events
