@@ -13,7 +13,7 @@ template partial for single post type
    * Page Title
    */
   ?>
-  <div class="c-single-project__header lg:px-50 js-header-blog pb-80">
+  <div class="c-single-project__header lg:px-50 js-header-blog pb-50 lg:pb-80">
     <h1 class="c-single-project__title font-title text-center text-taste-1 text-60 leading-69 mt-20 lg:mt-0">
       projects
     </h1>
@@ -37,29 +37,29 @@ template partial for single post type
    * Title - Subtitle - Intro - Partners
    */
   ?>
-  <div class="c-single-project__content pt-50 lg:pt-60 mx-auto border-b-2 border-taste-5 lg:border-b-0">
+  <div class="c-single-project__content pt-50 pb-70 lg:pb-0 lg:pt-60 mx-auto border-taste-5 lg:border-b-0">
     <div class="c-single-project__inner mx-20 lg:mx-auto max-w-1000">
-      <h2 class="font-subtitle text-12 leading-30.12 tracking-3.18 lg:text-16 lg:leading-30 lg:tracking-4.24 text-taste-2 uppercase text-center">
+      <h2 class="font-subtitle text-14 leading-30 tracking-3.71 lg:text-16 lg:leading-30 lg:tracking-4.24 text-taste-2 uppercase text-center">
         <?php the_field('location'); ?>
       </h2>
-      <h1 class="c-single-project__title font-title text-taste-1 text-48 leading-52.48 lg:text-66 lg:leading-89 text-center">
+      <h1 class="c-single-project__title font-title text-taste-1 text-42 leading-57 lg:text-66 lg:leading-89 text-center">
         <?php the_title(); ?>
       </h1>
-      <div class="c-single-project__intro entry-content mt-40 mb-30 text-center font-body text-16 leading-24 text-taste-6">
+      <div class="c-single-project__intro entry-content mt-30 lg:mt-40 mb-30 text-center font-body text-16 leading-24 text-taste-6">
         <?php the_content(); ?>
       </div>
       <?php if (have_rows('partners')) : ?>
         <div class="c-single-project__partners">
-          <h2 class="font-subtitle text-12 leading-30.12 tracking-3.18 lg:text-16 lg:leading-30 lg:tracking-4.24 text-taste-2 uppercase text-center border-t-2 border-taste-5 max-w-498 mx-auto pt-30">
+          <h2 class="font-subtitle text-14 leading-30 tracking-3.71 lg:text-16 lg:leading-30 lg:tracking-4.24 text-taste-2 uppercase text-center border-t-2 border-taste-5 max-w-498 mx-auto pt-40 lg:pt-30">
             Project Partners
           </h2>
-          <div class="flex mt-20">
+          <div class="flex flex-col lg:flex-row mt-20">
           <?php while (have_rows('partners')) : the_row(); ?>
-            <div class="c-single-project__partner-item flex-1">
-              <h4 class="c-single-project__intro entry-content text-center font-body text-16 leading-24 text-taste-1">
+            <div class="c-single-project__partner-item flex-1 my-10">
+              <h4 class="c-single-project__intro entry-content text-center font-body text-16 leading-22 lg:leading-24 text-taste-1">
                 <?php the_sub_field('title'); ?>:
               </h4>
-              <h4 class="c-single-project__intro entry-content text-center font-body text-16 leading-24 text-taste-6">
+              <h4 class="c-single-project__intro entry-content text-center font-body text-16 leading-22 lg:leading-24 text-taste-6">
                 <?php the_sub_field('partner'); ?>
               </h4>
             </div>
@@ -82,51 +82,61 @@ template partial for single post type
    * Gallery
    */
   ?>
-  <div class="c-single-project__gallery pt-60">
-    <h1 class="font-title text-30 leading-40 text-taste-3 text-center">
-      Full Project Gallery
-    </h1>
-    <h4 class="entry-content text-center font-body text-16 leading-24 text-taste-1 mt-30">
-      Photographer:
-    </h4>
-    <h4 class="entry-content text-center font-body text-16 leading-24 text-taste-6">
-      <?php the_field('photographer'); ?>
-    </h4>
-    <div class="c-single-project__gallery-wrapper pt-40">
-      <div class="c-single-project__gallery-inner mx-n5 flex flex-wrap">
-        <?php $gallery = get_field('gallery'); ?>
-        <?php $count = 0; ?>
-        <?php foreach ($gallery as $image) : ?>
-          <div class="c-single-project__gallery-image-wrapper p-5 h-gallery-image
-          <?php if ($image['width'] > $image['height']) : ?>w-1/2<?php else : ?>w-1/4<?php endif; ?>
-          ">
-            <div class="c-single-project__gallery-image-inner w-full h-full js-gallery-image cursor-pointer" data-index="<?php echo $count; ?>">
-              <?php generate_image($image['ID'], 'c-single-project__gallery-image w-full h-full o-cover', 'medium'); ?>
-            </div>
-          </div>
-          <?php $count++; ?>
-        <?php endforeach; ?>
-      </div>
-    </div>
-    <div class="c-single-project__gallery-popup js-gallery-popup fixed w-full h-full top-0 left-0 px-70 pt-30 pb-20">
-      <div class="c-single-project__gallery-popup-underlay absolute w-full h-full top-0 left-0 bg-taste-7 opacity-60 js-gallery-overlay cursor-pointer"></div>
-      <div class="c-single-project__gallery-popup-slider js-gallery-slider w-full h-m90 relative">
-        <?php foreach ($gallery as $image) : ?>
-          <?php generate_image($image['ID'], 'c-single-project__gallery-popup-image w-full h-full o-contain', 'massive'); ?>
-        <?php endforeach; ?>
-      </div>
-      <div class="c-single-project__gallery-popup-thumbnails-container px-50 mt-15">
-        <div class="c-single-project__gallery-popup-thumbnails js-gallery-thumbnails w-full h-90 relative">
+  <?php $gallery = get_field('gallery'); ?>
+  <?php if ($gallery) : ?>
+    <div class="c-single-project__gallery pt-60">
+      <h1 class="font-title text-30 leading-40 text-taste-3 text-center">
+        Full Project Gallery
+      </h1>
+      <h4 class="entry-content text-center font-body text-16 leading-22 lg:leading-24 text-taste-1 mt-30">
+        Photographer:
+      </h4>
+      <h4 class="entry-content text-center font-body text-16 leading-22 lg:leading-24 text-taste-6">
+        <?php the_field('photographer'); ?>
+      </h4>
+      <div class="c-single-project__gallery-wrapper pt-40">
+        <div class="c-single-project__gallery-inner mx-n2 lg:mx-n5 flex flex-wrap">
+          <?php $count = 0; ?>
           <?php foreach ($gallery as $image) : ?>
-            <?php generate_image($image['ID'], 'c-single-project__gallery-popup-image js-gallery-item w-auto h-full mx-5', 'tiny'); ?>
+            <div class="c-single-project__gallery-image-wrapper p-2 lg:p-5 h-gallery-image-mobile lg:h-gallery-image
+            <?php if ($image['width'] > $image['height']) : ?>
+              w-full lg:w-1/2
+            <?php else : ?>
+              w-1/2 lg:w-1/4
+            <?php endif; ?>
+            ">
+              <div class="c-single-project__gallery-image-inner w-full h-full js-gallery-image cursor-pointer" data-index="<?php echo $count; ?>">
+                <?php generate_image($image['ID'], 'c-single-project__gallery-image w-full h-full o-cover', 'medium'); ?>
+              </div>
+            </div>
+            <?php $count++; ?>
           <?php endforeach; ?>
         </div>
       </div>
-      <h3 class="font-body text-14 leading-21 tracking-3.5 text-light js-gallery-index text-center uppercase mt-15 relative">
-        Image 01/<?php echo count($gallery); ?>
-      </h3>
+      <div class="c-single-project__gallery-popup js-gallery-popup fixed w-full h-full top-0 left-0 px-20 py-50 lg:px-70 lg:pt-30 lg:pb-20 z-50">
+        <div class="c-single-project__gallery-popup-underlay absolute w-full h-full top-0 left-0 bg-taste-7 opacity-60 js-gallery-overlay cursor-pointer"></div>
+        <div class="c-single-project__gallery-popup-slider js-gallery-slider w-full h-full lg:h-m90 relative">
+          <?php foreach ($gallery as $image) : ?>
+            <?php generate_image($image['ID'], 'c-single-project__gallery-popup-image w-full h-full o-contain', 'massive'); ?>
+          <?php endforeach; ?>
+        </div>
+        <div class="c-single-project__gallery-popup-thumbnails-container px-50 mt-15 hidden lg:block">
+          <div class="c-single-project__gallery-popup-thumbnails js-gallery-thumbnails w-full h-90 relative">
+            <?php foreach ($gallery as $image) : ?>
+              <?php generate_image($image['ID'], 'c-single-project__gallery-popup-image js-gallery-item w-auto h-full mx-5 cursor-pointer', 'tiny'); ?>
+            <?php endforeach; ?>
+          </div>
+        </div>
+        <h3 class="font-body text-14 leading-21 tracking-3.5 text-light js-gallery-index text-center uppercase mt-15 relative">
+          Image 01/<?php echo count($gallery); ?>
+        </h3>
+        <div class="c-single-project__gallery-close w-28 h-28 lg:w-33 lg:h-33 absolute is-active js-gallery-close cursor-pointer">
+					<div class="c-single-project__gallery-stick w-full h-3 lg:h-3.78 absolute bg-light rounded"></div>
+					<div class="c-single-project__gallery-stick w-full h-3 lg:h-3.78 absolute bg-light rounded"></div>
+				</div>
+      </div>
     </div>
-  </div>
+  <?php endif; ?>
 
   <?php
   /**
@@ -135,40 +145,40 @@ template partial for single post type
   $nextPost = get_next_post();
   $prevPost = get_previous_post();
   ?>
-  <div class="c-single-project__navigation px-20 lg:px-50 py-55 bg-light flex items-center flex-wrap">
-    <div class="mx-auto md:hidden pb-50">
-      <a class="border-b-4 border-taste-3 no-underline inline-block" href="<?php echo get_post_type_archive_link('project'); ?>">
-        <span class="text-16 leading-30 tracking-3.56 lg:tracking-4.24 text-taste-1 uppercase">View all projects</span>
-      </a>
-    </div>
-
-    <div class="min-w-full xs:min-w-158 lg:min-w-316 mr-auto">
+  <div class="c-single-project__navigation px-10 py-40 lg:px-50 lg:py-55 bg-light flex items-center flex-wrap">
+    <div class="min-w-99 lg:min-w-316 mr-auto">
       <?php if (!empty($prevPost)) : ?>
         <a class="no-underline block mr-auto w-full xs:w-auto" href="<?php echo get_permalink($prevPost); ?>">
-          <div class="border-2 border-taste-4 py-30 px-15 lg:py-50 lg:px-21 items-center inline-flex flex-col lg:flex-row w-full">
-            <img src="<?php get_image_url('reverse-path.png'); ?>" alt="Prev" class="w-40 h-auto lg:mr-30 align-middle">
-            <span class="text-12 leading-17.12 tracking-2.57 lg:text-14 lg:leading-17 lg:tracking-3 text-taste-2 uppercase mt-15 lg:mt-0 lg:ml-auto">
-              Previous project
+          <div class="border-2 border-taste-4 px-10 pt-15 pb-10 lg:py-25 lg:px-20 items-center inline-flex flex-col lg:flex-row lg:w-full">
+            <img src="<?php get_image_url('reverse-path.png'); ?>" alt="Prev" class="w-40 h-auto lg:mr-18 align-middle order-2 lg-order-1 mt-10 lg:mt-0">
+            <div class="w-75 h-50 lg:w-99 lg:h-74 lg:mr-auto order-1 lg-order-2">
+              <?php echo generate_image(get_post_thumbnail_id($prevPost->ID), 'w-full h-full o-cover'); ?>
+            </div>
+            <span class="text-12 leading-17.12 tracking-2.57 lg:text-14 lg:leading-17 lg:tracking-3 text-taste-2 uppercase mt-15 lg:mt-0 lg:ml-20 hidden order-3 lg:inline">
+              Previous<br>project
             </span>
           </div>
         </a>
       <?php endif; ?>
     </div>
 
-    <div class="mx-auto hidden md:block">
-      <a class="border-b-4 border-taste-3 no-underline inline-block" href="<?php echo get_post_type_archive_link('project'); ?>">
-        <span class="text-16 leading-30 tracking-4.24 text-taste-1 uppercase">View all projects</span>
+    <div class="mx-auto">
+      <a class="border-b-2 lg:border-b-4 border-taste-3 no-underline inline-block" href="<?php echo get_post_type_archive_link('project'); ?>">
+        <span class="text-11 tracking-2.91 lg:text-16 leading-30 lg:tracking-4.24 text-taste-1 uppercase">View all projects</span>
       </a>
     </div>
 
-    <div class="min-w-full xs:min-w-158 lg:min-w-316 ml-auto">
+    <div class="min-w-99 lg:min-w-316 ml-auto">
       <?php if (!empty($nextPost)) : ?>
         <a class="no-underline block w-full xs:w-auto mt-50 xs:mt-0" href="<?php echo get_permalink($nextPost); ?>">
-          <div class="border-2 border-taste-4 py-30 px-15 lg:py-50 lg:px-21 items-center inline-flex flex-col lg:flex-row w-full">
-            <span class="text-12 leading-17.12 tracking-2.57 lg:text-14 lg:leading-17 lg:tracking-3 text-taste-2 uppercase mt-15 lg:mt-0 lg:mr-auto order-2 lg-order-1">
-              Next project
+          <div class="border-2 border-taste-4 px-10 pt-15 pb-10 lg:py-25 lg:px-20 items-center inline-flex flex-col lg:flex-row lg:w-full">
+            <span class="text-12 leading-17.12 tracking-2.57 lg:text-14 lg:leading-17 lg:tracking-3 text-taste-2 uppercase mt-15 lg:mt-0 lg:mr-20 order-2 lg-order-1 hidden lg:inline">
+              Next<br>project
             </span>
-            <img src="<?php get_image_url('alternative-path.png'); ?>" alt="Next" class="w-40 h-auto lg:ml-30 align-middle order-1 lg-order-2">
+            <div class="w-75 h-50 lg:w-99 lg:h-74 lg-order-2 lg:ml-auto">
+              <?php echo generate_image(get_post_thumbnail_id($nextPost->ID), 'w-full h-full o-cover'); ?>
+            </div>
+            <img src="<?php get_image_url('alternative-path.png'); ?>" alt="Next" class="w-40 h-auto lg:ml-18 align-middle order-1 lg-order-3 mt-10 lg:mt-0">
           </div>
         </a>
       <?php endif; ?>

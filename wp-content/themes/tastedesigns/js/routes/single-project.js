@@ -20,6 +20,7 @@ export default {
     e.$images = $('.js-gallery-image');
     e.$popup = $('.js-gallery-popup');
     e.$overlay = $('.js-gallery-overlay');
+    e.$close = $('.js-gallery-close');
   },
   initGallery() {
     let s = this;
@@ -44,6 +45,7 @@ export default {
       speed: 1000,
       asNavFor: '.js-gallery-slider',
       cssEase: 'cubic-bezier(0.645, 0.045, 0.355, 1)',
+      touchMove: false,
     }).on('beforeChange', function(event, slick, currentSlide, nextSlide){
       e.$index.html('Image ' + s.pad(nextSlide + 1, 2) + '/' + total);
     });
@@ -64,6 +66,10 @@ export default {
     });
 
     e.$overlay.click(function() {
+      e.$popup.removeClass('is-active');
+    });
+
+    e.$close.click(function() {
       e.$popup.removeClass('is-active');
     });
   },
