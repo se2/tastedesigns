@@ -94,3 +94,21 @@ body.theme {
     order: 3;
   }
 }
+
+.xl-order-1 {
+  @screen xl {
+    order: 1;
+  }
+}
+
+.xl-order-2 {
+  @screen xl {
+    order: 2;
+  }
+}
+
+.xl-order-3 {
+  @screen xl {
+    order: 3;
+  }
+}

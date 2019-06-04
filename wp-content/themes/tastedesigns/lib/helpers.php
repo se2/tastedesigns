@@ -128,3 +128,50 @@ function get_image_url($name, $echo = true) {
 		return get_stylesheet_directory_uri() . '/img/' . $name;
 	}
 }
+
+/**
+ * Smooth out the gallery's output
+ */
+function evening_the_odds($gallery, $desktop = true) {
+	$max_space = $desktop ? 4 : 2;
+	$has_breach = false;
+	do {
+		// Reset marker
+		$has_breach = false;
+		$space = 0;
+		for ($i = 0; $i < count($gallery); $i++) {
+			// Iterate through the array
+			if ($gallery[$i]['width'] > $gallery[$i]['height']) {
+				$space += 2;
+			} else {
+				$space++;
+			}
+			// Check for potential breach
+			if ($space == $max_space) { // Current row is filled, all is safe, move to next row
+				$space = 0;
+			} else if ($space > $max_space) { // Current row cannot be filled, there's now a breach, panic!!!
+				$fill_complete = false;
+				// Grab the closest filler
+				for ($j = $i; $j < count($gallery); $j++) {
+					if ($gallery[$j]['width'] <= $gallery[$j]['height']) {
+						array_splice($gallery, $i, 0, array($gallery[$j]));
+						array_splice($gallery, $j + 1, 1);
+						$fill_complete = true;
+						break;
+					}
+				}
+				// If there's no filler anymore
+				if (!$fill_complete) {
+					$odd = $gallery[$i - 1];
+					array_splice($gallery, $i - 1, 1);
+					array_push($gallery, $odd);
+				}
+				// Proof that there's a breach
+				$has_breach = true;
+				// Gallery is altered, escape now or stuck here for eternity
+				break;
+			}
+		}
+	} while ($has_breach);
+	return $gallery;
+}
