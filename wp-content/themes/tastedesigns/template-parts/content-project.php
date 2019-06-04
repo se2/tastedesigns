@@ -9,7 +9,7 @@
 
 ?>
 
-<div id="project-<?php the_ID(); ?>" <?php post_class('c-project w-full md:w-1/2 lg:w-1/3'); ?>>
+<div id="project-<?php the_ID(); ?>" <?php post_class('c-project w-full lg:w-1/3'); ?>>
   <a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 		<?php the_post_thumbnail('post-thumbnail', array('class' => 'c-project__image')); ?>
 	</a>
