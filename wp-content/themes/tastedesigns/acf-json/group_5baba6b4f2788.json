@@ -740,6 +740,33 @@
                                     "placeholder": ""
                                 },
                                 {
+                                    "key": "field_5cf8ea5905e2e",
+                                    "label": "Bullet Point formatted Paragraph",
+                                    "name": "bullet_point",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_5cf1068c06a07",
+                                                "operator": "==",
+                                                "value": "is-background-full"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "",
+                                    "default_value": 1,
+                                    "ui": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": ""
+                                },
+                                {
                                     "key": "field_5cf105c006a02",
                                     "label": "Title",
                                     "name": "title",
@@ -795,8 +822,90 @@
                                     "maxlength": "",
                                     "rows": "",
                                     "new_lines": "wpautop"
+                                },
+                                {
+                                    "key": "field_5cf8e89dabc96",
+                                    "label": "Call To Action",
+                                    "name": "call_to_action",
+                                    "type": "link",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array"
                                 }
                             ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5cf8ecaa261a2": {
+                    "key": "layout_5cf8ecaa261a2",
+                    "name": "video-editor",
+                    "label": "Video",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5cf8ecaa261a3",
+                            "label": "Admin Title",
+                            "name": "layout_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5cf8ed68261aa",
+                            "label": "Embed",
+                            "name": "embed",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5cf8ecaa261a8",
+                            "label": "Visible?",
+                            "name": "visible",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "25",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 1,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
                         }
                     ],
                     "min": "",
@@ -847,5 +956,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1559370109
+    "modified": 1559817605
 }

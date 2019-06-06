@@ -540,6 +540,7 @@ module.exports = {
     '9/12': 'calc(9 / 12 * 100%)',
     '99': '6.1875rem',
     '75': '4.6875rem',
+    '276': '17.25rem',
   },
 
   /*
@@ -611,6 +612,8 @@ module.exports = {
     'gallery-image-mobile': 'calc(275 / 414 * 100vw)',
     'm90': 'calc(100% - 136px)',
     'project-block': 'calc(452 / 414 * 100vw)',
+    'video-block': 'calc(732 / 1440 * 100vw)',
+    '276': '17.25rem',
   },
 
   /*

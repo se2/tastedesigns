@@ -10,9 +10,11 @@
 $background = get_sub_field('background');
 while (have_rows('group')) : the_row();
   $type = get_sub_field('block_type');
+  $bullet_point = get_sub_field('bullet_point');
   $title = get_sub_field('title');
   $subtitle = get_sub_field('subtitle');
   $content = get_sub_field('content');
+  $cta = get_sub_field('call_to_action');
 endwhile;
 ?>
 
@@ -49,12 +51,20 @@ endwhile;
         <?php echo $title; ?>
       </h1>
       <div class="c-project-block__body font-body text-14 leading-21 xl:text-16 xl:leading-24 text-taste-6
-      <?php if ($type == 'is-background-full') : ?>
+      <?php if ($type == 'is-background-full' && $bullet_point) : ?>
         has-bullet-point
       <?php endif; ?>
       ">
         <?php echo $content; ?>
       </div>
+      <?php if ($cta) : ?>
+      <a href="<?php echo $cta['url']; ?>" target="<?php echo $cta['target']; ?>" class="no-underline w-full lg:w-auto mt-35 block">
+        <div class="c-project-block__button border-2 border-taste-4 py-25 px-21 items-center inline-flex w-full lg:w-auto">
+          <span class="text-14 leading-17 tracking-3.71 lg:text-18 lg:leading-21 lg:tracking-3 text-taste-2 uppercase"><?php echo $cta['title']; ?></span>
+          <img src="<?php get_image_url('alternative-path.png'); ?>" alt="Enter" class="w-50 h-auto ml-auto lg:ml-30 align-middle">
+        </div>
+      </a>
+      <?php endif; ?>
     </div>
   </div>
 </section>
