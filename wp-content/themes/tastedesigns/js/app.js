@@ -11,6 +11,7 @@ import category from './routes/blog';
 import tag from './routes/blog';
 import author from './routes/blog';
 import singlePost from './routes/blog';
+import page from './routes/blog';
 import singleProject from './routes/single-project';
 
 /** Populate Router instance with DOM routes */
@@ -28,7 +29,9 @@ const routes = new Router({
   // Author page
   author,
   // Single Post
-  singlePost,
+	singlePost,
+	// Single Post
+	page,
   // Single Project
   singleProject,
 });

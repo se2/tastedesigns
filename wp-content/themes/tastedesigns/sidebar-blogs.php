@@ -1,5 +1,5 @@
 <!-- Desktop -->
-<aside id="sidebar sidebar-blogs" class="widget-area c-sidebar-blogs c-sidebar-blogs__desktop js-sidebar-blog">
+<aside id="sidebar sidebar-blogs" class="widget-area c-sidebar-blogs c-sidebar-blogs__desktop js-sidebar-blog pt-40 lg:pt-0">
 	<!-- Temporarily hidden on Has Sidebar post template -->
 	<?php if ( is_home() ) : ?>
 	<h2 class="c-sidebar-blogs__title hidden lg:block">
