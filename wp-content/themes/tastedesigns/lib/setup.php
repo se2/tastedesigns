@@ -134,6 +134,19 @@ if ( ! function_exists( 'ttg_wp_setup' ) ) :
 		 * Hide counts from all dropdowns
 		 */
 		add_filter('facetwp_facet_dropdown_show_counts', '__return_false');
+
+		/**
+		 * Exclude Uncategorized filter
+		 */
+		add_filter('facetwp_index_row', function($params, $class) {
+			if ('categories' == $params['facet_name']) {
+				$excluded_terms = array('Uncategorized');
+				if (in_array($params['facet_display_value'], $excluded_terms)) {
+					return false;
+				}
+			}
+			return $params;
+		}, 10, 2);
 	}
 endif;
 add_action( 'after_setup_theme', 'ttg_wp_setup' );

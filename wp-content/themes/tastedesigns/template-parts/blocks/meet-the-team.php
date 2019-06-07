@@ -1,53 +1,47 @@
 <?php
 /**
- * Hero Editor ACF Module
+ * Meet The Team module
  *
- * @category   ACF Modules
+ * @category   Modules
  * @author     Technology Therapy Group
  * @link       https://technologytherapy.com/
  */
 
-$bg = 'background-image:url(' . get_sub_field( 'background' ) . ');';
-$bg_mobile = 'background-image:url(' . get_sub_field( 'background_image_mobile' ) . ');';
-$title = get_sub_field('title');
-$subtitle = get_sub_field('subtitle');
+$title = get_query_var('title');
+$args = array (
+  'post_type' => 'team',
+  'posts_per_page' => -1,
+  'orderby' => 'date',
+  'order' => 'ASC',
+);
+$query = new WP_Query($args);
 ?>
-1111
-<?php
 
-$section_team = get_field('meetTheTeam');
-
-var_dump( $section_team );
-exit;
-
-?>
-<section>
-  <h1>
-  </h1>
-  <div>
-    <?php
-
-    ?>
-  </div>
-</section>
-
-
-
-
-<section class="c-cover w-full h-screen bg-cover bg-bottom relative" style="<?php echo $bg; ?>">
-  <div class="c-cover__background absolute w-full h-full lg:hidden bg-cover" style="<?php echo $bg_mobile; ?>"></div>
-  <div class="c-cover__inner absolute w-full px-20 py-20 lg:pt-34 lg:pb-55 lg:px-27">
-    <div class="c-cover__underlay absolute w-full h-full opacity-50 bgc-primary"></div>
-    <div class="c-cover__text-content w-full lg:w-576 text-center lg:text-left lg:float-right">
-      <h1 class="c-cover__title font-title text-50 leading-67 lg:text-75 lg:leading-101 text-light relative text-center lg:text-left">
-        <?php echo $title; ?>
-      </h1>
-      <a href="<?php echo $subtitle['url']; ?>" class="c-cover__subtitle text-17 font-subtitle leading-20 tracking-4.5 lg:tracking-4.13 text-light uppercase relative inline-block mt-10 lg:mt-32 pb-5 no-underline border-b-4">
-        <?php echo $subtitle['title']; ?>
-      </a>
-      <img src="<?php get_image_url('down-arrow.png'); ?>" alt="Scroll Down" class="c-cover__arrow block w-40 h-40 lg:hidden mx-auto mt-30 relative js-scroll">
+<?php if ($query->have_posts()) : ?>
+  <div class="c-team w-full py-100">
+    <h1 class="font-title text-66 leading-89 text-taste-1 text-center capitalize">
+      <?php echo $title; ?>
+    </h1>
+    <div class="c-team__content px-10 flex flex-wrap mt-60">
+      <?php while ($query->have_posts()) : $query->the_post(); ?>
+        <div class="c-team__item w-1/3 px-6 py-24">
+          <a href="<?php the_permalink(); ?>" class="no-underline">
+            <div class="c-team__item-inner px-15 py-16 hover:bg-taste-5">
+              <div class="c-team__thumbnail w-full h-team-image bg-taste-9">
+                <?php the_post_thumbnail('small', [
+                  'class' => 'c-team__image w-full h-full o-cover'
+                ]); ?>
+              </div>
+              <h1 class="font-title text-42 leading-57 text-taste-1 text-center mt-20">
+                <?php the_title(); ?>
+              </h1>
+              <h2 class="font-body text-16 leading-30.16 tracking-3.71 text-center text-taste-2 no-underline uppercase">
+                <?php the_field('position'); ?>
+              </h2>
+            </div>
+          </a>
+        </div>
+      <?php endwhile; ?>
     </div>
   </div>
-  <img src="<?php get_image_url('down-arrow.png'); ?>" alt="Scroll Down" class="c-cover__arrow absolute w-40 h-40 hidden lg:block js-scroll">
-  <div class="c-cover__bottom absolute w-full h-44 lg:h-16 bg-taste-2"></div>
-</section>
+<?php endif; ?>

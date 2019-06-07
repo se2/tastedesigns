@@ -148,6 +148,25 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_5cd9a8841fbff",
+                            "label": "Visible?",
+                            "name": "visible",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "25",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 1,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
                             "key": "field_5cd9a8841fc00",
                             "label": "Admin Title",
                             "name": "layout_title",
@@ -247,9 +266,19 @@
                                 "id": ""
                             },
                             "return_format": "array"
-                        },
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5cde8e02f68c9": {
+                    "key": "layout_5cde8e02f68c9",
+                    "name": "featured-project-editor",
+                    "label": "Featured Project",
+                    "display": "block",
+                    "sub_fields": [
                         {
-                            "key": "field_5cd9a8841fbff",
+                            "key": "field_5cde8e02f68ca",
                             "label": "Visible?",
                             "name": "visible",
                             "type": "true_false",
@@ -266,17 +295,7 @@
                             "ui": 0,
                             "ui_on_text": "",
                             "ui_off_text": ""
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
-                "layout_5cde8e02f68c9": {
-                    "key": "layout_5cde8e02f68c9",
-                    "name": "featured-project-editor",
-                    "label": "Featured Project",
-                    "display": "block",
-                    "sub_fields": [
+                        },
                         {
                             "key": "field_5cde8e02f68cb",
                             "label": "Admin Title",
@@ -317,9 +336,19 @@
                             "multiple": 0,
                             "return_format": "object",
                             "ui": 1
-                        },
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5cde8e46f68d0": {
+                    "key": "layout_5cde8e46f68d0",
+                    "name": "stay-connected-editor",
+                    "label": "Stay Connected",
+                    "display": "block",
+                    "sub_fields": [
                         {
-                            "key": "field_5cde8e02f68ca",
+                            "key": "field_5cde8e46f68d1",
                             "label": "Visible?",
                             "name": "visible",
                             "type": "true_false",
@@ -336,17 +365,7 @@
                             "ui": 0,
                             "ui_on_text": "",
                             "ui_off_text": ""
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
-                "layout_5cde8e46f68d0": {
-                    "key": "layout_5cde8e46f68d0",
-                    "name": "stay-connected-editor",
-                    "label": "Stay Connected",
-                    "display": "block",
-                    "sub_fields": [
+                        },
                         {
                             "key": "field_5cde8e46f68d2",
                             "label": "Admin Title",
@@ -481,9 +500,19 @@
                             },
                             "default_value": "",
                             "placeholder": ""
-                        },
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5cde8f1af68d9": {
+                    "key": "layout_5cde8f1af68d9",
+                    "name": "appreciation-editor",
+                    "label": "Appreciation",
+                    "display": "block",
+                    "sub_fields": [
                         {
-                            "key": "field_5cde8e46f68d1",
+                            "key": "field_5cde8f1af68da",
                             "label": "Visible?",
                             "name": "visible",
                             "type": "true_false",
@@ -500,17 +529,7 @@
                             "ui": 0,
                             "ui_on_text": "",
                             "ui_off_text": ""
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
-                "layout_5cde8f1af68d9": {
-                    "key": "layout_5cde8f1af68d9",
-                    "name": "appreciation-editor",
-                    "label": "Appreciation",
-                    "display": "block",
-                    "sub_fields": [
+                        },
                         {
                             "key": "field_5cde8f1af68db",
                             "label": "Admin Title",
@@ -604,25 +623,6 @@
                                 "id": ""
                             },
                             "return_format": "array"
-                        },
-                        {
-                            "key": "field_5cde8f1af68da",
-                            "label": "Visible?",
-                            "name": "visible",
-                            "type": "true_false",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "25",
-                                "class": "",
-                                "id": ""
-                            },
-                            "message": "",
-                            "default_value": 1,
-                            "ui": 0,
-                            "ui_on_text": "",
-                            "ui_off_text": ""
                         }
                     ],
                     "min": "",
@@ -631,7 +631,7 @@
                 "layout_5cf105c0069fe": {
                     "key": "layout_5cf105c0069fe",
                     "name": "project-editor",
-                    "label": "Project Editor",
+                    "label": "Page Block Editor",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -851,6 +851,25 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_5cf8ecaa261a8",
+                            "label": "Visible?",
+                            "name": "visible",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "25",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 1,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
                             "key": "field_5cf8ecaa261a3",
                             "label": "Admin Title",
                             "name": "layout_title",
@@ -908,9 +927,19 @@
                             },
                             "width": "",
                             "height": ""
-                        },
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5cfa01008accc": {
+                    "key": "layout_5cfa01008accc",
+                    "name": "meet-our-team-editor",
+                    "label": "Meet Our Team",
+                    "display": "block",
+                    "sub_fields": [
                         {
-                            "key": "field_5cf8ecaa261a8",
+                            "key": "field_5cfa01008acd0",
                             "label": "Visible?",
                             "name": "visible",
                             "type": "true_false",
@@ -927,6 +956,44 @@
                             "ui": 0,
                             "ui_on_text": "",
                             "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_5cfa01008accd",
+                            "label": "Admin Title",
+                            "name": "layout_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5cfa013a8acd1",
+                            "label": "Title",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
                         }
                     ],
                     "min": "",
@@ -977,5 +1044,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1559841325
+    "modified": 1559888326
 }

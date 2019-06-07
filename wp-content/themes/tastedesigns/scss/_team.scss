@@ -1,0 +1,9 @@
+.c-team {
+  &__item-inner {
+    transition-duration: 0.5s;
+
+    &.is-active {
+      @apply bg-taste-5;
+    }
+  }
+}

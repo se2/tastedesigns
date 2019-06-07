@@ -11,7 +11,7 @@ $embed = get_sub_field('embed');
 $image = get_sub_field('video_image');
 ?>
 
-<section class="c-video-block w-full xl:mt-90 h-video-block relative js-video">
+<section class="c-video-block w-full xl:mt-90 h-video-block relative js-video bg-taste-7">
   <?php echo $embed; ?>
   <?php if ($image) : ?>
     <div class="c-video-block__overlay absolute top-0 left-0 w-full h-full items-center justify-center js-video-play hidden xl:flex">
