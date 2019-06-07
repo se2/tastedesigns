@@ -81,7 +81,7 @@ template partial for single post type
   /**
    * Gallery
    */
-  get_template_part('template-parts/shared/gallery', '');
+  get_template_part('template-parts/shared/gallery');
   ?>
 
   <?php

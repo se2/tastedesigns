@@ -41,6 +41,25 @@
             "button_label": "Add Partner",
             "sub_fields": [
                 {
+                    "key": "field_5cfa3c3e28630",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
                     "key": "field_5cdf8c8be9293",
                     "label": "Partner",
                     "name": "partner",
@@ -79,5 +98,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1559886638
+    "modified": 1559903476
 }
