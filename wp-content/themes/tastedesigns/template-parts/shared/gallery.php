@@ -9,7 +9,7 @@
     c-single-project__gallery pt-60
   <?php endif; ?>">
 
-    <h1 class="font-title text-30 leading-40 text-taste-3 text-center">
+    <h1 class="font-title text-30 leading-40 text-taste-3 text-center px-20 lg:px-0">
       <?php if (is_singular( 'artist' )): ?>
         <?php the_title(); ?> Gallery
       <?php else: ?>
