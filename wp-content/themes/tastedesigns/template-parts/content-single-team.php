@@ -13,8 +13,8 @@ template partial for single post type
    * Page Title
    */
   ?>
-  <div class="c-single-team__header lg:px-50 js-header-blog pb-50 lg:pb-80">
-    <h1 class="c-single-team__title font-title text-center text-taste-1 text-60 leading-69 mt-20 lg:mt-0">
+  <div class="c-single-team__header xl:px-50 js-header-blog pb-50 xl:pb-80">
+    <h1 class="c-single-team__title font-title text-center text-taste-1 text-60 leading-69 mt-20 xl:mt-0">
       about our team
     </h1>
   </div>
@@ -24,14 +24,14 @@ template partial for single post type
    * Team Member Content
    */
   ?>
-  <div class="c-single-team__content flex px-30 pb-70 relative">
-    <div class="c-single-team__avatar w-team-avatar h-full bg-taste-9">
+  <div class="c-single-team__content flex flex-col xl:flex-row px-20 pb-40 xl:px-30 xl:pb-70 relative">
+    <div class="c-single-team__avatar w-full xl:w-team-avatar h-full bg-taste-9">
       <?php the_post_thumbnail('medium', [
         'class' => 'c-single-team__image block w-full h-full o-center'
       ]); ?>
     </div>
-    <div class="c-single-team__body py-150 pl-100 pr-80">
-      <h1 class="font-title text-42 leading-57 text-taste-1 mt-20 lg:mt-0">
+    <div class="c-single-team__body py-20 px-0 xl:py-150 xl:pl-100 xl:pr-80">
+      <h1 class="font-title text-42 leading-57 text-taste-1 mt-20 xl:mt-0">
         <?php the_title(); ?>
       </h1>
       <h2 class="font-body text-16 leading-30.16 tracking-3.71 text-taste-2 no-underline uppercase">
@@ -44,7 +44,7 @@ template partial for single post type
         <?php the_field('content'); ?>
       </div>
     </div>
-    <div class="c-single-team__separator absolute bottom-0 left-30px right-30px h-4 bg-taste-5"></div>
+    <div class="c-single-team__separator absolute bottom-0 left-20px right-20px lg-left-30px lg-right-30px h-4 bg-taste-5"></div>
   </div>
 
   <?php

@@ -85,6 +85,26 @@ body.theme {
   right: 30px;
 }
 
+.left-20px {
+  left: 20px;
+}
+
+.right-20px {
+  right: 20px;
+}
+
+.lg-left-30px {
+  @screen lg {
+    left: 30px;
+  }
+}
+
+.lg-right-30px {
+  @screen lg {
+    right: 30px;
+  }
+}
+
 .order-1 {
   order: 1;
 }

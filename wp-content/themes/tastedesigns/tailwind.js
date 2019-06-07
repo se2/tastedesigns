@@ -620,6 +620,7 @@ module.exports = {
     '276': '17.25rem',
     '143': '8.9375rem',
     'team-image': 'calc(500 / 1440 * 100vw)',
+    'team-image-mobile': 'calc(300 / 414 * 100vw)',
     'team-avatar': '44.5rem',
   },
 
@@ -844,6 +845,7 @@ module.exports = {
     'n5': '-0.3125rem',
     'n2': '-0.125rem',
     '18': '1.125rem',
+    'n21': '-1.3125rem',
   },
 
   /*
