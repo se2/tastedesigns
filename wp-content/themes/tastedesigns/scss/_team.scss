@@ -7,3 +7,13 @@
     }
   }
 }
+
+.c-single-team {
+  &__avatar {
+    flex-shrink: 0;
+  }
+
+  &__text-content p {
+    @apply my-20;
+  }
+}

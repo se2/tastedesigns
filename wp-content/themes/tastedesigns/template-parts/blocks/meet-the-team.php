@@ -7,6 +7,7 @@
  * @link       https://technologytherapy.com/
  */
 
+$parent_id = get_the_ID();
 $title = get_query_var('title');
 $args = array (
   'post_type' => 'team',
@@ -26,7 +27,11 @@ $query = new WP_Query($args);
       <?php while ($query->have_posts()) : $query->the_post(); ?>
         <div class="c-team__item w-1/3 px-6 py-24">
           <a href="<?php the_permalink(); ?>" class="no-underline">
-            <div class="c-team__item-inner px-15 py-16 hover:bg-taste-5">
+            <div class="c-team__item-inner px-15 py-16 hover:bg-taste-5
+            <?php if ($parent_id === get_the_ID()) : ?>
+              is-active
+            <?php endif; ?>
+            ">
               <div class="c-team__thumbnail w-full h-team-image bg-taste-9">
                 <?php the_post_thumbnail('small', [
                   'class' => 'c-team__image w-full h-full o-cover'
