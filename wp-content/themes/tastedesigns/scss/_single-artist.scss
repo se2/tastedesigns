@@ -1,0 +1,49 @@
+.c-single-artist {
+  &__header {
+    padding-bottom: 35px;
+  }
+  &__inner {
+    padding-top: 40px;
+    padding-bottom: 44px;
+    max-width: 920px;
+  }
+  &__intro {
+    line-height: 1.5;
+    padding-top: 14px;
+  }
+  &__navigation {
+    margin-top: 42px;
+    margin-bottom: 42px;
+  }
+  &__gallery {
+    padding-top: 35px;
+  }
+  &__gallery-wrapper {
+    padding-top: 30px;
+  }
+  @screen lg {
+    &__header {
+      padding-bottom: 71px;
+    }
+    &__inner {
+      padding-top: 79px;
+      padding-bottom: 88px;
+    }
+    &__intro {
+      line-height: 1.5;
+      padding-top: 28px;
+    }
+    &__navigation {
+      padding-top: 35px;
+      padding-bottom: 34px;
+      margin-top: 84px;
+      margin-bottom: 85px;
+    }
+    &__gallery {
+      padding-top: 69px;
+    }
+    &__gallery-wrapper {
+      padding-top: 62px;
+    }
+  }
+}

@@ -32,4 +32,5 @@ require_once get_template_directory() . '/lib/blogs_cta.php';
 require get_template_directory() . '/lib/project-cpt.php';
 require get_template_directory() . '/lib/testimonial-cpt.php';
 require get_template_directory() . '/lib/tasteExpert-cpt.php';
+require get_template_directory() . '/lib/tasteArtist-cpt.php';
 require get_template_directory() . '/lib/team-cpt.php';

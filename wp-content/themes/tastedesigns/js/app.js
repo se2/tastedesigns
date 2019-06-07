@@ -13,6 +13,7 @@ import author from './routes/blog';
 import singlePost from './routes/blog';
 import page from './routes/blog';
 import singleProject from './routes/single-project';
+import singleArtist from './routes/single-project';
 import pageTemplateDefault from './routes/page';
 
 /** Populate Router instance with DOM routes */
@@ -36,6 +37,8 @@ const routes = new Router({
   pageTemplateDefault,
   // Single Project
   singleProject,
+  // Single Artist
+  singleArtist,
 });
 
 // Load Events
