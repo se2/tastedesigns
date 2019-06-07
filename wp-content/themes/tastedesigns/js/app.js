@@ -13,6 +13,7 @@ import author from './routes/blog';
 import singlePost from './routes/blog';
 import page from './routes/blog';
 import singleProject from './routes/single-project';
+import pageTemplateDefault from './routes/page';
 
 /** Populate Router instance with DOM routes */
 const routes = new Router({
@@ -30,8 +31,9 @@ const routes = new Router({
   author,
   // Single Post
 	singlePost,
-	// Single Post
-	page,
+	// Page
+  page,
+  pageTemplateDefault,
   // Single Project
   singleProject,
 });

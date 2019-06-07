@@ -541,6 +541,7 @@ module.exports = {
     '99': '6.1875rem',
     '75': '4.6875rem',
     '276': '17.25rem',
+    '126': '7.875rem',
   },
 
   /*
@@ -614,6 +615,7 @@ module.exports = {
     'project-block': 'calc(452 / 414 * 100vw)',
     'video-block': 'calc(732 / 1440 * 100vw)',
     '276': '17.25rem',
+    '143': '8.9375rem',
   },
 
   /*
