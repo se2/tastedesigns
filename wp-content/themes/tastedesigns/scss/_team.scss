@@ -1,0 +1,19 @@
+.c-team {
+  &__item-inner {
+    transition-duration: 0.5s;
+
+    &.is-active {
+      @apply bg-taste-5;
+    }
+  }
+}
+
+.c-single-team {
+  &__avatar {
+    flex-shrink: 0;
+  }
+
+  &__text-content p {
+    @apply my-20;
+  }
+}

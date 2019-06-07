@@ -31,7 +31,11 @@ get_header();
 			</div>
 		<?php endif; ?>
 
-		<div class="c-archive__content flex flex-wrap">
+		<div class="c-archive__content flex flex-wrap
+		<?php if (is_post_type_archive('project')) : ?>
+			lg:mx-n21
+		<?php endif; ?>
+		">
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :

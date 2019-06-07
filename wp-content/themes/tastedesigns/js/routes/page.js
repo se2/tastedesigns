@@ -13,16 +13,21 @@ export default {
 
     e.$window = $(window);
     e.$document = $(document);
-    e.$play = $('.js-video-play');
-    e.$video = $('.js-video iframe').get(0);
+    e.$video = $('.js-video');
   },
   initVideo() {
     let s = this;
     let e = s.elements;
 
-    e.$play.click(function() {
-      e.$play.addClass('is-hidden');
-      e.$video.src += '&autoplay=1';
+    e.$video.each(function() {
+      let $video = $(this);
+      let $play = $video.children('.js-video-play');
+      let video = $video.children('iframe').get(0);
+
+      $play.click(function() {
+        $play.addClass('is-hidden');
+        video.src += '&autoplay=1';
+      });
     });
   },
 };
