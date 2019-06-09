@@ -837,6 +837,41 @@
                                         "id": ""
                                     },
                                     "return_format": "array"
+                                },
+                                {
+                                    "key": "field_5cfcc3662e6b9",
+                                    "label": "Align",
+                                    "name": "align",
+                                    "type": "select",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_5cf1068c06a07",
+                                                "operator": "==",
+                                                "value": "is-background-full"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "ml-auto": "Right",
+                                        "mr-auto": "Left"
+                                    },
+                                    "default_value": [
+                                        "ml-auto"
+                                    ],
+                                    "allow_null": 0,
+                                    "multiple": 0,
+                                    "ui": 0,
+                                    "return_format": "value",
+                                    "ajax": 0,
+                                    "placeholder": ""
                                 }
                             ]
                         }
@@ -1044,5 +1079,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1559888326
+    "modified": 1560069824
 }

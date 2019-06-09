@@ -25,6 +25,11 @@
       content: '\2022';
     }
   }
+
+  &__content.is-left {
+    margin-left: 0;
+    margin-right: auto;
+  }
 }
 
 .c-single-project {

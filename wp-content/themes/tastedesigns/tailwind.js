@@ -622,6 +622,7 @@ module.exports = {
     'team-image': 'calc(500 / 1440 * 100vw)',
     'team-image-mobile': 'calc(300 / 414 * 100vw)',
     'team-avatar': '44.5rem',
+    'artist-image': 'calc(360 / 1440 * 100vw)',
   },
 
   /*

@@ -1,11 +1,11 @@
 {
     "key": "group_5ce5a1b595a98",
-    "title": "Gallery Fields",
+    "title": "Gallery At Taste",
     "fields": [
         {
             "key": "field_5ce5a1bc09cee",
             "label": "Featured Artist",
-            "name": "gallery_featuredArtist",
+            "name": "featured_artist",
             "type": "post_object",
             "instructions": "",
             "required": 0,
@@ -16,7 +16,7 @@
                 "id": ""
             },
             "post_type": [
-                "expert"
+                "artist"
             ],
             "taxonomy": "",
             "allow_null": 0,
@@ -30,7 +30,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "page-gallery.php"
+                "value": "templates\/taste-gallery.php"
             }
         ]
     ],
@@ -42,5 +42,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1558554460
+    "modified": 1560076809
 }

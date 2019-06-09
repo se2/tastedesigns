@@ -42,7 +42,7 @@ template partial for single post type
       <h1 class="c-single-artist__title font-title text-taste-1 text-42 leading-57 lg:text-66 lg:leading-89 text-center">
         <?php the_title(); ?>
       </h1>
-      <div class="c-single-artist__intro entry-content text-center font-body text-24 text-taste-6">
+      <div class="c-single-artist__intro entry-content text-center font-body text-16 leading-24 lg:text-24 text-taste-6">
         <?php the_content(); ?>
       </div>
     </div>

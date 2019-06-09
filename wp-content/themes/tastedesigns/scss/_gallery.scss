@@ -1,0 +1,11 @@
+.c-gallery-artist {
+  &__body p {
+    @apply my-20;
+  }
+}
+
+.c-artists {
+  &__item-inner {
+    transition-duration: 0.5s;
+  }
+}

@@ -31,10 +31,10 @@ template partial for single post type
       ]); ?>
     </div>
     <div class="c-single-team__body py-20 px-0 xl:py-150 xl:pl-100 xl:pr-80">
-      <h1 class="font-title text-42 leading-57 text-taste-1 mt-20 xl:mt-0">
+      <h1 class="font-title text-42 leading-57 text-taste-1 mt-20 xl:mt-0 text-center lg:text-left">
         <?php the_title(); ?>
       </h1>
-      <h2 class="font-body text-16 leading-30.16 tracking-3.71 text-taste-2 no-underline uppercase">
+      <h2 class="font-body text-16 leading-30.16 tracking-3.71 text-taste-2 no-underline uppercase text-center lg:text-left">
         <?php the_field('position'); ?>
       </h2>
       <h3 class="font-body text-16 leading-24 text-taste-6 font-bold mt-60">

@@ -15,6 +15,7 @@ while (have_rows('group')) : the_row();
   $subtitle = get_sub_field('subtitle');
   $content = get_sub_field('content');
   $cta = get_sub_field('call_to_action');
+  $align = get_sub_field('align');
 endwhile;
 ?>
 
@@ -36,7 +37,8 @@ endwhile;
   <?php elseif ($type == 'is-alternative') : ?>
     bg-light xl-order-1 pt-50 xl:pt-35 pb-50 xl:pb-45 pr-20 xl:pr-175
   <?php elseif ($type == 'is-background-full') : ?>
-    ml-auto pt-100 xl:pt-65 pb-100 xl:pb-50 xl:pb-75 pr-20 xl:pr-145 bg-transparent
+    pt-100 xl:pt-65 pb-100 xl:pb-50 xl:pb-75 pr-20 xl:pr-145 bg-transparent
+    <?php echo $align; ?>
   <?php endif; ?>
   ">
     <div class="c-project-block__content-inner
