@@ -105,7 +105,10 @@ window.FWP = window.FWP || {};
 
     FWP.helper.detect_loop = function(node) {
         var curNode = null;
-        var iterator = document.createNodeIterator(node, NodeFilter.SHOW_COMMENT);
+        var iterator = document.createNodeIterator(node, NodeFilter.SHOW_COMMENT, function() {
+            return NodeFilter.FILTER_ACCEPT; /* IE expects a function */
+        }, false);
+
         while (curNode = iterator.nextNode()) {
             if (8 === curNode.nodeType && 'fwp-loop' === curNode.nodeValue) {
                 return curNode.parentNode;

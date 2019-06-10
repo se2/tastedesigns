@@ -243,9 +243,9 @@ class FacetWP_Integration_WooCommerce
 
         $sql = "
         SELECT t.name
-        FROM wp_terms t
-        INNER JOIN wp_term_taxonomy tt ON tt.term_id = t.term_id AND tt.taxonomy = 'product_type'
-        INNER JOIN wp_term_relationships tr ON tr.term_taxonomy_id = tt.term_taxonomy_id AND tr.object_id = %d";
+        FROM $wpdb->terms t
+        INNER JOIN $wpdb->term_taxonomy tt ON tt.term_id = t.term_id AND tt.taxonomy = 'product_type'
+        INNER JOIN $wpdb->term_relationships tr ON tr.term_taxonomy_id = tt.term_taxonomy_id AND tr.object_id = %d";
 
         $type = $wpdb->get_var(
             $wpdb->prepare( $sql, $post_id )
