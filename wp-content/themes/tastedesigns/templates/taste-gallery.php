@@ -37,13 +37,13 @@ if (have_posts()) : ?>
 						setup_postdata($post);
 					?>
 						<div class="c-gallery-artist w-full flex flex-col xl:flex-row relative">
-							<div class="c-gallery-artist__image-wrapper xl:w-1/2 relative h-project-block xl:h-auto">
+							<div class="c-gallery-artist__image-wrapper xl:w-1/2 relative min-h-artist-avatar-mobile xl:min-h-artist-avatar">
 								<?php the_post_thumbnail('medium', [
-									'class' => 'c-gallery-artist__image w-full h-full o-cover absolute top-0 left-0'
+									'class' => 'c-gallery-artist__image w-full h-full o-cover o-top absolute top-0 left-0'
 								]); ?>
 							</div>
-							<div class="c-gallery-artist__content pl-20 xl:pl-145 xl:w-1/2 relative bg-taste-5 pt-50 xl:pt-75 pb-50 xl:pb-65 pr-20 xl:pr-145">
-								<div class="c-gallery-artist__content-inner">
+							<div class="c-gallery-artist__content pl-20 xl:pl-145 xl:w-1/2 relative bg-taste-5 pt-50 xl:pt-75 pb-50 xl:pb-65 pr-20 xl:pr-145 flex">
+								<div class="c-gallery-artist__content-inner my-auto">
 									<h2 class="font-subtitle text-14 leading-15.69/14 tracking-4.05 xl:text-16 xl:leading-15.69 xl:tracking-4.63 text-taste-2 uppercase">
 										Featured Artist
 									</h2>
@@ -91,7 +91,7 @@ if (have_posts()) : ?>
 											<div class="c-artists__item-inner px-20 py-20 lg:px-15 lg:py-16 hover:bg-taste-5">
 												<div class="c-artists__thumbnail w-full h-team-image-mobile lg:h-artist-image bg-taste-9">
 													<?php the_post_thumbnail('small', [
-														'class' => 'c-artists__image w-full h-full o-cover block'
+														'class' => 'c-artists__image w-full h-full o-cover o-top block'
 													]); ?>
 												</div>
 												<h2 class="font-body text-16 leading-30.16 tracking-3.71 text-center text-taste-2 no-underline uppercase mt-20">
