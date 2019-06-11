@@ -81,6 +81,7 @@ template partial for single post type
   /**
    * Gallery
    */
+  set_query_var('gallery', get_field('gallery'));
   get_template_part('template-parts/shared/gallery');
   ?>
 

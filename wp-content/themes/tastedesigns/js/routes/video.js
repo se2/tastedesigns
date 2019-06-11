@@ -5,10 +5,10 @@ export default {
   init() {
     let s = this;
 
-    s.initPage();
+    s.initElement();
     s.initVideo();
   },
-  initPage() {
+  initElement() {
     let e = this.elements;
 
     e.$window = $(window);
@@ -30,4 +30,5 @@ export default {
       });
     });
   },
+  finalize() {},
 };

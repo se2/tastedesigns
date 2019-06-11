@@ -1,36 +1,43 @@
-<?php $gallery = get_field('gallery'); ?>
+<?php $gallery = get_query_var('gallery'); ?>
+<?php $post_content = get_query_var('post_content'); ?>
 <?php if ($gallery) : ?>
   <?php $desktop_gallery = evening_the_odds($gallery); ?>
   <?php $mobile_gallery = evening_the_odds($gallery, false); ?>
 
-  <div class="<?php if (is_singular( 'artist' )): ?>
+  <div class="c-gallery js-gallery
+  <?php if (!$post_content && is_singular('artist')) : ?>
     c-single-artist__gallery
-  <?php else: ?>
+  <?php elseif (!$post_content && is_singular('project')) : ?>
     c-single-project__gallery pt-60
-  <?php endif; ?>">
+  <?php endif; ?>
+  ">
 
-    <h1 class="font-title text-30 leading-40 text-taste-3 text-center px-20 lg:px-0">
-      <?php if (is_singular( 'artist' )): ?>
-        <?php the_title(); ?> Gallery
-      <?php else: ?>
-        Full Project Gallery
+    <?php if (!$post_content) : ?>
+      <h1 class="font-title text-30 leading-40 text-taste-3 text-center px-20 lg:px-0">
+        <?php if (is_singular( 'artist' )): ?>
+          <?php the_title(); ?> Gallery
+        <?php else: ?>
+          Full Project Gallery
+        <?php endif; ?>
+      </h1>
+
+      <?php if (is_singular('project')): ?>
+        <h4 class="entry-content text-center font-body text-16 leading-22 lg:leading-24 text-taste-1 mt-30">
+          Photographer:
+        </h4>
+        <h4 class="entry-content text-center font-body text-16 leading-22 lg:leading-24 text-taste-6">
+          <?php the_field('photographer'); ?>
+        </h4>
       <?php endif; ?>
-    </h1>
-
-    <?php if (is_singular( 'project' )): ?>
-      <h4 class="entry-content text-center font-body text-16 leading-22 lg:leading-24 text-taste-1 mt-30">
-        Photographer:
-      </h4>
-      <h4 class="entry-content text-center font-body text-16 leading-22 lg:leading-24 text-taste-6">
-        <?php the_field('photographer'); ?>
-      </h4>
     <?php endif; ?>
 
-    <div class="<?php if (is_singular( 'artist' )): ?>
+    <div class="c-gallery__wrapper
+    <?php if (!$post_content && is_singular('artist')) : ?>
       c-single-artist__gallery-wrapper
-    <?php else: ?>
-    c-single-project__gallery-wrapper pt-40
-    <?php endif; ?>">
+    <?php elseif (!$post_content && is_singular('project')) : ?>
+      c-single-project__gallery-wrapper pt-40
+    <?php endif; ?>
+    ">
       <div class="c-single-project__gallery-inner mx-n2 lg:mx-n5 flex flex-wrap">
 
         <?php
@@ -40,7 +47,12 @@
         ?>
         <?php $index = 0; ?>
         <?php foreach ($desktop_gallery as $image) : ?>
-          <div class="c-single-project__gallery-image-wrapper p-2 lg:p-5 h-gallery-image-mobile lg:h-gallery-image
+          <div class="c-single-project__gallery-image-wrapper p-2 lg:p-5
+          <?php if ($post_content) : ?>
+            h-gallery-image-post-content
+          <?php else : ?>
+            h-gallery-image
+          <?php endif; ?>
           <?php if ($image['width'] > $image['height']) : ?>
             w-full lg:w-1/2
           <?php else : ?>
@@ -61,7 +73,12 @@
         ?>
         <?php $index = 0; ?>
         <?php foreach ($mobile_gallery as $image) : ?>
-          <div class="c-single-project__gallery-image-wrapper p-2 lg:p-5 h-gallery-image-mobile lg:h-gallery-image
+          <div class="c-single-project__gallery-image-wrapper p-2 lg:p-5
+          <?php if ($post_content) : ?>
+            h-gallery-image-post-content-mobile
+          <?php else : ?>
+            h-gallery-image-mobile
+          <?php endif; ?>
           <?php if ($image['width'] > $image['height']) : ?>
             w-full lg:w-1/2
           <?php else : ?>
