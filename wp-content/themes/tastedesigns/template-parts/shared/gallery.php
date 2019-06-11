@@ -60,7 +60,8 @@
           <?php endif; ?>
           hidden lg:block">
             <div class="c-single-project__gallery-image-inner w-full h-full js-gallery-image cursor-pointer" data-index="<?php echo $index; ?>">
-              <?php generate_image($image['ID'], 'c-single-project__gallery-image w-full h-full o-cover', 'medium'); ?>
+              <?php $size = ($image['width'] > $image['height']) ? 'medium' : 'small'; ?>
+              <?php generate_image($image['ID'], 'c-single-project__gallery-image w-full h-full o-cover', $size); ?>
             </div>
           </div>
           <?php $index++; ?>
@@ -86,7 +87,8 @@
           <?php endif; ?>
           lg:hidden">
             <div class="c-single-project__gallery-image-inner w-full h-full js-gallery-image-mobile cursor-pointer" data-index="<?php echo $index; ?>">
-              <?php generate_image($image['ID'], 'c-single-project__gallery-image w-full h-full o-cover', 'medium'); ?>
+              <?php $size = ($image['width'] > $image['height']) ? 'small' : 'tiny'; ?>
+              <?php generate_image($image['ID'], 'c-single-project__gallery-image w-full h-full o-cover', $size); ?>
             </div>
           </div>
           <?php $index++; ?>
@@ -114,7 +116,7 @@
           <?php endforeach; ?>
         </div>
       </div>
-      <h3 class="font-body text-14 leading-21 tracking-3.5 text-light js-gallery-index text-center uppercase mt-15 relative">
+      <h3 class="c-single-project__gallery-index font-body text-14 leading-21 tracking-3.5 text-light js-gallery-index text-center uppercase mt-15 relative">
         Image 01/<?php echo count($desktop_gallery); ?>
       </h3>
       <div class="c-single-project__gallery-close w-28 h-28 lg:w-33 lg:h-33 absolute is-active js-gallery-close cursor-pointer">
@@ -132,10 +134,10 @@
       <div class="c-single-project__gallery-popup-underlay absolute w-full h-full top-0 left-0 bg-taste-7 opacity-60 js-gallery-overlay-mobile cursor-pointer"></div>
       <div class="c-single-project__gallery-popup-slider js-gallery-slider-mobile w-full h-full lg:h-m90 relative">
         <?php foreach ($mobile_gallery as $image) : ?>
-          <?php generate_image($image['ID'], 'c-single-project__gallery-popup-image w-full h-full o-contain px-20 lg:px-0', 'massive'); ?>
+          <?php generate_image($image['ID'], 'c-single-project__gallery-popup-image w-full h-full o-contain px-20 lg:px-0', 'small'); ?>
         <?php endforeach; ?>
       </div>
-      <h3 class="font-body text-14 leading-21 tracking-3.5 text-light js-gallery-index-mobile text-center uppercase mt-15 relative">
+      <h3 class="c-single-project__gallery-index font-body text-14 leading-21 tracking-3.5 text-light js-gallery-index-mobile text-center uppercase mt-15 relative">
         Image 01/<?php echo count($mobile_gallery); ?>
       </h3>
       <div class="c-single-project__gallery-close w-28 h-28 lg:w-33 lg:h-33 absolute is-active js-gallery-close-mobile cursor-pointer">

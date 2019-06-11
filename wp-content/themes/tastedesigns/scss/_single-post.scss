@@ -33,7 +33,7 @@
       }
     }
 
-    h3 {
+    h3:not(.c-single-project__gallery-index) {
       @apply font-body;
       @apply text-24;
       @apply leading-28;
