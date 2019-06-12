@@ -8,6 +8,10 @@ $reverse: cubic-bezier(0.65, 0.00, 0.79, 0.39);
 
   font-weight: normal;
   transition-timing-function: $default;
+
+  &::selection {
+    background: config('colors.taste-7');
+  }
 }
 
 html {

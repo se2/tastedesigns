@@ -74,6 +74,10 @@ export default {
       });
     });
 
+    e.$searchInput.focus(function() {
+      e.$searchInput.select();
+    });
+
     e.$searchTrigger.click(function(event) {
       event.preventDefault();
       e.$searchForm.addClass('is-active');

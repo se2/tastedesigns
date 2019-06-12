@@ -257,6 +257,20 @@ if ( ! function_exists( 'ttg_wp_setup' ) ) :
 			$form = preg_replace( '/action=".*"/', 'action="/search/"', $form );
 			return $form;
 		} );
+
+		/**
+		 * Redirect default search behavior
+		 */
+		add_action('template_redirect', function() {
+			if (is_search()) {
+				if (!empty($_GET['s'])) {
+					wp_redirect(home_url("/search/?_search=").urlencode(get_query_var('s')));
+				} else {
+					wp_redirect(home_url("/search/"));
+				}
+				exit();
+			}
+		});
 	}
 endif;
 add_action( 'after_setup_theme', 'ttg_wp_setup' );
