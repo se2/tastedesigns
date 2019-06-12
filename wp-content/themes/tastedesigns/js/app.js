@@ -49,6 +49,15 @@ const routes = new Router({
       blog.finalize();
       gallery.finalize();
     }
+  },
+  // Search
+  search: {
+    init() {
+      blog.init();
+    },
+    finalize() {
+      blog.finalize();
+    }
   }
 });
 
