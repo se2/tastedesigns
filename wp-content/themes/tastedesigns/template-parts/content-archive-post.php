@@ -12,7 +12,7 @@ template partial for archive post type
   <?php else: ?>
     <?php $default_feature_image = get_field( 'default_feature_image', 'option' ); ?>
     <a class="post-thumbnail" href="<?php echo get_permalink(); ?>" aria-hidden="true" tabindex="-1">
-      <img width="524" height="524" src="<?php echo $default_feature_image['url']; ?>" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="">
+      <img src="<?php echo $default_feature_image['url']; ?>" alt="placeholder" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="">
     </a>
   <?php endif; ?>
 

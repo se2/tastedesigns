@@ -10,9 +10,10 @@
 get_header();
 ?>
 
-	<header class="page-header js-header-blog">
-		<h1 class="font-title text-center text-taste-1 page-title">
-			<?php printf( esc_html__( 'Search Results for: %s', 'ttg-wp' ), '<span>' . get_search_query() . '</span>' ); ?>
+	<header class="page-header js-header-blog px-20 md:px-0">
+		<h1 class="page-title font-title text-center text-taste-1 text-60 leading-69 mt-20 lg:mt-0 pb-50 lg:pb-0">
+			<?php $search = isset($_GET['_search']) ? $_GET['_search'] : ''; ?>
+			<?php printf( esc_html__( 'Search Results for: %s', 'ttg-wp' ), '"<span class="font-title js-search-title">' . $search . '</span>"' ); ?>
 		</h1>
 	</header><!-- .page-header -->
 
@@ -20,18 +21,15 @@ get_header();
 		<main id="main" class="site-main">
 
 		<div class="flex flex-wrap relative">
-			<div class="search-results-area">
-				<?php if ( have_posts() ) : ?>
-					<?php
-					while ( have_posts() ) :
-						the_post();
+			<div class="search-results-area order-1">
+				<?php
+				if ( have_posts() ) :
+					while ( have_posts() ) : the_post();
 						get_template_part( 'template-parts/content', 'search' );
 					endwhile;
-					// the_posts_navigation();
-					else :
+				else :
 					get_template_part( 'template-parts/content', 'none' );
-
-					endif;
+				endif;
 				?>
 			</div>
 
