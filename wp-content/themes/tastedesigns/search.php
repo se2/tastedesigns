@@ -10,46 +10,34 @@
 get_header();
 ?>
 
-	<section id="primary" class="content-area">
+	<header class="page-header js-header-blog px-20 md:px-0">
+		<h1 class="page-title font-title text-center text-taste-1 text-60 leading-69 mt-20 lg:mt-0 pb-50 lg:pb-0">
+			<?php $search = isset($_GET['_search']) ? $_GET['_search'] : ''; ?>
+			<?php printf( esc_html__( 'Search Results for: %s', 'ttg-wp' ), '"<span class="font-title js-search-title">' . $search . '</span>"' ); ?>
+		</h1>
+	</header><!-- .page-header -->
+
+	<section id="primary" class="content-area js-content-blog">
 		<main id="main" class="site-main">
 
-		<?php if ( have_posts() ) : ?>
+		<div class="flex flex-wrap relative">
+			<div class="search-results-area order-1">
+				<?php
+				if ( have_posts() ) :
+					while ( have_posts() ) : the_post();
+						get_template_part( 'template-parts/content', 'search' );
+					endwhile;
+				else :
+					get_template_part( 'template-parts/content', 'none' );
+				endif;
+				?>
+			</div>
 
-			<header class="page-header">
-				<h1 class="page-title">
-					<?php
-					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'ttg-wp' ), '<span>' . get_search_query() . '</span>' );
-					?>
-				</h1>
-			</header><!-- .page-header -->
-
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'search' );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
+			<?php get_sidebar('blogs'); ?>
+		</div>
 
 		</main><!-- #main -->
 	</section><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();

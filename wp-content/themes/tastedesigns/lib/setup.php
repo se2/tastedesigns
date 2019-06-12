@@ -224,6 +224,39 @@ if ( ! function_exists( 'ttg_wp_setup' ) ) :
 
 			return $output;
 		}, 10, 2);
+
+		/**
+		 * Remove Editor on specific template
+		 */
+		add_action('admin_init', function() {
+			$post_id = !empty($_GET['post']) ? $_GET['post'] : '';
+			if (empty($post_id)) {
+				$post_id =!empty($_POST['post_ID']) ? $_POST['post_ID'] : '';
+			}
+			if (!isset($post_id)) return;
+
+			$template_file = get_post_meta($post_id, '_wp_page_template', true);
+
+			if ($template_file == 'templates/taste-search.php') { // edit the template name
+				remove_post_type_support('page', 'editor');
+			}
+		});
+
+		/**
+		 * Custom WP_Query with FacetWP
+		 */
+		add_filter( 'facetwp_is_main_query', function( $bool, $query ) {
+			return ( true === $query->get( 'facetwp' ) ) ? true : $bool;
+		}, 10, 2 );
+
+		/**
+		 * Custom Search page
+		 */
+		add_filter( 'get_search_form', function( $form ) {
+			$form = str_replace( 'name="s"', 'name="_search"', $form );
+			$form = preg_replace( '/action=".*"/', 'action="/search/"', $form );
+			return $form;
+		} );
 	}
 endif;
 add_action( 'after_setup_theme', 'ttg_wp_setup' );

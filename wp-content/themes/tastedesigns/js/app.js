@@ -9,6 +9,7 @@ import home from './routes/home';
 import blog from './routes/blog';
 import gallery from './routes/gallery';
 import video from './routes/video';
+import search from './routes/search';
 
 /** Populate Router instance with DOM routes */
 const routes = new Router({
@@ -48,6 +49,17 @@ const routes = new Router({
     finalize() {
       blog.finalize();
       gallery.finalize();
+    }
+  },
+  // Search
+  pageTemplateTasteSearch: {
+    init() {
+      blog.init();
+      search.init();
+    },
+    finalize() {
+      blog.finalize();
+      search.finalize();
     }
   }
 });
