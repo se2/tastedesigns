@@ -336,6 +336,600 @@
                             "multiple": 0,
                             "return_format": "object",
                             "ui": 1
+                        },
+                        {
+                            "key": "field_5d01f6b01334d",
+                            "label": "Colors",
+                            "name": "colors",
+                            "type": "group",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_5d01f8a31334e",
+                                    "label": "Override Default Colors?",
+                                    "name": "override_default_colors",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "",
+                                    "default_value": 0,
+                                    "ui": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": ""
+                                },
+                                {
+                                    "key": "field_5d01f8c91334f",
+                                    "label": "Color Background",
+                                    "name": "color_background",
+                                    "type": "radio",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_5d01f8a31334e",
+                                                "operator": "==",
+                                                "value": "1"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "#4F4137": "<span style=\"padding: .25rem; background-color:#4F4137; color: #FFFFFF;\">ColorA<\/span>",
+                                        "#736357": "<span style=\"padding: .25rem; background-color:#736357; color: #FFFFFF;\">ColorB<\/span>",
+                                        "#A6988D": "<span style=\"padding: .25rem; background-color:#A6988D; color: #FFFFFF;\">ColorC<\/span>",
+                                        "#CEBBAD": "<span style=\"padding: .25rem; background-color:#CEBBAD; color: #FFFFFF;\">ColorD<\/span>",
+                                        "#E8E0DA": "<span style=\"padding: .25rem; background-color:#E8E0DA; color: #FFFFFF;\">ColorE<\/span>",
+                                        "#9B9B9B": "<span style=\"padding: .25rem; background-color:#9B9B9B; color: #FFFFFF;\">ColorF<\/span>",
+                                        "#000000": "<span style=\"padding: .25rem; background-color:#000000; color: #FFFFFF;\">ColorG<\/span>",
+                                        "#FFFFFF": "<span style=\"padding: .25rem; color: #000000;\">None<\/span>",
+                                        "other": "<span style=\"padding: .25rem; color: #000000;\">Other<\/span>"
+                                    },
+                                    "allow_null": 0,
+                                    "other_choice": 0,
+                                    "default_value": "#FFFFFF",
+                                    "layout": "horizontal",
+                                    "return_format": "value",
+                                    "save_other_choice": 0
+                                },
+                                {
+                                    "key": "field_5d0201a016f6c",
+                                    "label": "Color Background Alternative",
+                                    "name": "color_background_alternative",
+                                    "type": "color_picker",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_5d01f8c91334f",
+                                                "operator": "==",
+                                                "value": "other"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": ""
+                                },
+                                {
+                                    "key": "field_5d01fab3095c0",
+                                    "label": "Color \"Featured\"",
+                                    "name": "color_featured",
+                                    "type": "radio",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_5d01f8a31334e",
+                                                "operator": "==",
+                                                "value": "1"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "#4F4137": "<span style=\"padding: .25rem; background-color:#4F4137; color: #FFFFFF;\">ColorA<\/span>",
+                                        "#736357": "<span style=\"padding: .25rem; background-color:#736357; color: #FFFFFF;\">ColorB<\/span>",
+                                        "#A6988D": "<span style=\"padding: .25rem; background-color:#A6988D; color: #FFFFFF;\">ColorC<\/span>",
+                                        "#CEBBAD": "<span style=\"padding: .25rem; background-color:#CEBBAD; color: #FFFFFF;\">ColorD<\/span>",
+                                        "#E8E0DA": "<span style=\"padding: .25rem; background-color:#E8E0DA; color: #FFFFFF;\">ColorE<\/span>",
+                                        "#9B9B9B": "<span style=\"padding: .25rem; background-color:#9B9B9B; color: #FFFFFF;\">ColorF<\/span>",
+                                        "#000000": "<span style=\"padding: .25rem; background-color:#000000; color: #FFFFFF;\">ColorG<\/span>",
+                                        "#FFFFFF": "<span style=\"padding: .25rem; color: #000000;\">None<\/span>",
+                                        "other": "<span style=\"padding: .25rem; color: #000000;\">Other<\/span>"
+                                    },
+                                    "allow_null": 0,
+                                    "other_choice": 0,
+                                    "default_value": "#CEBBAD",
+                                    "layout": "horizontal",
+                                    "return_format": "value",
+                                    "save_other_choice": 0
+                                },
+                                {
+                                    "key": "field_5d020237a9551",
+                                    "label": "Color \"Featured\" Alternative",
+                                    "name": "color_featured_alternative",
+                                    "type": "color_picker",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_5d01fab3095c0",
+                                                "operator": "==",
+                                                "value": "other"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": ""
+                                },
+                                {
+                                    "key": "field_5d01fb07095c2",
+                                    "label": "Color \"Location\"",
+                                    "name": "color_location",
+                                    "type": "radio",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_5d01f8a31334e",
+                                                "operator": "==",
+                                                "value": "1"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "#4F4137": "<span style=\"padding: .25rem; background-color:#4F4137; color: #FFFFFF;\">ColorA<\/span>",
+                                        "#736357": "<span style=\"padding: .25rem; background-color:#736357; color: #FFFFFF;\">ColorB<\/span>",
+                                        "#A6988D": "<span style=\"padding: .25rem; background-color:#A6988D; color: #FFFFFF;\">ColorC<\/span>",
+                                        "#CEBBAD": "<span style=\"padding: .25rem; background-color:#CEBBAD; color: #FFFFFF;\">ColorD<\/span>",
+                                        "#E8E0DA": "<span style=\"padding: .25rem; background-color:#E8E0DA; color: #FFFFFF;\">ColorE<\/span>",
+                                        "#9B9B9B": "<span style=\"padding: .25rem; background-color:#9B9B9B; color: #FFFFFF;\">ColorF<\/span>",
+                                        "#000000": "<span style=\"padding: .25rem; background-color:#000000; color: #FFFFFF;\">ColorG<\/span>",
+                                        "#FFFFFF": "<span style=\"padding: .25rem; color: #000000;\">None<\/span>",
+                                        "other": "<span style=\"padding: .25rem; color: #000000;\">Other<\/span>"
+                                    },
+                                    "allow_null": 0,
+                                    "other_choice": 0,
+                                    "default_value": "#736357",
+                                    "layout": "horizontal",
+                                    "return_format": "value",
+                                    "save_other_choice": 0
+                                },
+                                {
+                                    "key": "field_5d020271a9552",
+                                    "label": "Color \"Location\" Alternative",
+                                    "name": "color_location_alternative",
+                                    "type": "color_picker",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_5d01fb07095c2",
+                                                "operator": "==",
+                                                "value": "other"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": ""
+                                },
+                                {
+                                    "key": "field_5d01fb30095c4",
+                                    "label": "Color \"Title\"",
+                                    "name": "color_title",
+                                    "type": "radio",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_5d01f8a31334e",
+                                                "operator": "==",
+                                                "value": "1"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "#4F4137": "<span style=\"padding: .25rem; background-color:#4F4137; color: #FFFFFF;\">ColorA<\/span>",
+                                        "#736357": "<span style=\"padding: .25rem; background-color:#736357; color: #FFFFFF;\">ColorB<\/span>",
+                                        "#A6988D": "<span style=\"padding: .25rem; background-color:#A6988D; color: #FFFFFF;\">ColorC<\/span>",
+                                        "#CEBBAD": "<span style=\"padding: .25rem; background-color:#CEBBAD; color: #FFFFFF;\">ColorD<\/span>",
+                                        "#E8E0DA": "<span style=\"padding: .25rem; background-color:#E8E0DA; color: #FFFFFF;\">ColorE<\/span>",
+                                        "#9B9B9B": "<span style=\"padding: .25rem; background-color:#9B9B9B; color: #FFFFFF;\">ColorF<\/span>",
+                                        "#000000": "<span style=\"padding: .25rem; background-color:#000000; color: #FFFFFF;\">ColorG<\/span>",
+                                        "#FFFFFF": "<span style=\"padding: .25rem; color: #000000;\">None<\/span>",
+                                        "other": "<span style=\"padding: .25rem; color: #000000;\">Other<\/span>"
+                                    },
+                                    "allow_null": 0,
+                                    "other_choice": 0,
+                                    "default_value": "#4F4137",
+                                    "layout": "horizontal",
+                                    "return_format": "value",
+                                    "save_other_choice": 0
+                                },
+                                {
+                                    "key": "field_5d020291a9553",
+                                    "label": "Color \"Title\" Alternative",
+                                    "name": "color_title_alternative",
+                                    "type": "color_picker",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_5d01fb30095c4",
+                                                "operator": "==",
+                                                "value": "other"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": ""
+                                },
+                                {
+                                    "key": "field_5d01fb4a095c5",
+                                    "label": "Color \"Body\"",
+                                    "name": "color_body",
+                                    "type": "radio",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_5d01f8a31334e",
+                                                "operator": "==",
+                                                "value": "1"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "#4F4137": "<span style=\"padding: .25rem; background-color:#4F4137; color: #FFFFFF;\">ColorA<\/span>",
+                                        "#736357": "<span style=\"padding: .25rem; background-color:#736357; color: #FFFFFF;\">ColorB<\/span>",
+                                        "#A6988D": "<span style=\"padding: .25rem; background-color:#A6988D; color: #FFFFFF;\">ColorC<\/span>",
+                                        "#CEBBAD": "<span style=\"padding: .25rem; background-color:#CEBBAD; color: #FFFFFF;\">ColorD<\/span>",
+                                        "#E8E0DA": "<span style=\"padding: .25rem; background-color:#E8E0DA; color: #FFFFFF;\">ColorE<\/span>",
+                                        "#9B9B9B": "<span style=\"padding: .25rem; background-color:#9B9B9B; color: #FFFFFF;\">ColorF<\/span>",
+                                        "#000000": "<span style=\"padding: .25rem; background-color:#000000; color: #FFFFFF;\">ColorG<\/span>",
+                                        "#FFFFFF": "<span style=\"padding: .25rem; color: #000000;\">None<\/span>",
+                                        "other": "<span style=\"padding: .25rem; color: #000000;\">Other<\/span>"
+                                    },
+                                    "allow_null": 0,
+                                    "other_choice": 0,
+                                    "default_value": "#9B9B9B",
+                                    "layout": "horizontal",
+                                    "return_format": "value",
+                                    "save_other_choice": 0
+                                },
+                                {
+                                    "key": "field_5d0202aba9554",
+                                    "label": "Color \"Body\" Alternative",
+                                    "name": "color_body_alternative",
+                                    "type": "color_picker",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_5d01fb4a095c5",
+                                                "operator": "==",
+                                                "value": "other"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": ""
+                                },
+                                {
+                                    "key": "field_5d01fb80095c6",
+                                    "label": "Color \"Featured Partners\"",
+                                    "name": "color_featured_partners",
+                                    "type": "radio",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_5d01f8a31334e",
+                                                "operator": "==",
+                                                "value": "1"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "#4F4137": "<span style=\"padding: .25rem; background-color:#4F4137; color: #FFFFFF;\">ColorA<\/span>",
+                                        "#736357": "<span style=\"padding: .25rem; background-color:#736357; color: #FFFFFF;\">ColorB<\/span>",
+                                        "#A6988D": "<span style=\"padding: .25rem; background-color:#A6988D; color: #FFFFFF;\">ColorC<\/span>",
+                                        "#CEBBAD": "<span style=\"padding: .25rem; background-color:#CEBBAD; color: #FFFFFF;\">ColorD<\/span>",
+                                        "#E8E0DA": "<span style=\"padding: .25rem; background-color:#E8E0DA; color: #FFFFFF;\">ColorE<\/span>",
+                                        "#9B9B9B": "<span style=\"padding: .25rem; background-color:#9B9B9B; color: #FFFFFF;\">ColorF<\/span>",
+                                        "#000000": "<span style=\"padding: .25rem; background-color:#000000; color: #FFFFFF;\">ColorG<\/span>",
+                                        "#FFFFFF": "<span style=\"padding: .25rem; color: #000000;\">None<\/span>",
+                                        "other": "<span style=\"padding: .25rem; color: #000000;\">Other<\/span>"
+                                    },
+                                    "allow_null": 0,
+                                    "other_choice": 0,
+                                    "default_value": "#736357",
+                                    "layout": "horizontal",
+                                    "return_format": "value",
+                                    "save_other_choice": 0
+                                },
+                                {
+                                    "key": "field_5d0202bfa9555",
+                                    "label": "Color \"Featured Partners\" Alternative",
+                                    "name": "color_featured_partners_alternative",
+                                    "type": "color_picker",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_5d01fb80095c6",
+                                                "operator": "==",
+                                                "value": "other"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": ""
+                                },
+                                {
+                                    "key": "field_5d01fba8095c7",
+                                    "label": "Color \"Partner Title\"",
+                                    "name": "color_partner_title",
+                                    "type": "radio",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_5d01f8a31334e",
+                                                "operator": "==",
+                                                "value": "1"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "#4F4137": "<span style=\"padding: .25rem; background-color:#4F4137; color: #FFFFFF;\">ColorA<\/span>",
+                                        "#736357": "<span style=\"padding: .25rem; background-color:#736357; color: #FFFFFF;\">ColorB<\/span>",
+                                        "#A6988D": "<span style=\"padding: .25rem; background-color:#A6988D; color: #FFFFFF;\">ColorC<\/span>",
+                                        "#CEBBAD": "<span style=\"padding: .25rem; background-color:#CEBBAD; color: #FFFFFF;\">ColorD<\/span>",
+                                        "#E8E0DA": "<span style=\"padding: .25rem; background-color:#E8E0DA; color: #FFFFFF;\">ColorE<\/span>",
+                                        "#9B9B9B": "<span style=\"padding: .25rem; background-color:#9B9B9B; color: #FFFFFF;\">ColorF<\/span>",
+                                        "#000000": "<span style=\"padding: .25rem; background-color:#000000; color: #FFFFFF;\">ColorG<\/span>",
+                                        "#FFFFFF": "<span style=\"padding: .25rem; color: #000000;\">None<\/span>",
+                                        "other": "<span style=\"padding: .25rem; color: #000000;\">Other<\/span>"
+                                    },
+                                    "allow_null": 0,
+                                    "other_choice": 0,
+                                    "default_value": "#9B9B9B",
+                                    "layout": "horizontal",
+                                    "return_format": "value",
+                                    "save_other_choice": 0
+                                },
+                                {
+                                    "key": "field_5d0202d6a9556",
+                                    "label": "Color \"Partner Title\" Alternative",
+                                    "name": "color_partner_title_alternative",
+                                    "type": "color_picker",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_5d01fba8095c7",
+                                                "operator": "==",
+                                                "value": "other"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": ""
+                                },
+                                {
+                                    "key": "field_5d021076f2c5a",
+                                    "label": "Color \"Project Detail\"",
+                                    "name": "color_project_detail",
+                                    "type": "radio",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_5d01f8a31334e",
+                                                "operator": "==",
+                                                "value": "1"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "#4F4137": "<span style=\"padding: .25rem; background-color:#4F4137; color: #FFFFFF;\">ColorA<\/span>",
+                                        "#736357": "<span style=\"padding: .25rem; background-color:#736357; color: #FFFFFF;\">ColorB<\/span>",
+                                        "#A6988D": "<span style=\"padding: .25rem; background-color:#A6988D; color: #FFFFFF;\">ColorC<\/span>",
+                                        "#CEBBAD": "<span style=\"padding: .25rem; background-color:#CEBBAD; color: #FFFFFF;\">ColorD<\/span>",
+                                        "#E8E0DA": "<span style=\"padding: .25rem; background-color:#E8E0DA; color: #FFFFFF;\">ColorE<\/span>",
+                                        "#9B9B9B": "<span style=\"padding: .25rem; background-color:#9B9B9B; color: #FFFFFF;\">ColorF<\/span>",
+                                        "#000000": "<span style=\"padding: .25rem; background-color:#000000; color: #FFFFFF;\">ColorG<\/span>",
+                                        "#FFFFFF": "<span style=\"padding: .25rem; color: #000000;\">None<\/span>",
+                                        "other": "<span style=\"padding: .25rem; color: #000000;\">Other<\/span>"
+                                    },
+                                    "allow_null": 0,
+                                    "other_choice": 0,
+                                    "default_value": "#736357",
+                                    "layout": "horizontal",
+                                    "return_format": "value",
+                                    "save_other_choice": 0
+                                },
+                                {
+                                    "key": "field_5d021092f2c5b",
+                                    "label": "Color \"Project Detail\" Alternative",
+                                    "name": "color_project_detail_alternative",
+                                    "type": "color_picker",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_5d021076f2c5a",
+                                                "operator": "==",
+                                                "value": "other"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": ""
+                                },
+                                {
+                                    "key": "field_5d0210cef2c5d",
+                                    "label": "Color \"All Projects\"",
+                                    "name": "color_all_projects",
+                                    "type": "radio",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_5d01f8a31334e",
+                                                "operator": "==",
+                                                "value": "1"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "#4F4137": "<span style=\"padding: .25rem; background-color:#4F4137; color: #FFFFFF;\">ColorA<\/span>",
+                                        "#736357": "<span style=\"padding: .25rem; background-color:#736357; color: #FFFFFF;\">ColorB<\/span>",
+                                        "#A6988D": "<span style=\"padding: .25rem; background-color:#A6988D; color: #FFFFFF;\">ColorC<\/span>",
+                                        "#CEBBAD": "<span style=\"padding: .25rem; background-color:#CEBBAD; color: #FFFFFF;\">ColorD<\/span>",
+                                        "#E8E0DA": "<span style=\"padding: .25rem; background-color:#E8E0DA; color: #FFFFFF;\">ColorE<\/span>",
+                                        "#9B9B9B": "<span style=\"padding: .25rem; background-color:#9B9B9B; color: #FFFFFF;\">ColorF<\/span>",
+                                        "#000000": "<span style=\"padding: .25rem; background-color:#000000; color: #FFFFFF;\">ColorG<\/span>",
+                                        "#FFFFFF": "<span style=\"padding: .25rem; color: #000000;\">None<\/span>",
+                                        "other": "<span style=\"padding: .25rem; color: #000000;\">Other<\/span>"
+                                    },
+                                    "allow_null": 0,
+                                    "other_choice": 0,
+                                    "default_value": "#736357",
+                                    "layout": "horizontal",
+                                    "return_format": "value",
+                                    "save_other_choice": 0
+                                },
+                                {
+                                    "key": "field_5d0210e2f2c5e",
+                                    "label": "Color \"All Projects\" Alternative",
+                                    "name": "color_all_projects_alternative",
+                                    "type": "color_picker",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_5d0210cef2c5d",
+                                                "operator": "==",
+                                                "value": "other"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": ""
+                                }
+                            ]
                         }
                     ],
                     "min": "",
@@ -1079,5 +1673,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1560334108
+    "modified": 1560416605
 }
