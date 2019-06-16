@@ -23,6 +23,225 @@
             "multiple": 0,
             "return_format": "object",
             "ui": 1
+        },
+        {
+            "key": "field_5d0632d094a66",
+            "label": "Colors",
+            "name": "colors",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_5d0632d894a67",
+                    "label": "Override Default Colors?",
+                    "name": "override_default_colors",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
+                    "key": "field_5d0632eb94a68",
+                    "label": "Primary Color",
+                    "name": "primary_color",
+                    "type": "radio",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5d0632d894a67",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "#4F4137": "<span style=\"padding: .25rem; background-color:#4F4137; color: #FFFFFF;\">ColorA<\/span>",
+                        "#736357": "<span style=\"padding: .25rem; background-color:#736357; color: #FFFFFF;\">ColorB<\/span>",
+                        "#A6988D": "<span style=\"padding: .25rem; background-color:#A6988D; color: #FFFFFF;\">ColorC<\/span>",
+                        "#CEBBAD": "<span style=\"padding: .25rem; background-color:#CEBBAD; color: #FFFFFF;\">ColorD<\/span>",
+                        "#E8E0DA": "<span style=\"padding: .25rem; background-color:#E8E0DA; color: #FFFFFF;\">ColorE<\/span>",
+                        "#9B9B9B": "<span style=\"padding: .25rem; background-color:#9B9B9B; color: #FFFFFF;\">ColorF<\/span>",
+                        "#000000": "<span style=\"padding: .25rem; background-color:#000000; color: #FFFFFF;\">ColorG<\/span>",
+                        "other": "<span style=\"padding: .25rem; color: #000000;\">Other<\/span>"
+                    },
+                    "allow_null": 0,
+                    "other_choice": 0,
+                    "default_value": "#4F4137",
+                    "layout": "horizontal",
+                    "return_format": "value",
+                    "save_other_choice": 0
+                },
+                {
+                    "key": "field_5d06333994a69",
+                    "label": "Primary Color Alternative",
+                    "name": "primary_color_alternative",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5d0632eb94a68",
+                                "operator": "==",
+                                "value": "other"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": ""
+                },
+                {
+                    "key": "field_5d06336094a6a",
+                    "label": "Secondary Color",
+                    "name": "secondary_color",
+                    "type": "radio",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5d0632d894a67",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "#4F4137": "<span style=\"padding: .25rem; background-color:#4F4137; color: #FFFFFF;\">ColorA<\/span>",
+                        "#736357": "<span style=\"padding: .25rem; background-color:#736357; color: #FFFFFF;\">ColorB<\/span>",
+                        "#A6988D": "<span style=\"padding: .25rem; background-color:#A6988D; color: #FFFFFF;\">ColorC<\/span>",
+                        "#CEBBAD": "<span style=\"padding: .25rem; background-color:#CEBBAD; color: #FFFFFF;\">ColorD<\/span>",
+                        "#E8E0DA": "<span style=\"padding: .25rem; background-color:#E8E0DA; color: #FFFFFF;\">ColorE<\/span>",
+                        "#9B9B9B": "<span style=\"padding: .25rem; background-color:#9B9B9B; color: #FFFFFF;\">ColorF<\/span>",
+                        "#000000": "<span style=\"padding: .25rem; background-color:#000000; color: #FFFFFF;\">ColorG<\/span>",
+                        "other": "<span style=\"padding: .25rem; color: #000000;\">Other<\/span>"
+                    },
+                    "allow_null": 0,
+                    "other_choice": 0,
+                    "default_value": "#CEBBAD",
+                    "layout": "horizontal",
+                    "return_format": "value",
+                    "save_other_choice": 0
+                },
+                {
+                    "key": "field_5d06338c94a6b",
+                    "label": "Secondary Color Alternative",
+                    "name": "secondary_color_alternative",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5d06336094a6a",
+                                "operator": "==",
+                                "value": "other"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": ""
+                },
+                {
+                    "key": "field_5d0633a494a6c",
+                    "label": "Tertiary Color",
+                    "name": "tertiary_color",
+                    "type": "radio",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5d0632d894a67",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "#4F4137": "<span style=\"padding: .25rem; background-color:#4F4137; color: #FFFFFF;\">ColorA<\/span>",
+                        "#736357": "<span style=\"padding: .25rem; background-color:#736357; color: #FFFFFF;\">ColorB<\/span>",
+                        "#A6988D": "<span style=\"padding: .25rem; background-color:#A6988D; color: #FFFFFF;\">ColorC<\/span>",
+                        "#CEBBAD": "<span style=\"padding: .25rem; background-color:#CEBBAD; color: #FFFFFF;\">ColorD<\/span>",
+                        "#E8E0DA": "<span style=\"padding: .25rem; background-color:#E8E0DA; color: #FFFFFF;\">ColorE<\/span>",
+                        "#9B9B9B": "<span style=\"padding: .25rem; background-color:#9B9B9B; color: #FFFFFF;\">ColorF<\/span>",
+                        "#000000": "<span style=\"padding: .25rem; background-color:#000000; color: #FFFFFF;\">ColorG<\/span>",
+                        "other": "<span style=\"padding: .25rem; color: #000000;\">Other<\/span>"
+                    },
+                    "allow_null": 0,
+                    "other_choice": 0,
+                    "default_value": "#E8E0DA",
+                    "layout": "horizontal",
+                    "return_format": "value",
+                    "save_other_choice": 0
+                },
+                {
+                    "key": "field_5d0633c694a6d",
+                    "label": "Tertiary Color Alternative",
+                    "name": "tertiary_color_alternative",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5d0633a494a6c",
+                                "operator": "==",
+                                "value": "other"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": ""
+                }
+            ]
         }
     ],
     "location": [
@@ -42,5 +261,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1560076809
+    "modified": 1560687581
 }

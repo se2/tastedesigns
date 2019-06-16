@@ -17,6 +17,8 @@ while (have_rows('group')) : the_row();
   $cta = get_sub_field('call_to_action');
   $align = get_sub_field('align');
 endwhile;
+$colors = get_theme_colors();
+$override = !empty($colors);
 ?>
 
 <section class="c-project-block w-full flex flex-col xl:flex-row xl:mt-90 relative">
@@ -46,10 +48,18 @@ endwhile;
       bg-light py-65 px-40 xl:px-45
     <?php endif; ?>
     ">
-      <h2 class="font-subtitle text-14 leading-15.69/14 tracking-4.05 xl:text-16 xl:leading-15.69 xl:tracking-4.63 text-taste-2 uppercase">
+      <h2 class="font-subtitle text-14 leading-15.69/14 tracking-4.05 xl:text-16 xl:leading-15.69 xl:tracking-4.63 text-taste-2 uppercase"
+      <?php if ($override) : ?>
+        style="color:<?php echo $colors['secondary']; ?>;"
+      <?php endif; ?>
+      >
         <?php echo $subtitle; ?>
       </h2>
-      <h1 class="font-title text-40 leading-50/40 xl:text-42 xl:leading-50/42 text-taste-1 mt-10">
+      <h1 class="font-title text-40 leading-50/40 xl:text-42 xl:leading-50/42 text-taste-1 mt-10"
+      <?php if ($override) : ?>
+        style="color:<?php echo $colors['primary']; ?>;"
+      <?php endif; ?>
+      >
         <?php echo $title; ?>
       </h1>
       <div class="c-project-block__body font-body text-14 leading-21 xl:text-16 xl:leading-24 text-taste-6
@@ -61,8 +71,18 @@ endwhile;
       </div>
       <?php if ($cta) : ?>
       <a href="<?php echo $cta['url']; ?>" target="<?php echo $cta['target']; ?>" class="no-underline w-full lg:w-auto mt-35 block">
-        <div class="c-project-block__button border-2 border-taste-4 py-25 px-21 items-center inline-flex w-full lg:w-auto">
-          <span class="text-14 leading-17 tracking-3.71 lg:text-18 lg:leading-21 lg:tracking-3 text-taste-2 uppercase"><?php echo $cta['title']; ?></span>
+        <div class="c-project-block__button border-2 border-taste-4 py-25 px-21 items-center inline-flex w-full lg:w-auto"
+        <?php if ($override) : ?>
+          style="border-color:<?php echo $colors['tertiary']; ?>;"
+        <?php endif; ?>
+        >
+          <span class="text-14 leading-17 tracking-3.71 lg:text-18 lg:leading-21 lg:tracking-3 text-taste-2 uppercase"
+          <?php if ($override) : ?>
+            style="color:<?php echo $colors['primary']; ?>;"
+          <?php endif; ?>
+          >
+            <?php echo $cta['title']; ?>
+          </span>
           <img src="<?php get_image_url('alternative-path.png'); ?>" alt="Enter" class="w-50 h-auto ml-auto lg:ml-30 align-middle">
         </div>
       </a>

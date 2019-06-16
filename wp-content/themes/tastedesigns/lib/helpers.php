@@ -175,3 +175,26 @@ function evening_the_odds($gallery, $desktop = true) {
 	} while ($has_breach);
 	return $gallery;
 }
+
+/**
+ * Get custom colors
+ */
+function get_theme_colors() {
+	$colors = array();
+	while (have_rows('colors')) : the_row();
+    $override = get_sub_field('override_default_colors');
+		if ($override) :
+			$keys = array('primary', 'secondary', 'tertiary');
+			foreach ($keys as $key) :
+				$color = get_sub_field($key.'_color');
+				$color_alternative = get_sub_field($key.'_color_alternative');
+				if (!empty($color) && $color != 'other') :
+					$colors[$key] = $color;
+				elseif (!empty($color_alternative)) :
+					$colors[$key] = $color_alternative;
+				endif;
+      endforeach;
+    endif;
+	endwhile;
+	return $colors;
+}
