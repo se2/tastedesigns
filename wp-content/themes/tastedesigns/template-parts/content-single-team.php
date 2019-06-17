@@ -6,6 +6,8 @@ template partial for single post type
 */
 ?>
 
+<?php $theme_colors = new TasteColors(true); ?>
+
 <section id="team-<?php the_ID(); ?>" class="c-single-team min-h-full w-full">
 
   <?php
@@ -14,7 +16,7 @@ template partial for single post type
    */
   ?>
   <div class="c-single-team__header xl:px-50 js-header-blog pb-50 xl:pb-80">
-    <h1 class="c-single-team__title font-title text-center text-taste-1 text-60 leading-69 mt-20 xl:mt-0">
+    <h1 class="c-single-team__title font-title text-center text-taste-1 text-60 leading-69 mt-20 xl:mt-0" <?php $theme_colors->getPrimary(); ?>>
       about our team
     </h1>
   </div>

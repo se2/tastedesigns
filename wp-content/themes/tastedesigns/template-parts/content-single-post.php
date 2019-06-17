@@ -7,11 +7,12 @@ template partial for single post type
 ?>
 
 <?php $alter = is_page_template( 'templates/single-sidebar.php' ); ?>
+<?php $theme_colors = new TasteColors(true); ?>
 
 <section class="c-blog">
 
   <div class="c-blog__header lg:px-50 js-header-blog">
-    <h1 class="c-blog__title font-title text-center text-taste-1 text-60 leading-69 mt-20 lg:mt-0 <?php echo $alter ? 'pb-40 lg:pb-60' : ''; ?>">
+    <h1 class="c-blog__title font-title text-center text-taste-1 text-60 leading-69 mt-20 lg:mt-0 <?php echo $alter ? 'pb-40 lg:pb-60' : ''; ?>" <?php $theme_colors->getPrimary(); ?>>
       Blog Title
     </h1>
     <?php if (!$alter) : ?>
@@ -158,7 +159,7 @@ template partial for single post type
             <span class="text-12 leading-17.12 tracking-2.57 lg:text-14 lg:leading-17 lg:tracking-3 text-taste-2 uppercase mt-15 lg:mt-0 lg:mr-auto order-2 lg-order-1">
               Next post
             </span>
-            <img src="<?php get_image_url('alternative-path.png'); ?>" alt="Next" class="w-40 h-auto lg:ml-30 align-middle order-1 lg-order-2">
+            <?php get_arrow_svg('w-40 h-auto lg:ml-30 align-middle order-1 lg-order-2 fill-taste-1'); ?>
           </div>
         </a>
       <?php endif; ?>

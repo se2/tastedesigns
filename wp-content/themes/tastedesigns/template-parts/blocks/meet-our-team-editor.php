@@ -8,8 +8,8 @@
  */
 
 $title = get_sub_field('title');
-$colors = get_theme_colors();
-$override = !empty($colors);
+$colors = new TasteColors();
+$override = $colors->isOverriden();
 set_query_var('title', $title);
 set_query_var('override', $override);
 set_query_var('colors', $colors);

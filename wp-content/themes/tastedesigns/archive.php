@@ -8,10 +8,11 @@
  */
 
 get_header();
+$theme_colors = new TasteColors(true);
 ?>
 
 <div class="c-header js-header-blog">
-	<?php the_archive_title('<h1 class="c-header__title font-title text-center text-taste-1 text-60 leading-15 pb-46 lg:pb-65 mt-10 lg:mt-0 break-words mx-20 lg:mx-0">', '</h1>'); ?>
+	<?php the_archive_title('<h1 class="c-header__title font-title text-center text-taste-1 text-60 leading-15 pb-46 lg:pb-65 mt-10 lg:mt-0 break-words mx-20 lg:mx-0" '.$theme_colors->getPrimary(TasteColors::COLOR, false).'>', '</h1>'); ?>
 </div>
 
 <?php if (get_post_type() == 'post') : ?>
@@ -55,7 +56,7 @@ get_header();
 		<?php if (get_post_type() == 'post') : ?>
 			<div class="c-button border-2 border-taste-4 px-21 inline-flex items-center fwp-load-more cursor-pointer uppercase text-14 tracking-3 text-taste-2 font-subtitle">
 				<span class="c-button__text uppercase text-14 text-taste-2 font-subtitle tracking-3">View more Posts</span>
-				<img src="<?php get_image_url('alternative-path.png'); ?>" alt="Arrow" class="c-button__icon h-auto ml-auto lg:ml-30">
+				<?php get_arrow_svg('c-button__icon h-auto ml-auto lg:ml-30'); ?>
 			</div>
 		<?php endif; ?>
 

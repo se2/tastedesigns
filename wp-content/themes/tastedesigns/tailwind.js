@@ -545,6 +545,7 @@ module.exports = {
     '276': '17.25rem',
     '126': '7.875rem',
     'team-avatar': '38.4375rem',
+    '90': '5.625rem',
   },
 
   /*
@@ -625,6 +626,7 @@ module.exports = {
     'team-image-mobile': 'calc(300 / 414 * 100vw)',
     'team-avatar': '44.5rem',
     'artist-image': 'calc(420 / 1440 * 100vw)',
+    '65': '4.0625rem',
   },
 
   /*
@@ -972,9 +974,7 @@ module.exports = {
   |
   */
 
-  svgFill: {
-    current: 'currentColor',
-  },
+  svgFill: colors,
 
   /*
   |-----------------------------------------------------------------------------

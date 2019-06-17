@@ -24,7 +24,7 @@ $query = new WP_Query($args);
   <div class="c-team w-full py-60 lg:py-100">
     <h1 class="font-title text-40 leading-50/40 lg:text-66 lg:leading-89 text-taste-1 text-center capitalize"
     <?php if ($override) : ?>
-      style="color:<?php echo $colors['primary']; ?>;"
+      <?php $colors->getPrimary(); ?>
     <?php endif; ?>
     >
       <?php echo $title; ?>
@@ -39,7 +39,7 @@ $query = new WP_Query($args);
             <?php endif; ?>
             "
             <?php if ($override) : ?>
-              onMouseOver="this.style.backgroundColor='<?php echo $colors['tertiary']; ?>'"
+              onMouseOver="this.style.backgroundColor='<?php echo $colors->getRawTertiary(); ?>'"
               onMouseOut="this.style.backgroundColor='transparent'"
             <?php endif; ?>
             >
@@ -50,14 +50,14 @@ $query = new WP_Query($args);
               </div>
               <h1 class="font-title text-42 leading-57 text-taste-1 text-center mt-20"
               <?php if ($override) : ?>
-                style="color:<?php echo $colors['primary']; ?>;"
+                <?php $colors->getPrimary(); ?>
               <?php endif; ?>
               >
                 <?php the_title(); ?>
               </h1>
               <h2 class="font-body text-16 leading-30.16 tracking-3.71 text-center text-taste-2 no-underline uppercase"
               <?php if ($override) : ?>
-                style="color:<?php echo $colors['secondary']; ?>;"
+                <?php $colors->getSecondary(); ?>
               <?php endif; ?>
               >
                 <?php the_field('position'); ?>

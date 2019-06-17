@@ -177,24 +177,158 @@ function evening_the_odds($gallery, $desktop = true) {
 }
 
 /**
- * Get custom colors
+ * Taste Colors Management
  */
-function get_theme_colors() {
-	$colors = array();
-	while (have_rows('colors')) : the_row();
-    $override = get_sub_field('override_default_colors');
-		if ($override) :
-			$keys = array('primary', 'secondary', 'tertiary');
-			foreach ($keys as $key) :
-				$color = get_sub_field($key.'_color');
-				$color_alternative = get_sub_field($key.'_color_alternative');
-				if (!empty($color) && $color != 'other') :
-					$colors[$key] = $color;
-				elseif (!empty($color_alternative)) :
-					$colors[$key] = $color_alternative;
-				endif;
-      endforeach;
-    endif;
-	endwhile;
-	return $colors;
+class TasteColors {
+	const PRIMARY = 'primary';
+	const SECONDARY = 'secondary';
+	const TERTIARY = 'tertiary';
+	const COLOR = 1;
+	const BACKGROUND = 2;
+	const BORDER = 3;
+	const FILL = 4;
+
+	private $colors;
+	private $override;
+	private $option;
+	private $id;
+
+	public function __construct($option = false, $id = false) {
+		$this->colors = array();
+		$this->override = false;
+		$this->option = $option;
+		$this->id = $id;
+		$this->collectThemeColors();
+	}
+
+	private function collectThemeColors() {
+		while ($this->haveRowColors()) {
+			the_row();
+			$this->override = get_sub_field('override_default_colors');
+			if ($this->override) {
+				$keys = array(self::PRIMARY, self::SECONDARY, self::TERTIARY);
+				foreach ($keys as $key) {
+					$color = get_sub_field($key.'_color');
+					$color_alternative = get_sub_field($key.'_color_alternative');
+					if (!empty($color) && $color != 'other') {
+						$this->colors[$key] = $color;
+					} else if (!empty($color_alternative)) {
+						$this->colors[$key] = $color_alternative;
+					}
+				}
+			}
+		}
+	}
+
+	private function haveRowColors() {
+		if ($this->option) {
+			return have_rows('colors', 'option');
+		} else if ($this->id) {
+			return have_rows('colors', $this->id);
+		} else {
+			return have_rows('colors');
+		}
+	}
+
+	private function generateProperty($property, $color) {
+		switch ($property) {
+			case self::COLOR:
+				return 'color:'.$color.';';
+			case self::BORDER:
+				return 'border-color:'.$color.';';
+			case self::BACKGROUND:
+				return 'background-color:'.$color.';';
+			case self::FILL:
+				return 'fill:'.$color.';';
+		}
+	}
+
+	private function generateStyle($type, $color) {
+		$style = 'style="';
+		if (is_array($type)) {
+			foreach ($type as $property) {
+				$style .= $this->generateProperty($property, $color);
+			}
+		} else {
+			$style .= $this->generateProperty($type, $color);
+		}
+		$style .= '"';
+		return $style;
+	}
+
+	public function getPrimary($type = self::COLOR, $echo = true) {
+		if ($this->override) {
+			$style = $this->generateStyle($type, $this->getRawPrimary());
+			if ($echo) {
+				echo $style;
+			} else {
+				return $style;
+			}
+		}
+	}
+
+	public function getSecondary($type = self::COLOR, $echo = true) {
+		if ($this->override) {
+			$style = $this->generateStyle($type, $this->getRawSecondary());
+			if ($echo) {
+				echo $style;
+			} else {
+				return $style;
+			}
+		}
+	}
+
+	public function getTertiary($type = self::COLOR, $echo = true) {
+		if ($this->override) {
+			$style = $this->generateStyle($type, $this->getRawTertiary());
+			if ($echo) {
+				echo $style;
+			} else {
+				return $style;
+			}
+		}
+	}
+
+	public function isOverriden() {
+		return $this->override;
+	}
+
+	public function getRawPrimary() {
+		if ($this->override) {
+			return $this->colors[self::PRIMARY];
+		}
+	}
+
+	public function getRawSecondary() {
+		if ($this->override) {
+			return $this->colors[self::SECONDARY];
+		}
+	}
+
+	public function getRawTertiary() {
+		if ($this->override) {
+			return $this->colors[self::TERTIARY];
+		}
+	}
+}
+
+/**
+ * Add styles to Menu
+ */
+function custom_menu_styles($menu_html, $style) {
+	return str_replace('<a href', '<a '.$style.' href', $menu_html);
+}
+
+/**
+ * Generate custom SVG HTML
+ */
+function get_arrow_svg($class, $style = '') {
+	echo '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 97.95 35.98" class="'.$class.'" '.$style.'><title>Arrow-right</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path d="M78.4.69a2.46,2.46,0,0,0,0,3.45l11.4,11.41H2.42a2.44,2.44,0,0,0,0,4.87H89.76L78.37,31.83a2.47,2.47,0,0,0,0,3.45,2.42,2.42,0,0,0,3.43,0L97.25,19.71a2.72,2.72,0,0,0,.51-.77A2.36,2.36,0,0,0,98,18a2.45,2.45,0,0,0-.7-1.7L81.81.75A2.38,2.38,0,0,0,78.4.69Z"/></g></g></svg>';
+}
+
+/**
+ * Generate custom SVG HTML
+ */
+function get_quote_svg($class, $style = '') {
+	echo '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 145.88 99.01" class="'.$class.'" '.$style.'><title>quote</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path d="M70.88,35.5A35.48,35.48,0,0,1,35.38,71a34.32,34.32,0,0,1-4.2-.25A25.4,25.4,0,0,0,48.67,99C22.57,90.84,1.55,67.71.07,39.76c-.54-10.26,2.1-20.6,9.17-28.29a35.51,35.51,0,0,1,61.64,24ZM110.38,0A35.7,35.7,0,0,0,84.24,11.47c-7.07,7.69-9.71,18-9.17,28.29,1.48,27.95,22.5,51.08,48.6,59.25a25.4,25.4,0,0,1-17.49-28.26,34.32,34.32,0,0,0,4.2.25,35.5,35.5,0,0,0,0-71Z"/></g></g></svg>';
 }

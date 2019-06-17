@@ -16,12 +16,17 @@ if (have_posts()) : ?>
 				<section id="page-<?php the_ID(); ?>" class="c-gallery min-h-full w-full">
 
 					<?php
+					$theme_colors = new TasteColors(true);
+					$colors = new TasteColors();
+					?>
+
+					<?php
 					/**
 					 * Page Title
 					 */
 					?>
 					<div class="c-gallery__header px-20 xl:px-50 js-header-blog pb-50 xl:pb-80">
-						<h1 class="c-gallery__title font-title text-center text-taste-1 text-60 leading-69 mt-20 xl:mt-0 lowercase">
+						<h1 class="c-gallery__title font-title text-center text-taste-1 text-60 leading-69 mt-20 xl:mt-0 lowercase" <?php $theme_colors->getPrimary(); ?>>
 							<?php the_title(); ?>
 						</h1>
 					</div>
@@ -42,21 +47,23 @@ if (have_posts()) : ?>
 									'class' => 'c-gallery-artist__image w-full h-full o-cover o-top absolute top-0 left-0'
 								]); ?>
 							</div>
-							<div class="c-gallery-artist__content pl-20 xl:pl-145 xl:w-1/2 relative bg-taste-5 pt-50 xl:pt-75 pb-50 xl:pb-65 pr-20 xl:pr-145 flex">
+							<div class="c-gallery-artist__content pl-20 xl:pl-145 xl:w-1/2 relative bg-taste-5 pt-50 xl:pt-75 pb-50 xl:pb-65 pr-20 xl:pr-145 flex" <?php $colors->getTertiary(TasteColors::BACKGROUND); ?>>
 								<div class="c-gallery-artist__content-inner my-auto">
 									<h2 class="font-subtitle text-14 leading-15.69/14 tracking-4.05 xl:text-16 xl:leading-15.69 xl:tracking-4.63 text-taste-2 uppercase">
 										Featured Artist
 									</h2>
-									<h1 class="font-title text-40 leading-50/40 xl:text-42 xl:leading-50/42 text-taste-1">
+									<h1 class="font-title text-40 leading-50/40 xl:text-42 xl:leading-50/42 text-taste-1" <?php $colors->getPrimary(); ?>>
 										<?php the_title(); ?>
 									</h1>
 									<div class="c-gallery-artist__body font-body text-14 leading-21 xl:text-16 xl:leading-24 text-taste-6">
 										<?php the_content(); ?>
 									</div>
 									<a href="<?php the_permalink(); ?>" class="no-underline w-full lg:w-auto mt-50 block">
-										<div class="c-gallery-artist__button border-2 border-taste-4 py-25 px-21 items-center inline-flex w-full lg:w-auto">
-											<span class="text-14 leading-17 tracking-3.71 lg:text-18 lg:leading-21 lg:tracking-3 text-taste-2 uppercase">View Artist</span>
-											<img src="<?php get_image_url('alternative-path.png'); ?>" alt="Enter" class="w-50 h-auto ml-auto lg:ml-30 align-middle">
+										<div class="c-gallery-artist__button border-2 border-taste-4 py-25 px-21 items-center inline-flex w-full lg:w-auto" <?php $colors->getSecondary(TasteColors::BORDER); ?>>
+											<span class="text-14 leading-17 tracking-3.71 lg:text-18 lg:leading-21 lg:tracking-3 text-taste-2 uppercase" <?php $colors->getPrimary(); ?>>
+												View Artist
+											</span>
+											<?php get_arrow_svg('w-50 h-auto ml-auto lg:ml-30 align-middle fill-taste-1', $colors->getPrimary(TasteColors::FILL, false)); ?>
 										</div>
 									</a>
 								</div>
@@ -81,20 +88,25 @@ if (have_posts()) : ?>
 
 					<?php if ($query->have_posts()) : ?>
 						<div class="c-artists w-full py-60 lg:py-100">
-							<h1 class="font-title text-40 leading-50/40 lg:text-66 lg:leading-89 text-taste-1 text-center capitalize">
+							<h1 class="font-title text-40 leading-50/40 lg:text-66 lg:leading-89 text-taste-1 text-center capitalize" <?php $colors->getPrimary(); ?>>
 								Artists
 							</h1>
 							<div class="c-artists__content px-0 lg:px-10 flex flex-wrap mt-40 lg:mt-60">
 								<?php while ($query->have_posts()) : $query->the_post(); ?>
 									<div class="c-artists__item w-full lg:w-1/3 px-0 lg:px-6 lg:py-24">
 										<a href="<?php the_permalink(); ?>" class="no-underline">
-											<div class="c-artists__item-inner px-20 py-20 lg:px-15 lg:py-16 hover:bg-taste-5">
+											<div class="c-artists__item-inner px-20 py-20 lg:px-15 lg:py-16 hover:bg-taste-5"
+											<?php if ($colors->isOverriden()) : ?>
+												onMouseOver="this.style.backgroundColor='<?php echo $colors->getRawTertiary(); ?>'"
+												onMouseOut="this.style.backgroundColor='transparent'"
+											<?php endif; ?>
+											>
 												<div class="c-artists__thumbnail w-full h-team-image-mobile lg:h-artist-image bg-taste-9">
 													<?php the_post_thumbnail('small', [
 														'class' => 'c-artists__image w-full h-full o-cover o-top block'
 													]); ?>
 												</div>
-												<h2 class="font-body text-16 leading-30.16 tracking-3.71 text-center text-taste-2 no-underline uppercase mt-20">
+												<h2 class="font-body text-16 leading-30.16 tracking-3.71 text-center text-taste-2 no-underline uppercase mt-20" <?php $colors->getPrimary(); ?>>
 													<?php the_title(); ?>
 												</h2>
 											</div>

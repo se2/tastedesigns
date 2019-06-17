@@ -7,11 +7,12 @@ Default template partial for Page
 ?>
 
 <?php $alter = is_page_template( 'templates/page-sidebar.php' ); ?>
+<?php $theme_colors = new TasteColors(true); ?>
 
 <section id="page-<?php the_ID(); ?>" class="c-page min-h-full w-full">
 
   <div class="c-page__header lg:px-50 js-header-blog">
-    <h1 class="c-page__title font-title text-center text-taste-1 text-60 leading-69 mt-20 lg:mt-0 <?php echo $alter ? 'pb-40 lg:pb-60' : 'pb-50 lg:pb-0'; ?>">
+    <h1 class="c-page__title font-title text-center text-taste-1 text-60 leading-69 mt-20 lg:mt-0 <?php echo $alter ? 'pb-40 lg:pb-60' : 'pb-50 lg:pb-0'; ?>" <?php $theme_colors->getPrimary(); ?>>
 			<?php the_title(); ?>
     </h1>
   </div>

@@ -107,22 +107,8 @@
 
 
 .c-appreciation {
-  &__quote::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 90px;
-    height: 65px;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-image: url('../img/left-quote.png');
+  &__quote-mark {
 
-    @screen lg {
-      width: 70px;
-      height: 50px;
-    }
   }
 
   &__quote p {
