@@ -1,12 +1,14 @@
 <?php
 /**
+ * WPSEO plugin file.
+ *
  * @package WPSEO\Admin
  */
 
 /**
- * Class WPSEO_Recalculate_Scores
+ * Class WPSEO_Recalculate_Scores.
  *
- * This class handles the SEO score recalculation for all posts with a filled focus keyword
+ * This class handles the SEO score recalculation for all posts with a filled focus keyword.
  */
 class WPSEO_Recalculate_Scores {
 
@@ -22,12 +24,8 @@ class WPSEO_Recalculate_Scores {
 	 * Run the localize script.
 	 */
 	public function recalculate_assets() {
-		wp_enqueue_script( 'wpseo-recalculate-script', plugins_url( 'js/wp-seo-recalculate-' . '310' . WPSEO_CSSJS_SUFFIX . '.js', WPSEO_FILE ), array(
-			'jquery',
-			'jquery-ui-core',
-			'jquery-ui-progressbar',
-			'yoast-seo',
-		), WPSEO_VERSION, true );
+		$asset_manager = new WPSEO_Admin_Asset_Manager();
+		$asset_manager->enqueue_script( 'recalculate' );
 	}
 
 	/**
@@ -39,19 +37,18 @@ class WPSEO_Recalculate_Scores {
 
 		$progress = sprintf(
 			/* translators: 1: expands to a <span> containing the number of posts recalculated. 2: expands to a <strong> containing the total number of posts. */
-			__( '%1$s of %2$s done.', 'wordpress-seo' ),
+			esc_html__( '%1$s of %2$s done.', 'wordpress-seo' ),
 			'<span id="wpseo_count">0</span>',
 			'<strong id="wpseo_count_total">0</strong>'
 		);
 
 		?>
-		<div id="wpseo_recalculate" style="display:none;">
-			<p><?php esc_html_e( 'Recalculating SEO scores for all pieces of content with a focus keyword.', 'wordpress-seo' ); ?></p>
+		<div id="wpseo_recalculate" class="hidden">
+			<p><?php esc_html_e( 'Recalculating SEO scores for all pieces of content with a focus keyphrase.', 'wordpress-seo' ); ?></p>
 
 			<div id="wpseo_progressbar"></div>
 			<p><?php echo $progress; ?></p>
 		</div>
 		<?php
 	}
-
 }

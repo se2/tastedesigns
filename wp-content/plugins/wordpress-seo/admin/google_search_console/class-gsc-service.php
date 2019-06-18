@@ -1,10 +1,12 @@
 <?php
 /**
- * @package WPSEO\Admin|Google_Search_Console
+ * WPSEO plugin file.
+ *
+ * @package WPSEO\Admin\Google_Search_Console
  */
 
 /**
- * Class WPSEO_GSC_Service
+ * Class WPSEO_GSC_Service.
  */
 class WPSEO_GSC_Service {
 
@@ -30,7 +32,7 @@ class WPSEO_GSC_Service {
 	}
 
 	/**
-	 * Returns the client
+	 * Returns the client.
 	 *
 	 * @return Yoast_Api_Google_Client
 	 */
@@ -39,7 +41,7 @@ class WPSEO_GSC_Service {
 	}
 
 	/**
-	 * Removes the option and calls the clients clear_data method to clear that one as well
+	 * Removes the option and calls the clients clear_data method to clear that one as well.
 	 */
 	public function clear_data() {
 		// Clear client data.
@@ -47,7 +49,7 @@ class WPSEO_GSC_Service {
 	}
 
 	/**
-	 * Get all sites that are registered in the GSC panel
+	 * Get all sites that are registered in the GSC panel.
 	 *
 	 * @return array
 	 */
@@ -70,7 +72,7 @@ class WPSEO_GSC_Service {
 	}
 
 	/**
-	 * Get crawl issues
+	 * Get crawl issues.
 	 *
 	 * @return array
 	 */
@@ -79,6 +81,7 @@ class WPSEO_GSC_Service {
 		$crawl_error_counts = $this->get_crawl_error_counts( $this->profile );
 
 		$return = array();
+		// Ignore coding standards for object properties.
 		if ( ! empty( $crawl_error_counts->countPerTypes ) ) {
 			foreach ( $crawl_error_counts->countPerTypes as $category ) {
 				$return[ $category->platform ][ $category->category ] = array(
@@ -92,7 +95,7 @@ class WPSEO_GSC_Service {
 	}
 
 	/**
-	 * Sending request to mark issue as fixed
+	 * Sending request to mark issue as fixed.
 	 *
 	 * @param string $url      Issue URL.
 	 * @param string $platform Platform (desktop, mobile, feature phone).
@@ -101,12 +104,12 @@ class WPSEO_GSC_Service {
 	 * @return bool
 	 */
 	public function mark_as_fixed( $url, $platform, $category ) {
-		$response = $this->client->do_request( 'sites/' .  urlencode( $this->profile ) .  '/urlCrawlErrorsSamples/' . urlencode( ltrim( $url, '/' ) ) . '?category=' . WPSEO_GSC_Mapper::category_to_api( $category ) . '&platform=' . WPSEO_GSC_Mapper::platform_to_api( $platform ) . '', false, 'DELETE' );
+		$response = $this->client->do_request( 'sites/' . urlencode( $this->profile ) . '/urlCrawlErrorsSamples/' . urlencode( ltrim( $url, '/' ) ) . '?category=' . WPSEO_GSC_Mapper::category_to_api( $category ) . '&platform=' . WPSEO_GSC_Mapper::platform_to_api( $platform ) . '', false, 'DELETE' );
 		return ( $response->getResponseHttpCode() === 204 );
 	}
 
 	/**
-	 * Fetching the issues from the GSC API
+	 * Fetching the issues from the GSC API.
 	 *
 	 * @param string $platform Platform (desktop, mobile, feature phone).
 	 * @param string $category Issue type.
@@ -125,7 +128,7 @@ class WPSEO_GSC_Service {
 	}
 
 	/**
-	 * Setting the GSC client
+	 * Setting the GSC client.
 	 */
 	private function set_client() {
 		try {
@@ -141,8 +144,8 @@ class WPSEO_GSC_Service {
 
 		if ( class_exists( 'Yoast_Api_Google_Client' ) === false ) {
 			$this->incompatible_api_libs(
-				/* translators: %1$s expands to Yoast SEO, %2$s expands to Google Analytics by Yoast */
 				sprintf(
+					/* translators: %1$s expands to Yoast SEO, %2$s expands to Google Analytics by Yoast */
 					__(
 						'%1$s detected you’re using a version of %2$s which is not compatible with %1$s. Please update %2$s to the latest version to use this feature.',
 						'wordpress-seo'
@@ -152,7 +155,7 @@ class WPSEO_GSC_Service {
 				)
 			);
 
-			wp_redirect( admin_url( 'admin.php?page=wpseo_dashboard' ) );
+			wp_redirect( admin_url( 'admin.php?page=' . WPSEO_Admin::PAGE_IDENTIFIER ) );
 			exit;
 		}
 
@@ -160,18 +163,18 @@ class WPSEO_GSC_Service {
 	}
 
 	/**
-	 * Adding notice that the api libs has the wrong version
+	 * Adding notice that the api libs has the wrong version.
 	 *
 	 * @param string $notice Message string.
 	 */
 	private function incompatible_api_libs( $notice ) {
 		Yoast_Notification_Center::get()->add_notification(
-			new Yoast_Notification( $notice, array( 'type' => 'error' ) )
+			new Yoast_Notification( $notice, array( 'type' => Yoast_Notification::ERROR ) )
 		);
 	}
 
 	/**
-	 * Getting the crawl error counts
+	 * Getting the crawl error counts.
 	 *
 	 * @param string $profile Profile name string.
 	 *

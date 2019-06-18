@@ -1,34 +1,22 @@
 <?php
 /**
+ * WPSEO plugin file.
+ *
  * @package WPSEO\Admin
  */
 
 /**
- * This class parses all the values for the general tab in the Yoast SEO settings metabox
+ * This class parses all the values for the general tab in the Yoast SEO settings metabox.
  */
 class WPSEO_Taxonomy_Content_Fields extends WPSEO_Taxonomy_Fields {
 
 	/**
-	 * Returns array with the fields for the general tab
+	 * Returns array with the fields for the general tab.
 	 *
 	 * @return array
 	 */
 	public function get() {
 		$fields = array(
-			'snippet' => $this->get_field_config(
-				__( 'Snippet Editor', 'wordpress-seo' ),
-				sprintf( __( 'This is a rendering of what this post might look like in Google\'s search results.<br/><br/>Read %sthis post%s for more info.', 'wordpress-seo' ), '<a href="https://yoast.com/snippet-preview/#utm_source=wordpress-seo-metabox&amp;utm_medium=inline-help&amp;utm_campaign=snippet-preview">', '</a>' ),
-				'div'
-			),
-			'focuskw' => $this->get_field_config(
-				__( 'Focus Keyword', 'wordpress-seo' ),
-				sprintf( __( 'Pick the main keyword or keyphrase that this post/page is about.<br/><br/>Read %sthis post%s for more info.', 'wordpress-seo' ), '<a href="https://yoast.com/focus-keyword/#utm_source=wordpress-seo-metabox&amp;utm_medium=inline-help&amp;utm_campaign=focus-keyword">', '</a>' )
-			),
-			'analysis' => $this->get_field_config(
-				__( 'Content Analysis', 'wordpress-seo' ),
-				sprintf( __( 'This is the content analysis, a collection of content checks that analyze the content of your page. Read %sthis post%s for more info.', 'wordpress-seo' ), '<a href="https://yoast.com/real-time-content-analysis/#utm_source=wordpress-seo-metabox&amp;utm_medium=inline-help&amp;utm_campaign=snippet-preview">', '</a>' ),
-				'div'
-			),
 			'title' => $this->get_field_config(
 				'',
 				'',
@@ -47,8 +35,26 @@ class WPSEO_Taxonomy_Content_Fields extends WPSEO_Taxonomy_Fields {
 				'hidden',
 				''
 			),
+			'content_score' => $this->get_field_config(
+				'',
+				'',
+				'hidden',
+				''
+			),
+			'focuskw' => $this->get_field_config(
+				'',
+				'',
+				'hidden',
+				''
+			),
 		);
+		/**
+		 * Filter: 'wpseo_taxonomy_content_fields' - Adds the possibility to register additional content fields.
+		 *
+		 * @api array - The additional fields.
+		 */
+		$additional_fields = apply_filters( 'wpseo_taxonomy_content_fields', array() );
 
-		return $this->filter_hidden_fields( $fields );
+		return $this->filter_hidden_fields( array_merge( $fields, $additional_fields ) );
 	}
 }

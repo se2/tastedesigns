@@ -1,63 +1,47 @@
 <?php
 /**
+ * WPSEO plugin file.
+ *
  * @package WPSEO\Admin
  */
 
 /**
- * Class WPSEO_Taxonomy_Tab
+ * Class WPSEO_Taxonomy_Tab.
  *
  * Contains the basics for each class extending this one.
  */
 abstract class WPSEO_Taxonomy_Fields {
 
 	/**
-	 * The Yoast SEO configuration from the WPSEO_Options
-	 *
-	 * @var array
-	 */
-	protected $options = array();
-
-	/**
-	 * The current term data
+	 * The current term data.
 	 *
 	 * @var stdClass
 	 */
 	protected $term;
 
 	/**
-	 * Setting the class properties
+	 * Setting the class properties.
 	 *
-	 * @param stdClass $term    The current term.
-	 * @param array    $options The options.
+	 * @param stdClass $term The current term.
 	 */
-	public function __construct( $term, array $options = null ) {
+	public function __construct( $term ) {
 		$this->term = $term;
-		if ( $options !== null ) {
-			$this->options = $options;
-		}
-		else {
-			$this->options = WPSEO_Options::get_options( array(
-				'wpseo_titles',
-				'wpseo_internallinks',
-				'wpseo_social',
-			) );
-		}
 	}
 
 	/**
-	 * This method should return the fields
+	 * This method should return the fields.
 	 *
 	 * @return array
 	 */
 	abstract public function get();
 
 	/**
-	 * Returns array with the field data
+	 * Returns array with the field data.
 	 *
 	 * @param string       $label       The label displayed before the field.
 	 * @param string       $description Description which will explain the field.
 	 * @param string       $type        The field type, for example: input, select.
-	 * @param string|array $options     Optional array with additional attributes for the field.
+	 * @param string|array $options     Optional. Array with additional options.
 	 * @param bool         $hide        Should the field be hidden.
 	 *
 	 * @return array
@@ -88,5 +72,4 @@ abstract class WPSEO_Taxonomy_Fields {
 
 		return $fields;
 	}
-
 }
