@@ -2101,6 +2101,49 @@
                             "maxlength": ""
                         },
                         {
+                            "key": "field_5d09f171b9a4f",
+                            "label": "Team",
+                            "name": "team",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": 0,
+                            "max": 0,
+                            "layout": "table",
+                            "button_label": "Add Team Member",
+                            "sub_fields": [
+                                {
+                                    "key": "field_5d09f1cab9a50",
+                                    "label": "Team Member",
+                                    "name": "team_member",
+                                    "type": "post_object",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "post_type": [
+                                        "team"
+                                    ],
+                                    "taxonomy": "",
+                                    "allow_null": 0,
+                                    "multiple": 0,
+                                    "return_format": "object",
+                                    "ui": 1
+                                }
+                            ]
+                        },
+                        {
                             "key": "field_5d06274eebda1",
                             "label": "Colors",
                             "name": "colors",
@@ -2368,5 +2411,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1560684439
+    "modified": 1560934116
 }
