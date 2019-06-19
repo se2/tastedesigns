@@ -12,7 +12,7 @@ template partial for single post type
 <section class="c-blog">
 
   <div class="c-blog__header lg:px-50 js-header-blog">
-    <h1 class="c-blog__title font-title text-center text-taste-1 text-60 leading-69 mt-20 lg:mt-0 <?php echo $alter ? 'pb-40 lg:pb-60' : ''; ?>" <?php $theme_colors->getPrimary(); ?>>
+    <h1 class="c-blog__title font-title text-center text-taste-1 text-60 leading-69 mt-20 lg:mt-0 lowercase <?php echo $alter ? 'pb-40 lg:pb-60' : ''; ?>" <?php $theme_colors->getPrimary(); ?>>
       Blog Title
     </h1>
     <?php if (!$alter) : ?>
