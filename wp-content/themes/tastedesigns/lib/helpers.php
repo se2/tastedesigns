@@ -320,15 +320,30 @@ function custom_menu_styles($menu_html, $style) {
 }
 
 /**
- * Generate custom SVG HTML
+ * Generate arrow SVG
  */
 function get_arrow_svg($class, $style = '') {
 	echo '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 97.95 35.98" class="'.$class.'" '.$style.'><title>Arrow-right</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path d="M78.4.69a2.46,2.46,0,0,0,0,3.45l11.4,11.41H2.42a2.44,2.44,0,0,0,0,4.87H89.76L78.37,31.83a2.47,2.47,0,0,0,0,3.45,2.42,2.42,0,0,0,3.43,0L97.25,19.71a2.72,2.72,0,0,0,.51-.77A2.36,2.36,0,0,0,98,18a2.45,2.45,0,0,0-.7-1.7L81.81.75A2.38,2.38,0,0,0,78.4.69Z"/></g></g></svg>';
 }
 
 /**
- * Generate custom SVG HTML
+ * Generate quotation mark SVG
  */
 function get_quote_svg($class, $style = '') {
 	echo '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 145.88 99.01" class="'.$class.'" '.$style.'><title>quote</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path d="M70.88,35.5A35.48,35.48,0,0,1,35.38,71a34.32,34.32,0,0,1-4.2-.25A25.4,25.4,0,0,0,48.67,99C22.57,90.84,1.55,67.71.07,39.76c-.54-10.26,2.1-20.6,9.17-28.29a35.51,35.51,0,0,1,61.64,24ZM110.38,0A35.7,35.7,0,0,0,84.24,11.47c-7.07,7.69-9.71,18-9.17,28.29,1.48,27.95,22.5,51.08,48.6,59.25a25.4,25.4,0,0,1-17.49-28.26,34.32,34.32,0,0,0,4.2.25,35.5,35.5,0,0,0,0-71Z"/></g></g></svg>';
+}
+
+/**
+ * Generate email SVG
+ */
+function get_email_svg($class, $style = '') {
+	echo '<svg viewBox="0 0 74 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="'.$class.'">
+		<title>mail</title>
+		<desc>Created with Sketch.</desc>
+		<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+			<g id="mail" fill="#cebbad" fill-rule="nonzero" '.$style.'>
+				<path d="M8.90710955,5 L36.9794189,28.7102227 L64.3495714,5 L8.90710955,5 Z M69,7.58663807 L38.6369093,33.889584 C37.7063553,34.6957047 36.3274278,34.7043313 35.3868606,33.9099166 L5,8.24479498 L5,49 C5,50.0245358 6.03120501,51 7.4,51 L66.6,51 C67.968795,51 69,50.0245358 69,49 L69,7.58663807 Z M7.4,0 L66.6,0 C70.67,0 74,3.15 74,7 L74,49 C74,52.85 70.67,56 66.6,56 L7.4,56 C3.33,56 0,52.85 0,49 L0,7 C0,3.15 3.33,0 7.4,0 Z" id="Combined-Shape"></path>
+			</g>
+		</g>
+	</svg>';
 }
