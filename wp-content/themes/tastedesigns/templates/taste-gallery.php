@@ -29,6 +29,7 @@ if (have_posts()) : ?>
 						<h1 class="c-gallery__title font-title text-center text-taste-1 text-60 leading-69 mt-20 xl:mt-0 lowercase" <?php $theme_colors->getPrimary(); ?>>
 							<?php the_title(); ?>
 						</h1>
+						<?php get_template_part('template-parts/shared/page_excerpt'); ?>
 					</div>
 
 					<?php

@@ -12,7 +12,8 @@ $theme_colors = new TasteColors(true);
 ?>
 
 <div class="c-header js-header-blog">
-	<?php the_archive_title('<h1 class="c-header__title font-title text-center text-taste-1 text-60 leading-15 pb-46 lg:pb-65 mt-10 lg:mt-0 break-words mx-20 lg:mx-0" '.$theme_colors->getPrimary(TasteColors::COLOR, false).'>', '</h1>'); ?>
+	<?php the_archive_title('<h1 class="c-header__title font-title text-center text-taste-1 text-60 leading-15 pb-46 lg:pb-65 mt-10 lg:mt-0 break-words mx-20 lg:mx-0 lowercase" '.$theme_colors->getPrimary(TasteColors::COLOR, false).'>', '</h1>'); ?>
+	<?php get_template_part('template-parts/shared/page_excerpt'); ?>
 </div>
 
 <?php if (get_post_type() == 'post') : ?>

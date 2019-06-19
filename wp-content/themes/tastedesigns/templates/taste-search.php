@@ -10,7 +10,7 @@
 
 get_header();
 $args = array (
-  'post_type' => array('post', 'page', 'artist', 'project'),
+  'post_type' => 'any',
   'posts_per_page' => 10,
   'facetwp' => true,
 );
