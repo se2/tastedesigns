@@ -63,3 +63,33 @@ function disable_wp_responsive_images() {
 }
 
 add_filter('max_srcset_image_width', 'disable_wp_responsive_images');
+
+
+// 1. To remove the comments from the admin bar:
+// Remove comments link in admin bar
+function ttg_remove_comments_admin_bar_links() {
+	global $wp_admin_bar;
+	$wp_admin_bar->remove_menu('comments');
+}
+
+add_action( 'wp_before_admin_bar_render', 'ttg_remove_comments_admin_bar_links' );
+
+// 2. To disable the discussion page and redirect it:
+// Remove comments page in menu
+function ttg_disable_comments_admin_menu() {
+	remove_menu_page( 'edit-comments.php' );
+	remove_submenu_page( 'options-general.php', 'options-discussion.php' );
+}
+
+add_action( 'admin_menu', 'ttg_disable_comments_admin_menu' );
+
+// Redirect any user trying to access comments page
+function ttg_disable_comments_admin_menu_redirect() {
+	global $pagenow;
+	if ( $pagenow === 'edit-comments.php' || $pagenow === 'options-discussion.php' ) {
+		wp_redirect( admin_url() );
+		exit;
+	}
+}
+
+add_action( 'admin_init', 'ttg_disable_comments_admin_menu_redirect' );
