@@ -25,6 +25,49 @@
             "ui": 1
         },
         {
+            "key": "field_5d0a01940057e",
+            "label": "Artists",
+            "name": "artists",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Add Artist",
+            "sub_fields": [
+                {
+                    "key": "field_5d0a01b90057f",
+                    "label": "Artist",
+                    "name": "artist",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "artist"
+                    ],
+                    "taxonomy": "",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "return_format": "object",
+                    "ui": 1
+                }
+            ]
+        },
+        {
             "key": "field_5d0632d094a66",
             "label": "Colors",
             "name": "colors",
@@ -261,5 +304,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1560687581
+    "modified": 1560936914
 }
