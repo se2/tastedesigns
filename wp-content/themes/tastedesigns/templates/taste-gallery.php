@@ -80,8 +80,6 @@ if (have_posts()) : ?>
 					$args = array (
 						'post_type' => 'artist',
 						'posts_per_page' => -1,
-						'orderby' => 'date',
-						'order' => 'ASC',
 					);
 					$query = new WP_Query($args);
 					?>

@@ -14,8 +14,6 @@ $colors = get_query_var('colors');
 $args = array (
   'post_type' => 'team',
   'posts_per_page' => -1,
-  'orderby' => 'date',
-  'order' => 'ASC',
 );
 $query = new WP_Query($args);
 ?>
