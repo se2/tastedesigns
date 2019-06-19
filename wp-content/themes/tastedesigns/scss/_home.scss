@@ -28,11 +28,30 @@
 
   &__arrow {
     cursor: pointer;
+    border-radius: 100%;
+    transition-duration: 0.5s;
+    animation: pulse 3s infinite;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    &:active {
+      transform: scale(2);
+    }
 
     @screen lg {
       left: 50%;
       bottom: 3.875rem;
       transform: translateX(-50%);
+
+      &:hover {
+        transform: translateX(-50%) scale(1.2);
+      }
+
+      &:active {
+        transform: translateX(-50%) scale(2);
+      }
     }
   }
 
@@ -105,12 +124,7 @@
   }
 }
 
-
 .c-appreciation {
-  &__quote-mark {
-
-  }
-
   &__quote p {
     margin: 40px 0;
 

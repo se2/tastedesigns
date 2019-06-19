@@ -160,3 +160,15 @@ body.theme {
     order: 3;
   }
 }
+
+@keyframes pulse {
+  0% {
+    background-color: transparent;
+  }
+  50% {
+    background-color: config('colors.taste-1');
+  }
+  100% {
+    background-color: transparent;
+  }
+}
