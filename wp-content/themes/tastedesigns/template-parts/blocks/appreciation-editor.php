@@ -31,10 +31,12 @@ if ($testimonial) :
       <h1 class="font-title text-42 leading-57 lg:text-66 lg:leading-89 tc-primary break-words px-40 lg:px-0" <?php $colors->getPrimary(); ?>>
         <?php echo $title; ?>
       </h1>
-      <div class="c-appreciation__content-inner pt-20 lg:pt-60 px-40 lg:px-0">
-        <blockquote class="c-appreciation__quote font-body text-20 leading-36 lg:text-24 lg:leading-28 text-taste-6 lg:pl-75 lg:pr-0 pt-75 lg:pt-0 relative">
-          <?php get_quote_svg('c-appreciation__quote-mark absolute top-0 left-0 w-90 h-65 lg:w-70 lg:h-50 o-contain fill-taste-1', $colors->getSecondary(TasteColors::FILL, false)); ?>
-          <?php the_content(); ?>
+      <div class="c-appreciation__content-inner pt-20 xl:pt-60 px-40 lg:px-0">
+        <blockquote class="c-appreciation__quote font-body text-20 leading-36 lg:text-24 lg:leading-28 text-taste-6 xl:pl-50 xl:pl-75 lg:pr-0 pt-40 xl:pt-0 relative">
+          <?php get_quote_svg('c-appreciation__quote-mark absolute top-0 left-0 w-50 h-30 xl:w-70 xl:h-50 o-contain fill-taste-1', $colors->getSecondary(TasteColors::FILL, false)); ?>
+          <div class="c-appreciation__quote-content">
+            <?php the_content(); ?>
+          </div>
           <h4 class="font-body text-18 leading-28 tracking-4 text-taste-2 uppercase flex flex-row items-center" <?php $colors->getPrimary(); ?>>
             <span class="w-50 h-2 bg-taste-3 mr-16" <?php $colors->getTertiary(TasteColors::BACKGROUND); ?>></span>
             <?php the_title(); ?>

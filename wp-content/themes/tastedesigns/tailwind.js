@@ -627,6 +627,7 @@ module.exports = {
     'team-avatar': '44.5rem',
     'artist-image': 'calc(420 / 1440 * 100vw)',
     '65': '4.0625rem',
+    '30': '1.875rem',
   },
 
   /*
