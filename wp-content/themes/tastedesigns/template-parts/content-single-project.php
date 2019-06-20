@@ -100,7 +100,7 @@ template partial for single post type
         <a class="no-underline block mr-auto w-full xs:w-auto" href="<?php echo get_permalink($prevPost); ?>">
           <div class="border-2 border-taste-4 px-10 pt-15 pb-10 lg:py-25 lg:px-20 items-center inline-flex flex-col lg:flex-row lg:w-full">
             <img src="<?php get_image_url('reverse-path.png'); ?>" alt="Prev" class="w-40 h-auto lg:mr-18 align-middle order-2 lg-order-1 mt-10 lg:mt-0">
-            <div class="w-75 h-50 lg:w-99 lg:h-74 lg:mr-auto order-1 lg-order-2">
+            <div class="w-75 h-50 lg:w-99 lg:h-74 lg:mr-auto order-1 lg-order-2 bg-taste-9">
               <?php echo generate_image(get_post_thumbnail_id($prevPost->ID), 'w-full h-full o-cover'); ?>
             </div>
             <span class="text-12 leading-17.12 tracking-2.57 lg:text-14 lg:leading-17 lg:tracking-3 text-taste-2 uppercase mt-15 lg:mt-0 lg:ml-20 hidden order-3 lg:inline">
@@ -125,7 +125,7 @@ template partial for single post type
             <span class="text-12 leading-17.12 tracking-2.57 lg:text-14 lg:leading-17 lg:tracking-3 text-taste-2 uppercase mt-15 lg:mt-0 lg:mr-20 order-2 lg-order-1 hidden lg:inline">
               Next<br>project
             </span>
-            <div class="w-75 h-50 lg:w-99 lg:h-74 lg-order-2 lg:ml-auto">
+            <div class="w-75 h-50 lg:w-99 lg:h-74 lg-order-2 lg:ml-auto bg-taste-9">
               <?php echo generate_image(get_post_thumbnail_id($nextPost->ID), 'w-full h-full o-cover'); ?>
             </div>
             <img src="<?php get_image_url('alternative-path.png'); ?>" alt="Next" class="w-40 h-auto lg:ml-18 align-middle order-1 lg-order-3 mt-10 lg:mt-0">
