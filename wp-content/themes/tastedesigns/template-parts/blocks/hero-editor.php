@@ -7,15 +7,20 @@
  * @link       https://technologytherapy.com/
  */
 
-$bg = 'background-image:url(' . get_sub_field( 'background' ) . ');';
-$bg_mobile = 'background-image:url(' . get_sub_field( 'background_image_mobile' ) . ');';
+$bg = get_sub_field('background');
+$bg_mobile = get_sub_field('background_image_mobile');
 $title = get_sub_field('title');
 $subtitle = get_sub_field('subtitle');
 $colors = new TasteColors();
 ?>
 
-<section class="c-cover w-full h-screen bg-cover bg-bottom relative" style="<?php echo $bg; ?>">
-  <div class="c-cover__background absolute w-full h-full lg:hidden bg-cover" style="<?php echo $bg_mobile; ?>"></div>
+<section class="c-cover w-full h-screen relative">
+  <div class="c-cover__background absolute w-full h-full hidden lg:block">
+    <?php generate_image($bg, 'w-full h-full o-cover', 'massive'); ?>
+  </div>
+  <div class="absolute w-full h-full lg:hidden">
+    <?php generate_image($bg_mobile, 'w-full h-full o-cover', 'small'); ?>
+  </div>
   <div class="c-cover__inner absolute w-full px-20 py-20 lg:pt-34 lg:pb-55 lg:px-27">
     <div class="c-cover__underlay absolute w-full h-full opacity-50 bgc-primary"></div>
     <div class="c-cover__text-content w-full lg:w-576 text-center lg:text-left lg:float-right">
