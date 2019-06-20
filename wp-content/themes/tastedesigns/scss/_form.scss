@@ -1,0 +1,59 @@
+.gform_wrapper .c-form {
+
+  &__field input:not([type='radio']):not([type='checkbox']):not([type='submit']):not([type='button']):not([type='image']):not([type='file']),
+  &__field textarea,
+  .gform_footer input.button {
+    @apply font-body text-40 leading-50/40 text-left border-2 border-taste-8 pt-20 px-20 pb-15 m-0 text-14 leading-17 tracking-3.71 text-taste-2 uppercase;
+
+    outline: 0;
+
+    @screen xl {
+      @apply text-18 leading-21 tracking-3;
+    }
+  }
+
+  .gform_footer input.button {
+    @apply py-25 px-35 bg-transparent border-taste-4 cursor-pointer;
+
+    transition: color 0.5s $default, background-color 0.5s $default;
+
+    &:hover {
+      @apply text-light bg-taste-4;
+    }
+  }
+
+  .gform_footer.top_label {
+    @apply p-0;
+  }
+
+  .top_label .gfield_label {
+    display: none;
+  }
+}
+
+.gform_wrapper.gform_validation_error .c-form .gform_body ul li.gfield.gfield_error:not(.gf_left_half):not(.gf_right_half) {
+  max-width: 100% !important;
+  border: 0;
+  background-color: transparent;
+}
+
+.gform_wrapper .c-form ul.gform_fields li.gfield {
+  padding: 0;
+}
+
+.gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_description,
+.gform_wrapper .c-form .validation_message {
+  @apply mt-10 font-body text-16 leading-24 text-taste-9;
+}
+
+.gform_wrapper .c-form div.validation_error {
+  @apply font-body text-16 leading-24 text-taste-9;
+
+  border: 0;
+  margin-bottom: 0;
+}
+
+.gform_wrapper .c-form li.gfield_error input:not([type='radio']):not([type='checkbox']):not([type='submit']):not([type='button']):not([type='image']):not([type='file']),
+.gform_wrapper .c-form li.gfield_error textarea {
+  @apply border-2 border-taste-9;
+}
