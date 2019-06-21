@@ -36,10 +36,9 @@ export default {
 
     e.$gallery.slick({
       infinite: false,
-      autoplay: true,
       autoplaySpeed: 5000,
       rows: 0,
-      arrows: false,
+      arrows: true,
       speed: 1000,
       cssEase: 'cubic-bezier(0.645, 0.045, 0.355, 1)',
       pauseOnFocus: false,
@@ -52,6 +51,7 @@ export default {
             slidesToShow: 1,
             centerMode: true,
             centerPadding: '10px',
+            arrows: false,
           }
         },
       ],
