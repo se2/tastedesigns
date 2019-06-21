@@ -72,6 +72,36 @@ if ( !is_front_page() ) {
 				<?php endwhile; ?>
 			</div>
 		</div>
+		<?php
+		while (have_rows('contact_form', 'option')) : the_row();
+			$visible = get_sub_field('is_visible', 'option');
+			$title = get_sub_field('title', 'option');
+			$shortcode = get_sub_field('shortcode', 'option');
+
+			if ($visible) : ?>
+				<section class="c-contact-form fixed top-0 left-0 w-full h-full z-50 js-form">
+					<div class="c-contact-form__background bg-light absolute top-0 left-0 w-full h-full"></div>
+					<div class="c-contact-form__inner w-full h-full relative">
+						<div class="c-menu__hamburger w-28 h-28 right-0 lg:w-33 lg:h-33 absolute is-active js-form-close cursor-pointer">
+							<div class="c-menu__stick w-full h-3 lg:h-3.78 absolute bg-taste-2 rounded"></div>
+							<div class="c-menu__stick w-full h-3 lg:h-3.78 absolute bg-taste-2 rounded"></div>
+						</div>
+						<div class="c-contact-form__content overflow-y-auto w-full h-full px-20 py-50 lg:px-50 lg:py-70">
+							<div class="c-contact-form__header">
+								<h1 class="font-title text-40 leading-50/40 xl:text-42 xl:leading-50/42 text-taste-1 text-center">
+									<?php echo $title; ?>
+								</h1>
+							</div>
+							<div class="c_contact-form__content max-w-1000 mx-auto mt-50">
+								<?php echo do_shortcode($shortcode); ?>
+							</div>
+						</div>
+					</div>
+				</section>
+				<?php
+			endif;
+		endwhile;
+		?>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

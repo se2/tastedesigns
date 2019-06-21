@@ -4,17 +4,30 @@
     input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]),
   .gfield textarea,
   .gform_footer input.button {
-    @apply font-body text-40 leading-50/40 text-left border-2 border-taste-8 pt-20 px-20 pb-15 m-0 text-14 leading-17 tracking-3.71 text-taste-2 uppercase;
+    @apply font-body text-40 leading-50/40 text-left border-b-2 border-taste-8 px-0 pt-10 pb-5 m-0 text-14 leading-17 tracking-3.71 text-taste-2 bg-transparent;
 
     outline: 0;
 
     @screen xl {
       @apply text-18 leading-21 tracking-3;
     }
+
+    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+      @apply uppercase;
+    }
+    &::-moz-placeholder { /* Firefox 19+ */
+      @apply uppercase;
+    }
+    &:-ms-input-placeholder { /* IE 10+ */
+      @apply uppercase;
+    }
+    &:-moz-placeholder { /* Firefox 18- */
+      @apply uppercase;
+    }
   }
 
   .gform_footer input.button {
-    @apply py-25 px-35 bg-transparent border-taste-4 cursor-pointer w-auto;
+    @apply py-25 px-35 bg-transparent border-2 border-taste-4 cursor-pointer w-auto uppercase;
 
     transition: color 0.5s $default, background-color 0.5s $default;
 
@@ -73,6 +86,53 @@
   li.gfield_error
     input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]),
   .gform_wrapper .c-form li.gfield_error textarea {
-    @apply border-2 border-taste-9;
+    @apply border-0 border-b-2 border-taste-9;
+  }
+}
+
+.c-contact-form {
+  visibility: hidden;
+  transition-property: visibility;
+  transition-duration: 0s;
+  transition-delay: 0.7s;
+
+  .c-menu__hamburger {
+    top: 16px;
+    right: 20px;
+    cursor: pointer;
+
+    @screen lg {
+      top: 40px;
+      right: 50px;
+    }
+  }
+
+  &__background {
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 0.7s;
+    transition-timing-function: $reverse;
+  }
+
+  &__inner {
+    transform: translateY(-100%);
+    transition-property: transform;
+    transition-duration: 0.7s;
+    transition-timing-function: $reverse;
+  }
+
+  &.is-active {
+    visibility: visible;
+    transition-delay: 0s;
+
+    .c-contact-form__background {
+      opacity: 1;
+      transition-timing-function: $default;
+    }
+
+    .c-contact-form__inner {
+      transform: none;
+      transition-timing-function: $default;
+    }
   }
 }

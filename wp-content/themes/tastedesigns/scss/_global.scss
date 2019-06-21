@@ -22,6 +22,10 @@ a {
 	@apply outline-none;
 }
 
+html.is-freeze {
+  @apply overflow-hidden w-full h-full;
+}
+
 // Themes
 body.theme {
   &--color-1 {

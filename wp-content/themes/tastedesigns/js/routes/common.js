@@ -7,6 +7,7 @@ export default {
 
     s.initCommon();
     s.initMenu();
+    s.initContactForm();
   },
   initCommon() {
     let e = this.elements;
@@ -21,6 +22,10 @@ export default {
     e.$searchClose = $('.js-search-close');
     e.$searchForm = $('.js-search-form');
     e.$searchInput = $('.js-search-input');
+    e.$html = $('html');
+    e.$form = $('.js-form');
+    e.$formClose = $('.js-form-close');
+    e.$formOpen = $('a[href="#work-with-taste"]');
   },
   initMenu() {
     let s = this;
@@ -86,6 +91,22 @@ export default {
 
     e.$searchClose.click(function() {
       e.$searchForm.removeClass('is-active');
+    });
+  },
+  initContactForm() {
+    let s = this;
+    let e = s.elements;
+
+    e.$formClose.click(function() {
+      e.$form.removeClass('is-active');
+      e.$html.removeClass('is-freeze');
+    });
+
+    e.$formOpen.click(function(event) {
+      event.preventDefault();
+
+      e.$form.addClass('is-active');
+      e.$html.addClass('is-freeze');
     });
   },
   finalize() {
