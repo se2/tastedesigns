@@ -162,9 +162,21 @@ function evening_the_odds($gallery, $desktop = true) {
 				}
 				// If there's no filler anymore
 				if (!$fill_complete) {
-					$odd = $gallery[$i - 1];
-					array_splice($gallery, $i - 1, 1);
-					array_push($gallery, $odd);
+					if ($desktop) {
+						if ($gallery[$i - 1]['width'] <= $gallery[$i - 1]['height']) {
+							$odd = $gallery[$i - 1];
+							array_splice($gallery, $i - 1, 1);
+							array_push($gallery, $odd);
+						} else {
+							$odd = $gallery[$i - 2];
+							array_splice($gallery, $i - 2, 1);
+							array_push($gallery, $odd);
+						}
+					} else {
+						$odd = $gallery[$i - 1];
+						array_splice($gallery, $i - 1, 1);
+						array_push($gallery, $odd);
+					}
 				}
 				// Proof that there's a breach
 				$has_breach = true;
