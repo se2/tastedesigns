@@ -163,13 +163,13 @@
 							<i class="fab <?php echo get_sub_field('type'); ?>"></i>
 						</a>
 					<?php endwhile; ?>
-					<a href="#" class="font-body text-14 leading-17 tracking-3.71 tc-primary uppercase no-underline align-middle ml-auto hidden lg:inline">
+					<a href="<?php echo get_site_url(); ?>/gallery-at-taste/" class="font-body text-14 leading-17 tracking-3.71 tc-primary uppercase no-underline align-middle ml-auto hidden lg:inline">
 						Gallery At Taste
 						<img src="<?php get_image_url('path.png'); ?>" alt="Enter" class="w-47 h-auto ml-22 align-middle">
 					</a>
 				</div>
 
-				<a href="#" class="font-body text-11 leading-13 tracking-2.54 lg:text-14 lg:leading-17 lg:tracking-3.71 tc-primary uppercase no-underline align-middle mt-22 lg:hidden block text-center">
+				<a href="<?php echo get_site_url(); ?>/gallery-at-taste/" class="font-body text-11 leading-13 tracking-2.54 lg:text-14 lg:leading-17 lg:tracking-3.71 tc-primary uppercase no-underline align-middle mt-22 lg:hidden block text-center">
 					Gallery At Taste
 					<img src="<?php get_image_url('path.png'); ?>" alt="Enter" class="w-31 h-auto ml-20 align-middle">
 				</a>
