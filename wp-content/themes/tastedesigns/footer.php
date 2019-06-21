@@ -45,7 +45,6 @@ if ( !is_front_page() ) {
 					<div class="c-footer__button border-2 border-taste-2 py-25 px-25 items-center inline-flex" <?php $theme_colors->getSecondary(TasteColors::BORDER); ?>>
 						<span class="text-16 leading-19 tracking-4.24 text-taste-3 lg:text-taste-4 uppercase hidden lg:inline" <?php $theme_colors->getSecondary(); ?>><?php echo $career['title']; ?></span>
 						<span class="text-16 leading-19 tracking-4.24 text-taste-3 lg:text-taste-4 uppercase lg:hidden" <?php $theme_colors->getSecondary(); ?>>Inquiries</span>
-						<?php get_email_svg('w-38 h-auto align-middle ml-40', $theme_colors->getSecondary(TasteColors::FILL, false)); ?>
 					</div>
 				</a>
 			<?php endif; ?>
