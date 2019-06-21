@@ -17,7 +17,7 @@ template partial for single post type
   ?>
   <div class="c-single-project__header lg:px-50 js-header-blog pb-50 lg:pb-80">
     <h1 class="c-single-project__title font-title text-center text-taste-1 text-60 leading-69 mt-20 lg:mt-0" <?php $theme_colors->getPrimary(); ?>>
-      projects
+      client stories
     </h1>
   </div>
 
@@ -113,7 +113,7 @@ template partial for single post type
 
     <div class="mx-auto">
       <a class="border-b-2 lg:border-b-4 border-taste-3 no-underline inline-block" href="<?php echo get_post_type_archive_link('project'); ?>">
-        <span class="text-11 tracking-2.91 lg:text-16 leading-30 lg:tracking-4.24 text-taste-1 uppercase hidden xs:inline">View all projects</span>
+        <span class="text-11 tracking-2.91 lg:text-16 leading-30 lg:tracking-4.24 text-taste-1 uppercase hidden xs:inline">View all client stories</span>
         <span class="text-11 tracking-2.91 lg:text-16 leading-30 lg:tracking-4.24 text-taste-1 uppercase xs:hidden">View all</span>
       </a>
     </div>
