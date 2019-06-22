@@ -8,6 +8,7 @@
  */
 
 $project = get_sub_field('project');
+$autoplay = get_sub_field('autoplay');
 if ($project) :
   global $post;
   $post = $project;
@@ -21,15 +22,24 @@ if ($project) :
         <h2 class="font-title text-30 leading-40 text-taste-4 text-center mb-22 lg:hidden" <?php $colors->getTertiary(); ?>>
           Featured Project
         </h2>
-        <div class="c-featured-project__gallery-inner js-project-gallery">
+        <div class="c-featured-project__gallery-inner js-project-gallery relative" data-slick='{"autoplay": <?php echo $autoplay; ?>}''>
           <?php $gallery = get_field('gallery'); ?>
           <?php $count = 0; ?>
           <?php foreach ($gallery as $image) : $count++; ?>
             <div class="c-featured-project__image-wrapper py-10 px-10 lg:pl-0 lg:pr-20 js-project-gallery-item">
-              <?php generate_image($image['ID'], 'c-featured-project__image w-full h-featured-mobile lg:h-featured', 'large'); ?>
+              <a href="<?php echo get_permalink($project); ?>" class="no-underline">
+                <?php generate_image($image['ID'], 'c-featured-project__image w-full h-featured-mobile lg:h-featured', 'large'); ?>
+              </a>
             </div>
             <?php if ($count == 4) : break; endif; ?>
           <?php endforeach; ?>
+        </div>
+        <div class="c-featured-project__link-wrapper w-full items-center hidden lg:flex">
+          <a href="<?php echo get_post_type_archive_link('project'); ?>" class="c-featured-project__link border-b-4 no-underline mt-50 lg:mt-120 mx-auto pb-5 lg:pb-0 block" <?php $colors->getSecondary(TasteColors::BORDER); ?>>
+            <span class="text-14 leading-17 tracking-3.71 lg:text-18 lg:leading-21 lg:tracking-3 text-taste-2 uppercase" <?php $colors->getPrimary(); ?>>
+              View All Projects
+            </span>
+          </a>
         </div>
       </div>
       <div class="c-featured-project__content w-full lg:w-34% px-20 lg:px-50">
@@ -58,18 +68,18 @@ if ($project) :
             </p>
           <?php endwhile; ?>
         <?php endif; ?>
+        <a href="<?php echo get_permalink($project); ?>" class="no-underline w-full lg:w-auto">
+          <div class="c-featured-project__button border-2 border-taste-4 py-25 px-21 items-center inline-flex w-full lg:w-auto mt-50" <?php $colors->getSecondary(TasteColors::BORDER); ?>>
+            <span class="text-14 leading-17 tracking-3.71 lg:text-18 lg:leading-21 lg:tracking-3 text-taste-2 uppercase" <?php $colors->getPrimary(); ?>>
+              Full Project Details
+            </span>
+            <?php get_arrow_svg('w-50 h-auto ml-auto lg:ml-30 align-middle fill-taste-1', $colors->getPrimary(TasteColors::FILL, false)); ?>
+          </div>
+        </a>
       </div>
     </div>
-    <div class="c-featured-project__bottom w-full px-20 lg:px-50 mt-50 flex items-center flex-col lg:flex-row">
-      <a href="<?php echo get_permalink($project); ?>" class="no-underline w-full lg:w-auto">
-        <div class="c-featured-project__button border-2 border-taste-4 py-25 px-21 items-center inline-flex w-full lg:w-auto" <?php $colors->getSecondary(TasteColors::BORDER); ?>>
-          <span class="text-14 leading-17 tracking-3.71 lg:text-18 lg:leading-21 lg:tracking-3 text-taste-2 uppercase" <?php $colors->getPrimary(); ?>>
-            Full Project Details
-          </span>
-          <?php get_arrow_svg('w-50 h-auto ml-auto lg:ml-30 align-middle fill-taste-1', $colors->getPrimary(TasteColors::FILL, false)); ?>
-        </div>
-      </a>
-      <a href="<?php echo get_post_type_archive_link('project'); ?>" class="c-featured-project__link border-b-4 no-underline mt-50 lg:mt-0 mx-auto lg:mr-0 lg:ml-auto pb-5 lg:pb-0" <?php $colors->getSecondary(TasteColors::BORDER); ?>>
+    <div class="c-featured-project__bottom w-full px-20 lg:px-50 flex lg:hidden items-center flex-col lg:flex-row">
+      <a href="<?php echo get_post_type_archive_link('project'); ?>" class="c-featured-project__link border-b-4 no-underline mt-50 lg:mt-120 mx-auto pb-5 lg:pb-0 block" <?php $colors->getSecondary(TasteColors::BORDER); ?>>
         <span class="text-14 leading-17 tracking-3.71 lg:text-18 lg:leading-21 lg:tracking-3 text-taste-2 uppercase" <?php $colors->getPrimary(); ?>>
           View All Projects
         </span>

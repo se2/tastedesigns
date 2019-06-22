@@ -132,9 +132,11 @@ function get_image_url($name, $echo = true) {
 /**
  * Smooth out the gallery's output
  */
+const SAFE_LIMIT = 1000;
 function evening_the_odds($gallery, $desktop = true) {
 	$max_space = $desktop ? 4 : 2;
 	$has_breach = false;
+	$failsafe_counter = 0;
 	do {
 		// Reset marker
 		$has_breach = false;
@@ -183,6 +185,10 @@ function evening_the_odds($gallery, $desktop = true) {
 				// Gallery is altered, escape now or stuck here for eternity
 				break;
 			}
+		}
+		// Check safe limit
+		if (++$failsafe_counter >= SAFE_LIMIT) {
+			break;
 		}
 	} while ($has_breach);
 	return $gallery;
