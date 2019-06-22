@@ -93,3 +93,19 @@ function ttg_disable_comments_admin_menu_redirect() {
 }
 
 add_action( 'admin_init', 'ttg_disable_comments_admin_menu_redirect' );
+
+
+// adjust archive title for Projects to Client Stories, lowercase
+function ttg_renameArchive_projects( $title )
+{
+	if ( 
+		$title == 'Projects' ||
+		$title == 'Archives: Projects'
+	)
+	{
+		$title = 'client stories';
+	}
+
+	return $title;
+}
+add_filter( 'get_the_archive_title', 'ttg_renameArchive_projects', 1000, 1);

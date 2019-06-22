@@ -11,7 +11,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php if (has_post_thumbnail()): ?>
-    <?php ttg_wp_post_thumbnail(); ?>
+    	<a href="<?php the_permalink(); ?>"><?php ttg_wp_post_thumbnail(); ?></a>
   <?php else: ?>
     <?php $default_feature_image = get_field( 'default_feature_image', 'option' ); ?>
     <a class="post-thumbnail" href="<?php echo get_permalink(); ?>" aria-hidden="true" tabindex="-1">
