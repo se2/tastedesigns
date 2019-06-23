@@ -75,7 +75,7 @@ if (!$is_about) :
 
   <?php if (!empty($team)) : ?>
     <div class="c-team w-full py-60 lg:py-80">
-      <h1 class="font-title text-42 leading-57 text-taste-1 text-center lowercase"
+      <h1 class="font-title text-42 leading-57 lg:text-58 lg:leading-78 text-taste-1 text-center lowercase"
       <?php if ($override) : ?>
         <?php $colors->getPrimary(); ?>
       <?php endif; ?>
