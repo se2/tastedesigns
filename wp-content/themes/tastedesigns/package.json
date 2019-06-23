@@ -19,6 +19,7 @@
     "tailwindcss": "^0.6.4"
   },
   "dependencies": {
+    "animate.css": "^3.7.2",
     "jquery": "^3.4.1",
     "slick-carousel": "^1.8.1"
   }

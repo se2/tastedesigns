@@ -30,9 +30,9 @@ $colors = new TasteColors();
       <a href="<?php echo $subtitle['url']; ?>" class="c-cover__subtitle text-17 font-subtitle leading-20 tracking-4.5 lg:tracking-4.13 text-light uppercase relative inline-block mt-10 lg:mt-32 pb-5 no-underline border-b-4" <?php $colors->getPrimary(TasteColors::BORDER); ?>>
         <?php echo $subtitle['title']; ?>
       </a>
-      <img src="<?php get_image_url('down-arrow.png'); ?>" alt="Scroll Down" class="c-cover__arrow block w-40 h-40 lg:hidden mx-auto mt-30 relative js-scroll">
+      <img src="<?php get_image_url('down-arrow.png'); ?>" alt="Scroll Down" class="c-cover__arrow block w-40 h-40 lg:hidden mx-auto mt-30 relative js-scroll bounce infinite animated slower">
     </div>
   </div>
-  <img src="<?php get_image_url('down-arrow.png'); ?>" alt="Scroll Down" class="c-cover__arrow absolute w-40 h-40 hidden lg:block js-scroll">
+  <img src="<?php get_image_url('down-arrow.png'); ?>" alt="Scroll Down" class="c-cover__arrow absolute w-40 h-40 hidden lg:block js-scroll bounce infinite animated slower">
   <div class="c-cover__bottom absolute w-full h-44 lg:h-16 bg-taste-2"></div>
 </section>

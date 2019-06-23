@@ -29,8 +29,8 @@
   &__arrow {
     cursor: pointer;
     border-radius: 100%;
-    transition-duration: 0.5s;
-    animation: pulse 3s infinite;
+    // transition-duration: 0.5s;
+    // animation: pulse 3s infinite;
 
     &:hover {
       transform: scale(1.2);
