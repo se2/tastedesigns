@@ -8,10 +8,12 @@
  */
 
 $title = get_sub_field('title');
+$subtitle = get_sub_field('subtitle');
 $colors = new TasteColors();
 $override = $colors->isOverriden();
 $team = get_sub_field('team');
 set_query_var('title', $title);
+set_query_var('subtitle', $subtitle);
 set_query_var('override', $override);
 set_query_var('team', $team);
 set_query_var('colors', $colors);

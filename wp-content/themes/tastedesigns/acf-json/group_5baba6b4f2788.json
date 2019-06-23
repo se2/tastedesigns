@@ -2120,6 +2120,25 @@
                             "maxlength": ""
                         },
                         {
+                            "key": "field_5d0f97e558c3c",
+                            "label": "Subtitle",
+                            "name": "subtitle",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "maxlength": "",
+                            "rows": 4,
+                            "new_lines": "br"
+                        },
+                        {
                             "key": "field_5d09f171b9a4f",
                             "label": "Team",
                             "name": "team",
@@ -2430,5 +2449,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1561153628
+    "modified": 1561303096
 }

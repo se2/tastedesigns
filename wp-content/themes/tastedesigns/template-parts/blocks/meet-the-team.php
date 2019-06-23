@@ -9,6 +9,7 @@
 
 $parent_id = get_the_ID();
 $title = get_query_var('title');
+$subtitle = get_query_var('subtitle');
 $override = get_query_var('override');
 $team = get_query_var('team');
 $colors = get_query_var('colors');
@@ -75,13 +76,16 @@ if (!$is_about) :
 
   <?php if (!empty($team)) : ?>
     <div class="c-team w-full py-60 lg:py-80">
-      <h1 class="font-title text-42 leading-57 lg:text-58 lg:leading-78 text-taste-1 text-center lowercase"
+      <h1 class="font-title text-42 leading-57 lg:text-58 lg:leading-78 mb-50 xl:mb-0 text-taste-1 text-center lowercase"
       <?php if ($override) : ?>
         <?php $colors->getPrimary(); ?>
       <?php endif; ?>
       >
         <?php echo $title; ?>
       </h1>
+      <h2 class="font-subtitle text-14 leading-30 tracking-3.71 lg:text-16 lg:leading-30 lg:tracking-4.24 text-taste-2 uppercase text-center mt-0 lg:mt-60 mx-20 lg:mx-30">
+        <?php echo $subtitle; ?>
+      </h2>
       <div class="c-team__content px-0 lg:px-10 flex flex-wrap mt-40 lg:mt-40">
         <?php foreach ($team as $element) : ?>
           <?php $member = $element['team_member']; ?>
