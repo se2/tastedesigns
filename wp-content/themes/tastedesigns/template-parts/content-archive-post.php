@@ -21,7 +21,7 @@ template partial for archive post type
       <?php echo $author; ?>&nbsp;&nbsp;|&nbsp;&nbsp;<?php echo $primaryCat; ?>
     </div>
     <h1 class="entry-title">
-      <a href="<?php echo get_permalink(); ?>" class="font-title text-taste-1 no-underline entry-title__title"><?php the_title(); ?></a>
+      <a href="<?php echo get_permalink(); ?>" class="font-title text-42 leading-57 lg:text-58 lg:leading-78 text-taste-1 no-underline entry-title__title"><?php the_title(); ?></a>
     </h1>
   </header>
   <div class="entry-content">

@@ -22,15 +22,15 @@ if (!$is_about) :
 ?>
 
   <?php if ($query->have_posts()) : ?>
-    <div class="c-team w-full py-60 lg:py-100">
-      <h1 class="font-title text-40 leading-50/40 lg:text-66 lg:leading-89 text-taste-1 text-center lowercase"
+    <div class="c-team w-full py-60 lg:py-80">
+      <h1 class="font-title text-42 leading-57 lg:text-58 lg:leading-78 text-taste-1 text-center lowercase"
       <?php if ($override) : ?>
         <?php $colors->getPrimary(); ?>
       <?php endif; ?>
       >
         <?php echo $title; ?>
       </h1>
-      <div class="c-team__content px-0 lg:px-10 flex flex-wrap mt-40 lg:mt-60">
+      <div class="c-team__content px-0 lg:px-10 flex flex-wrap mt-40 lg:mt-40">
         <?php while ($query->have_posts()) : $query->the_post(); ?>
           <div class="c-team__item w-full lg:w-1/3 px-0 lg:px-6 lg:py-24">
             <a href="<?php the_permalink(); ?>" class="no-underline">
@@ -56,7 +56,7 @@ if (!$is_about) :
                 >
                   <?php the_title(); ?>
                 </h1>
-                <h2 class="font-body text-16 leading-30.16 tracking-3.71 text-center text-taste-2 no-underline uppercase"
+                <h2 class="font-subtitle text-14 leading-30 tracking-3.71 lg:text-16 lg:leading-30 lg:tracking-4.24 text-taste-2 uppercase text-center no-underline"
                 <?php if ($override) : ?>
                   <?php $colors->getSecondary(); ?>
                 <?php endif; ?>
@@ -74,15 +74,15 @@ if (!$is_about) :
 <?php else : ?>
 
   <?php if (!empty($team)) : ?>
-    <div class="c-team w-full py-60 lg:py-100">
-      <h1 class="font-title text-40 leading-50/40 lg:text-66 lg:leading-89 text-taste-1 text-center lowercase"
+    <div class="c-team w-full py-60 lg:py-80">
+      <h1 class="font-title text-42 leading-57 text-taste-1 text-center lowercase"
       <?php if ($override) : ?>
         <?php $colors->getPrimary(); ?>
       <?php endif; ?>
       >
         <?php echo $title; ?>
       </h1>
-      <div class="c-team__content px-0 lg:px-10 flex flex-wrap mt-40 lg:mt-60">
+      <div class="c-team__content px-0 lg:px-10 flex flex-wrap mt-40 lg:mt-40">
         <?php foreach ($team as $element) : ?>
           <?php $member = $element['team_member']; ?>
           <div class="c-team__item w-full lg:w-1/3 px-0 lg:px-6 lg:py-24">
@@ -105,7 +105,7 @@ if (!$is_about) :
                 >
                   <?php echo get_the_title($member); ?>
                 </h1>
-                <h2 class="font-body text-16 leading-30.16 tracking-3.71 text-center text-taste-2 no-underline uppercase"
+                <h2 class="font-subtitle text-14 leading-30 tracking-3.71 lg:text-16 lg:leading-30 lg:tracking-4.24 text-taste-2 uppercase text-center no-underline"
                 <?php if ($override) : ?>
                   <?php $colors->getSecondary(); ?>
                 <?php endif; ?>

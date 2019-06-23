@@ -23,7 +23,7 @@ $theme_colors = new TasteColors(true);
 		</h1>
 		<a href="<?php echo $button_url; ?>" class="c-button__link no-underline">
 			<div class="c-button border-2 border-taste-4 px-21 inline-flex items-center w-full lg:w-auto" <?php $theme_colors->getSecondary(TasteColors::BORDER); ?>>
-				<span class="c-button__text uppercase text-16 leading-19 lg:leading-21 lg:text-18 text-taste-3" <?php $theme_colors->getPrimary(); ?>><?php echo $button_text; ?></span>
+				<span class="c-button__text font-subtitle text-14 leading-17 tracking-3.71 lg:text-18 lg:leading-21 lg:tracking-3 text-taste-3 uppercase" <?php $theme_colors->getPrimary(); ?>><?php echo $button_text; ?></span>
 				<?php get_arrow_svg('c-button__icon h-auto ml-auto lg:ml-30 fill-taste-1', $theme_colors->getPrimary(TasteColors::FILL, false)); ?>
 			</div>
 		</a>

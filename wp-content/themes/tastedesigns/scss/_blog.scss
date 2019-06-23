@@ -58,12 +58,12 @@
       line-height: 2.5;
       letter-spacing: 3.18px;
     }
-    .entry-title {
-      &__title {
-        font-size: 40px;
-        line-height: 1.05;
-      }
-    }
+    // .entry-title {
+    //   &__title {
+    //     font-size: 40px;
+    //     line-height: 1.05;
+    //   }
+    // }
   }
   .entry-content {
     @apply .font-body .text-14 .text-taste-6;
@@ -115,12 +115,12 @@
         line-height: 1.875;
         letter-spacing: 4.24px;
       }
-      .entry-title {
-        &__title {
-          font-size: 66px;
-          line-height: 1.3484848485;
-        }
-      }
+      // .entry-title {
+      //   &__title {
+      //     font-size: 66px;
+      //     line-height: 1.3484848485;
+      //   }
+      // }
     }
     .entry-content {
       @apply .text-16;

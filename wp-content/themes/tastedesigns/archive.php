@@ -12,7 +12,7 @@ $theme_colors = new TasteColors(true);
 ?>
 
 <div class="c-header js-header-blog">
-	<?php the_archive_title('<h1 class="c-header__title font-title text-center text-taste-1 text-60 leading-15 pb-46 lg:pb-65 mt-10 lg:mt-0 break-words mx-20 lg:mx-0 lowercase" '.$theme_colors->getPrimary(TasteColors::COLOR, false).'>', '</h1>'); ?>
+	<?php the_archive_title('<h1 class="c-header__title font-title text-center text-taste-1 text-42 leading-57 lg:text-58 lg:leading-78 pb-46 lg:pb-65 mt-10 lg:mt-0 break-words mx-20 lg:mx-0 lowercase" '.$theme_colors->getPrimary(TasteColors::COLOR, false).'>', '</h1>'); ?>
 	<?php get_template_part('template-parts/shared/page_excerpt'); ?>
 </div>
 
@@ -55,8 +55,8 @@ $theme_colors = new TasteColors(true);
 		</div>
 
 		<?php if (get_post_type() == 'post') : ?>
-			<div class="c-button border-2 border-taste-4 px-21 inline-flex items-center fwp-load-more cursor-pointer uppercase text-14 tracking-3 text-taste-2 font-subtitle">
-				<span class="c-button__text uppercase text-14 text-taste-2 font-subtitle tracking-3">View more Posts</span>
+			<div class="c-button border-2 border-taste-4 px-21 inline-flex items-center fwp-load-more cursor-pointer uppercase">
+				<span class="c-button__text uppercase font-subtitle text-14 leading-17 tracking-3.71 lg:text-18 lg:leading-21 lg:tracking-3 text-taste-2">View more Posts</span>
 				<?php get_arrow_svg('c-button__icon h-auto ml-auto lg:ml-30'); ?>
 			</div>
 		<?php endif; ?>

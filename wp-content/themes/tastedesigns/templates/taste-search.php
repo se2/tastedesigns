@@ -41,7 +41,7 @@ $query = new WP_Query($args);
           ?>
         </div>
         <div class="c-button border-2 border-taste-4 px-21 inline-flex items-center fwp-load-more cursor-pointer uppercase text-14 tracking-3 text-taste-2 font-subtitle order-3">
-          <span class="c-button__text uppercase text-14 text-taste-2 font-subtitle tracking-3">View more Results</span>
+          <span class="c-button__text uppercase font-subtitle text-14 leading-17 tracking-3.71 lg:text-18 lg:leading-21 lg:tracking-3 text-taste-2">View more Results</span>
           <img src="<?php get_image_url('alternative-path.png'); ?>" alt="Arrow" class="c-button__icon h-auto ml-auto lg:ml-30">
         </div>
       </div>

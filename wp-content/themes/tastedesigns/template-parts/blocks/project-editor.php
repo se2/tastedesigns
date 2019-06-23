@@ -20,7 +20,7 @@ endwhile;
 $colors = new TasteColors();
 ?>
 
-<section class="c-project-block w-full flex flex-col xl:flex-row xl:mt-90 relative">
+<section class="c-project-block w-full flex flex-col xl:flex-row mt-50 xl:mt-80 relative">
   <div class="c-project-block__image-wrapper
   <?php if ($type == 'is-default') : ?>
     xl:w-1/2 relative h-project-block xl:h-auto
@@ -63,7 +63,7 @@ $colors = new TasteColors();
       <?php if ($cta) : ?>
       <a href="<?php echo $cta['url']; ?>" target="<?php echo $cta['target']; ?>" class="no-underline w-full lg:w-auto mt-35 block">
         <div class="c-project-block__button border-2 border-taste-4 py-25 px-21 items-center inline-flex w-full lg:w-auto" <?php $colors->getTertiary(TasteColors::BORDER); ?>>
-          <span class="text-14 leading-17 tracking-3.71 lg:text-18 lg:leading-21 lg:tracking-3 text-taste-2 uppercase" <?php $colors->getPrimary(); ?>>
+          <span class="font-subtitle text-14 leading-17 tracking-3.71 lg:text-18 lg:leading-21 lg:tracking-3 text-taste-2 uppercase" <?php $colors->getPrimary(); ?>>
             <?php echo $cta['title']; ?>
           </span>
           <?php get_arrow_svg('w-50 h-auto ml-auto lg:ml-30 align-middle fill-taste-1', $colors->getPrimary(TasteColors::FILL, false)); ?>

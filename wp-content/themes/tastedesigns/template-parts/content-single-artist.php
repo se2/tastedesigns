@@ -16,7 +16,7 @@ template partial for single post type
    */
   ?>
   <div class="c-single-artist__header px-20 lg:px-0">
-    <h1 class="c-single-artist__title font-title text-center text-taste-1 text-42 leading-57 mt-20 lg:mt-0" <?php $theme_colors->getPrimary(); ?>>
+    <h1 class="c-single-artist__title font-title text-center text-taste-1 text-42 leading-57 lg:text-58 lg:leading-78 mt-20 lg:mt-0" <?php $theme_colors->getPrimary(); ?>>
       gallery at taste
     </h1>
   </div>
@@ -41,7 +41,7 @@ template partial for single post type
   ?>
   <div class="c-single-artist__content mx-auto border-taste-5 border-b-2">
     <div class="c-single-artist__inner mx-20 lg:mx-auto">
-      <h1 class="c-single-artist__title font-title text-taste-1 text-42 leading-57 lg:text-66 lg:leading-89 text-center">
+      <h1 class="c-single-artist__title font-title text-taste-1 text-42 leading-57 lg:text-58 lg:leading-78 text-center">
         <?php the_title(); ?>
       </h1>
       <div class="c-single-artist__intro entry-content text-center font-body text-16 leading-24 lg:text-24 text-taste-6">
