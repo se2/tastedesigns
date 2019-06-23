@@ -25,7 +25,7 @@ if ( !is_front_page() ) {
 
 ?>
 
-	<footer id="colophon" class="site-footer c-footer py-50 px-20 lg:px-36 bgc-primary" <?php $theme_colors->getPrimary(TasteColors::BACKGROUND); ?>>
+	<footer id="colophon" class="site-footer c-footer py-50 px-20 lg:px-36 bg-taste-1" <?php $theme_colors->getPrimary(TasteColors::BACKGROUND); ?>>
 		<?php
 			$menu = wp_nav_menu( array(
 				'theme_location' => 'menu-2',
@@ -59,7 +59,7 @@ if ( !is_front_page() ) {
 			</div><!-- .site-info -->
 			<div class="c-footer__social inline-flex pt-50 lg:pt-0 flex-wrap">
 				<?php while (have_rows('social_medias', 'option')) : the_row(); ?>
-					<a href="<?php echo get_sub_field('link'); ?>" target="_blank" class="c-footer__social-item inline-block mx-12 xs:mx-24 lg:mx-12 xl:mx-24 text-0 rounded-full border-2 border-taste-2 w-47 h-47 flex justify-center items-center no-underline lg:hover:bg-taste-3 text-taste-2 lg:text-taste-3 tc-large-primary-hover text-24"
+					<a href="<?php echo get_sub_field('link'); ?>" target="_blank" class="c-footer__social-item inline-block mx-12 xs:mx-24 lg:mx-12 xl:mx-24 text-0 rounded-full border-2 border-taste-2 w-47 h-47 flex justify-center items-center no-underline lg:hover:bg-taste-3 text-taste-2 lg:text-taste-3 lg:hover:text-taste-1 text-24"
 					<?php $theme_colors->getSecondary(array(TasteColors::COLOR, TasteColors::BORDER)); ?>
 					<?php if ($theme_colors->isOverriden()) : ?>
 						onMouseOver="this.style.backgroundColor='<?php echo $theme_colors->getRawSecondary(); ?>';this.style.color='<?php echo $theme_colors->getRawPrimary(); ?>';"

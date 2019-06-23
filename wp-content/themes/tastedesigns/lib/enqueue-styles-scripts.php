@@ -84,7 +84,7 @@ add_action('wp_head', 'ttg_wp_ouputPrimaryColorStyle');
 /**
  * Color Scheme
  */
-function ttg_wp_color_scheme() {
-	get_template_part('template-parts/settings/color-scheme');
-}
-add_action('wp_head', 'ttg_wp_color_scheme');
+// function ttg_wp_color_scheme() {
+// 	get_template_part('template-parts/settings/color-scheme');
+// }
+// add_action('wp_head', 'ttg_wp_color_scheme');

@@ -28,7 +28,7 @@ if ($testimonial) :
           <?php echo $location; ?>
         </h3>
       <?php endif; ?>
-      <h1 class="font-title text-42 leading-57 lg:text-66 lg:leading-89 tc-primary break-words px-40 lg:px-0" <?php $colors->getPrimary(); ?>>
+      <h1 class="font-title text-42 leading-57 lg:text-66 lg:leading-89 text-taste-1 break-words px-40 lg:px-0" <?php $colors->getPrimary(); ?>>
         <?php echo $title; ?>
       </h1>
       <div class="c-appreciation__content-inner pt-20 xl:pt-60 px-40 lg:px-0">

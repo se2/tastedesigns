@@ -22,7 +22,7 @@ $colors = new TasteColors();
     <?php generate_image($bg_mobile, 'w-full h-full o-cover', 'small'); ?>
   </div>
   <div class="c-cover__inner absolute w-full px-20 py-20 lg:pt-34 lg:pb-55 lg:px-27">
-    <div class="c-cover__underlay absolute w-full h-full opacity-50 bgc-primary"></div>
+    <div class="c-cover__underlay absolute w-full h-full opacity-50 bg-taste-1"></div>
     <div class="c-cover__text-content w-full lg:w-576 text-center lg:text-left lg:float-right">
       <h1 class="c-cover__title font-title text-42 leading-57 lg:text-75 lg:leading-101 text-light relative text-center lg:text-left">
         <?php echo $title; ?>
