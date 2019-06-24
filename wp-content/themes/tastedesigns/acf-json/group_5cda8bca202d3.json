@@ -128,6 +128,25 @@
             ]
         },
         {
+            "key": "field_5d109001c6aa4",
+            "label": "Instagram Access Token",
+            "name": "instagram_access_token",
+            "type": "text",
+            "instructions": "To obtain your access_token:<br>\r\n- Navigate <a href=\"https:\/\/api.instagram.com\/oauth\/authorize\/?client_id=d01fdbc6300d40db83455355c6b00832&redirect_uri=http:\/\/omeow.com&response_type=token\" target=\"_blank\">here<\/a>.<br>\r\n- Login with your Instagram account.<br>\r\n- Once logged in, you can find your access_token in the URL bar with the format: <i>http:\/\/omeow.com\/#access_token=ACCESS_TOKEN<\/i>.<br>\r\n- Copy your access_token and fill it here.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_5d0c95d6ea7e5",
             "label": "Contact Form",
             "name": "contact_form",
@@ -235,5 +254,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1561105964
+    "modified": 1561366648
 }

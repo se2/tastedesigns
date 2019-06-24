@@ -25,8 +25,10 @@ export default {
       e.$window.scroll(function() {
         let winTop = e.$window.scrollTop();
         let winBottom = winTop + e.$window.height();
-        let top = e.$header.offset().top;
-        let height = e.$header.outerHeight();
+        let $subtitle = e.$header.children('.js-subtitle');
+        let subtitleHeight = $subtitle ? $subtitle.outerHeight() : 0;
+        let top = e.$header.offset().top + subtitleHeight;
+        let height = e.$header.outerHeight() - subtitleHeight;
         let sidebarBottom = e.$window.height() - (height + e.$sidebar.outerHeight());
         let bottom = e.$content.offset().top + e.$content.outerHeight() + sidebarBottom;
 

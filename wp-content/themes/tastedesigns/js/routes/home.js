@@ -8,6 +8,7 @@ export default {
     s.initHome();
     s.initCover();
     s.initFeaturedProject();
+    s.initStayConnected();
   },
   initHome() {
     let e = this.elements;
@@ -17,6 +18,7 @@ export default {
     e.$scroll = $('.js-scroll');
     e.$gallery = $('.js-project-gallery');
     e.$galleryItem = $('.js-project-gallery-item');
+    e.$instagram = $('.js-instagram');
   },
   initCover() {
     let s = this;
@@ -63,6 +65,37 @@ export default {
 
       e.$gallery.slick('slickGoTo', index);
     });
+  },
+  initStayConnected() {
+    let s = this;
+
+    $.ajax({
+      type: 'POST',
+      url: '/wp-admin/admin-ajax.php',
+      data: ({
+        action: 'get_latest_insta_photo',
+      }),
+      success: function(result) {
+        if (result) {
+          let data = JSON.parse(result);
+
+          s.assignPhoto(data);
+        }
+      },
+      error: function(jqXHR, exception) {
+        console.error(jqXHR.status, jqXHR.responseText);
+      }
+    });
+  },
+  assignPhoto(data) {
+    let s = this;
+    let e = s.elements;
+
+    if (data && data.length) {
+      let img = '<img class="c-stay-connected__instagram-cover w-full h-full" src="' + data[0].image_url + '" />';
+
+      e.$instagram.html(img);
+    }
   },
   finalize() {
     // JavaScript to be fired on the home page, after the init JS
