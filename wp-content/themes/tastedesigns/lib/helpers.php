@@ -365,3 +365,38 @@ function get_email_svg($class, $style = '') {
 		</g>
 	</svg>';
 }
+
+/**
+ * Retrieve latest Instagram media
+ * Reference: https://rudrastyh.com/instagram/get-recent-photos-php.html
+ */
+function get_latest_insta_photo() {
+	$access_token = get_field('instagram_access_token', 'option');
+	if (!empty($access_token)) {
+		$return = rudr_instagram_api_curl_connect('https://api.instagram.com/v1/users/self/media/recent/?access_token=' . $access_token);
+		$data = array();
+		foreach ( $return->data as $post ) {
+			$data[] = array(
+				'link' => $post->link,
+				'image_url' => $post->images->standard_resolution->url
+			);
+		}
+		echo json_encode($data);
+	}
+	die();
+}
+add_action('wp_ajax_nopriv_get_latest_insta_photo', 'get_latest_insta_photo');
+add_action('wp_ajax_get_latest_insta_photo', 'get_latest_insta_photo');
+
+/**
+ * Connect to Instagram API
+ */
+function rudr_instagram_api_curl_connect($api_url){
+	$connection_c = curl_init(); // initializing
+	curl_setopt($connection_c, CURLOPT_URL, $api_url); // API URL to connect
+	curl_setopt($connection_c, CURLOPT_RETURNTRANSFER, 1); // return the result, do not print
+	curl_setopt($connection_c, CURLOPT_TIMEOUT, 20);
+	$json_return = curl_exec($connection_c); // connect and get json data
+	curl_close($connection_c); // close connection
+	return json_decode($json_return); // decode and return
+}

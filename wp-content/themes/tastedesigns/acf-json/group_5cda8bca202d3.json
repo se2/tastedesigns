@@ -3,131 +3,6 @@
     "title": "Contact",
     "fields": [
         {
-            "key": "field_5cda8bcf12fd1",
-            "label": "Phone Numbers",
-            "name": "phone_numbers",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "collapsed": "",
-            "min": 0,
-            "max": 2,
-            "layout": "table",
-            "button_label": "Add Phone Number",
-            "sub_fields": [
-                {
-                    "key": "field_5cda8f18d1815",
-                    "label": "Name",
-                    "name": "name",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_5cda8fcf17ae3",
-                    "label": "Number",
-                    "name": "number",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                }
-            ]
-        },
-        {
-            "key": "field_5cda8c6912fd3",
-            "label": "Social Medias",
-            "name": "social_medias",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "collapsed": "",
-            "min": 0,
-            "max": 0,
-            "layout": "table",
-            "button_label": "Add Social Media",
-            "sub_fields": [
-                {
-                    "key": "field_5cda8cb412fd5",
-                    "label": "Type",
-                    "name": "type",
-                    "type": "select",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "fa-facebook-f": "Facebook",
-                        "fa-instagram": "Instagram",
-                        "fa-pinterest-p": "Pinterest",
-                        "fa-twitter": "Twitter"
-                    },
-                    "default_value": [
-                        "facebook"
-                    ],
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "ui": 0,
-                    "return_format": "value",
-                    "ajax": 0,
-                    "placeholder": ""
-                },
-                {
-                    "key": "field_5cda8c8012fd4",
-                    "label": "Link",
-                    "name": "link",
-                    "type": "url",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": ""
-                }
-            ]
-        },
-        {
             "key": "field_5d0c95d6ea7e5",
             "label": "Contact Form",
             "name": "contact_form",
@@ -216,6 +91,150 @@
                     "maxlength": ""
                 }
             ]
+        },
+        {
+            "key": "field_5d109001c6aa4",
+            "label": "Instagram Access Token",
+            "name": "instagram_access_token",
+            "type": "text",
+            "instructions": "To obtain your access_token:<br>\r\n- Navigate <a href=\"https:\/\/instagram.com\/oauth\/authorize\/?client_id=1677ed07ddd54db0a70f14f9b1435579&redirect_uri=http:\/\/instagram.pixelunion.net&response_type=token&hl=en\" target=\"_blank\">here<\/a>.<br>\r\n- Login with your Instagram account.<br>\r\n- Once logged in, you can find your access_token in the input like below.<br>\r\n<img src=\"https:\/\/d2aztkdj0ezvrk.cloudfront.net\/items\/2P3T0Z2y2k3X202k2F07\/pixelunion.png\" alt=\"\"><br>\r\n- Copy your access_token and fill it here.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5cda8bcf12fd1",
+            "label": "Phone Numbers",
+            "name": "phone_numbers",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 2,
+            "layout": "table",
+            "button_label": "Add Phone Number",
+            "sub_fields": [
+                {
+                    "key": "field_5cda8f18d1815",
+                    "label": "Name",
+                    "name": "name",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5cda8fcf17ae3",
+                    "label": "Number",
+                    "name": "number",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                }
+            ]
+        },
+        {
+            "key": "field_5cda8c6912fd3",
+            "label": "Social Medias",
+            "name": "social_medias",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Add Social Media",
+            "sub_fields": [
+                {
+                    "key": "field_5cda8c8012fd4",
+                    "label": "Link",
+                    "name": "link",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_5cda8cb412fd5",
+                    "label": "Type",
+                    "name": "type",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "fa-facebook-f": "Facebook",
+                        "fa-instagram": "Instagram",
+                        "fa-pinterest-p": "Pinterest",
+                        "fa-twitter": "Twitter"
+                    },
+                    "default_value": [
+                        "facebook"
+                    ],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                }
+            ]
         }
     ],
     "location": [
@@ -235,5 +254,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1561105964
+    "modified": 1561374372
 }

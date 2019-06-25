@@ -71,10 +71,12 @@ $colors = new TasteColors();
       <h1 class="font-title text-42 leading-57 lg:text-58 lg:leading-78 text-taste-1" <?php $colors->getPrimary(); ?>>
         Instagram
       </h1>
-      <div class="c-stay-connected__image-wrapper mt-30 lg:w-featured-instagram h-featured-instagram-mobile lg:h-featured-instagram mb-auto">
-        <?php generate_image(get_sub_field('instagram_cover'), 'c-stay-connected__instagram-cover w-full h-full', 'medium'); ?>
-      </div>
-      <a href="<?php echo get_sub_field('instagram_account'); ?>" class="c-stay-connected__link border-b-4 border-taste-3 no-underline mx-auto lg:mr-0 lg:ml-auto pb-5 float-right mt-30 lg:mt-40">
+      <a href="<?php echo get_sub_field('instagram_account'); ?>" target="_blank" class="c-stay-connected__link no-underline">
+        <div class="c-stay-connected__image-wrapper mt-30 lg:w-featured-instagram h-featured-instagram-mobile lg:h-featured-instagram mb-auto js-instagram">
+          <?php generate_image(get_sub_field('instagram_cover'), 'c-stay-connected__instagram-cover w-full h-full', 'medium'); ?>
+        </div>
+      </a>
+      <a href="<?php echo get_sub_field('instagram_account'); ?>" target="_blank" class="c-stay-connected__link border-b-4 border-taste-3 no-underline mx-auto lg:mr-0 lg:ml-auto pb-5 float-right mt-30 lg:mt-40">
         <span class="text-14 leading-17 tracking-3.71 lg:text-18 lg:leading-21 lg:tracking-3 text-taste-2 uppercase" <?php $colors->getSecondary(); ?>>
           Follow Us
         </span>

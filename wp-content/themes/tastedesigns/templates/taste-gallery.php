@@ -25,7 +25,7 @@ if (have_posts()) : ?>
 					 * Page Title
 					 */
 					?>
-					<div class="c-gallery__header px-20 xl:px-50 js-header-blog pb-50 xl:pb-80">
+					<div class="c-gallery__header px-0 xl:px-50 js-header-blog pb-50 xl:pb-80">
 						<h1 class="c-gallery__title font-title text-center text-taste-1 text-42 leading-57 lg:text-58 lg:leading-78 mt-20 xl:mt-0 lowercase" <?php $theme_colors->getPrimary(); ?>>
 							<?php the_title(); ?>
 						</h1>
