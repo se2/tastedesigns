@@ -252,6 +252,12 @@
   }
 }
 
+.c-sidebar-blogs__desktop {
+  .c-sidebar-blogs__cta  {
+    margin-bottom: 50px;
+  }
+}
+
 .c-blogs-cta {
   &__background {
     @apply .flex .flex-wrap .items-center .justify-center .relative;

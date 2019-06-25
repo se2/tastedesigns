@@ -16,8 +16,18 @@
 	<div class="c-sidebar-blogs__cta hidden lg:block">
 		<?php do_action('ttg_blogsCta'); ?>
 	</div>
+	<div class="sidebar-widget hidden lg:block">
+		<?php if ( is_single() && is_active_sidebar( 'sidebar-blogs' ) ) : ?>
+			<?php dynamic_sidebar( 'sidebar-blogs' ); ?>
+		<?php endif; ?>
+	</div>
 </aside>
 
 <aside id="sidebar sidebar-blogs" class="px-20 widget-area c-sidebar-blogs c-sidebar-blogs__mobile" style="order: 2;">
 	<?php do_action('ttg_blogsCta'); ?>
+	<div class="sidebar-widget">
+		<?php if ( is_single() && is_active_sidebar( 'sidebar-blogs' ) ) : ?>
+			<?php dynamic_sidebar( 'sidebar-blogs' ); ?>
+		<?php endif; ?>
+	</div>
 </aside>
