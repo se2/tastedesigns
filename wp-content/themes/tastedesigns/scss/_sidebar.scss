@@ -1,0 +1,179 @@
+.sidebar-widget {
+  @apply .w-full;
+  .widget {
+    @apply .w-full;
+    margin-bottom: 50px;
+    ul {
+      list-style-type: none;
+      padding-left: 20px;
+    }
+    a {
+      @apply .w-full .text-taste-1 .font-body .text-14 .no-underline;
+      line-height: 1.2142857143;
+    }
+    .widget-title {
+      @apply .font-subtitle .text-taste-2 .text-16 .uppercase;
+      letter-spacing: 4.63px;
+      line-height: 0.980625;
+      padding-bottom: 21px;
+    }
+    &:last-child {
+      @apply .pb-0;
+    }
+  }
+  .widget_categories {
+    form {
+      .postform {
+        @apply .w-full .outline-none .text-taste-2 .font-body .text-14;
+        -webkit-appearance: none;
+        background-color: #ffffff;
+        border-radius: initial;
+        height: 66px;
+        border: 2px solid config('colors.taste-5');
+        padding: 0 20px;
+        line-height: 1.2142857143;
+        background-image: url('../img/icon-down.png');
+        background-repeat: no-repeat;
+        background-position-x: calc(100% - 21px);
+        background-position-y: 50%;
+        background-size: 22px;
+      }
+    }
+  }
+  .widget_text {
+    .textwidget {
+      @apply .w-full .text-taste-1 .font-body .text-14;
+      line-height: 1.2142857143;
+    }
+  }
+  .widget_custom_html {
+    .custom-html-widget {
+      @apply font-body text-taste-6 text-14 leading-21;
+      h1 {
+        @apply font-title text-58 leading-78 text-taste-1;
+      }
+      h2 {
+        @apply font-title text-30 leading-40 text-taste-3;
+      }
+      h3 {
+        @apply font-body text-24 leading-28 text-taste-2;
+      }
+      h4,
+      h5,
+      h6 {
+        @apply font-subtitle text-taste-2 uppercase text-12 leading-17.12 tracking-2.57;
+      }
+      p,
+      li,
+      blockquote {
+        @apply font-body text-taste-6 text-14 leading-21;
+      }
+      blockquote {
+        font-style: italic;
+      }
+    }
+  }
+  .widget_recent_entries {
+    ul {
+      li {
+        margin-bottom: 5px;
+        a {
+          @apply block;
+        }
+        .post-date {
+          @apply font-body text-taste-6 text-14 leading-21;
+          padding-left: 15px;
+        }
+      }
+    }
+  }
+
+  .widget_nav_menu {
+    ul {
+      .menu-item-has-children {
+        height: auto !important;
+      }
+    }
+  }
+  .gform_widget {
+    .gform_wrapper {
+      @apply .w-full .text-taste-2 .font-body;
+      @apply .m-0;
+      .gform_heading {
+        .gform_title {
+          @apply .font-body .text-24 .leading-28 .text-taste-2;
+        }
+        .gform_description {
+          @apply .font-body .text-taste-6 .text-14 .leading-21;
+        }
+      }
+      textarea.large {
+        height: 160px;
+      }
+    }
+    @screen lg {
+      .gform_wrapper {
+        .gform_heading {
+          .gform_title {
+            @apply .text-30 .leading-36;
+          }
+          .gform_description {
+            @apply .text-16 .leading-24;
+          }
+        }
+      }
+    }
+  }
+  .widget_search {
+    form {
+      @apply .relative;
+      input {
+        @apply .w-full .outline-none .text-taste-2 .font-body .text-14 .text-left;
+        line-height: 1.2142857143;
+        height: 66px;
+        padding-right: 20px;
+        border: 2px solid config('colors.taste-5');
+        border-radius: 60px;
+        background-color: #e8e0da;
+        padding-left: 30px;
+        background-image: url('../img/alternative-search.png');
+        background-repeat: no-repeat;
+        background-position-x: calc(100% - 19px);
+        background-position-y: 50%;
+        background-size: 29px;
+      }
+    }
+  }
+  @screen lg {
+    .widget {
+      .widget_custom_html {
+        .custom-html-widget {
+          h1 {
+            @apply text-42 leading-57;
+          }
+          h2 {
+            @apply text-42 leading-57;
+          }
+          h3 {
+            @apply text-30 leading-36;
+          }
+          h4,
+          h5,
+          h6 {
+            @apply text-16 leading-30 tracking-4.24;
+          }
+          p,
+          li,
+          blockquote {
+            @apply text-16 leading-24;
+          }
+        }
+      }
+      .widget_recent_entries {
+        .post-date {
+          @apply text-16 leading-24;
+        }
+      }
+    }
+  }
+}
