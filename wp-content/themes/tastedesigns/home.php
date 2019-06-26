@@ -12,7 +12,7 @@ $theme_colors = new TasteColors(true);
 ?>
 
 <div class="c-header js-header-blog pb-1">
-	<h1 class="c-page__title font-title text-center text-taste-1 text-42 leading-57 lg:text-58 lg:leading-78 mt-20 xl:mt-0 lowercase mb-40 lg:mb-60" <?php $theme_colors->getPrimary(); ?>><?php echo get_the_title(get_option('page_for_posts', true)); ?></h1>
+	<h1 class="c-page__title font-title text-center text-taste-1 text-42 leading-57 lg:text-66 lg:leading-89 mt-20 xl:mt-0 lowercase mb-40 lg:mb-60" <?php $theme_colors->getPrimary(); ?>><?php echo get_the_title(get_option('page_for_posts', true)); ?></h1>
 	<?php get_template_part('template-parts/shared/page_excerpt'); ?>
 </div>
 

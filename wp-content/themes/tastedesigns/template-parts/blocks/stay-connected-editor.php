@@ -34,7 +34,7 @@ $colors = new TasteColors();
         <h3 class="font-subtitle text-12 leading-18 tracking-3.63 lg:text-14 lg:leading-21 lg:tracking-4.24 text-taste-2 uppercase break-words">
           In Good Taste
         </h3>
-        <h1 class="font-title text-42 leading-57 lg:text-58 lg:leading-78 text-taste-1" <?php $colors->getPrimary(); ?>>
+        <h1 class="font-title text-42 leading-57 lg:text-66 lg:leading-89 text-taste-1" <?php $colors->getPrimary(); ?>>
           Blog
         </h1>
         <div class="c-stay-connected__image-wrapper mt-20 mb-30 lg:my-30 h-featured-blog-mobile lg:h-featured-blog">
@@ -68,7 +68,7 @@ $colors = new TasteColors();
       <h3 class="font-subtitle text-12 leading-18 tracking-3.63 lg:text-14 lg:leading-21 lg:tracking-4.24 text-taste-2 uppercase break-words">
         <?php echo get_sub_field('instagram_handle'); ?>
       </h3>
-      <h1 class="font-title text-42 leading-57 lg:text-58 lg:leading-78 text-taste-1" <?php $colors->getPrimary(); ?>>
+      <h1 class="font-title text-42 leading-57 lg:text-66 lg:leading-89 text-taste-1" <?php $colors->getPrimary(); ?>>
         Instagram
       </h1>
       <a href="<?php echo get_sub_field('instagram_account'); ?>" target="_blank" class="c-stay-connected__link no-underline">

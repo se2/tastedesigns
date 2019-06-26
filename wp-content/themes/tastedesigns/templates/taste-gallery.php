@@ -26,7 +26,7 @@ if (have_posts()) : ?>
 					 */
 					?>
 					<div class="c-gallery__header px-0 xl:px-50 js-header-blog pb-50 xl:pb-80">
-						<h1 class="c-gallery__title font-title text-center text-taste-1 text-42 leading-57 lg:text-58 lg:leading-78 mt-20 xl:mt-0 lowercase" <?php $theme_colors->getPrimary(); ?>>
+						<h1 class="c-gallery__title font-title text-center text-taste-1 text-42 leading-57 lg:text-66 lg:leading-89 mt-20 xl:mt-0 lowercase" <?php $theme_colors->getPrimary(); ?>>
 							<?php the_title(); ?>
 						</h1>
 						<?php get_template_part('template-parts/shared/page_excerpt'); ?>
@@ -81,7 +81,7 @@ if (have_posts()) : ?>
 
 					<?php if (have_rows('artists')) : ?>
 						<div class="c-artists w-full py-60 lg:py-80">
-							<h1 class="font-title text-42 leading-57 lg:text-58 lg:leading-78 text-taste-1 text-center capitalize" <?php $colors->getPrimary(); ?>>
+							<h1 class="font-title text-42 leading-57 lg:text-66 lg:leading-89 text-taste-1 text-center capitalize" <?php $colors->getPrimary(); ?>>
 								Artists
 							</h1>
 							<div class="c-artists__content px-0 lg:px-10 flex flex-wrap mt-40 lg:mt-40">

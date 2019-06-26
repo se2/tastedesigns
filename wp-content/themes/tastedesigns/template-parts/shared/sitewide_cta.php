@@ -18,7 +18,7 @@ $theme_colors = new TasteColors(true);
 		<?php echo $subtitle; ?>
 	</h2>
 	<div class="c-global-cta__inner bg-light">
-		<h1 class="c-global-cta__title font-title text-42 leading-57 lg:text-58 lg:leading-78 text-center text-taste-1" <?php $theme_colors->getPrimary(); ?>>
+		<h1 class="c-global-cta__title font-title text-42 leading-57 lg:text-66 lg:leading-89 text-center text-taste-1" <?php $theme_colors->getPrimary(); ?>>
 			<?php echo $title; ?>
 		</h1>
 		<a href="<?php echo $button_url; ?>" class="c-button__link no-underline">

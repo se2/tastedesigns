@@ -43,7 +43,7 @@ if ($testimonial) :
           </h4>
         </blockquote>
         <?php if ($link) : ?>
-          <a href="<?php echo $link['url']; ?>" targte="<?php echo $link['target']; ?>" class="no-underline w-full lg:w-auto lg:ml-75 mt-40 lg:mt-60 block">
+          <a href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>" class="no-underline w-full lg:w-auto lg:ml-75 mt-40 lg:mt-60 block">
             <div class="c-featured-project__button border-2 border-taste-4 py-25 px-60 w-full lg:w-auto lg:items-center lg:inline-flex text-center" <?php $colors->getSecondary(TasteColors::BORDER); ?>>
               <span class="text-14 leading-17 tracking-3.71 lg:text-18 lg:leading-21 lg:tracking-3 uppercase text-center text-taste-2" <?php $colors->getPrimary(); ?>>Read Story</span>
 							<?php get_arrow_svg('w-50 h-auto ml-auto xs:ml-30 align-middle fill-taste-1', $colors->getPrimary(TasteColors::FILL, false)); ?>
