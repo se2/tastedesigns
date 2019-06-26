@@ -705,6 +705,8 @@ module.exports = {
     '1000': '62.5rem',
     'initial': 'initial',
     '498': '31.125rem',
+    '1200': '75rem',
+    '920': '57.5rem',
   },
 
   /*
