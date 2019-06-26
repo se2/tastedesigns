@@ -8,10 +8,11 @@
  */
 
 get_header();
+$theme_colors = new TasteColors(true);
 ?>
 
 	<header class="page-header js-header-blog px-20 md:px-0">
-		<h1 class="page-title font-title text-center text-taste-1 text-60 leading-69 mt-20 lg:mt-0 pb-50 lg:pb-0">
+		<h1 class="page-title font-title text-center text-taste-1 text-60 leading-69 mt-20 lg:mt-0 pb-50 lg:pb-0" <?php $theme_colors->getPrimaryColor(); ?>>
 			<?php $search = isset($_GET['_search']) ? $_GET['_search'] : ''; ?>
 			<?php printf( esc_html__( 'Search Results for: %s', 'ttg-wp' ), '"<span class="font-title js-search-title">' . $search . '</span>"' ); ?>
 		</h1>

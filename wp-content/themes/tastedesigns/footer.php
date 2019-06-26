@@ -25,7 +25,7 @@ if ( !is_front_page() ) {
 
 ?>
 
-	<footer id="colophon" class="site-footer c-footer py-50 px-20 lg:px-36 bg-taste-1" <?php $theme_colors->getPrimary(TasteColors::BACKGROUND); ?>>
+	<footer id="colophon" class="site-footer c-footer py-50 px-20 lg:px-36 bg-taste-1" <?php $theme_colors->getPrimaryBackground(); ?>>
 		<?php
 			$menu = wp_nav_menu( array(
 				'theme_location' => 'menu-2',
@@ -33,7 +33,7 @@ if ( !is_front_page() ) {
 				'echo'					 => false,
 			) );
 			if ($theme_colors->isOverriden()) :
-				$menu = custom_menu_styles($menu, $theme_colors->getSecondary(TasteColors::COLOR, false));
+				$menu = custom_menu_styles($menu, $theme_colors->getSecondaryColor(false));
 			endif;
 			echo $menu;
 		?>
@@ -42,19 +42,19 @@ if ( !is_front_page() ) {
 			<?php $career = get_field('career', 'option'); ?>
 			<?php if ($career) : ?>
 				<a href="<?php echo $career['url']; ?>" target="<?php echo $career['target']; ?>" class="c-footer__inquiry no-underline block text-right flex-1">
-					<div class="c-footer__button border-2 border-taste-2 py-25 px-25 items-center inline-flex" <?php $theme_colors->getSecondary(TasteColors::BORDER); ?>>
-						<span class="text-16 leading-19 tracking-4.24 text-taste-3 lg:text-taste-4 uppercase hidden lg:inline" <?php $theme_colors->getSecondary(); ?>><?php echo $career['title']; ?></span>
-						<span class="text-16 leading-19 tracking-4.24 text-taste-3 lg:text-taste-4 uppercase lg:hidden" <?php $theme_colors->getSecondary(); ?>>Inquiries</span>
+					<div class="c-footer__button border-2 border-taste-2 py-25 px-25 items-center inline-flex" <?php $theme_colors->getSecondaryBorder(); ?>>
+						<span class="text-16 leading-19 tracking-4.24 text-taste-3 lg:text-taste-4 uppercase hidden lg:inline" <?php $theme_colors->getSecondaryColor(); ?>><?php echo $career['title']; ?></span>
+						<span class="text-16 leading-19 tracking-4.24 text-taste-3 lg:text-taste-4 uppercase lg:hidden" <?php $theme_colors->getSecondaryColor(); ?>>Inquiries</span>
 					</div>
 				</a>
 			<?php endif; ?>
-			<div class="c-footer__copyright site-info font-body text-14 leading-17 text-taste-3 lg:text-taste-4 flex-1 pt-60 lg:pt-0 text-center lg:text-left" <?php $theme_colors->getSecondary(); ?>>
+			<div class="c-footer__copyright site-info font-body text-14 leading-17 text-taste-3 lg:text-taste-4 flex-1 pt-60 lg:pt-0 text-center lg:text-left" <?php $theme_colors->getSecondaryColor(); ?>>
 				<p>
 					©<?php echo date("Y"); ?> Taste, Artful Interiors & Design. All rights reserved.
 				</p>
 				<?php
 					/* translators: 1: Theme name, 2: Theme author. */
-					printf( esc_html__( 'Site Design by %s', 'ttg-wp' ), '<a href="https://technologytherapy.com" class="no-underline text-taste-3 lg:text-taste-4"'.$theme_colors->getSecondary(TasteColors::COLOR, false).'>TTG</a>' );
+					printf( esc_html__( 'Site Design by %s', 'ttg-wp' ), '<a href="https://technologytherapy.com" class="no-underline text-taste-3 lg:text-taste-4"'.$theme_colors->getSecondaryColor(false).'>TTG</a>' );
 				?>
 			</div><!-- .site-info -->
 			<div class="c-footer__social inline-flex pt-50 lg:pt-0 flex-wrap">

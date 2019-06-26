@@ -10,7 +10,7 @@
 $colors = new TasteColors();
 ?>
 
-<section class="c-stay-connected w-full relative py-70 px-0 lg:px-30 bg-taste-5" <?php $colors->getTertiary(TasteColors::BACKGROUND); ?>>
+<section class="c-stay-connected w-full relative py-70 px-0 lg:px-30 bg-taste-5" <?php $colors->getTertiaryBackground(); ?>>
   <h2 class="font-title text-30 leading-40 text-center lg:text-left lg:text-42 lg:leading-57 text-taste-3 px-20">
     Stay Connected
   </h2>
@@ -34,28 +34,28 @@ $colors = new TasteColors();
         <h3 class="font-subtitle text-12 leading-18 tracking-3.63 lg:text-14 lg:leading-21 lg:tracking-4.24 text-taste-2 uppercase break-words">
           In Good Taste
         </h3>
-        <h1 class="font-title text-42 leading-57 lg:text-66 lg:leading-89 text-taste-1" <?php $colors->getPrimary(); ?>>
+        <h1 class="font-title text-42 leading-57 lg:text-66 lg:leading-89 text-taste-1" <?php $colors->getPrimaryColor(); ?>>
           Blog
         </h1>
         <div class="c-stay-connected__image-wrapper mt-20 mb-30 lg:my-30 h-featured-blog-mobile lg:h-featured-blog">
           <?php generate_image(get_post_thumbnail_id(get_the_ID()), 'c-stay-connected__blog-photo w-full h-full', 'medium'); ?>
         </div>
-        <h4 class="font-body text-24 leading-28 lg:text-30 lg:leading-36 text-taste-2" <?php $colors->getSecondary(); ?>>
+        <h4 class="font-body text-24 leading-28 lg:text-30 lg:leading-36 text-taste-2" <?php $colors->getSecondaryColor(); ?>>
           <?php the_title(); ?>
         </h4>
         <div class="c-stay-connected__body font-body text-14 leading-17 lg:text-16 lg:leading-19 text-taste-6">
           <?php the_excerpt(); ?>
         </div>
         <a href="<?php echo get_permalink($post); ?>" class="no-underline block mt-20 lg:mt-40 mb-auto">
-          <div class="c-stay-connected__button border-2 border-taste-4 py-25 px-21 items-center inline-flex" <?php $colors->getTertiary(TasteColors::BORDER); ?>>
-            <span class="text-14 leading-17 tracking-3.71 lg:text-18 lg:leading-21 lg:tracking-3 text-taste-2 uppercase" <?php $colors->getSecondary(); ?>>
+          <div class="c-stay-connected__button border-2 border-taste-4 py-25 px-21 items-center inline-flex" <?php $colors->getTertiaryBorder(); ?>>
+            <span class="text-14 leading-17 tracking-3.71 lg:text-18 lg:leading-21 lg:tracking-3 text-taste-2 uppercase" <?php $colors->getSecondaryColor(); ?>>
               Read More
             </span>
-            <?php get_arrow_svg('w-50 h-auto ml-30 align-middle fill-taste-1', $colors->getSecondary(TasteColors::FILL, false)); ?>
+            <?php get_arrow_svg('w-50 h-auto ml-30 align-middle fill-taste-1', $colors->getSecondaryFill(false)); ?>
           </div>
         </a>
         <a href="<?php echo get_permalink(get_option('page_for_posts')); ?>" class="c-stay-connected__link border-b-4 border-taste-3 no-underline mx-auto lg:mr-0 lg:ml-auto pb-5 float-right mt-30 lg:mt-40">
-          <span class="text-14 leading-17 tracking-3.71 lg:text-18 lg:leading-21 lg:tracking-3 text-taste-2 uppercase" <?php $colors->getSecondary(); ?>>
+          <span class="text-14 leading-17 tracking-3.71 lg:text-18 lg:leading-21 lg:tracking-3 text-taste-2 uppercase" <?php $colors->getSecondaryColor(); ?>>
             View All Posts
           </span>
         </a>
@@ -68,7 +68,7 @@ $colors = new TasteColors();
       <h3 class="font-subtitle text-12 leading-18 tracking-3.63 lg:text-14 lg:leading-21 lg:tracking-4.24 text-taste-2 uppercase break-words">
         <?php echo get_sub_field('instagram_handle'); ?>
       </h3>
-      <h1 class="font-title text-42 leading-57 lg:text-66 lg:leading-89 text-taste-1" <?php $colors->getPrimary(); ?>>
+      <h1 class="font-title text-42 leading-57 lg:text-66 lg:leading-89 text-taste-1" <?php $colors->getPrimaryColor(); ?>>
         Instagram
       </h1>
       <a href="<?php echo get_sub_field('instagram_account'); ?>" target="_blank" class="c-stay-connected__link no-underline">
@@ -77,7 +77,7 @@ $colors = new TasteColors();
         </div>
       </a>
       <a href="<?php echo get_sub_field('instagram_account'); ?>" target="_blank" class="c-stay-connected__link border-b-4 border-taste-3 no-underline mx-auto lg:mr-0 lg:ml-auto pb-5 float-right mt-30 lg:mt-40">
-        <span class="text-14 leading-17 tracking-3.71 lg:text-18 lg:leading-21 lg:tracking-3 text-taste-2 uppercase" <?php $colors->getSecondary(); ?>>
+        <span class="text-14 leading-17 tracking-3.71 lg:text-18 lg:leading-21 lg:tracking-3 text-taste-2 uppercase" <?php $colors->getSecondaryColor(); ?>>
           Follow Us
         </span>
       </a>

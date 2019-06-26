@@ -26,7 +26,7 @@ if (have_posts()) : ?>
 					 */
 					?>
 					<div class="c-gallery__header px-0 xl:px-50 js-header-blog pb-50 xl:pb-80">
-						<h1 class="c-gallery__title font-title text-center text-taste-1 text-42 leading-57 lg:text-66 lg:leading-89 mt-20 xl:mt-0 lowercase" <?php $theme_colors->getPrimary(); ?>>
+						<h1 class="c-gallery__title font-title text-center text-taste-1 text-42 leading-57 lg:text-66 lg:leading-89 mt-20 xl:mt-0 lowercase" <?php $theme_colors->getPrimaryColor(); ?>>
 							<?php the_title(); ?>
 						</h1>
 						<?php get_template_part('template-parts/shared/page_excerpt'); ?>
@@ -48,23 +48,23 @@ if (have_posts()) : ?>
 									'class' => 'c-gallery-artist__image w-full h-full o-cover o-top absolute top-0 left-0'
 								]); ?>
 							</div>
-							<div class="c-gallery-artist__content pl-20 xl:pl-145 xl:w-1/2 relative bg-taste-5 pt-50 xl:pt-75 pb-50 xl:pb-65 pr-20 xl:pr-145 flex" <?php $colors->getTertiary(TasteColors::BACKGROUND); ?>>
+							<div class="c-gallery-artist__content pl-20 xl:pl-145 xl:w-1/2 relative bg-taste-5 pt-50 xl:pt-75 pb-50 xl:pb-65 pr-20 xl:pr-145 flex" <?php $colors->getTertiaryBackground(); ?>>
 								<div class="c-gallery-artist__content-inner my-auto">
 									<h2 class="font-subtitle text-14 leading-30 tracking-3.71 lg:text-16 lg:leading-30 lg:tracking-4.24 text-taste-2 uppercase">
 										Featured Artist
 									</h2>
-									<h1 class="font-title text-40 leading-50/40 xl:text-42 xl:leading-57 text-taste-1" <?php $colors->getPrimary(); ?>>
+									<h1 class="font-title text-40 leading-50/40 xl:text-42 xl:leading-57 text-taste-1" <?php $colors->getPrimaryColor(); ?>>
 										<?php the_title(); ?>
 									</h1>
 									<div class="c-gallery-artist__body font-body text-14 leading-21 xl:text-16 xl:leading-24 text-taste-6">
 										<?php the_content(); ?>
 									</div>
 									<a href="<?php the_permalink(); ?>" class="no-underline w-full lg:w-auto mt-50 block">
-										<div class="c-gallery-artist__button border-2 border-taste-4 py-25 px-21 items-center inline-flex w-full lg:w-auto" <?php $colors->getSecondary(TasteColors::BORDER); ?>>
-											<span class="font-subtitle text-14 leading-17 tracking-3.71 lg:text-18 lg:leading-21 lg:tracking-3 text-taste-2 uppercase" <?php $colors->getPrimary(); ?>>
+										<div class="c-gallery-artist__button border-2 border-taste-4 py-25 px-21 items-center inline-flex w-full lg:w-auto" <?php $colors->getSecondaryBorder(); ?>>
+											<span class="font-subtitle text-14 leading-17 tracking-3.71 lg:text-18 lg:leading-21 lg:tracking-3 text-taste-2 uppercase" <?php $colors->getPrimaryColor(); ?>>
 												View Artist
 											</span>
-											<?php get_arrow_svg('w-50 h-auto ml-auto lg:ml-30 align-middle fill-taste-1', $colors->getPrimary(TasteColors::FILL, false)); ?>
+											<?php get_arrow_svg('w-50 h-auto ml-auto lg:ml-30 align-middle fill-taste-1', $colors->getPrimaryFill(false)); ?>
 										</div>
 									</a>
 								</div>
@@ -81,7 +81,7 @@ if (have_posts()) : ?>
 
 					<?php if (have_rows('artists')) : ?>
 						<div class="c-artists w-full py-60 lg:py-80">
-							<h1 class="font-title text-42 leading-57 lg:text-66 lg:leading-89 text-taste-1 text-center capitalize" <?php $colors->getPrimary(); ?>>
+							<h1 class="font-title text-42 leading-57 lg:text-66 lg:leading-89 text-taste-1 text-center capitalize" <?php $colors->getPrimaryColor(); ?>>
 								Artists
 							</h1>
 							<div class="c-artists__content px-0 lg:px-10 flex flex-wrap mt-40 lg:mt-40">
@@ -100,7 +100,7 @@ if (have_posts()) : ?>
 														'class' => 'c-artists__image w-full h-full o-cover o-top block'
 													]); ?>
 												</div>
-												<h2 class="font-subtitle text-14 leading-30 tracking-3.71 lg:text-16 lg:leading-30 lg:tracking-4.24 text-taste-2 uppercase no-underline text-center mt-20" <?php $colors->getPrimary(); ?>>
+												<h2 class="font-subtitle text-14 leading-30 tracking-3.71 lg:text-16 lg:leading-30 lg:tracking-4.24 text-taste-2 uppercase no-underline text-center mt-20" <?php $colors->getPrimaryColor(); ?>>
 													<?php echo get_the_title($artist); ?>
 												</h2>
 											</div>

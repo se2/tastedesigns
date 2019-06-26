@@ -211,3 +211,9 @@
     object-fit: cover;
   }
 }
+
+.c-service-package {
+  &__content p {
+    @apply mt-20;
+  }
+}

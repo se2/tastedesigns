@@ -23,6 +23,7 @@ require get_template_directory() . '/lib/comments.php';
 
 require get_template_directory() . '/lib/helpers.php';
 require get_template_directory() . '/lib/acf-options-page.php';
+require get_template_directory() . '/lib/taste-colors.php';
 
 // global CTA logic
 require_once get_template_directory() . '/lib/sitewide_cta.php';

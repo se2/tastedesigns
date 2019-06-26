@@ -18,7 +18,7 @@ $colors = new TasteColors();
     <div class="c-video-block__overlay absolute top-0 left-0 w-full h-full items-center justify-center js-video-play hidden xl:flex">
       <div class="c-video-block__middlelay absolute w-full h-full top-0 left-0 bg-taste-7"></div>
       <?php generate_image($image, 'c-video-block__overlay-image w-full h-full top-0 left-0 absolute o-cover opacity-50', 'massive'); ?>
-      <div class="c-video-block__play w-276 h-276 rounded-full bg-taste-3 flex items-center justify-center relative cursor-pointer" <?php $colors->getPrimary(TasteColors::BACKGROUND); ?>>
+      <div class="c-video-block__play w-276 h-276 rounded-full bg-taste-3 flex items-center justify-center relative cursor-pointer" <?php $colors->getPrimaryBackground(); ?>>
         <img src="<?php get_image_url('play.png'); ?>" alt="Play" class="c-video-block__play-icon w-126 h-143 ml-20">
       </div>
     </div>

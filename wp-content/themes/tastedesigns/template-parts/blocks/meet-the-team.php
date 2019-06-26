@@ -26,7 +26,7 @@ if (!$is_about) :
     <div class="c-team w-full py-60 lg:py-80">
       <h1 class="font-title text-42 leading-57 lg:text-66 lg:leading-89 text-taste-1 text-center lowercase"
       <?php if ($override) : ?>
-        <?php $colors->getPrimary(); ?>
+        <?php $colors->getPrimaryColor(); ?>
       <?php endif; ?>
       >
         <?php echo $title; ?>
@@ -52,14 +52,14 @@ if (!$is_about) :
                 </div>
                 <h1 class="font-title text-42 leading-57 text-taste-1 text-center mt-20"
                 <?php if ($override) : ?>
-                  <?php $colors->getPrimary(); ?>
+                  <?php $colors->getPrimaryColor(); ?>
                 <?php endif; ?>
                 >
                   <?php the_title(); ?>
                 </h1>
                 <h2 class="font-subtitle text-14 leading-30 tracking-3.71 lg:text-16 lg:leading-30 lg:tracking-4.24 text-taste-2 uppercase text-center no-underline"
                 <?php if ($override) : ?>
-                  <?php $colors->getSecondary(); ?>
+                  <?php $colors->getSecondaryColor(); ?>
                 <?php endif; ?>
                 >
                   <?php the_field('position'); ?>
@@ -78,7 +78,7 @@ if (!$is_about) :
     <div class="c-team w-full py-60 lg:py-80">
       <h1 class="font-title text-42 leading-57 lg:text-66 lg:leading-89 mb-50 xl:mb-0 text-taste-1 text-center lowercase"
       <?php if ($override) : ?>
-        <?php $colors->getPrimary(); ?>
+        <?php $colors->getPrimaryColor(); ?>
       <?php endif; ?>
       >
         <?php echo $title; ?>
@@ -104,14 +104,14 @@ if (!$is_about) :
                 </div>
                 <h1 class="font-title text-42 leading-57 text-taste-1 text-center mt-20"
                 <?php if ($override) : ?>
-                  <?php $colors->getPrimary(); ?>
+                  <?php $colors->getPrimaryColor(); ?>
                 <?php endif; ?>
                 >
                   <?php echo get_the_title($member); ?>
                 </h1>
                 <h2 class="font-subtitle text-14 leading-30 tracking-3.71 lg:text-16 lg:leading-30 lg:tracking-4.24 text-taste-2 uppercase text-center no-underline"
                 <?php if ($override) : ?>
-                  <?php $colors->getSecondary(); ?>
+                  <?php $colors->getSecondaryColor(); ?>
                 <?php endif; ?>
                 >
                   <?php the_field('position', $member); ?>

@@ -12,7 +12,7 @@ Default template partial for Page
 <section id="page-<?php the_ID(); ?>" class="c-page min-h-full w-full">
 
   <div class="c-page__header lg:px-50 js-header-blog">
-    <h1 class="c-page__title font-title text-center text-taste-1 text-42 leading-57 lg:text-66 lg:leading-89 mt-20 xl:mt-0 lowercase <?php echo $alter ? 'mb-40 lg:mb-60' : 'mb-50 lg:mb-0'; ?>" <?php $theme_colors->getPrimary(); ?>>
+    <h1 class="c-page__title font-title text-center text-taste-1 text-42 leading-57 lg:text-66 lg:leading-89 mt-20 xl:mt-0 lowercase <?php echo $alter ? 'mb-40 lg:mb-60' : 'mb-50 lg:mb-0'; ?>" <?php $theme_colors->getPrimaryColor(); ?>>
 			<?php the_title(); ?>
     </h1>
 		<?php get_template_part('template-parts/shared/page_excerpt'); ?>

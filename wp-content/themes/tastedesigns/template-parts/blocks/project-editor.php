@@ -47,10 +47,10 @@ $colors = new TasteColors();
       bg-light py-65 px-40 xl:px-45
     <?php endif; ?>
     ">
-      <h2 class="font-subtitle text-14 leading-15.69/14 tracking-4.05 xl:text-16 xl:leading-15.69 xl:tracking-4.63 text-taste-2 uppercase" <?php $colors->getSecondary(); ?>>
+      <h2 class="font-subtitle text-14 leading-15.69/14 tracking-4.05 xl:text-16 xl:leading-15.69 xl:tracking-4.63 text-taste-2 uppercase" <?php $colors->getSecondaryColor(); ?>>
         <?php echo $subtitle; ?>
       </h2>
-      <h1 class="font-title text-40 leading-50/40 xl:text-42 xl:leading-50/42 text-taste-1 mt-10" <?php $colors->getPrimary(); ?>>
+      <h1 class="font-title text-40 leading-50/40 xl:text-42 xl:leading-50/42 text-taste-1 mt-10" <?php $colors->getPrimaryColor(); ?>>
         <?php echo $title; ?>
       </h1>
       <div class="c-project-block__body font-body text-14 leading-21 xl:text-16 xl:leading-24 text-taste-6
@@ -62,11 +62,11 @@ $colors = new TasteColors();
       </div>
       <?php if ($cta) : ?>
       <a href="<?php echo $cta['url']; ?>" target="<?php echo $cta['target']; ?>" class="no-underline w-full lg:w-auto mt-35 block">
-        <div class="c-project-block__button border-2 border-taste-4 py-25 px-21 items-center inline-flex w-full lg:w-auto" <?php $colors->getTertiary(TasteColors::BORDER); ?>>
-          <span class="font-subtitle text-14 leading-17 tracking-3.71 lg:text-18 lg:leading-21 lg:tracking-3 text-taste-2 uppercase" <?php $colors->getPrimary(); ?>>
+        <div class="c-project-block__button border-2 border-taste-4 py-25 px-21 items-center inline-flex w-full lg:w-auto" <?php $colors->getTertiaryBorder(); ?>>
+          <span class="font-subtitle text-14 leading-17 tracking-3.71 lg:text-18 lg:leading-21 lg:tracking-3 text-taste-2 uppercase" <?php $colors->getPrimaryColor(); ?>>
             <?php echo $cta['title']; ?>
           </span>
-          <?php get_arrow_svg('w-50 h-auto ml-auto lg:ml-30 align-middle fill-taste-1', $colors->getPrimary(TasteColors::FILL, false)); ?>
+          <?php get_arrow_svg('w-50 h-auto ml-auto lg:ml-30 align-middle fill-taste-1', $colors->getPrimaryFill(false)); ?>
         </div>
       </a>
       <?php endif; ?>

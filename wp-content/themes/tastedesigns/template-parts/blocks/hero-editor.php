@@ -27,7 +27,7 @@ $colors = new TasteColors();
       <h1 class="c-cover__title font-title text-42 leading-57 lg:text-75 lg:leading-101 text-light relative text-center lg:text-left">
         <?php echo $title; ?>
       </h1>
-      <a href="<?php echo $subtitle['url']; ?>" class="c-cover__subtitle text-17 font-subtitle leading-20 tracking-4.5 lg:tracking-4.13 text-light uppercase relative inline-block mt-10 lg:mt-32 pb-5 no-underline border-b-4" <?php $colors->getPrimary(TasteColors::BORDER); ?>>
+      <a href="<?php echo $subtitle['url']; ?>" class="c-cover__subtitle text-17 font-subtitle leading-20 tracking-4.5 lg:tracking-4.13 text-light uppercase relative inline-block mt-10 lg:mt-32 pb-5 no-underline border-b-4" <?php $colors->getPrimaryBorder(); ?>>
         <?php echo $subtitle['title']; ?>
       </a>
       <img src="<?php get_image_url('down-arrow.png'); ?>" alt="Scroll Down" class="c-cover__arrow block w-40 h-40 lg:hidden mx-auto mt-30 relative js-scroll bounce infinite animated slower">
