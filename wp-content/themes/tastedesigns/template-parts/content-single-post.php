@@ -36,7 +36,7 @@ template partial for single post type
         ]); ?>
       </div>
     <?php endif; ?>
-    <div class="c-blog__content pt-50 lg:pt-60 pb-70 lg:pb-140 <?php if (!$alter) : echo 'max-w-1000'; endif; ?> mx-auto border-b-2 border-taste-5 lg:border-b-0">
+    <div class="c-blog__content mt-50 lg:mt-60 mb-70 lg:mb-140 <?php if (!$alter) : echo 'max-w-1000'; endif; ?> mx-auto border-b-2 border-taste-5 lg:border-b-0">
       <div class="c-blog__inner mx-20 lg:mx-0">
         <h2 class="font-subtitle text-12 leading-30.12 tracking-3.18 lg:text-16 lg:leading-30 lg:tracking-4.24 text-taste-2 uppercase text-center <?php if ($alter) : ?>lg:text-left<?php endif; ?>">
           <?php echo $author; ?>&nbsp;&nbsp;|&nbsp;&nbsp;<?php echo $primaryCat; ?>

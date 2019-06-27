@@ -18,32 +18,34 @@ Default template partial for Page
 		<?php get_template_part('template-parts/shared/page_excerpt'); ?>
   </div>
 
-	<div class="flex flex-wrap relative w-full js-content-blog mt-50 xl:mt-80">
+	<?php if (has_post_thumbnail() || !empty(get_the_content())) : ?>
+		<div class="flex flex-wrap relative w-full js-content-blog mt-50 xl:mt-80">
 
-		<?php $post_class = ( $alter ? ' lg:w-9/12 lg:px-50' : '' ); ?>
-		<div <?php post_class( 'min-h-full w-full' . $post_class ); ?> >
-			<?php if ( has_post_thumbnail() ) : ?>
-				<div class="c-page__image-wrapper w-full h-blog-image <?php echo ($alter) ? 'lg:h-alt-blog-image' : ''; ?>">
-					<?php the_post_thumbnail('massive', [
-						'class' => 'c-page__image w-full h-full'
-					]); ?>
-				</div>
-			<?php endif; ?>
-			<?php if (!empty(get_the_content())) : ?>
-				<div class="c-page__content <?php echo !$alter ? 'pt-50 lg:pt-60' : ''; ?> pb-70 lg:pb-70 <?php if ( !$alter ) : echo 'max-w-1000'; endif; ?> mx-auto border-b-2 border-taste-5 lg:border-b-0">
-					<div class="c-page__inner mx-20 lg:mx-0">
-						<div class="c-page__body entry-content mb-50 clearfix">
-							<?php the_content(); ?>
+			<?php $post_class = ( $alter ? ' lg:w-9/12 lg:px-50' : '' ); ?>
+			<div <?php post_class( 'min-h-full w-full' . $post_class ); ?> >
+				<?php if (has_post_thumbnail()) : ?>
+					<div class="c-page__image-wrapper w-full h-blog-image <?php echo ($alter) ? 'lg:h-alt-blog-image' : ''; ?>">
+						<?php the_post_thumbnail('massive', [
+							'class' => 'c-page__image w-full h-full'
+						]); ?>
+					</div>
+				<?php endif; ?>
+				<?php if (!empty(get_the_content())) : ?>
+					<div class="c-page__content <?php echo !$alter ? 'mt-50 lg:mt-60' : ''; ?> mb-70 lg:mb-70 <?php if ( !$alter ) : echo 'max-w-1000'; endif; ?> mx-auto border-b-2 border-taste-5 lg:border-b-0">
+						<div class="c-page__inner mx-20 lg:mx-0">
+							<div class="c-page__body entry-content mb-50 clearfix">
+								<?php the_content(); ?>
+							</div>
 						</div>
 					</div>
-				</div>
+				<?php endif; ?>
+			</div>
+
+			<?php if ( $alter ) : ?>
+				<?php get_sidebar( 'blogs' ); ?>
 			<?php endif; ?>
+
 		</div>
-
-		<?php if ( $alter ) : ?>
-			<?php get_sidebar( 'blogs' ); ?>
-		<?php endif; ?>
-
-	</div>
+	<?php endif; ?>
 
 </section>

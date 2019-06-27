@@ -53,7 +53,7 @@ $colors = new TasteColors();
       <h1 class="font-title text-40 leading-50/40 xl:text-42 xl:leading-50/42 text-taste-1 mt-10" <?php $colors->getPrimaryColor(); ?>>
         <?php echo $title; ?>
       </h1>
-      <div class="c-project-block__body font-body text-14 leading-21 xl:text-16 xl:leading-24 text-taste-6
+      <div class="c-project-block__body font-body text-14 leading-21 lg:text-16 lg:leading-24 text-taste-6
       <?php if ($type == 'is-background-full' && $bullet_point) : ?>
         has-bullet-point
       <?php endif; ?>

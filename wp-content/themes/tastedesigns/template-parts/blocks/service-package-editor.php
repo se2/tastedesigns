@@ -8,14 +8,19 @@
  */
 
 $title = get_sub_field('title');
+$small = get_sub_field('use_small_title');
 $subtitle = get_sub_field('subtitle');
 $content = get_sub_field('content');
 $override = get_sub_field('override');
 $colors = new TasteColors();
 ?>
 
-<div class="c-service-package py-60 lg:py-80 max-w-920 mx-20 lg:mx-auto">
-  <h1 class="font-title text-42 leading-57 lg:text-66 lg:leading-89 mb-50 xl:mb-0 text-taste-1 text-center" <?php $colors->getPrimaryColor(); ?>>
+<div class="c-service-package my-60 lg:my-80 max-w-920 mx-20 lg:mx-auto">
+  <h1 class="font-title text-42 leading-57 mb-50 xl:mb-0 text-taste-1 text-center
+  <?php if (!$small) : ?>
+    lg:text-66 lg:leading-89
+  <?php endif; ?>
+  " <?php $colors->getPrimaryColor(); ?>>
     <?php echo $title; ?>
   </h1>
   <?php if ($subtitle) : ?>
@@ -24,7 +29,7 @@ $colors = new TasteColors();
     </h2>
   <?php endif; ?>
   <?php if ($content) : ?>
-    <div class="c-service-package__content font-body text-14 leading-21 xl:text-16 xl:leading-24 text-taste-6 mt-40 lg:mt-50 text-center">
+    <div class="c-service-package__content font-body text-14 leading-21 lg:text-16 lg:leading-24 text-taste-6 mt-40 lg:mt-50 text-center">
       <?php echo $content; ?>
     </div>
   <?php endif; ?>

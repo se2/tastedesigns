@@ -56,7 +56,7 @@ if (have_posts()) : ?>
 									<h1 class="font-title text-40 leading-50/40 xl:text-42 xl:leading-57 text-taste-1" <?php $colors->getPrimaryColor(); ?>>
 										<?php the_title(); ?>
 									</h1>
-									<div class="c-gallery-artist__body font-body text-14 leading-21 xl:text-16 xl:leading-24 text-taste-6">
+									<div class="c-gallery-artist__body font-body text-14 leading-21 lg:text-16 lg:leading-24 text-taste-6">
 										<?php the_content(); ?>
 									</div>
 									<a href="<?php the_permalink(); ?>" class="no-underline w-full lg:w-auto mt-50 block">
@@ -80,7 +80,7 @@ if (have_posts()) : ?>
 					?>
 
 					<?php if (have_rows('artists')) : ?>
-						<div class="c-artists w-full py-60 lg:py-80">
+						<div class="c-artists w-full my-60 lg:my-80">
 							<h1 class="font-title text-42 leading-57 lg:text-66 lg:leading-89 text-taste-1 text-center capitalize" <?php $colors->getPrimaryColor(); ?>>
 								Artists
 							</h1>

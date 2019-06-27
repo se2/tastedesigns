@@ -2135,7 +2135,7 @@
                             "default_value": "",
                             "placeholder": "",
                             "maxlength": "",
-                            "rows": 4,
+                            "rows": 2,
                             "new_lines": "br"
                         },
                         {
@@ -2483,7 +2483,7 @@
                             "default_value": "",
                             "placeholder": "",
                             "maxlength": "",
-                            "rows": 4,
+                            "rows": 2,
                             "new_lines": "br"
                         },
                         {
@@ -2872,6 +2872,25 @@
                             "maxlength": ""
                         },
                         {
+                            "key": "field_5d14476af5f61",
+                            "label": "Use Small Title",
+                            "name": "use_small_title",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
                             "key": "field_5d1390aea18c4",
                             "label": "Subtitle",
                             "name": "subtitle",
@@ -2887,7 +2906,7 @@
                             "default_value": "",
                             "placeholder": "",
                             "maxlength": "",
-                            "rows": 4,
+                            "rows": 2,
                             "new_lines": "br"
                         },
                         {
@@ -3213,5 +3232,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1561563644
+    "modified": 1561610208
 }

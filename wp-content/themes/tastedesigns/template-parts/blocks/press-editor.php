@@ -13,7 +13,7 @@ $override = get_sub_field('override');
 $colors = new TasteColors();
 
 if (have_rows('press')) : ?>
-  <div class="c-team w-full py-60 lg:py-80">
+  <div class="c-team w-full my-60 lg:my-80">
     <h1 class="font-title text-42 leading-57 lg:text-66 lg:leading-89 mb-50 xl:mb-0 text-taste-1 text-center lowercase" <?php $colors->getPrimaryColor(); ?>>
       <?php echo $title; ?>
     </h1>
