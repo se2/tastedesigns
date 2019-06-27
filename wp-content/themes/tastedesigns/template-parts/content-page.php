@@ -18,7 +18,7 @@ Default template partial for Page
 		<?php get_template_part('template-parts/shared/page_excerpt'); ?>
   </div>
 
-	<div class="flex flex-wrap relative w-full js-content-blog">
+	<div class="flex flex-wrap relative w-full js-content-blog mt-50 xl:mt-80">
 
 		<?php $post_class = ( $alter ? ' lg:w-9/12 lg:px-50' : '' ); ?>
 		<div <?php post_class( 'min-h-full w-full' . $post_class ); ?> >
