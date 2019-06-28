@@ -68,7 +68,6 @@
 					<?php if ($career) : ?>
 						<a href="<?php echo $career['url']; ?>" target="<?php echo $career['target']; ?>" class="c-menu__item font-body text-14 leading-17 tracking-5.73 text-taste-2 uppercase no-underline hidden lg:inline">
 							<?php echo $career['title']; ?>
-							<img src="<?php get_image_url('alternative-email.png'); ?>" alt="Email" class="c-menu__mail-icon w-31 h-auto align-middle ml-22">
 						</a>
 					<?php endif; ?>
 					<div class="c-menu__separator w-2 h-36 bg-taste-3 align-middle ml-28 mr-28 hidden lg:inline-block"></div>
