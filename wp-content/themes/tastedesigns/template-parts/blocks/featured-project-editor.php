@@ -35,7 +35,7 @@ if ($project) :
           <?php endforeach; ?>
         </div>
         <div class="c-featured-project__link-wrapper w-full items-center hidden lg:flex">
-          <a href="<?php echo get_post_type_archive_link('project'); ?>" class="c-featured-project__link border-b-4 no-underline mt-50 lg:mt-120 mx-auto pb-5 lg:pb-0 block" <?php $colors->getSecondaryBorder(); ?>>
+          <a href="<?php echo get_post_type_archive_link('project'); ?>" class="c-featured-project__link border-b-4 no-underline mt-50 lg:mt-45 ml-auto pb-5 lg:pb-0 block" <?php $colors->getSecondaryBorder(); ?>>
             <span class="text-14 leading-17 tracking-3.71 lg:text-18 lg:leading-21 lg:tracking-3 text-taste-2 uppercase" <?php $colors->getPrimaryColor(); ?>>
               View All Projects
             </span>

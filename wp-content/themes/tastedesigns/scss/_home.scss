@@ -80,7 +80,7 @@
   }
 
   &__link-wrapper {
-    width: calc(100% - 45px);
+    width: calc(100% - 50px);
   }
 
   &__content {
@@ -124,12 +124,11 @@
     @apply border-taste-1;
 
     top: auto;
-    left: calc(50% - 60px);
-    bottom: -80px;
+    left: 0;
+    bottom: -100px;
     width: 40px;
     height: 40px;
     border-radius: 100%;
-    transform: translateX(-50%);
     transition: opacity 0.5s $default, background-color 0.5s $default;
 
     &::before,
@@ -171,7 +170,7 @@
   }
 
   .slick-next {
-    left: calc(50% + 10px);
+    left: 70px;
 
     &::before,
     &::after {
