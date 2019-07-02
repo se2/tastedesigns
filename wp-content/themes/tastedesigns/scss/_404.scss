@@ -10,15 +10,16 @@
       @apply text-taste-6 .mb-20;
     }
     .search-form {
-      @apply .relative;
+			@apply .relative;
+			max-width: 400px;
       input {
-        @apply .w-full .outline-none .text-taste-2 .font-body .text-14 .text-left .pr-20 .pl-30;
+        @apply .w-full .outline-none .text-taste-2 .font-body .text-14 .text-left .pr-50 .pl-30;
         line-height: 1.2142857143;
         height: 66px;
-        border: 2px solid config('colors.taste-5');
+        border: 2px solid config("colors.taste-5");
         border-radius: 60px;
         background-color: #e8e0da;
-        background-image: url('../img/alternative-search.png');
+        background-image: url("../img/alternative-search.png");
         background-repeat: no-repeat;
         background-position-x: calc(100% - 19px);
         background-position-y: 50%;
@@ -30,7 +31,7 @@
     @apply .mt-0;
     margin-bottom: 88px;
     article {
-      width: calc( 100% * 9 / 12 );
+      width: calc(100% * 9 / 12);
     }
   }
 }
