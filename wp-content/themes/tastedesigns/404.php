@@ -14,43 +14,20 @@ get_header();
 		<main id="main" class="site-main">
 
 			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'ttg-wp' ); ?></h1>
-				</header><!-- .page-header -->
+				<article class="mx-20 lg:mx-0 lg:px-50">
+					<header class="page-header mb-20">
+						<h1 class="page-title font-title text-taste-1 text-42 leading-57 lg:text-66 lg:leading-89 text-center lg:text-left"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'ttg-wp' ); ?></h1>
+					</header><!-- .page-header -->
 
-				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'ttg-wp' ); ?></p>
+					<div class="page-content text-center lg:text-left">
+						<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'ttg-wp' ); ?></p>
 
-					<?php
-					get_search_form();
+						<?php get_search_form(); ?>
 
-					the_widget( 'WP_Widget_Recent_Posts' );
-					?>
+					</div><!-- .page-content -->
+				</article>
 
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'ttg-wp' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-							?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-					/* translators: %1$s: smiley */
-					$ttg_wp_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'ttg-wp' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$ttg_wp_archive_content" );
-
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-				</div><!-- .page-content -->
+				<?php get_sidebar('blogs'); ?>
 			</section><!-- .error-404 -->
 
 		</main><!-- #main -->
