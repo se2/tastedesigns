@@ -33,10 +33,13 @@ $colors = new TasteColors();
       <?php echo $content; ?>
     </div>
   <?php endif; ?>
-  <?php if (have_rows('actions')) : ?>
+  <?php if ( have_rows( 'actions' ) ) : ?>
     <div class="flex flex-col lg:flex-row justify-center">
-      <?php while (have_rows('actions')) : the_row(); ?>
-        <?php $cta = get_sub_field('cta'); ?>
+      <?php while ( have_rows( 'actions' ) ) : the_row(); ?>
+				<?php
+				$cta = get_sub_field( 'cta' );
+				if ( $cta ) :
+				?>
         <a href="<?php echo $cta['url']; ?>" target="<?php echo $cta['target']; ?>" class="no-underline w-full lg:w-auto lg:mx-20 mt-40 lg:mt-60 block">
           <div class="border-2 border-taste-4 py-25 px-60 w-full lg:w-auto lg:items-center lg:inline-flex text-center" <?php $colors->getSecondaryBorder(); ?>>
             <span class="text-14 leading-17 tracking-3.71 lg:text-18 lg:leading-21 lg:tracking-3 uppercase text-center text-taste-2" <?php $colors->getPrimaryColor(); ?>>
@@ -44,7 +47,10 @@ $colors = new TasteColors();
             </span>
           </div>
         </a>
-      <?php endwhile; ?>
+			<?php
+				endif;
+			endwhile;
+			?>
     </div>
   <?php endif; ?>
 </div>
