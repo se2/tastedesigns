@@ -32,10 +32,12 @@ const routes = new Router({
   // Page
   page: {
     init() {
+			home.init();
       blog.init();
       video.init();
     },
     finalize() {
+			home.finalize();
       blog.finalize();
       video.finalize();
     }
