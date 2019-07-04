@@ -21,12 +21,12 @@
         <?php endif; ?>
       </h1>
 
-      <?php if (is_singular('project')): ?>
+      <?php if ( is_singular( 'project' ) && get_field( 'photographer' ) ) : ?>
         <h4 class="entry-content text-center font-body text-16 leading-22 lg:leading-24 text-taste-1 mt-30">
           Photographer:
         </h4>
         <h4 class="entry-content text-center font-body text-16 leading-22 lg:leading-24 text-taste-6">
-          <?php the_field('photographer'); ?>
+          <?php the_field( 'photographer' ); ?>
         </h4>
       <?php endif; ?>
     <?php endif; ?>

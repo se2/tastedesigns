@@ -41,9 +41,11 @@ template partial for single post type
   ?>
   <div class="c-single-project__content pt-50 pb-70 xl:pb-0 lg:pt-60 mx-auto border-taste-5 lg:border-b-0">
     <div class="c-single-project__inner mx-20 lg:mx-auto max-w-1000">
+			<?php if ( get_field( 'location' ) ) : ?>
       <h2 class="font-subtitle text-14 leading-30 tracking-3.71 lg:text-16 lg:leading-30 lg:tracking-4.24 text-taste-2 uppercase text-center">
-        <?php the_field('location'); ?>
+        <?php the_field( 'location' ); ?>
       </h2>
+			<?php endif; ?>
       <h1 class="c-single-project__title font-title text-taste-1 text-42 leading-57 lg:text-66 lg:leading-89 text-center">
         <?php the_title(); ?>
       </h1>
@@ -58,12 +60,16 @@ template partial for single post type
           <div class="flex flex-col lg:flex-row mt-20">
           <?php while (have_rows('partners')) : the_row(); ?>
             <div class="c-single-project__partner-item flex-1 my-10">
+							<?php if ( get_sub_field( 'title' ) ) : ?>
               <h4 class="c-single-project__intro entry-content text-center font-body text-16 leading-22 lg:leading-24 text-taste-1">
-                <?php the_sub_field('title'); ?>:
+                <?php the_sub_field( 'title' ); ?>
               </h4>
+							<?php endif; ?>
+							<?php if ( get_sub_field( 'partner' ) ) : ?>
               <h4 class="c-single-project__intro entry-content text-center font-body text-16 leading-22 lg:leading-24 text-taste-6">
-                <?php the_sub_field('partner'); ?>
+                <?php the_sub_field( 'partner' ); ?>
               </h4>
+							<?php endif; ?>
             </div>
             <?php endwhile; ?>
           </div>
