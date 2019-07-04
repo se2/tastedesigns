@@ -26,6 +26,11 @@
     }
   }
 
+  &__body.no-top,
+  &__body.no-top p:first-child {
+    @apply mt-0;
+  }
+
   &__content.is-left {
     margin-left: 0;
     margin-right: auto;

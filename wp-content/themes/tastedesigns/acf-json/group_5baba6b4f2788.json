@@ -1451,7 +1451,7 @@
                             "name": "background",
                             "type": "image",
                             "instructions": "",
-                            "required": 0,
+                            "required": 1,
                             "conditional_logic": 0,
                             "wrapper": {
                                 "width": "50",
@@ -2407,7 +2407,7 @@
                 "layout_5d10dfc050d9e": {
                     "key": "layout_5d10dfc050d9e",
                     "name": "press-editor",
-                    "label": "Press",
+                    "label": "Tiled Content",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -2488,7 +2488,7 @@
                         },
                         {
                             "key": "field_5d10dfc050db0",
-                            "label": "Press",
+                            "label": "Tiles",
                             "name": "press",
                             "type": "repeater",
                             "instructions": "",
@@ -2549,6 +2549,25 @@
                                     "mime_types": ""
                                 },
                                 {
+                                    "key": "field_5d10dfc050db4",
+                                    "label": "Text",
+                                    "name": "source",
+                                    "type": "textarea",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "maxlength": "",
+                                    "rows": 4,
+                                    "new_lines": "br"
+                                },
+                                {
                                     "key": "field_5d10dfc050db3",
                                     "label": "Url",
                                     "name": "url",
@@ -2563,25 +2582,6 @@
                                     },
                                     "default_value": "",
                                     "placeholder": ""
-                                },
-                                {
-                                    "key": "field_5d10dfc050db4",
-                                    "label": "Source",
-                                    "name": "source",
-                                    "type": "text",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": "",
-                                    "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
-                                    "maxlength": ""
                                 }
                             ]
                         },
@@ -3232,5 +3232,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1561610208
+    "modified": 1562257351
 }

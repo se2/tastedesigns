@@ -52,9 +52,11 @@ if ($testimonial) :
         <?php endif; ?>
       </div>
     </div>
-    <div class="c-appreciation__image-container lg:ml-50 w-full h-appreciation-mobile lg:h-auto lg:w-appreciation overflow-hidden relative">
-      <?php generate_image(get_post_thumbnail_id(get_the_ID()), 'c-appreciation__image h-full w-full o-cover absolute top-0 left-0', 'medium'); ?>
-    </div>
+    <?php if (has_post_thumbnail()) : ?>
+      <div class="c-appreciation__image-container lg:ml-50 w-full h-appreciation-mobile lg:h-auto lg:w-appreciation overflow-hidden relative">
+        <?php generate_image(get_post_thumbnail_id(get_the_ID()), 'c-appreciation__image h-full w-full o-cover absolute top-0 left-0', 'medium'); ?>
+      </div>
+    <?php endif; ?>
   </section>
 
 <?php
