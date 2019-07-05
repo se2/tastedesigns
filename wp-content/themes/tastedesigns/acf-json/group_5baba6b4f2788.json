@@ -1485,6 +1485,41 @@
                             "layout": "block",
                             "sub_fields": [
                                 {
+                                    "key": "field_5cfcc3662e6b9",
+                                    "label": "Align",
+                                    "name": "align",
+                                    "type": "select",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_5cf1068c06a07",
+                                                "operator": "==",
+                                                "value": "is-background-full"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "ml-auto": "Right",
+                                        "mr-auto": "Left"
+                                    },
+                                    "default_value": [
+                                        "ml-auto"
+                                    ],
+                                    "allow_null": 0,
+                                    "multiple": 0,
+                                    "ui": 0,
+                                    "return_format": "value",
+                                    "ajax": 0,
+                                    "placeholder": ""
+                                },
+                                {
                                     "key": "field_5cf1068c06a07",
                                     "label": "Block Type",
                                     "name": "block_type",
@@ -1511,33 +1546,6 @@
                                     "return_format": "value",
                                     "ajax": 0,
                                     "placeholder": ""
-                                },
-                                {
-                                    "key": "field_5cf8ea5905e2e",
-                                    "label": "Bullet Point formatted Paragraph",
-                                    "name": "bullet_point",
-                                    "type": "true_false",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": [
-                                        [
-                                            {
-                                                "field": "field_5cf1068c06a07",
-                                                "operator": "==",
-                                                "value": "is-background-full"
-                                            }
-                                        ]
-                                    ],
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "message": "",
-                                    "default_value": 1,
-                                    "ui": 0,
-                                    "ui_on_text": "",
-                                    "ui_off_text": ""
                                 },
                                 {
                                     "key": "field_5cf105c006a02",
@@ -1597,25 +1605,10 @@
                                     "new_lines": "wpautop"
                                 },
                                 {
-                                    "key": "field_5cf8e89dabc96",
-                                    "label": "Call To Action",
-                                    "name": "call_to_action",
-                                    "type": "link",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "return_format": "array"
-                                },
-                                {
-                                    "key": "field_5cfcc3662e6b9",
-                                    "label": "Align",
-                                    "name": "align",
-                                    "type": "select",
+                                    "key": "field_5cf8ea5905e2e",
+                                    "label": "Bullet Point formatted Paragraph",
+                                    "name": "bullet_point",
+                                    "type": "true_false",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": [
@@ -1632,19 +1625,26 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "choices": {
-                                        "ml-auto": "Right",
-                                        "mr-auto": "Left"
-                                    },
-                                    "default_value": [
-                                        "ml-auto"
-                                    ],
-                                    "allow_null": 0,
-                                    "multiple": 0,
+                                    "message": "",
+                                    "default_value": 1,
                                     "ui": 0,
-                                    "return_format": "value",
-                                    "ajax": 0,
-                                    "placeholder": ""
+                                    "ui_on_text": "",
+                                    "ui_off_text": ""
+                                },
+                                {
+                                    "key": "field_5cf8e89dabc96",
+                                    "label": "Call To Action",
+                                    "name": "call_to_action",
+                                    "type": "link",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array"
                                 }
                             ]
                         },
@@ -1663,63 +1663,6 @@
                             },
                             "layout": "block",
                             "sub_fields": [
-                                {
-                                    "key": "field_5d061cd29bd13",
-                                    "label": "Override Default Colors?",
-                                    "name": "override_default_colors",
-                                    "type": "true_false",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "message": "",
-                                    "default_value": 0,
-                                    "ui": 0,
-                                    "ui_on_text": "",
-                                    "ui_off_text": ""
-                                },
-                                {
-                                    "key": "field_5d061cd29bd14",
-                                    "label": "Primary Color",
-                                    "name": "primary_color",
-                                    "type": "radio",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": [
-                                        [
-                                            {
-                                                "field": "field_5d061cd29bd13",
-                                                "operator": "==",
-                                                "value": "1"
-                                            }
-                                        ]
-                                    ],
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "choices": {
-                                        "#4F4137": "<span style=\"padding: .25rem; background-color:#4F4137; color: #FFFFFF;\">ColorA<\/span>",
-                                        "#736357": "<span style=\"padding: .25rem; background-color:#736357; color: #FFFFFF;\">ColorB<\/span>",
-                                        "#A6988D": "<span style=\"padding: .25rem; background-color:#A6988D; color: #FFFFFF;\">ColorC<\/span>",
-                                        "#CEBBAD": "<span style=\"padding: .25rem; background-color:#CEBBAD; color: #FFFFFF;\">ColorD<\/span>",
-                                        "#E8E0DA": "<span style=\"padding: .25rem; background-color:#E8E0DA; color: #FFFFFF;\">ColorE<\/span>",
-                                        "#9B9B9B": "<span style=\"padding: .25rem; background-color:#9B9B9B; color: #FFFFFF;\">ColorF<\/span>",
-                                        "#000000": "<span style=\"padding: .25rem; background-color:#000000; color: #FFFFFF;\">ColorG<\/span>",
-                                        "other": "<span style=\"padding: .25rem; color: #000000;\">Other<\/span>"
-                                    },
-                                    "allow_null": 0,
-                                    "other_choice": 0,
-                                    "default_value": "#4F4137",
-                                    "layout": "horizontal",
-                                    "return_format": "value",
-                                    "save_other_choice": 0
-                                },
                                 {
                                     "key": "field_5d061cd29bd15",
                                     "label": "Primary Color Alternative",
@@ -1864,6 +1807,63 @@
                                         "id": ""
                                     },
                                     "default_value": ""
+                                },
+                                {
+                                    "key": "field_5d061cd29bd13",
+                                    "label": "Override Default Colors?",
+                                    "name": "override_default_colors",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "",
+                                    "default_value": 0,
+                                    "ui": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": ""
+                                },
+                                {
+                                    "key": "field_5d061cd29bd14",
+                                    "label": "Primary Color",
+                                    "name": "primary_color",
+                                    "type": "radio",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_5d061cd29bd13",
+                                                "operator": "==",
+                                                "value": "1"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "#4F4137": "<span style=\"padding: .25rem; background-color:#4F4137; color: #FFFFFF;\">ColorA<\/span>",
+                                        "#736357": "<span style=\"padding: .25rem; background-color:#736357; color: #FFFFFF;\">ColorB<\/span>",
+                                        "#A6988D": "<span style=\"padding: .25rem; background-color:#A6988D; color: #FFFFFF;\">ColorC<\/span>",
+                                        "#CEBBAD": "<span style=\"padding: .25rem; background-color:#CEBBAD; color: #FFFFFF;\">ColorD<\/span>",
+                                        "#E8E0DA": "<span style=\"padding: .25rem; background-color:#E8E0DA; color: #FFFFFF;\">ColorE<\/span>",
+                                        "#9B9B9B": "<span style=\"padding: .25rem; background-color:#9B9B9B; color: #FFFFFF;\">ColorF<\/span>",
+                                        "#000000": "<span style=\"padding: .25rem; background-color:#000000; color: #FFFFFF;\">ColorG<\/span>",
+                                        "other": "<span style=\"padding: .25rem; color: #000000;\">Other<\/span>"
+                                    },
+                                    "allow_null": 0,
+                                    "other_choice": 0,
+                                    "default_value": "#4F4137",
+                                    "layout": "horizontal",
+                                    "return_format": "value",
+                                    "save_other_choice": 0
                                 }
                             ]
                         }
@@ -2503,11 +2503,11 @@
                             "min": 0,
                             "max": 6,
                             "layout": "row",
-                            "button_label": "Add Press",
+                            "button_label": "Add Tile",
                             "sub_fields": [
                                 {
                                     "key": "field_5d10dfc050db1",
-                                    "label": "Title",
+                                    "label": "Item Title",
                                     "name": "title",
                                     "type": "text",
                                     "instructions": "",
@@ -2526,7 +2526,7 @@
                                 },
                                 {
                                     "key": "field_5d10dfc050db2",
-                                    "label": "Image",
+                                    "label": "Item Image",
                                     "name": "image",
                                     "type": "image",
                                     "instructions": "",
@@ -2549,8 +2549,24 @@
                                     "mime_types": ""
                                 },
                                 {
+                                    "key": "field_5d10dfc050db3",
+                                    "label": "Item Url",
+                                    "name": "url",
+                                    "type": "url",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": ""
+                                },
+                                {
                                     "key": "field_5d10dfc050db4",
-                                    "label": "Text",
+                                    "label": "Item Text",
                                     "name": "source",
                                     "type": "textarea",
                                     "instructions": "",
@@ -2566,22 +2582,6 @@
                                     "maxlength": "",
                                     "rows": 4,
                                     "new_lines": "br"
-                                },
-                                {
-                                    "key": "field_5d10dfc050db3",
-                                    "label": "Url",
-                                    "name": "url",
-                                    "type": "url",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": "",
-                                    "placeholder": ""
                                 }
                             ]
                         },
@@ -3232,5 +3232,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1562257351
+    "modified": 1562302845
 }
