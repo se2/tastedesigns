@@ -9,6 +9,30 @@
 
 get_header();
 $theme_colors = new TasteColors(true);
+
+if ( is_post_type_archive( 'project' ) ) {
+	global $wp_query;
+	$defaults = $wp_query->query_vars;
+
+	// get exclude project types
+	$excluded = get_field( 'exclude_project_types', 'option' );
+	// exclude certain project types based on settings
+	$args = array(
+		'tax_query' => array(
+			array(
+					'taxonomy' => 'project_type',
+					'field'    => 'term_id',
+					'terms'    => $excluded,
+					'operator' => 'NOT IN',
+			),
+		)
+	);
+	// merge the default with custom args
+	$args = wp_parse_args( $args, $defaults );
+	// query posts based on merged arguments
+	query_posts( $args );
+}
+
 ?>
 
 <div class="c-header js-header-blog pb-1">

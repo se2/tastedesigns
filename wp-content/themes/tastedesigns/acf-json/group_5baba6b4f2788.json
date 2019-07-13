@@ -3074,6 +3074,11 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "page"
+            },
+            {
+                "param": "page_template",
+                "operator": "!=",
+                "value": "templates\/project-type.php"
             }
         ],
         [
@@ -3107,5 +3112,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1562571420
+    "modified": 1563004661
 }

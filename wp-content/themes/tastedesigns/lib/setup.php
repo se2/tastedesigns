@@ -136,12 +136,18 @@ if ( ! function_exists( 'ttg_wp_setup' ) ) :
 		add_filter('facetwp_facet_dropdown_show_counts', '__return_false');
 
 		/**
-		 * Exclude Uncategorized filter
+		 * Exclude Uncategorized and Coming Soon filter
 		 */
 		add_filter('facetwp_index_row', function($params, $class) {
 			if ('categories' == $params['facet_name']) {
 				$excluded_terms = array('Uncategorized');
 				if (in_array($params['facet_display_value'], $excluded_terms)) {
+					return false;
+				}
+			}
+			if ('project_type' == $params['facet_name']) {
+				$excluded_terms = array( 'Coming Soon' );
+				if ( in_array( $params[ 'facet_display_value' ], $excluded_terms ) ) {
 					return false;
 				}
 			}
