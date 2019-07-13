@@ -31,7 +31,7 @@ if (!$is_about) :
       >
         <?php echo $title; ?>
       </h1>
-      <div class="c-team__content px-0 lg:px-10 flex flex-wrap mt-40 lg:mt-40">
+      <div class="c-team__content px-0 lg:px-10 flex flex-wrap justify-center mt-40 lg:mt-40">
         <?php while ($query->have_posts()) : $query->the_post(); ?>
           <div class="c-team__item w-full lg:w-1/3 px-0 lg:px-6 lg:py-24">
             <a href="<?php the_permalink(); ?>" class="no-underline">
@@ -45,9 +45,9 @@ if (!$is_about) :
                 onMouseOut="this.style.backgroundColor='transparent'"
               <?php endif; ?>
               >
-                <div class="c-team__thumbnail w-full h-team-image-mobile lg:h-team-image bg-taste-9">
+                <div class="c-team__thumbnail w-full h-team-image-mobile lg:h-team-image xl:px-25">
                   <?php the_post_thumbnail('small', [
-                    'class' => 'c-team__image w-full h-full o-cover block'
+                    'class' => 'c-team__image w-full h-full block'
                   ]); ?>
                 </div>
                 <h1 class="font-title text-42 leading-57 text-taste-1 text-center mt-20"
@@ -86,7 +86,7 @@ if (!$is_about) :
       <h2 class="font-subtitle text-14 leading-30 tracking-3.71 lg:text-16 lg:leading-30 lg:tracking-4.24 text-taste-2 uppercase text-center mt-0 lg:mt-60 mx-20 lg:mx-30">
         <?php echo $subtitle; ?>
       </h2>
-      <div class="c-team__content px-0 lg:px-10 flex flex-wrap mt-40 lg:mt-40">
+      <div class="c-team__content px-0 lg:px-10 flex flex-wrap justify-center mt-40 lg:mt-40">
         <?php foreach ($team as $element) : ?>
           <?php $member = $element['team_member']; ?>
           <div class="c-team__item w-full lg:w-1/3 px-0 lg:px-6 lg:py-24">
@@ -97,9 +97,9 @@ if (!$is_about) :
                 onMouseOut="this.style.backgroundColor='transparent'"
               <?php endif; ?>
               >
-                <div class="c-team__thumbnail w-full h-team-image-mobile lg:h-team-image bg-taste-9">
+                <div class="c-team__thumbnail w-full h-team-image-mobile lg:h-team-image xl:px-25">
                   <?php echo get_the_post_thumbnail($member, 'small', [
-                    'class' => 'c-team__image w-full h-full o-cover block'
+                    'class' => 'c-team__image w-full h-full block'
                   ]); ?>
                 </div>
                 <h1 class="font-title text-42 leading-57 text-taste-1 text-center mt-20"

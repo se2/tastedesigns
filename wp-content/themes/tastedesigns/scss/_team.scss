@@ -5,7 +5,13 @@
     &.is-active {
       @apply bg-taste-5;
     }
-  }
+	}
+	&__image {
+		object-fit: cover;
+		@screen xl {
+			object-fit: contain;
+		}
+	}
 }
 
 .c-single-team {

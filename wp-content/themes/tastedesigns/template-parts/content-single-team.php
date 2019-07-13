@@ -27,10 +27,18 @@ template partial for single post type
    */
   ?>
   <div class="c-single-team__content flex flex-col xl:flex-row px-20 pb-40 xl:px-30 xl:pb-70 relative">
-    <div class="c-single-team__avatar w-full xl:w-team-avatar h-full bg-taste-9">
-      <?php the_post_thumbnail('medium', [
-        'class' => 'c-single-team__image block w-full h-full o-center'
-      ]); ?>
+    <div class="c-single-team__avatar w-full xl:w-team-avatar h-full">
+			<?php
+			if ( get_field( 'details_page_image' ) ) {
+			?>
+			<img src="<?php the_field( 'details_page_image' ); ?>" class="c-single-team__image block w-full h-full o-center" alt="<?php the_title(); ?>">
+			<?php
+			} else {
+				the_post_thumbnail('medium', [
+					'class' => 'c-single-team__image block w-full h-full o-center'
+				]);
+			}
+			?>
     </div>
     <div class="c-single-team__body py-20 px-0 xl:py-150 xl:pl-100 xl:pr-80">
       <h1 class="font-title text-42 leading-57 text-taste-1 mt-20 xl:mt-0 text-center lg:text-left">
