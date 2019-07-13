@@ -4,7 +4,7 @@
 	<?php if ( is_home() || is_search() || is_page_template( 'templates/taste-search.php' ) ) : ?>
 		<?php if ( is_home() ) : ?>
 			<h2 class="c-sidebar-blogs__title hidden lg:block">
-				Sort by Category:
+				Filter by Category:
 			</h2>
 			<?php echo do_shortcode('[facetwp facet="categories"]'); ?>
 		<?php endif; ?>
