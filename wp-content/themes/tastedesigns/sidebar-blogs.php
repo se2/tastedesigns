@@ -8,9 +8,9 @@
 			</h2>
 			<?php echo do_shortcode('[facetwp facet="categories"]'); ?>
 		<?php endif; ?>
-		<h2 class="c-sidebar-blogs__title hidden lg:block">
+		<!-- <h2 class="c-sidebar-blogs__title hidden lg:block">
 			Search the Blog:
-		</h2>
+		</h2> -->
 		<?php echo do_shortcode('[facetwp facet="search"]'); ?>
 	<?php endif; ?>
 	<div class="c-sidebar-blogs__cta hidden lg:block">

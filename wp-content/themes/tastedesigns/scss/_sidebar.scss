@@ -28,7 +28,7 @@
         -webkit-appearance: none;
         background-color: #ffffff;
         border-radius: initial;
-        height: 66px;
+        height: 54px;
         border: 2px solid config('colors.taste-5');
         padding: 0 20px;
         line-height: 1.2142857143;
@@ -130,7 +130,7 @@
       input {
         @apply .w-full .outline-none .text-taste-2 .font-body .text-14 .text-left;
         line-height: 1.2142857143;
-        height: 66px;
+        height: 54px;
         padding-right: 20px;
         border: 2px solid config('colors.taste-5');
         border-radius: 60px;
