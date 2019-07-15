@@ -10,6 +10,7 @@ import blog from './routes/blog';
 import gallery from './routes/gallery';
 import video from './routes/video';
 import search from './routes/search';
+import thePackages from './routes/package';
 
 /** Populate Router instance with DOM routes */
 const routes = new Router({
@@ -35,11 +36,13 @@ const routes = new Router({
 			home.init();
       blog.init();
       video.init();
+      thePackages.init();
     },
     finalize() {
 			home.finalize();
       blog.finalize();
       video.finalize();
+      thePackages.finalize();
     }
   },
   // Single Post

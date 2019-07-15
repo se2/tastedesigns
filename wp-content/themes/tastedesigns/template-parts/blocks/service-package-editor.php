@@ -40,7 +40,7 @@ $colors = new TasteColors();
 				$cta = get_sub_field( 'cta' );
 				if ( $cta ) :
 				?>
-        <a href="<?php echo $cta['url']; ?>" target="<?php echo $cta['target']; ?>" class="no-underline w-full lg:w-auto lg:mx-20 mt-40 lg:mt-60 block">
+        <a href="<?php echo $cta['url']; ?>" target="<?php echo $cta['target']; ?>" class="js-service-package no-underline w-full lg:w-auto lg:mx-20 mt-40 lg:mt-60 block">
           <div class="border-2 border-taste-4 py-25 px-60 w-full lg:w-auto lg:items-center lg:inline-flex text-center" <?php $colors->getSecondaryBorder(); ?>>
             <span class="text-14 leading-17 tracking-3.71 lg:text-18 lg:leading-21 lg:tracking-3 uppercase text-center text-taste-2" <?php $colors->getPrimaryColor(); ?>>
               <?php echo $cta['title']; ?>

@@ -216,3 +216,16 @@
     @apply mt-20;
   }
 }
+
+.c-package {
+  &__content {
+    p,
+    li {
+      @apply mt-20;
+    }
+
+    ul {
+      padding-left: 18px;
+    }
+  }
+}
