@@ -87,4 +87,33 @@
       border-color: config('colors.taste-3');
     }
   }
+  &__contact {
+    a {
+      @apply font-body;
+      @apply text-taste-3;
+      @apply no-underline;
+      @apply uppercase;
+      @apply text-11;
+      @apply leading-12;
+      @apply tracking-2.92;
+      @apply .block;
+
+			@screen md {
+				@apply .inline-block;
+			}
+
+      @screen lg {
+        @apply text-taste-4;
+        @apply text-14;
+        @apply leading-17;
+        @apply tracking-3.71;
+      }
+    }
+    .c-phone-numbers__item {
+      padding-top: 0.625rem;
+      @screen lg {
+        @apply .pt-0;
+      }
+    }
+  }
 }
