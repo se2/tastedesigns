@@ -14,7 +14,7 @@ $colors = new TasteColors();
 
 if (have_rows('press')) : ?>
   <div class="c-team w-full my-60 lg:my-80">
-    <h1 class="font-title text-42 leading-57 lg:text-66 lg:leading-89 mb-50 xl:mb-0 text-taste-1 text-center lowercase" <?php $colors->getPrimaryColor(); ?>>
+    <h1 class="font-title text-42 leading-57 lg:text-64 lg:leading-89 mb-50 xl:mb-0 text-taste-1 text-center lowercase" <?php $colors->getPrimaryColor(); ?>>
       <?php echo $title; ?>
     </h1>
     <h2 class="font-subtitle text-14 leading-30 tracking-3.71 lg:text-16 lg:leading-30 lg:tracking-4.24 text-taste-2 uppercase text-center mt-0 lg:mt-60 mx-20 lg:mx-30">

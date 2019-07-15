@@ -24,7 +24,7 @@ $colors = new TasteColors();
   <div class="c-cover__inner absolute w-full px-20 py-20 lg:pt-34 lg:pb-55 lg:px-27">
     <div class="c-cover__underlay absolute w-full h-full opacity-50 bg-taste-1"></div>
     <div class="c-cover__text-content w-full lg:w-576 text-center lg:text-left lg:float-right">
-      <h1 class="c-cover__title font-title text-42 leading-57 lg:text-75 lg:leading-101 text-light relative text-center lg:text-left">
+      <h1 class="c-cover__title font-title text-42 leading-57 lg:text-73 lg:leading-101 text-light relative text-center lg:text-left">
         <?php echo $title; ?>
 			</h1>
 			<?php if ( $subtitle ) : ?>

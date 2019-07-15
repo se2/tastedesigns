@@ -18,7 +18,7 @@ $colors = new TasteColors();
 <div class="c-service-package my-60 lg:my-80 max-w-920 mx-20 lg:mx-auto">
   <h1 class="font-title text-42 leading-57 mb-50 xl:mb-0 text-taste-1 text-center
   <?php if (!$small) : ?>
-    lg:text-66 lg:leading-89
+    lg:text-64 lg:leading-89
   <?php endif; ?>
   " <?php $colors->getPrimaryColor(); ?>>
     <?php echo $title; ?>

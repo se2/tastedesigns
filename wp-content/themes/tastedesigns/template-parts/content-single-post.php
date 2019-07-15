@@ -12,7 +12,7 @@ template partial for single post type
 <section class="c-blog">
 
   <div class="c-blog__header lg:px-50 js-header-blog">
-    <h1 class="c-blog__title font-title text-center text-taste-1 text-42 leading-57 lg:text-66 lg:leading-89 mt-20 lg:mt-0 lowercase <?php echo $alter ? 'pb-40 lg:pb-60' : ''; ?>" <?php $theme_colors->getPrimaryColor(); ?>>
+    <h1 class="c-blog__title font-title text-center text-taste-1 text-42 leading-57 lg:text-64 lg:leading-89 mt-20 lg:mt-0 lowercase <?php echo $alter ? 'pb-40 lg:pb-60' : ''; ?>" <?php $theme_colors->getPrimaryColor(); ?>>
       <?php echo get_the_title(get_option('page_for_posts')); ?>
     </h1>
     <?php if (!$alter) : ?>
@@ -41,7 +41,7 @@ template partial for single post type
         <h2 class="font-subtitle text-12 leading-30.12 tracking-3.18 lg:text-16 lg:leading-30 lg:tracking-4.24 text-taste-2 uppercase text-center <?php if ($alter) : ?>lg:text-left<?php endif; ?>">
           <?php echo $author; ?>&nbsp;&nbsp;|&nbsp;&nbsp;<?php echo $primaryCat; ?>
         </h2>
-        <h1 class="c-blog__title font-title text-taste-1 text-42 leading-57 lg:text-66 lg:leading-89 text-center <?php if ($alter) : ?>lg:text-left<?php endif; ?>">
+        <h1 class="c-blog__title font-title text-taste-1 text-42 leading-57 lg:text-64 lg:leading-89 text-center <?php if ($alter) : ?>lg:text-left<?php endif; ?>">
           <?php the_title(); ?>
         </h1>
         <div class="c-blog__body entry-content mt-50 lg:mt-70 mb-50 clearfix">

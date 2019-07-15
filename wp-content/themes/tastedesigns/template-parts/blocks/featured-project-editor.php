@@ -51,7 +51,7 @@ if ($project) :
             <?php the_field('location'); ?>
           </h3>
         <?php endif; ?>
-        <h1 class="font-title text-42 leading-57 lg:text-66 lg:leading-89 text-taste-1 break-words" <?php $colors->getPrimaryColor(); ?>>
+        <h1 class="font-title text-42 leading-57 lg:text-64 lg:leading-89 text-taste-1 break-words" <?php $colors->getPrimaryColor(); ?>>
           <?php the_title(); ?>
         </h1>
         <div class="c-featured-project__body font-body text-14 leading-17 lg:text-16 lg:leading-19 text-taste-6">

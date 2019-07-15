@@ -16,7 +16,7 @@ get_header();
 			<section class="error-404 not-found">
 				<article class="mx-20 lg:mx-0 lg:px-50">
 					<header class="page-header mb-20">
-						<h1 class="page-title font-title text-taste-1 text-42 leading-57 lg:text-66 lg:leading-89 text-center lg:text-left"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'ttg-wp' ); ?></h1>
+						<h1 class="page-title font-title text-taste-1 text-42 leading-57 lg:text-64 lg:leading-89 text-center lg:text-left"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'ttg-wp' ); ?></h1>
 					</header><!-- .page-header -->
 
 					<div class="page-content text-center lg:text-left">

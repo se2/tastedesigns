@@ -16,7 +16,7 @@ template partial for single post type
    */
   ?>
   <div class="c-single-project__header lg:px-50 js-header-blog pb-50 lg:pb-80">
-    <h1 class="c-single-project__title font-title text-center text-taste-1 text-42 leading-57 lg:text-66 lg:leading-89 mt-20 lg:mt-0" <?php $theme_colors->getPrimaryColor(); ?>>
+    <h1 class="c-single-project__title font-title text-center text-taste-1 text-42 leading-57 lg:text-64 lg:leading-89 mt-20 lg:mt-0" <?php $theme_colors->getPrimaryColor(); ?>>
       client stories
     </h1>
   </div>
@@ -46,7 +46,7 @@ template partial for single post type
         <?php the_field( 'location' ); ?>
       </h2>
 			<?php endif; ?>
-      <h1 class="c-single-project__title font-title text-taste-1 text-42 leading-57 lg:text-66 lg:leading-89 text-center">
+      <h1 class="c-single-project__title font-title text-taste-1 text-42 leading-57 lg:text-64 lg:leading-89 text-center">
         <?php the_title(); ?>
       </h1>
       <div class="c-single-project__intro entry-content mt-30 lg:mt-40 mb-30 text-center font-body text-16 leading-24 text-taste-6">
