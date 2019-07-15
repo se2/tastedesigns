@@ -38,6 +38,16 @@ if ( !is_front_page() ) {
 			echo $menu;
 		?>
 		<div class="c-footer__separator h-2 w-full bg-taste-2 mt-50"></div>
+		<div class="c-footer__contact pt-70 text-center">
+			<?php $address = get_field('address', 'option'); ?>
+			<a href="<?php echo $address['url']; ?>" target="_blank"><?php echo $address['title']; ?></a>
+			<span class="hidden lg:inline-block text-taste-4 text-14 leading-17 tracking-3.71">|</span>
+			<?php while (have_rows('phone_numbers', 'option')) : the_row(); ?>
+				<a href="<?php echo 'tel:+'.get_sub_field('number'); ?>" class="c-phone-numbers__item block">
+					<?php echo get_sub_field('number'); ?>
+				</a>
+			<?php endwhile; ?>
+		</div>
 		<div class="c-footer__bottom pt-70 pb-20 flex flex-col lg:flex-row items-center">
 			<?php $career = get_field('career', 'option'); ?>
 			<?php if ($career) : ?>
