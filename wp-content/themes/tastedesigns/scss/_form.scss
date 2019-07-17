@@ -4,7 +4,7 @@
     input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]),
   .gfield textarea,
   .gform_footer input.button {
-    @apply font-body text-40 leading-50/40 text-left border-b-2 border-taste-8 px-0 pt-10 pb-5 m-0 text-14 leading-17 tracking-3.71 text-taste-2 bg-transparent;
+    @apply font-body text-40 leading-50/40 text-left border-b-2 border-taste-5 px-0 pt-10 pb-5 m-0 text-14 leading-17 tracking-3.71 text-taste-6 bg-transparent;
 
     outline: 0;
 
@@ -26,6 +26,10 @@
     }
   }
 
+  .gfield textarea {
+    @apply bg-taste-5;
+  }
+
   .gform_footer input.button {
     @apply py-25 px-35 bg-transparent border-2 border-taste-4 cursor-pointer w-auto uppercase;
 
@@ -42,6 +46,29 @@
 
   .top_label .gfield_label {
     display: none;
+  }
+  .gfield {
+    margin-top: 40px;
+  }
+
+  .gfield:last-child {
+    .gfield_label{
+      @apply .block .uppercase text-taste-6 font-body;
+      font-size: 18px;
+      letter-spacing: 0.1666666667;
+      line-height: 2;
+      font-weight: 400;
+      padding: 15px;
+    }
+    .ginput_container {
+      margin-top: 14px;
+      textarea {
+        @apply text-taste-6 font-body;
+        font-size: 16px;
+        line-height: 2.25;
+        padding: 30px 15px !important;
+      }
+    }
   }
 }
 

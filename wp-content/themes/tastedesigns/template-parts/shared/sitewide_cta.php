@@ -18,13 +18,13 @@ $theme_colors = new TasteColors(true);
 		<?php echo $subtitle; ?>
 	</h2>
 	<div class="c-global-cta__inner bg-light">
-		<h1 class="c-global-cta__title font-title text-42 leading-57 lg:text-64 lg:leading-89 text-center text-taste-1" <?php $theme_colors->getPrimaryColor(); ?>>
+		<h1 class="c-global-cta__title font-title text-42 leading-57 lg:text-48 lg:leading-65 text-center text-taste-1" <?php $theme_colors->getPrimaryColor(); ?>>
 			<?php echo $title; ?>
 		</h1>
 		<a href="<?php echo $button_url; ?>" class="c-button__link no-underline">
 			<div class="c-button border-2 border-taste-4 px-21 inline-flex items-center w-full lg:w-auto" <?php $theme_colors->getSecondaryBorder(); ?>>
 				<span class="c-button__text font-subtitle text-14 leading-17 tracking-3.71 lg:text-18 lg:leading-21 lg:tracking-3 text-taste-3 uppercase" <?php $theme_colors->getPrimaryColor(); ?>><?php echo $button_text; ?></span>
-				<?php get_arrow_svg('c-button__icon h-auto ml-auto lg:ml-30 fill-taste-1', $theme_colors->getPrimaryFill(false)); ?>
+				<?php get_arrow_svg('c-button__icon h-auto ml-auto lg:ml-30 xl:ml-90 fill-taste-1', $theme_colors->getPrimaryFill(false)); ?>
 			</div>
 		</a>
 	</div>

@@ -8,8 +8,6 @@
     width: 47px;
   }
   @screen lg {
-    padding-top: 27px;
-    padding-bottom: 23px;
     &__text {
       letter-spacing: 4.77px;
     }
@@ -36,12 +34,13 @@
   @screen lg {
     padding-bottom: 94px;
     &__inner {
+      @apply .flex .flex-wrap .justify-between .items-center;
       padding-left: 115px;
       padding-right: 115px;
       padding-bottom: 67px;
     }
     &__title {
-      padding-bottom: 53px;
+      @apply .pb-0;
     }
   }
   @screen xl {
