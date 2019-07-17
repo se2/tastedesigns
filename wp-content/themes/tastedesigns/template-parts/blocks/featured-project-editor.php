@@ -64,7 +64,13 @@ if ($project) :
           </h3>
           <?php while (have_rows('partners')) : the_row(); ?>
             <p class="font-body text-14 leading-17 lg:text-16 lg:leading-19 text-taste-6">
-              <?php echo get_sub_field('partner'); ?>
+							<?php
+							$partner_title = "";
+							if ( get_sub_field( 'title' ) ) {
+								$partner_title = " - " . get_sub_field( 'title' );
+							}
+							echo get_sub_field('partner') . $partner_title;
+							?>
             </p>
           <?php endwhile; ?>
         <?php endif; ?>
