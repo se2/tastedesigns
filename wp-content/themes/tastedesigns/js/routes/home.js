@@ -36,35 +36,37 @@ export default {
     let s = this;
     let e = s.elements;
 
-    e.$gallery.slick({
-      infinite: false,
-      autoplaySpeed: 5000,
-      rows: 0,
-      arrows: true,
-      speed: 1000,
-      cssEase: 'cubic-bezier(0.645, 0.045, 0.355, 1)',
-      pauseOnFocus: false,
-      pauseOnHover: false,
-      pauseOnDotsHover: false,
-      responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 1,
-            centerMode: true,
-            centerPadding: '10px',
-            arrows: false,
-          }
-        },
-      ],
-    });
+    if (!e.$gallery.hasClass('slick-initialized')) {
+      e.$gallery.slick({
+        infinite: false,
+        autoplaySpeed: 5000,
+        rows: 0,
+        arrows: true,
+        speed: 1000,
+        cssEase: 'cubic-bezier(0.645, 0.045, 0.355, 1)',
+        pauseOnFocus: false,
+        pauseOnHover: false,
+        pauseOnDotsHover: false,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 1,
+              centerMode: true,
+              centerPadding: '10px',
+              arrows: false,
+            }
+          },
+        ],
+      });
 
-    e.$galleryItem.click(function() {
-      let $item = $(this);
-      let index = $item.data('slick-index');
+      e.$galleryItem.click(function() {
+        let $item = $(this);
+        let index = $item.data('slick-index');
 
-      e.$gallery.slick('slickGoTo', index);
-    });
+        e.$gallery.slick('slickGoTo', index);
+      });
+    }
   },
   initStayConnected() {
     let s = this;
