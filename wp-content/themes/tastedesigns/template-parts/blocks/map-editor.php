@@ -11,7 +11,7 @@ $title = get_sub_field('title');
 $address = get_sub_field('address');
 $phone = get_sub_field('phone');
 $email = get_sub_field('email');
-$map_image = get_sub_field('map_image');
+$map_iframe = get_sub_field('map_iframe');
 $address_url = get_field('address', 'option');
 ?>
 
@@ -25,6 +25,6 @@ $address_url = get_field('address', 'option');
     </div>
   </div>
   <div class="c-map-block__map-image w-full lg:w-1/2">
-    <?php echo $map_image; ?>
+    <?php echo $map_iframe; ?>
   </div>
 </section>

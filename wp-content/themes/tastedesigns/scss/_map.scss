@@ -17,6 +17,9 @@
     }
     h2 + h2 {
       padding-top: 25px;
+      a {
+        @apply text-taste-5;
+      }
     }
     p {
       a {

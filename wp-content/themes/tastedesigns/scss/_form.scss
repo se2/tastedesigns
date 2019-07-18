@@ -9,7 +9,8 @@
     outline: 0;
 
     @screen xl {
-      @apply text-18 leading-21 tracking-3;
+      @apply text-18 tracking-3;
+      line-height: 2;
     }
 
     &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -28,10 +29,22 @@
 
   .gfield textarea {
     @apply bg-taste-5;
+    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+      @apply capitalize;
+    }
+    &::-moz-placeholder { /* Firefox 19+ */
+      @apply capitalize;
+    }
+    &:-ms-input-placeholder { /* IE 10+ */
+      @apply capitalize;
+    }
+    &:-moz-placeholder { /* Firefox 18- */
+      @apply capitalize;
+    }
   }
 
   .gform_footer input.button {
-    @apply py-25 px-35 bg-transparent border-2 border-taste-4 cursor-pointer w-auto uppercase;
+    @apply py-25 px-35 bg-transparent border-2 border-taste-4 cursor-pointer w-auto uppercase .tracking-4.77 .leading-30.18 .text-taste-2;
 
     transition: color 0.5s $default, background-color 0.5s $default;
 
@@ -41,7 +54,7 @@
   }
 
   .gform_footer.top_label {
-    @apply p-0;
+    @apply p-0 .text-right;
   }
 
   .top_label .gfield_label {
@@ -53,9 +66,8 @@
 
   .gfield:last-child {
     .gfield_label{
-      @apply .block .uppercase text-taste-6 font-body;
+      @apply .block .uppercase text-taste-6 font-body .tracking-3;
       font-size: 18px;
-      letter-spacing: 0.1666666667;
       line-height: 2;
       font-weight: 400;
       padding: 15px;
