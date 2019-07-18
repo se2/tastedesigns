@@ -4204,8 +4204,8 @@
                         },
                         {
                             "key": "field_5d2ed894d30cd",
-                            "label": "Map Image",
-                            "name": "map_image",
+                            "label": "Map Iframe",
+                            "name": "map_iframe",
                             "type": "textarea",
                             "instructions": "",
                             "required": 0,
@@ -4275,5 +4275,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1563355510
+    "modified": 1563418039
 }
