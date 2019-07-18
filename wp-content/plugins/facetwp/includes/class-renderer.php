@@ -453,20 +453,23 @@ class FacetWP_Renderer
             // Required for dropdowns and checkboxes in "or" mode
             FWP()->or_values[ $facet_name ] = $matches;
 
-            // Preserve post ID order for search facets
             if ( 'search' == $facet_type ) {
                 $this->is_search = true;
-                $intersected_ids = [];
-                foreach ( $matches as $match ) {
-                    if ( in_array( $match, $post_ids ) ) {
-                        $intersected_ids[] = $match;
-                    }
+            }
+
+            // Store post IDs as array keys for faster lookups
+            $id_lookup = array_flip( $post_ids );
+
+            // Preserve post ID order
+            $intersected_ids = [];
+
+            foreach ( $matches as $match ) {
+                if ( isset( $id_lookup[ $match ] ) ) {
+                    $intersected_ids[] = $match;
                 }
-                $post_ids = $intersected_ids;
             }
-            else {
-                $post_ids = array_intersect( $post_ids, $matches );
-            }
+
+            $post_ids = $intersected_ids;
         }
 
         // Return a zero array if no matches

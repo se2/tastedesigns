@@ -5,6 +5,7 @@ class FacetWP_Init
 
     function __construct() {
         add_action( 'init', [ $this, 'init' ] );
+        add_filter( 'woocommerce_is_rest_api_request', [ $this, 'is_rest_api_request' ] );
     }
 
 
@@ -107,7 +108,6 @@ class FacetWP_Init
      */
     function admin_scripts( $hook ) {
         if ( 'settings_page_facetwp' == $hook ) {
-            wp_enqueue_style( 'media-views' );
             wp_enqueue_script( 'jquery-powertip', FACETWP_URL . '/assets/vendor/jquery-powertip/jquery.powertip.min.js', [ 'jquery' ], '1.2.0' );
         }
     }
@@ -140,6 +140,23 @@ class FacetWP_Init
         $settings_link = '<a href=" ' . $settings_link . '">' . __( 'Settings', 'fwp' )  . '</a>';
         array_unshift( $links, $settings_link );
         return $links;
+    }
+
+
+    /**
+     * WooCommerce 3.6+ doesn't load its frontend includes for REST API requests
+     * We need to force-load these includes for FacetWP refreshes
+     * See includes() within class-woocommerce.php
+     * 
+     * This code isn't within /integrations/woocommerce/ because it runs *before* init
+     * 
+     * @since 3.3.10
+     */
+    function is_rest_api_request( $request ) {
+        if ( false !== strpos( $_SERVER['REQUEST_URI'], 'facetwp' ) ) {
+            return false;
+        }
+        return $request;
     }
 }
 

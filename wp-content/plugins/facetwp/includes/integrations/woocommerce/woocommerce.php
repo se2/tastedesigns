@@ -33,6 +33,9 @@ class FacetWP_Integration_WooCommerce
 
         // Prevent WooCommerce from redirecting to a single result page
         add_filter( 'woocommerce_redirect_single_search_result', [ $this, 'redirect_single_search_result' ] );
+
+        // Dynamic counts when Shop Page Display = "Categories" or "Both"
+        //include( FACETWP_DIR . '/includes/integrations/woocommerce/taxonomy.php' );
     }
 
 
@@ -505,7 +508,7 @@ class FacetWP_Integration_WooCommerce
      * @since 3.3.7
      */
     function redirect_single_search_result( $bool ) {
-        if ( function_exists( 'FWP' ) && ( FWP()->ajax->is_refresh || FWP()->ajax->is_preload ) ) {
+        if ( FWP()->ajax->is_refresh || ! empty( FWP()->ajax->url_vars ) ) {
             $bool = false;
         }
 
