@@ -23,7 +23,7 @@ $colors = new TasteColors();
       <?php generate_image($background, 'c-package__background w-full h-full o-cover', 'large'); ?>
     <?php endif; ?>
   </div>
-  <div class="absolute w-full h-full top-0 left-0" style="background-color: rgba(79,65,55,0.45);"></div>
+  <div class="absolute w-full h-full top-0 left-0 c-package__overlay"></div>
   <div class="c-package__inner relative">
     <?php if ($title) : ?>
       <h1 class="font-title text-42 leading-50/42 text-center
