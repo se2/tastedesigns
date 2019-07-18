@@ -29,7 +29,7 @@ template partial for single post type
   <?php if (has_post_thumbnail()) : ?>
     <div class="c-single-project__image-wrapper w-full h-blog-image">
       <?php the_post_thumbnail('massive', [
-        'class' => 'c-single-project__image w-full h-full h-blog-image'
+        'class' => 'c-single-project__image w-full h-full h-blog-image o-cover'
       ]); ?>
     </div>
   <?php endif; ?>
