@@ -145,3 +145,8 @@ html.is-freeze {
     background-color: transparent;
   }
 }
+
+.mw-1280px {
+  @apply .m-auto;
+  max-width: 1280px;
+}
