@@ -21,14 +21,14 @@ export default {
     let e = s.elements;
 
     e.$anchors.click(function(event) {
-      event.preventDefault();
-
       let $anchor = $(this);
       let link = $anchor.attr('href');
       let anchor = link.substring(1);
       let $package = e.$packages.filter('[data-id="' + anchor + '"]');
 
       if ($package.length) {
+        event.preventDefault();
+
         let top = $package.offset().top;
 
         e.$root.animate({
