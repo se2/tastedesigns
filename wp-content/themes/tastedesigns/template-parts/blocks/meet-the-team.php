@@ -14,6 +14,7 @@ $override = get_query_var('override');
 $team = get_query_var('team');
 $colors = get_query_var('colors');
 $is_about = get_query_var('is_about');
+$custom_class = get_sub_field('custom_class');
 if (!$is_about) :
   $args = array (
     'post_type' => 'team',
@@ -23,7 +24,7 @@ if (!$is_about) :
 ?>
 
   <?php if ($query->have_posts()) : ?>
-    <div class="c-team w-full my-60 lg:my-80">
+    <div class="c-team w-full my-60 lg:my-80 mw-1280px">
       <h1 class="font-title text-42 leading-57 lg:text-64 lg:leading-89 text-taste-1 text-center lowercase"
       <?php if ($override) : ?>
         <?php $colors->getPrimaryColor(); ?>
@@ -31,7 +32,7 @@ if (!$is_about) :
       >
         <?php echo $title; ?>
       </h1>
-      <div class="c-team__content px-0 lg:px-10 flex flex-wrap justify-center mt-40 lg:mt-40">
+      <div class="c-team__content px-0 lg:px-10 flex flex-wrap justify-center mt-40 lg:mt-40 <?php echo $custom_class; ?>">
         <?php while ($query->have_posts()) : $query->the_post(); ?>
           <div class="c-team__item w-full lg:w-1/3 px-0 lg:px-6 lg:py-24">
             <a href="<?php the_permalink(); ?>" class="no-underline">
@@ -75,7 +76,7 @@ if (!$is_about) :
 <?php else : ?>
 
   <?php if (!empty($team)) : ?>
-    <div class="c-team w-full my-60 lg:my-80">
+    <div class="c-team w-full my-60 lg:my-80 mw-1280px">
       <h1 class="font-title text-42 leading-57 lg:text-64 lg:leading-89 mb-50 xl:mb-0 text-taste-1 text-center lowercase"
       <?php if ($override) : ?>
         <?php $colors->getPrimaryColor(); ?>
@@ -86,7 +87,7 @@ if (!$is_about) :
       <h2 class="font-subtitle text-14 leading-30 tracking-3.71 lg:text-16 lg:leading-30 lg:tracking-4.24 text-taste-2 uppercase text-center mt-0 lg:mt-60 mx-20 lg:mx-30">
         <?php echo $subtitle; ?>
       </h2>
-      <div class="c-team__content px-0 lg:px-10 flex flex-wrap justify-center mt-40 lg:mt-40">
+      <div class="c-team__content px-0 lg:px-10 flex flex-wrap justify-center mt-40 lg:mt-40 <?php echo $custom_class; ?>">
         <?php foreach ($team as $element) : ?>
           <?php $member = $element['team_member']; ?>
           <div class="c-team__item w-full lg:w-1/3 px-0 lg:px-6 lg:py-24">
