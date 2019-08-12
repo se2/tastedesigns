@@ -17,7 +17,14 @@ template partial for single post type
   ?>
   <div class="c-single-project__header lg:px-50 js-header-blog pb-50 lg:pb-80">
     <h1 class="c-single-project__title font-title text-center text-taste-1 text-42 leading-57 lg:text-64 lg:leading-89 mt-20 lg:mt-0" <?php $theme_colors->getPrimaryColor(); ?>>
-      client stories
+			<?php
+			$terms = wp_get_post_terms( $post->ID, 'project_type', array( 'fields' => 'names' ) );
+			if ( in_array( 'Coming Soon', $terms ) ) {
+				echo 'projects in progress';
+			} else {
+				echo 'client stories';
+			}
+			?>
     </h1>
   </div>
 
