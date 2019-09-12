@@ -117,7 +117,7 @@
             $el.text($el.text().replace('{num}', num));
         });
 
-        // are children visible?
+        // add toggle feature
         $('.facetwp-type-checkboxes').each(function() {
             var $facet = $(this);
             var name = $facet.attr('data-name');
@@ -127,26 +127,22 @@
                 return;
             }
 
-            // hierarchy toggles
+            // expand children
             if ('yes' === FWP.settings[name]['show_expanded']) {
                 $facet.find('.facetwp-depth').addClass('visible');
             }
 
             if (1 > $facet.find('.facetwp-expand').length) {
+
+                // expand groups with selected items
+                $facet.find('.facetwp-checkbox.checked').each(function() {
+                    $(this).parents('.facetwp-depth').addClass('visible');
+                });
+
+                // add the toggle button
                 $facet.find('.facetwp-depth').each(function() {
                     var which = $(this).hasClass('visible') ? 'collapse' : 'expand';
                     $(this).prev('.facetwp-checkbox').append(' <span class="facetwp-expand">' + FWP_JSON[which] + '</span>');
-                });
-
-                // un-hide groups with selected items
-                $facet.find('.facetwp-checkbox.checked').each(function() {
-                    $(this).parents('.facetwp-depth').each(function() {
-                        $(this).prev('.facetwp-checkbox').find('.facetwp-expand').html(FWP_JSON['collapse']);
-                        $(this).addClass('visible');
-                    });
-
-                    // show children of selected items
-                    $(this).find('.facetwp-expand').trigger('click');
                 });
             }
         });
@@ -518,9 +514,19 @@
             });
 
             $this.removeClass('f-loading');
+
+            FWP.hooks.doAction('facetwp/geolocation/success', {
+                'facet': $facet,
+                'position': position
+            });
         },
-        function() {
+        function(error) {
             $this.removeClass('f-loading');
+
+            FWP.hooks.doAction('facetwp/geolocation/error', {
+                'facet': $facet,
+                'error': error
+            });
         });
     });
 

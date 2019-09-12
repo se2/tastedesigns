@@ -327,7 +327,6 @@ $false_value = isset( $atts['false_value'] ) ? $atts['false_value'] : 'no';
             if ( in_array( $size, $default_sizes ) ) {
                 $sizes[ $size ]['width'] = (int) get_option( "{$size}_size_w" );
                 $sizes[ $size ]['height'] = (int) get_option( "{$size}_size_h" );
-                $sizes[ $size ]['crop'] = (bool) get_option( "{$size}_size_crop" );
             }
             elseif ( isset( $_wp_additional_image_sizes[ $size ] ) ) {
                 $sizes[ $size ] = $_wp_additional_image_sizes[ $size ];

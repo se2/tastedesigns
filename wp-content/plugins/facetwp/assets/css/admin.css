@@ -356,6 +356,23 @@ a:hover {
     width: auto;
 }
 
+.facetwp-region .item-locked {
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #dc3545;
+    border-radius: 3px;
+    color: #fff;
+}
+
+.facetwp-region .item-locked span {
+    padding-left: 5px;
+    cursor: pointer;
+}
+
+.facetwp-region .facetwp-content.locked {
+    opacity: 0.4;
+}
+
 /* Data Source dropdown */
 
 .name-source .fs-dropdown {
@@ -586,7 +603,6 @@ a:hover {
     display: inline-block;
     vertical-align: middle;
     max-width: 300px;
-    width: auto;
 }
 
 /* Boolean toggle */

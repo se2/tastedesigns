@@ -396,7 +396,14 @@ class FacetWP_Ajax
         $params = $this->process_post_data();
         $output = FWP()->facet->render( $params );
         $data = stripslashes_deep( $_POST['data'] );
-        $output = json_encode( $output );
+
+        // Ignore invalid UTF-8 characters in PHP 7.2+
+        if ( version_compare( phpversion(), '7.2', '<' ) ) {
+            $output = json_encode( $output );
+        }
+        else {
+            $output = json_encode( $output, JSON_INVALID_UTF8_IGNORE );
+        }
 
         echo apply_filters( 'facetwp_ajax_response', $output, [
             'data' => $data

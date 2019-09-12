@@ -1271,7 +1271,10 @@
                     @click="$root.editItem('facet', facet)"
                 >
                     <div class="card-drag">&#9776;</div>
-                    <div class="card-label" :title="facet.name">{{ facet.label }}</div>
+                    <div class="card-label" :title="facet.name">
+                        {{ facet.label }}
+                        <span v-if="facet._code">&nbsp; <i class="fas fa-lock"></i></span>
+                    </div>
                     <div class="card-delete" @click.stop="$root.deleteItem('facet', index)"></div>
                     <div class="card-type">{{ facet.type }}</div>
                     <div class="card-source" v-html="getSource(facet.source)"></div>
@@ -1302,7 +1305,10 @@
                     @click="$root.editItem('template', template)"
                 >
                     <div class="card-drag">&#9776;</div>
-                    <div class="card-label" :title="template.name">{{ template.label }}</div>
+                    <div class="card-label" :title="template.name">
+                        {{ template.label }}
+                        <span v-if="template._code">&nbsp;<i class="fas fa-lock"></i></span>
+                    </div>
                     <div class="card-delete" @click.stop="$root.deleteItem('template', index)"></div>
                     <div class="card-display-mode">{{ getDisplayMode(index) }}</div>
                     <div class="card-post-types">{{ getPostTypes(index) }}</div>
@@ -1341,51 +1347,62 @@
             created() {
                 this.facet = this.$root.editing;
             },
+            methods: {
+                unlock() {
+                    Vue.delete(this.facet, '_code');
+                }
+            },
             template: `
-            <div class="facetwp-content" :class="[ 'type-' + facet.type ]">
-                <div class="facetwp-row">
-                    <div>{{ 'Label' | i18n }}:</div>
-                    <div>
-                        <input
-                            type="text"
-                            v-model="facet.label"
-                            @focus="$root.isNameEditable(facet)"
-                            @keyup="$root.maybeEditName(facet)"
-                        />
-                        &nbsp; &nbsp; {{ 'Name' | i18n }}:
-                        <input
-                            type="text"
-                            class="item-name"
-                            v-model="facet.name"
-                        />
-                    </div>
+            <div>
+                <div class="item-locked" v-if="facet._code">
+                    This facet is registered in code. Click to allow edits:
+                    <span @click="unlock"><i class="fas fa-lock-open"></i></span>
                 </div>
-                <div class="facetwp-row">
-                    <div>{{ 'Facet type' | i18n }}:</div>
-                    <div>
-                        <facet-types
-                            :facet="facet"
-                            :selected="facet.type"
-                            :types="$root.facet_types">
-                        </facet-types>
-                        &nbsp; &nbsp;
-                        <span class="facetwp-btn" @click="$root.copyToClipboard(facet.name, $event)">
-                            {{ 'Copy shortcode' | i18n }}
-                        </span>
+                <div class="facetwp-content" :class="[ 'type-' + facet.type, { locked: facet._code } ]">
+                    <div class="facetwp-row">
+                        <div>{{ 'Label' | i18n }}:</div>
+                        <div>
+                            <input
+                                type="text"
+                                v-model="facet.label"
+                                @focus="$root.isNameEditable(facet)"
+                                @keyup="$root.maybeEditName(facet)"
+                            />
+                            &nbsp; &nbsp; {{ 'Name' | i18n }}:
+                            <input
+                                type="text"
+                                class="item-name"
+                                v-model="facet.name"
+                            />
+                        </div>
                     </div>
-                </div>
-                <div class="facetwp-row field-data-source">
-                    <div>{{ 'Data source' | i18n }}:</div>
-                    <div>
-                        <data-sources
-                            :facet="facet"
-                            :selected="facet.source"
-                            :sources="$root.data_sources">
-                        </data-sources>
+                    <div class="facetwp-row">
+                        <div>{{ 'Facet type' | i18n }}:</div>
+                        <div>
+                            <facet-types
+                                :facet="facet"
+                                :selected="facet.type"
+                                :types="$root.facet_types">
+                            </facet-types>
+                            &nbsp; &nbsp;
+                            <span class="facetwp-btn" @click="$root.copyToClipboard(facet.name, $event)">
+                                {{ 'Copy shortcode' | i18n }}
+                            </span>
+                        </div>
                     </div>
+                    <div class="facetwp-row field-data-source">
+                        <div>{{ 'Data source' | i18n }}:</div>
+                        <div>
+                            <data-sources
+                                :facet="facet"
+                                :selected="facet.source"
+                                :sources="$root.data_sources">
+                            </data-sources>
+                        </div>
+                    </div>
+                    <hr />
+                    <facet-settings :facet="facet"></facet-settings>
                 </div>
-                <hr />
-                <facet-settings :facet="facet"></facet-settings>
             </div>
             `
         });
@@ -1431,56 +1448,65 @@
                 switchMode() {
                     const now = this.template.modes[this.tab];
                     this.template.modes[this.tab] = ('visual' === now) ? 'advanced' : 'visual';
+                },
+                unlock() {
+                    Vue.delete(this.template, '_code');
                 }
             },
             template: `
-            <div class="facetwp-content">
-                <div class="table-row">
-                    <input
-                        type="text"
-                        v-model="template.label"
-                        @focus="$root.isNameEditable(template)"
-                        @keyup="$root.maybeEditName(template)"
-                    />
-                    &nbsp; &nbsp; Name:
-                    <input
-                        type="text"
-                        class="item-name"
-                        v-model="template.name"
-                    />
+            <div>
+                <div class="item-locked" v-if="template._code">
+                    This template is registered in code. Click to allow edits:
+                    <span @click="unlock"><i class="fas fa-lock-open"></i></span>
                 </div>
-
-                <div @click="switchMode()" v-show="isMode('visual')" class="side-link">{{ 'Switch to advanced mode' | i18n }}</div>
-                <div @click="switchMode()" v-show="isMode('advanced')" class="side-link">{{ 'Switch to visual mode' | i18n }}</div>
-
-                <div class="template-tabs top-level">
-                    <span @click="tab = 'display'" :class="{ active: tab == 'display' }">{{ 'Display' | i18n }}</span>
-                    <span @click="tab = 'query'" :class="{ active: tab == 'query' }">{{ 'Query' | i18n }}</span>
-                </div>
-
-                <div v-show="tab == 'display'">
-                    <div class="table-row" v-show="template.modes.display == 'visual'">
-                        <builder :layout="template.layout"></builder>
+                <div class="facetwp-content" :class="{ locked: template._code }">
+                    <div class="table-row">
+                        <input
+                            type="text"
+                            v-model="template.label"
+                            @focus="$root.isNameEditable(template)"
+                            @keyup="$root.maybeEditName(template)"
+                        />
+                        &nbsp; &nbsp; Name:
+                        <input
+                            type="text"
+                            class="item-name"
+                            v-model="template.name"
+                        />
                     </div>
-                    <div class="table-row" v-show="template.modes.display == 'advanced'">
-                        <div class="side-link">
-                            <a href="https://facetwp.com/documentation/templates/advanced-mode/" target="_blank">{{ 'Help' | i18n }}</a>
+
+                    <div @click="switchMode()" v-show="isMode('visual')" class="side-link">{{ 'Switch to advanced mode' | i18n }}</div>
+                    <div @click="switchMode()" v-show="isMode('advanced')" class="side-link">{{ 'Switch to visual mode' | i18n }}</div>
+
+                    <div class="template-tabs top-level">
+                        <span @click="tab = 'display'" :class="{ active: tab == 'display' }">{{ 'Display' | i18n }}</span>
+                        <span @click="tab = 'query'" :class="{ active: tab == 'query' }">{{ 'Query' | i18n }}</span>
+                    </div>
+
+                    <div v-show="tab == 'display'">
+                        <div class="table-row" v-show="template.modes.display == 'visual'">
+                            <builder :layout="template.layout"></builder>
                         </div>
-                        <div class="row-label">{{ 'Display Code' | i18n }}</div>
-                        <textarea v-model="template.template"></textarea>
-                    </div>
-                </div>
-
-                <div v-show="tab == 'query'">
-                    <div class="table-row" v-show="template.modes.query == 'visual'">
-                        <query-builder :query_obj="template.query_obj" :template="template"></query-builder>
-                    </div>
-                    <div class="table-row" v-show="template.modes.query == 'advanced'">
-                        <div class="side-link">
-                            <a href="https://facetwp.com/documentation/templates/advanced-mode/" target="_blank">{{ 'Help' | i18n }}</a>
+                        <div class="table-row" v-show="template.modes.display == 'advanced'">
+                            <div class="side-link">
+                                <a href="https://facetwp.com/documentation/templates/advanced-mode/" target="_blank">{{ 'Help' | i18n }}</a>
+                            </div>
+                            <div class="row-label">{{ 'Display Code' | i18n }}</div>
+                            <textarea v-model="template.template"></textarea>
                         </div>
-                        <div class="row-label">{{ 'Query Arguments' | i18n }}</div>
-                        <textarea v-model="template.query"></textarea>
+                    </div>
+
+                    <div v-show="tab == 'query'">
+                        <div class="table-row" v-show="template.modes.query == 'visual'">
+                            <query-builder :query_obj="template.query_obj" :template="template"></query-builder>
+                        </div>
+                        <div class="table-row" v-show="template.modes.query == 'advanced'">
+                            <div class="side-link">
+                                <a href="https://facetwp.com/documentation/templates/advanced-mode/" target="_blank">{{ 'Help' | i18n }}</a>
+                            </div>
+                            <div class="row-label">{{ 'Query Arguments' | i18n }}</div>
+                            <textarea v-model="template.query"></textarea>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1513,7 +1539,7 @@
                 tableToDivs() {
                     const self = this;
                     let html = this.$root.clone[this.facet.type];
-                    let custom_settings = [];
+                    let custom_settings = ['_code'];
 
                     // Backwards compatibility
                     html = html.replace(/<tr>/g, '<div class="facetwp-row">');
@@ -1724,8 +1750,14 @@
                     $('.facetwp-response').html(FWP.__('Saving') + '...');
                     $('.facetwp-response').addClass('visible');
 
+                    let data = JSON.parse(JSON.stringify(FWP.data));
+
+                    // Remove code-based facets and templates
+                    data.facets = data.facets.filter(obj => 'undefined' === typeof obj['_code']);
+                    data.templates = data.templates.filter(obj => 'undefined' === typeof obj['_code']);
+
                     // Settings save hook
-                    const data = FWP.hooks.applyFilters('facetwp/save_settings', FWP.data);
+                    data = FWP.hooks.applyFilters('facetwp/save_settings', data);
 
                     $.ajax(ajaxurl, {
                         method: 'POST',

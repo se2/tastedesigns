@@ -216,9 +216,8 @@ class FacetWP_Builder
                 $value = $product->get_type();
             }
         }
-        elseif ( 0 === strpos( $source, 'acf/' ) ) {
-            $field = substr( $source, 4 );
-            $value = get_field( $field, $post->ID );
+        elseif ( 0 === strpos( $source, 'acf/' ) && isset( FWP()->acf ) ) {
+            $value = FWP()->acf->get_field( $source, $post->ID );
         }
         elseif ( 'featured_image' == $source ) {
             $value = get_the_post_thumbnail( $post->ID, $settings['image_size'] );

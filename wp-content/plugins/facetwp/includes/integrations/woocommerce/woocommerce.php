@@ -35,7 +35,9 @@ class FacetWP_Integration_WooCommerce
         add_filter( 'woocommerce_redirect_single_search_result', [ $this, 'redirect_single_search_result' ] );
 
         // Dynamic counts when Shop Page Display = "Categories" or "Both"
-        //include( FACETWP_DIR . '/includes/integrations/woocommerce/taxonomy.php' );
+        if ( apply_filters( 'facetwp_woocommerce_support_categories_display', false ) ) {
+            include( FACETWP_DIR . '/includes/integrations/woocommerce/taxonomy.php' );
+        }
     }
 
 

@@ -110,12 +110,20 @@ class FacetWP_Display
     function front_scripts() {
 
         // Not enqueued - front.js needs to load before front_scripts()
-        if ( true === apply_filters( 'facetwp_load_assets', $this->load_assets ) ) {
-            if ( true === apply_filters( 'facetwp_load_css', true ) ) {
+        if ( apply_filters( 'facetwp_load_assets', $this->load_assets ) ) {
+
+            // Load CSS?
+            if ( apply_filters( 'facetwp_load_css', true ) ) {
                 $this->assets['front.css'] = FACETWP_URL . '/assets/css/front.css';
             }
 
+            // Load required JS
             $this->assets['front.js'] = FACETWP_URL . '/assets/js/dist/front.min.js';
+
+            // Load a11y?
+            if ( apply_filters( 'facetwp_load_a11y', false ) ) {
+                $this->assets['accessibility.js'] = FACETWP_URL . '/assets/js/src/accessibility.js';
+            }
 
             // Use the REST API?
             $ajaxurl = admin_url( 'admin-ajax.php' );
