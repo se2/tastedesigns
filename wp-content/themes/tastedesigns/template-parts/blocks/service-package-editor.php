@@ -24,12 +24,12 @@ $colors = new TasteColors();
     <?php echo $title; ?>
   </h1>
   <?php if ($subtitle) : ?>
-    <h2 class="font-subtitle text-14 leading-30 tracking-3.71 lg:text-16 lg:leading-30 lg:tracking-4.24 text-taste-2 uppercase text-center mt-0 lg:mt-60 mx-20 lg:mx-30">
+    <h2 class="font-subtitle text-14 leading-30 tracking-3.71 lg:text-14 lg:leading-30 lg:tracking-4.24 text-taste-2 uppercase text-center mt-0 lg:mt-60 mx-20 lg:mx-30">
       <?php echo $subtitle; ?>
     </h2>
   <?php endif; ?>
   <?php if ($content) : ?>
-    <div class="c-service-package__content font-body text-14 leading-21 lg:text-16 lg:leading-24 text-taste-6 mt-40 lg:mt-50 text-center">
+    <div class="c-service-package__content font-body text-14 leading-21 lg:text-14 lg:leading-24 text-taste-6 mt-40 lg:mt-50 text-center">
       <?php echo $content; ?>
     </div>
   <?php endif; ?>
