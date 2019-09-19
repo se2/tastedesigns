@@ -67,11 +67,11 @@
     blockquote {
       @apply font-body;
       @apply text-taste-6;
-      @apply text-14;
+      @apply text-14pt;
       @apply leading-21;
 
       @screen lg {
-        @apply text-16;
+        @apply text-14pt;
         @apply leading-24;
       }
     }

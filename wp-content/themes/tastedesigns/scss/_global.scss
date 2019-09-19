@@ -4,7 +4,7 @@ $default: cubic-bezier(0.21, 0.61, 0.35, 1);
 $reverse: cubic-bezier(0.65, 0.00, 0.79, 0.39);
 
 * {
-  @apply font-body;
+  @apply font-body text-14pt;
 
   font-weight: normal;
   transition-timing-function: $default;
@@ -12,6 +12,10 @@ $reverse: cubic-bezier(0.65, 0.00, 0.79, 0.39);
   &::selection {
     background: config('colors.taste-7');
   }
+}
+
+body p {
+	@apply text-14pt;
 }
 
 html {
